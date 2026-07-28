@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="vbe-defensive-contrast-fix-v10-7-5">
+:root { --vb-blue:#0B2451; --vb-blue-deep:#0B2451; --vb-blue-mid:#143A78; --vb-blue-soft:#E6ECF5; --vb-blue-light:#E6ECF5; --vb-orange:#F26522; --vb-orange-light:#FF8A4D; --vb-orange-glow:rgba(242,101,34,0.25); --vb-white:#FFFFFF; --vb-bg:#FAFAFA; --vb-bg-alt:#F8F8F8; --vb-slate:#4A5A7A; --vb-text:#0B2451; --vb-text-mid:#4A5A7A; --vb-line:#E5E7EB; --bg:#FAFAFA; --bg-alt:#F8F8F8; --bg-dark:#0B2451; --bg-soft:#F8F8F8; --text:#0B2451; --text-mid:#4A5A7A; --hairline:#E5E7EB; --hairline-strong:#C5CBD6; --orange:#F26522; --blue:#143A78; --blue-deep:#0B2451; --slate:#4A5A7A; --slate-light:#6B7A99; --white:#FFFFFF; --charcoal:#1A2A4A; --disc:#143A78; --disc-dark:#0B2451; --saffron:#FF9933; --india-green:#138808; --india-saffron:#FF9933; --whatsapp:#25D366; --bp-bg:#FAFAFA; --shadow-card:0 4px 12px rgba(11,36,81,0.08); --shadow-card-lift:0 12px 32px rgba(11,36,81,0.16); --ease:cubic-bezier(0.4,0,0.2,1); --mist:#F8F8F8; --cloud:#FFFFFF; --paper:#FAFAFA; --bp-line:#E5E7EB; --ink:#0B2451; --deep:#0B2451; --hair:#E5E7EB; --mono:#4A5A7A; --orange-glow:rgba(242,101,34,0.25); --mid:#4A5A7A; --cream:#FAFAFA; }
+html,body{background:#FFFFFF;color:#0B2451;} body *{color:inherit;}
+p,li,td,th,dd,dt,span:not([class]),div:not([class]){color:#4A5A7A;}
+h1,h2,h3,h4,h5,h6{color:#0B2451;}
+a{color:#143A78;} a:hover{color:#F26522;}
+input,textarea,select,button{color:#0B2451;background:#FFFFFF;border-color:#E5E7EB;}
+input::placeholder,textarea::placeholder{color:#6B7A99;opacity:1;}
+.bg-dark,.bg-dark *,.hero-dark,.hero-dark *,.fc-standards,.fc-standards *,.fc-cta,.fc-cta *,.arc-standards,.arc-standards *,.arc-cta,.arc-cta *,.dark-section,.dark-section *,.navy,.navy *,section[style*="background:#0B2451"],section[style*="background:#0B2451"] *,section[style*="background: #0B2451"],section[style*="background: #0B2451"] *,section[style*="linear-gradient(135deg,#0B2451"],section[style*="linear-gradient(135deg,#0B2451"] *,section[style*="linear-gradient(135deg, #0B2451"],section[style*="linear-gradient(135deg, #0B2451"] *{color:#FFFFFF;}
+.btn-primary,.nav-cta,[class*="btn"]:not([class*="btn-secondary"]){color:#FFFFFF !important;}
+.btn-secondary{color:#0B2451;}
+.deliv-card h3{color:#143A78;} .deliv-card p{color:#4A5A7A;}
+.case-card .case-industry{color:#F26522;} .case-card .case-descr{color:#143A78;} .case-card .case-pain{color:#4A5A7A;}
+.faq-item summary{color:#0B2451;} .faq-answer{color:#4A5A7A;}
+.cases-intro,.faqs-intro{color:#4A5A7A;}
+.arc-stage h3{color:#143A78;} .arc-stage p{color:#4A5A7A;}
+footer,footer *{color:#C5CBD6;} footer a,footer a:hover{color:#FFFFFF;} footer h4,footer h5,footer strong{color:#FFFFFF;}
+nav.primary,nav.primary a{color:#0B2451;} nav.primary .nav-items a{color:#0B2451;} nav.primary .nav-cta{color:#FFFFFF !important;}
+</style>
+
+  <!-- §6 Favicon · VB Group master mark · all standard sizes -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0B2451">
+  <link rel="shortcut icon" href="data:image/png;base64,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">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resources · Standards · Glossary · Case Studies</title>
+<meta name="description" content="VB Engineering resource library · 30+ years of brownfield engineering practice published as standards references, glossary entries, case studies, technical">
+<link rel="canonical" href="https://www.vbengg.com/resources/">
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.vbengg.com/og-default.jpg">
+<meta property="og:url" content="https://www.vbengg.com/resources/">
+<meta property="og:title" content="Resources · VB Engineering · Brownfield Engineering Reference Library">
+<meta property="og:description" content="Standards · Glossary · Case Studies · Technical Whitepapers · ROI Calculators · curated from VB Engineering's 30+ year brownfield practice.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Resources · VB Engineering">
+<meta name="twitter:description" content="Brownfield engineering reference library · standards, glossary, case studies, whitepapers, ROI calculators.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- §19 Edition 1.11 · GTM head -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NDRGZJV');</script>
+<!-- GA4 Day-1 fallback -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN2LJH6YR5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QN2LJH6YR5');</script>
+
+<!-- BreadcrumbList schema -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.vbengg.com/"},
+    {"@type":"ListItem","position":2,"name":"Resources","item":"https://www.vbengg.com/resources/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"VB Engineering Resources",
+  "url":"https://www.vbengg.com/resources/",
+  "description":"Brownfield engineering reference library · standards, glossary, case studies, whitepapers, ROI calculators.",
+  "publisher":{
+    "@type":"Organization",
+    "name":"VB Engineering India Pvt. Ltd.",
+    "url":"https://www.vbengg.com/"
+  }
+}
+</script>
+
+<style>
+:root {
+  --vb-blue-deep: #0B2451;
+  --vb-blue: #143A78;
+  --vb-orange: #F26522;
+  --vb-white: #FFFFFF;
+  --vb-cream: #FAFAFA;
+  --vb-bg-soft: #F8F8F8;
+  --vb-slate: #4A5A7A;
+  --vb-line: #E5E7EB;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #0B2451; background: #FFFFFF; line-height: 1.6; }
+
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid #E5E7EB; }
+.nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: #0B2451; text-decoration: none; }
+.nav-logo span { color: #F26522; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { color: #4A5A7A; text-decoration: none; font-weight: 500; font-size: 14px; }
+.nav-links a:hover { color: #0B2451; }
+.nav-cta { padding: 10px 20px; background: #F26522; color: #0B2451 !important; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; }
+
+/* Breadcrumb */
+.vbe-breadcrumb { position: fixed; top: 88px; left: 32px; z-index: 99; }
+.vbe-breadcrumb ol { display: flex; gap: 8px; list-style: none; font-size: 13px; align-items: center; background: rgba(255,255,255,0.9); padding: 8px 14px; border-radius: 6px; backdrop-filter: blur(8px); }
+.vbe-breadcrumb a { color: #4A5A7A; text-decoration: none; }
+.vbe-breadcrumb .vbe-breadcrumb-sep { color: #4A5A7A; }
+.vbe-breadcrumb .leaf { color: #0B2451; font-weight: 700; }
+
+/* Hero */
+.hero { position: relative; min-height: 60vh; padding: 200px 32px 80px; background: linear-gradient(135deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; overflow: hidden; }
+.hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
+.hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #F26522; text-transform: uppercase; margin-bottom: 16px; font-weight: 600; }
+.hero-h1 { font-size: clamp(40px, 6vw, 78px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 24px; }
+.hero-h1 .ac { color: #F26522; }
+.hero-sub { font-size: 20px; max-width: 720px; font-weight: 500; color: rgba(255,255,255,0.85); line-height: 1.4; margin-bottom: 36px; }
+.hero-lede { max-width: 720px; }
+.hero-lede p { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.75); font-weight: 500; }
+
+/* Hero particle backdrop · pure CSS · no off-brand hex */
+.hero-particles { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; opacity: 0.35; pointer-events: none; }
+.hero-particles::before { content: ''; position: absolute; top: 20%; left: 70%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, transparent 60%); border-radius: 50%; }
+.hero-particles::after { content: ''; position: absolute; bottom: 10%; left: 10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%); border-radius: 50%; }
+
+/* Section base */
+section { padding: 80px 32px; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #F26522; text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+.section-h2 { font-size: 36px; font-weight: 800; color: #0B2451; letter-spacing: -0.02em; margin-bottom: 16px; line-height: 1.15; }
+.section-body { font-size: 16px; line-height: 1.7; color: #4A5A7A; max-width: 780px; }
+
+/* Category cards */
+.categories { background: #FAFAFA; }
+.category-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 48px; }
+.category-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 32px; }
+.category-head { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 24px; }
+.category-icon { width: 56px; height: 56px; min-width: 56px; border-radius: 12px; background: #0B2451; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; }
+.category-info h3 { font-size: 24px; font-weight: 800; color: #0B2451; letter-spacing: -0.01em; margin-bottom: 6px; }
+.category-info p { font-size: 14px; color: #4A5A7A; line-height: 1.5; }
+.resource-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.resource-card { display: block; background: #F8F8F8; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 18px; text-decoration: none; color: #0B2451; transition: all 0.2s ease; }
+.resource-card:hover { border-color: #F26522; transform: translateY(-2px); }
+.resource-title { font-size: 14px; font-weight: 700; color: #0B2451; margin-bottom: 6px; line-height: 1.3; }
+.resource-meta { font-size: 12px; color: #4A5A7A; line-height: 1.4; margin-bottom: 4px; }
+.resource-stat { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #F26522; font-weight: 600; }
+.resource-card.coming-soon { opacity: 0.65; cursor: not-allowed; }
+
+/* 25-client marquee */
+.client-marquee { background: #FFFFFF; padding: 60px 32px; overflow: hidden; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB; }
+.client-marquee h4 { text-align: center; font-size: 14px; font-weight: 600; color: #4A5A7A; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 32px; }
+.client-track { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; max-width: 1280px; margin: 0 auto; }
+.client-pill { padding: 12px 20px; background: #FAFAFA; border: 1px solid #E5E7EB; border-radius: 6px; font-size: 13px; font-weight: 600; color: #0B2451; }
+
+/* CTA section */
+.cta-cinematic { background: #0B2451; color: #FFFFFF; padding: 100px 32px; }
+.cta-cinematic h2 { font-size: 42px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; color: #FFFFFF; }
+.cta-cinematic h2 .ac { color: #F26522; }
+.cta-cinematic p { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 720px; margin-bottom: 36px; }
+.cta-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary { padding: 14px 32px; background: #F26522; color: #0B2451; border-radius: 6px; font-weight: 800; text-decoration: none; font-size: 15px; }
+.btn-secondary { padding: 14px 32px; background: rgba(255,255,255,0.10); color: #FFFFFF; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 15px; border: 1px solid rgba(255,255,255,0.30); }
+
+/* Footer */
+.vbe-footer { background: #0B2451; color: rgba(255,255,255,0.7); padding: 50px 32px 30px; text-align: center; font-size: 13px; }
+.vbe-footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+.vbe-footer a:hover { color: #F26522; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero { padding: 140px 20px 60px; min-height: 50vh; }
+  .hero-h1 { font-size: clamp(32px, 8vw, 48px); }
+  section { padding: 60px 20px; }
+  .category-card { padding: 24px; }
+}
+</style>
+
+<style id="vbe-canonical-shell">
+:root{
+  --vb-blue-deep:#0B2451;
+  --vb-blue:#143A78;
+  --vb-orange:#F26522;
+  --vb-orange-light:#F26522;
+  --slate:#4A5A7A;
+  --charcoal:#0B2451;
+  --hairline:#E5E7EB;
+}
+
+/* CANONICAL HEADER + FOOTER CSS · Edition 1.13.5 · injected site-wide */
+
+/* === HEADER (.vbe-nav) === */
+
+.vbe-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,252,254,0.85);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border-bottom:1px solid var(--hairline)}
+
+.vbe-nav-inner{max-width:1400px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+
+.brand-mark{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+.brand-mark img{width:40px;height:auto;display:block}
+
+.brand-wordmark{font-weight:800;font-size:17px;letter-spacing:-0.3px;color:var(--vb-blue-deep)}
+
+.brand-wordmark span{color:var(--vb-orange)}
+
+.brand-tagline{font-size:10px;letter-spacing:1.6px;color:var(--slate);text-transform:uppercase;margin-top:1px}
+
+.nav-menu{list-style:none;display:flex;gap:28px;align-items:center}
+
+.nav-menu a{color:var(--charcoal);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+
+.nav-menu a:hover{color:var(--vb-orange)}
+
+.nav-cta{color:#FFFFFF !important;}
+
+.nav-cta{padding:10px 20px;background:var(--vb-orange);color:white !important;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:0.3px}
+
+.nav-cta:hover{background:var(--vb-orange-light);color:white !important;transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(242,101,34,0.5)}
+
+.primary,nav.primary a{color:#0B2451;}
+
+.primary .nav-items a{color:#0B2451;}
+
+.primary .nav-cta{color:#FFFFFF !important;}
+
+/* === FOOTER (.vbe-site-footer) === */
+
+.vbe-site-footer { background: linear-gradient(180deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; padding: 80px 24px 32px; font-family: 'Inter', sans-serif; margin-top: 0; }
+
+.vbe-site-footer-inner { max-width: 1280px; margin: 0 auto; }
+
+.vbe-site-footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 48px; margin-bottom: 56px; }
+
+.vbe-site-footer .brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
+
+.vbe-site-footer .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
+
+.vbe-site-footer .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+
+.vbe-site-footer .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
+
+.vbe-site-footer .brand-col a { color: #F26522; text-decoration: none; }
+
+.vbe-site-footer .social { display: flex; gap: 12px; }
+
+.vbe-site-footer .social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-size: 16px; transition: background 0.3s; }
+
+.vbe-site-footer .social a:hover { background: #F26522; }
+
+.vbe-site-footer h5 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F26522; margin-bottom: 18px; }
+
+.vbe-site-footer ul { list-style: none; padding: 0; margin: 0; }
+
+.vbe-site-footer ul li { margin-bottom: 10px; }
+
+.vbe-site-footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+
+.vbe-site-footer ul li a:hover { color: #F26522; }
+
+.vbe-site-footer-base { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.10); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+
+.vbe-site-footer-base .copy { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+.vbe-site-footer-base .badge { font-size: 11px; color: #F26522; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+
+@media (max-width: 900px) { .vbe-site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+
+@media (max-width: 600px) { .vbe-site-footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+.brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
+
+.brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
+
+.brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+
+.brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
+
+.brand-col a { color: #F26522; text-decoration: none; }
+
+.brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
+
+.brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+</style>
+
+<style id="vbe-linkedin-pill-css">
+.vbe-linkedin-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;margin-left:6px;border:1px solid #E5E7EB;border-radius:20px;background:#FFFFFF;color:#0B2451;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;text-decoration:none;line-height:1;transition:border-color .15s,color .15s,background .15s;vertical-align:middle}
+.vbe-linkedin-pill:hover{border-color:#F26522;color:#F26522;background:#FAFAFA}
+.vbe-li-glyph{width:14px;height:14px;flex-shrink:0;fill:#0A66C2}
+.vbe-linkedin-pill:hover .vbe-li-glyph{fill:#F26522}
+.vbe-li-count{color:#0B2451;font-weight:700;letter-spacing:.2px}
+.vbe-linkedin-pill:hover .vbe-li-count{color:#F26522}
+.vbe-li-label{color:#4A5A7A;font-weight:500}
+@media(max-width:768px){.vbe-linkedin-pill{padding:4px 8px;margin-left:4px;font-size:12px}.vbe-li-label{display:none}}
+@media(max-width:480px){.vbe-linkedin-pill{padding:3px 6px;margin-left:3px}.vbe-li-count{font-size:11px}}
+</style>
+<style id="vbe-v1012">.vbe-site-footer{border-top:2px solid rgba(255,255,255,0.14)!important}</style>
+</head>
+<body>
+
+<!-- GTM body noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDRGZJV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- Nav -->
+<!--#include virtual="/partials/header.html" -->
+
+<!-- Breadcrumb -->
+<nav class="vbe-breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li class="vbe-breadcrumb-sep">›</li>
+    <li><span class="leaf">Resources</span></li>
+  </ol>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-particles"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">VB Engineering · Reference Library</div>
+    <h1 class="hero-h1">Engineering<br>resources, <span class="ac">curated</span>.</h1>
+    <p class="hero-sub">Standards · Glossary · Case Studies · Technical Whitepapers · ROI Calculators · 30+ years of brownfield engineering practice, published.</p>
+    <div class="hero-lede">
+      <p>Built for Plant Heads, EHS leads, Electrical Maintenance Managers, and Project Directors. Every resource backed by Chartered Engineer practice. Cited across 21 countries.</p>
+    </div>
+  </div>
+</header>
+
+<!-- Categories -->
+<section class="categories">
+  <div class="section-inner">
+    <div class="section-eyebrow">FIVE CATEGORIES · ONE LIBRARY</div>
+    <h2 class="section-h2">What's inside the library</h2>
+    <p class="section-body">Each resource is a working artefact from VB Engineering's brownfield practice. Hand-selected, traffic-validated, and signed off by Chartered Engineers (CEng MIE India / CEng MIE FIE MIET).</p>
+
+    <div class="category-grid">
+      <div class="category-card">
+        <div class="category-head">
+          <div class="category-icon">S</div>
+          <div class="category-info">
+            <h3>Standards Library</h3>
+            <p>Engineering codes, standards, and compliance references. Curated from 30+ years of brownfield engineering practice.</p>
+          </div>
+        </div>
+        <div class="resource-list">
+          <a href="/services/power-system-studies/protection-coordination/" class="resource-card ">
+            <div class="resource-title">Relay Coordination Study</div>
+            <div class="resource-meta">IEEE Color Books · IS 13947 · ANSI C57</div>
+            <div class="resource-stat">16,885 monthly views</div>
+          </a>
+          <a href="/services/risk-safety-amc/hazop-study/" class="resource-card ">
+            <div class="resource-title">OSHA Process Safety + HAZOP</div>
+            <div class="resource-meta">OSHA PSM · API RP 750 · IEC 61511</div>
+            <div class="resource-stat">7,193 monthly views</div>
+          </a>
+          <a href="/services/" class="resource-card ">
+            <div class="resource-title">Engineering Isometric Drawing</div>
+            <div class="resource-meta">ISA S5.1 · ISO 6428 · IEEE 315</div>
+            <div class="resource-stat">9,755 monthly views</div>
+          </a>
+          <a href="/locations/usa/arc-flash-study/" class="resource-card ">
+            <div class="resource-title">OSHA NFPA 70E Training + Certification</div>
+            <div class="resource-meta">NFPA 70E · OSHA 1910.269 · NETA</div>
+            <div class="resource-stat">2,963 monthly views</div>
+          </a>
+          <a href="/services/power-system-studies/insulation-coordination/" class="resource-card ">
+            <div class="resource-title">Lightning Arrestor Protection Study</div>
+            <div class="resource-meta">IS 2309 · IEC 62305 · IEEE 998</div>
+            <div class="resource-stat">6,922 monthly views</div>
+          </a>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="category-head">
+          <div class="category-icon">G</div>
+          <div class="category-info">
+            <h3>Glossary + Knowledge Base</h3>
+            <p>Brownfield engineering vocabulary, safety terminology, and concept reference. Built for engineers, EHS leads, and plant heads.</p>
+          </div>
+        </div>
+        <div class="resource-list">
+          <a href="/services/" class="resource-card ">
+            <div class="resource-title">Arc Flash Hazard Reference</div>
+            <div class="resource-meta">IEEE 1584 · NFPA 70E definitions + boundaries</div>
+            <div class="resource-stat">5,191 monthly views</div>
+          </a>
+          <a href="/resources/" class="resource-card ">
+            <div class="resource-title">VB Knowledge Base</div>
+            <div class="resource-meta">30+ years of practice notes + briefs</div>
+            <div class="resource-stat">850 monthly views</div>
+          </a>
+          <a href="/resources/" class="resource-card ">
+            <div class="resource-title">Engineering FAQ</div>
+            <div class="resource-meta">100+ field-tested answers</div>
+            <div class="resource-stat">395 monthly views</div>
+          </a>
+          <a href="/resources/" class="resource-card ">
+            <div class="resource-title">Engineering FAQ (legacy)</div>
+            <div class="resource-meta">Archive · pre-2020 questions</div>
+            <div class="resource-stat">298 monthly views</div>
+          </a>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="category-head">
+          <div class="category-icon">C</div>
+          <div class="category-info">
+            <h3>Case Studies</h3>
+            <p>Landmark brownfield engineering case studies across refineries, power plants, petrochemicals, pharma, mining, and ports.</p>
+          </div>
+        </div>
+        <div class="resource-list">
+          <a href="/services/" class="resource-card ">
+            <div class="resource-title">Engineering Portfolio + Projects</div>
+            <div class="resource-meta">Brownfield engineering across 25 verified clients</div>
+            <div class="resource-stat">5,306 monthly views</div>
+          </a>
+          <a href="/resources/" class="resource-card ">
+            <div class="resource-title">VB Research + R+D</div>
+            <div class="resource-meta">Technical research outputs + briefs</div>
+            <div class="resource-stat">6,381 monthly views</div>
+          </a>
+          <a href="/services/" class="resource-card ">
+            <div class="resource-title">Project Management Consultancy</div>
+            <div class="resource-meta">Capex management + program oversight</div>
+            <div class="resource-stat">4,401 monthly views</div>
+          </a>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="category-head">
+          <div class="category-icon">W</div>
+          <div class="category-info">
+            <h3>Technical Whitepapers</h3>
+            <p>Deep-dive engineering analyses · arc flash, safety audit, short circuit, network analysis, infrared thermography.</p>
+          </div>
+        </div>
+        <div class="resource-list">
+          <a href="/locations/india/arc-flash-study/" class="resource-card ">
+            <div class="resource-title">Arc Flash Analysis · India</div>
+            <div class="resource-meta">IEEE 1584 + NFPA 70E in Indian context</div>
+            <div class="resource-stat">31,185 monthly views</div>
+          </a>
+          <a href="/services/risk-safety-amc/" class="resource-card ">
+            <div class="resource-title">Electrical Safety Audit Practice</div>
+            <div class="resource-meta">End-to-end audit methodology</div>
+            <div class="resource-stat">24,075 monthly views</div>
+          </a>
+          <a href="/services/" class="resource-card ">
+            <div class="resource-title">Arc Flash Safety Assessment</div>
+            <div class="resource-meta">5-phase NFPA 70E assessment cycle</div>
+            <div class="resource-stat">22,682 monthly views</div>
+          </a>
+          <a href="/services/" class="resource-card ">
+            <div class="resource-title">Arc Flash Risk Assessment</div>
+            <div class="resource-meta">Risk-based incident-energy + boundary determination</div>
+            <div class="resource-stat">15,182 monthly views</div>
+          </a>
+          <a href="/services/power-system-studies/short-circuit-study/" class="resource-card ">
+            <div class="resource-title">Short Circuit Analysis Practice</div>
+            <div class="resource-meta">IEC 60909 + IEEE C37 methods</div>
+            <div class="resource-stat">13,355 monthly views</div>
+          </a>
+          <a href="/services/power-system-studies/load-flow-analysis/" class="resource-card ">
+            <div class="resource-title">Network Analysis Tool Reference</div>
+            <div class="resource-meta">ETAP / DigSILENT / PSCAD practical use</div>
+            <div class="resource-stat">10,628 monthly views</div>
+          </a>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="category-head">
+          <div class="category-icon">R</div>
+          <div class="category-info">
+            <h3>ROI Calculators + Tools</h3>
+            <p>Decision-support tools for brownfield engineering capex. Quantified payback for arc flash, LiDAR, digital twin, and AMC investments.</p>
+          </div>
+        </div>
+        <div class="resource-list">
+          <a href="/services/" class="resource-card ">
+            <div class="resource-title">Arc Flash Incident Energy Calculator</div>
+            <div class="resource-meta">IEEE 1584 calculation method + worked examples</div>
+            <div class="resource-stat">2,851 monthly views</div>
+          </a>
+          <a href="/contact/?source=resources" class="resource-card coming-soon">
+            <div class="resource-title">Coming Q2 2027 · LiDAR vs Manual ROI</div>
+            <div class="resource-meta">Scan-to-twin cost comparison · 12-month payback model</div>
+            <div class="resource-stat">build pending</div>
+          </a>
+          <a href="/contact/?source=resources" class="resource-card coming-soon">
+            <div class="resource-title">Coming Q2 2027 · Digital Twin Payback</div>
+            <div class="resource-meta">Wistwin ARR + service-engagement bowtie model</div>
+            <div class="resource-stat">build pending</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 25-client marquee -->
+<section class="client-marquee">
+  <h4>Trusted by 25 Fortune-500 + leading enterprise clients</h4>
+  <div class="client-track">
+    <div class="client-pill">Bayer</div>
+    <div class="client-pill">Pfizer</div>
+    <div class="client-pill">TATA</div>
+    <div class="client-pill">Adani</div>
+    <div class="client-pill">JSW</div>
+    <div class="client-pill">Nestlé</div>
+    <div class="client-pill">Coca-Cola</div>
+    <div class="client-pill">ISRO</div>
+    <div class="client-pill">Asian Paints</div>
+    <div class="client-pill">DuPont</div>
+    <div class="client-pill">Dr. Reddy's</div>
+    <div class="client-pill">Aditya Birla</div>
+    <div class="client-pill">ITC</div>
+    <div class="client-pill">Mahindra</div>
+    <div class="client-pill">Kia</div>
+    <div class="client-pill">Hindalco</div>
+    <div class="client-pill">Amazon</div>
+    <div class="client-pill">Siemens</div>
+    <div class="client-pill">AMNS</div>
+    <div class="client-pill">Jindal Steel</div>
+    <div class="client-pill">Bosch</div>
+    <div class="client-pill">Indian Oil</div>
+    <div class="client-pill">Bureau Veritas</div>
+    <div class="client-pill">Rolls-Royce</div>
+    <div class="client-pill">Syngene</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-cinematic">
+  <div class="section-inner">
+    <h2>Need a specific resource you can't find?<br><span class="ac">Ask the engineering team directly.</span></h2>
+    <p>Most of our published library reflects what plants ask us. If you have a brownfield engineering question · safety audit, power study, LiDAR scope, simulation strategy, or AMC renewal · scope it with our team. Response within 24 hours, signed off by a Chartered Engineer.</p>
+    <div class="cta-buttons">
+      <a href="/contact/?source=resources_cta" class="btn-primary">Scope Your Plant →</a>
+      <a href="/services/" class="btn-secondary">Browse Services</a>
+<a href="/flagship-solutions/">Flagship Solutions</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+
+
+<!-- Bitrix Live Chat (10/uejvnm) -->
+<script data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/site_button/loader_10_uejvnm.js');</script>
+
+<!-- Interakt/Kiwi WhatsApp SDK -->
+<script>
+(function(d,t){var s=d.createElement(t),h=d.getElementsByTagName(t)[0];s.async=true;
+  s.src='https://cdn.interakt.ai/kiwi-sdk/kiwi-sdk-17.js';
+  s.onload=function(){if(window.kiwi&&window.kiwi.init){window.kiwi.init('','iiDGsTOgtTbXcKt9VozbwZlbpIQz1E8A');}};
+  h.parentNode.insertBefore(s,h);
+})(document,'script');
+</script>
+<script>var KiwiObject = window.kiwi || {};</script>
+<style>.kiwi-sdk-widget-container{bottom: 100px !important;}</style>
+
+
+
+
+<!-- ===== SITEWIDE FOOTER · §6 brand discipline · 21 Jun 2026 ===== -->
+<style>
+.vbe-site-footer { background: linear-gradient(180deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; padding: 80px 24px 32px; font-family: 'Inter', sans-serif; margin-top: 0; }
+.vbe-site-footer-inner { max-width: 1280px; margin: 0 auto; }
+.vbe-site-footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 48px; margin-bottom: 56px; }
+.vbe-site-footer .brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
+.vbe-site-footer .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
+.vbe-site-footer .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+.vbe-site-footer .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
+.vbe-site-footer .brand-col a { color: #F26522; text-decoration: none; }
+.vbe-site-footer .social { display: flex; gap: 12px; }
+.vbe-site-footer .social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-size: 16px; transition: background 0.3s; }
+.vbe-site-footer .social a:hover { background: #F26522; }
+.vbe-site-footer h5 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F26522; margin-bottom: 18px; }
+.vbe-site-footer ul { list-style: none; padding: 0; margin: 0; }
+.vbe-site-footer ul li { margin-bottom: 10px; }
+.vbe-site-footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.vbe-site-footer ul li a:hover { color: #F26522; }
+.vbe-site-footer-base { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.10); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.vbe-site-footer-base .copy { font-size: 12px; color: rgba(255,255,255,0.55); }
+.vbe-site-footer-base .badge { font-size: 11px; color: #F26522; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+@media (max-width: 900px) { .vbe-site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 600px) { .vbe-site-footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+</style>
+<!--#include virtual="/partials/footer.html" -->
+<!-- ===== END SITEWIDE FOOTER ===== -->
+
+<!-- SCOPE YOUR PLANT · MODAL COMPONENT · v10.8.4 · Bitrix Master Form A (230/wna9sd) -->
+<style id="vbe-scope-modal-styles">
+  .scope-modal-overlay{position:fixed;inset:0;background:rgba(11,36,81,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;overflow-y:auto}
+  .scope-modal-overlay.open{display:flex}
+  .scope-modal{background:#FFFFFF;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);position:relative;padding:36px 40px}
+  .scope-modal-close{position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:28px;color:#4A5A7A;cursor:pointer;line-height:1;padding:8px;border-radius:8px;transition:background 0.2s}
+  .scope-modal-close:hover{background:#F8F8F8;color:#0B2451}
+  .scope-modal-header{margin-bottom:24px;padding-right:32px}
+  .scope-modal-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F26522;font-weight:700;margin-bottom:8px}
+  .scope-modal-title{font-size:24px;font-weight:800;color:#0B2451;line-height:1.2;margin-bottom:6px}
+  .scope-modal-sub{font-size:14px;color:#4A5A7A;line-height:1.5}
+  .scope-modal-body .form-loader{padding:32px;text-align:center;color:#4A5A7A;font-size:14px}
+  @media (max-width:600px){.scope-modal{padding:28px 20px}.scope-modal-title{font-size:20px}}
+</style>
+<div class="scope-modal-overlay" id="scopeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="scopeModalTitle">
+  <div class="scope-modal">
+    <button class="scope-modal-close" id="scopeModalClose" aria-label="Close">&times;</button>
+    <div class="scope-modal-header">
+      <div class="scope-modal-eyebrow">Scope Your Plant</div>
+      <div class="scope-modal-title" id="scopeModalTitle">Tell us about the plant. We&rsquo;ll scope it in 48 hours.</div>
+      <div class="scope-modal-sub">Chartered Engineer signature on every deliverable. No pitch decks. Just engineering answers.</div>
+    </div>
+    <div class="scope-modal-body">
+      <div class="form-loader">Loading scoping form&hellip;</div>
+      <script data-b24-form="inline/230/wna9sd" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_230.js');</script>
+    </div>
+  </div>
+</div>
+<script id="vbe-scope-modal-js">(function(){
+  var overlay=document.getElementById('scopeModalOverlay');
+  var closeBtn=document.getElementById('scopeModalClose');
+  if(!overlay)return;
+  function openModal(ctx){
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    // Push URL context as hidden fields when Bitrix form is ready
+    if(ctx){
+      var tryFill=function(){
+        var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source};
+        Object.keys(fields).forEach(function(k){
+          if(!fields[k])return;
+          var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]');
+          if(input){input.value=fields[k]}
+        });
+      };
+      setTimeout(tryFill,1500);
+      setTimeout(tryFill,3000);
+      setTimeout(tryFill,5000);
+    }
+    // GA4 event
+    if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});}
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  closeBtn&&closeBtn.addEventListener('click',closeModal);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+  // Intercept all Scope Your Plant CTAs
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a.nav-cta, a[data-scope-cta]');
+    if(!a)return;
+    if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return;
+    e.preventDefault();
+    // Parse the CTA href query params for context
+    var url=a.getAttribute('href')||'';
+    var q=url.split('?')[1]||'';
+    var ctx={};
+    q.split('&').forEach(function(pair){
+      var kv=pair.split('=');
+      if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||'');
+    });
+    openModal(ctx);
+  });
+})();</script>
+
+
+<script id="vbe-linkedin-pill-js">
+(function(){
+  var el = document.querySelector('.vbe-linkedin-pill .vbe-li-count');
+  if(!el) return;
+  var t = Date.now();
+  fetch('/data/social.json?t=' + t, {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(d && d.linkedin){
+        el.textContent = (typeof d.linkedin==='number'?(d.linkedin>=1000?Math.floor(d.linkedin/1000)+'k+':String(d.linkedin)):String(d.linkedin));
+      }
+    })
+    .catch(function(){ /* silent · pill keeps hardcoded fallback */ });
+})();
+</script>
+
+</body>
+</html>

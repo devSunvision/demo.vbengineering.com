@@ -1,0 +1,105 @@
+/*
+Theme Name: iDea - Clean & Powerful Bootstrap Theme
+Author: HtmlCoder
+Author URI: http://www.htmlcoder.me
+Author e-mail: htmlcoder.me@gmail.com
+Version: 1.2.0 
+Created: August 2014
+License URI: http://support.wrapbootstrap.com/
+File Description: Place here your custom CSS styles
+*/
+/*Start Menu*/
+.navbar-default .navbar-nav > li > a {
+    padding: 12px 6px 12px 12px;
+    color:#2980b9;
+}
+.dropdown>a:before{right:-4px;}
+.nav-pills > li > a{
+    padding: 10px 36px;
+}
+/*End Menu*/
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .nav-pills > li > a:hover, .nav-pills > li > a:focus {
+    
+    color: #ffffff;
+    background-color: #f26b38;
+}
+.banner + .page-intro{
+    margin-top:0px !important;
+}
+
+.processtofollow  p{
+    font-size:18px !important;
+}
+
+.separator:after{
+    background:none;
+}
+
+@media only screen and (max-width: 768px) { 
+    .b24-window-panel{
+        margin-right: 36px !important;
+        width: 82% !important;
+    }
+    .b24-form-content {
+        padding: 0px 31px !important;
+    }
+    .b24-window-panel .b24-form-wrapper{
+        min-height:auto !important;
+    }
+    .b24-window-panel-pos-right{
+        margin-top: 5% !important;
+    }
+
+    .b24-form .b24-window-scrollable{
+        padding-bottom: 0px !important;
+    }
+    .b24-window-panel{
+        height: 80% !important;
+    }
+}
+@media (min-width: 768px) {
+    .main-navigation .navbar-nav.navbar-right:last-child {
+        margin-right: 0;
+        margin-left: -43px;
+    }
+}
+
+@media (min-width: 768px) {
+.main-navigation .navbar-nav.navbar-right:last-child {
+    margin-right: 70px;
+}
+}
+
+/*Global menu style*/
+ul.dropdown-menu.global{
+    margin-left:650px !important;
+}
+@media (max-width:480px){
+    ul.dropdown-menu.global{
+        margin-left:0px !important;
+    }
+    .dropdown > a:before{
+        right:6px !important;
+    }
+}
+@media (max-width:801px){ 
+    ul.dropdown-menu.global{
+        margin-left:0px !important;
+        
+    }
+    .dropdown > a:before{
+        right:6px !important;
+    }
+}
+
+.slider-banner-container .small_thin_dark{
+	font-size:25px !important; 
+	line-height: 1.5 !important;
+}
+@media (max-width:480px) {
+	.slider-banner-container .small_thin_dark{
+		font-size:13px !important; 
+		line-height: 1.5 !important;
+	}
+}
