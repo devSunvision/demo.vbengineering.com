@@ -1,0 +1,14 @@
+# VB Engineering · vbengg.com
+# Edition 1.13.1 · 20 Jun 2026
+
+User-agent: *
+Allow: /
+
+# Master sitemap (includes all 139 new + 185 legacy URLs preserved)
+Sitemap: https://www.vbengg.com/sitemap.xml
+
+# Block dev/staging if accidentally exposed
+Disallow: /staging/
+Disallow: /preview/
+Disallow: /*.BROKEN.html$
+Disallow: /*.BACKUP.html$
