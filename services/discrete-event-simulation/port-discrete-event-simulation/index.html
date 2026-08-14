@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Port Simulation Services · Vessel Turnaround + Yard + Gate…</title>
+<meta name="description" content="Port and container terminal simulation services for vessel turnaround, STS crane productivity, yard utilisation, gate throughput">
+<meta name="keywords" content="port simulation, port simulation services, container terminal simulation, port capacity simulation, port throughput simulation, brownfield digital engineering">
+<link rel="canonical" href="https://www.vbengg.com/services/discrete-event-simulation/port-discrete-event-simulation/">
+<meta property="og:title" content="Port Simulation Services · Vessel Turnaround + Yard + Gate + STS Crane · VB Engineering">
+<meta property="og:description" content="Port and container terminal simulation services for vessel turnaround, STS crane productivity, yard utilisation, gate throughput">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.vbengg.com/services/discrete-event-simulation/port-discrete-event-simulation/">
+<meta property="og:image" content="https://www.vbengg.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- GTM --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NDRGZJV');</script>
+<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-QN2LJH6YR5"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-QN2LJH6YR5');</script>
+<style>
+:root{--vb-blue-deep:#0B2451;--vb-blue:#143A78;--vb-orange:#F26522;--white:#FFFFFF;--off-white:#FAFAFA;--light:#F8F8F8;--slate:#4A5A7A;--line:#E5E7EB;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Inter','SF Pro Text',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--vb-blue-deep);background:var(--white);line-height:1.6;}a{color:var(--vb-orange);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.nav{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;height:72px;display:flex;align-items:center}.nav-grid{display:flex;align-items:center;justify-content:space-between;width:100%}.nav-logo{display:flex;align-items:center;gap:10px;color:var(--vb-blue-deep);font-weight:700;font-size:18px}.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{color:var(--vb-blue-deep);font-weight:500;font-size:14px}.nav-cta{background:var(--vb-orange);color:#FFF !important;padding:10px 18px;border-radius:8px;font-weight:600}
+.breadcrumb{padding:20px 0;background:var(--off-white);border-bottom:1px solid var(--line);font-size:13px;color:var(--slate)}.breadcrumb a{color:var(--slate)}.breadcrumb strong{color:var(--vb-blue-deep)}
+.hero-stage{padding:0;background:#0B2451;color:var(--white);position:relative;overflow:hidden;border-bottom:1px solid rgba(242,101,34,0.18);}.hero-stage .scene-frame{position:relative;display:block;line-height:0}.hero-stage .scene-frame svg{display:block;width:100%;height:auto;max-height:680px;object-fit:cover}.hero-stage .scene-caption{position:absolute;top:24px;left:24px;z-index:3;max-width:560px}.hero-stage .scene-caption .badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--vb-orange);font-weight:700;letter-spacing:0.16em;text-transform:uppercase;background:rgba(11,36,81,0.88);padding:8px 14px;border-radius:6px;border:1px solid rgba(242,101,34,0.45)}.hero-stage .scene-caption .pin{display:block;margin-top:14px;background:rgba(11,36,81,0.85);padding:12px 18px;border-radius:8px;border:1px solid rgba(242,101,34,0.28);color:#FFFFFF;font-size:14px;font-weight:600;line-height:1.4;max-width:520px}.hero-stage .scene-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,36,81,0.3) 0%,rgba(11,36,81,0) 30%,rgba(11,36,81,0) 60%,rgba(11,36,81,0.45) 100%);pointer-events:none;z-index:2}
+.title-strip{padding:64px 0 48px;background:linear-gradient(135deg,#FFFFFF 0%,#FAFAFA 100%);border-bottom:1px solid var(--line)}.title-strip .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--vb-orange);font-weight:700;letter-spacing:0.14em;text-transform:uppercase}.title-strip h1{font-size:56px;line-height:1.04;font-weight:700;color:var(--vb-blue-deep);margin:18px 0 14px;max-width:980px}.title-strip h1 .accent{color:var(--vb-orange);display:block}.title-strip .lede{font-size:17px;color:var(--slate);max-width:880px;line-height:1.65}.title-strip .brand-numbers{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-top:44px;padding-top:32px;border-top:1px solid var(--line);max-width:1000px}.title-strip .brand-numbers .num{color:var(--vb-orange);font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:700;line-height:1}.title-strip .brand-numbers .label{color:var(--slate);font-size:13px;margin-top:6px;letter-spacing:0.04em}
+.section{padding:80px 0;border-bottom:1px solid var(--line)}.section h2{font-size:34px;font-weight:700;margin-bottom:14px;color:var(--vb-blue-deep);max-width:840px}.section h2 .accent{color:var(--vb-orange)}.section .lede{font-size:17px;color:var(--slate);margin-bottom:32px;max-width:840px;line-height:1.6}.section-dark{background:linear-gradient(135deg,#0B2451 0%,#143A78 100%);color:var(--white);border-bottom:0}.section-dark h2{color:var(--white)}.section-dark .lede{color:#C5CBD6}
+.scene-block{border-radius:16px;overflow:hidden;background:#0B2451;border:1px solid rgba(242,101,34,0.18);margin-top:24px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:32px}.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px;transition:transform 0.2s,border-color 0.2s}.card:hover{transform:translateY(-4px);border-color:var(--vb-orange)}.card h3{font-size:18px;font-weight:700;color:var(--vb-blue-deep);margin-bottom:10px}.card p{font-size:14px;color:var(--slate);line-height:1.55}
+.cta-band{padding:80px 0;background:var(--vb-blue-deep);color:var(--white);text-align:center}.cta-band h2{color:var(--white);margin-bottom:16px;font-size:34px}.cta-band p{color:#C5CBD6;font-size:16px;margin-bottom:32px;max-width:640px;margin-left:auto;margin-right:auto}.cta-btn{display:inline-block;padding:14px 32px;background:var(--vb-orange);color:#FFF !important;border-radius:10px;font-weight:700;font-size:15px;letter-spacing:0.02em}
+.marquee-band{padding:48px 0;background:var(--off-white);border-bottom:1px solid var(--line);overflow:hidden}.marquee-band .label{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:24px;font-weight:700}.marquee{display:flex;gap:48px;animation:scroll 60s linear infinite;width:max-content}.marquee .mq-logo{flex-shrink:0;width:120px;height:48px;display:flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;font-weight:600;font-size:13px;color:var(--slate);background:#FFF;border:1px solid var(--line);border-radius:6px}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.footer{padding:48px 0;background:var(--vb-blue-deep);color:#C5CBD6;font-size:13px}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;margin-bottom:32px}.footer h4{color:var(--white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px}.footer a{color:#C5CBD6;display:block;padding:4px 0}.footer .copy{padding-top:24px;border-top:1px solid #1F3666;text-align:center;font-size:12px;color:#8995AC}.social-row{display:flex;gap:12px;margin-top:14px}.social-row a{padding:8px 12px;background:#143A78;border-radius:6px;font-size:11px;font-weight:600}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--vb-orange);font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:12px}
+@media (max-width:768px){.nav-links{display:none}.hero-stage .scene-frame svg{max-height:420px}.title-strip h1{font-size:32px}.title-strip{padding:48px 0 36px}.section{padding:48px 0}.section h2{font-size:26px}}
+</style><style id="vbe-canonical-shell">
+:root{
+  --vb-blue-deep:#0B2451;
+  --vb-blue:#143A78;
+  --vb-orange:#F26522;
+  --vb-orange-light:#F26522;
+  --slate:#4A5A7A;
+  --charcoal:#0B2451;
+  --hairline:#E5E7EB;
+}
+
+/* CANONICAL HEADER + FOOTER CSS · Edition 1.13.5 · injected site-wide */
+
+/* === HEADER (.vbe-nav) === */
+
+.vbe-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,252,254,0.85);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border-bottom:1px solid var(--hairline)}
+
+.vbe-nav-inner{max-width:1400px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+
+.brand-mark{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+.brand-mark img{width:40px;height:auto;display:block}
+
+.brand-wordmark{font-weight:800;font-size:17px;letter-spacing:-0.3px;color:var(--vb-blue-deep)}
+
+.brand-wordmark span{color:var(--vb-orange)}
+
+.brand-tagline{font-size:10px;letter-spacing:1.6px;color:var(--slate);text-transform:uppercase;margin-top:1px}
+
+.nav-menu{list-style:none;display:flex;gap:28px;align-items:center}
+
+.nav-menu a{color:var(--charcoal);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+
+.nav-menu a:hover{color:var(--vb-orange)}
+
+.nav-cta{color:#FFFFFF !important;}
+
+.nav-cta{padding:10px 20px;background:var(--vb-orange);color:white !important;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:0.3px}
+
+.nav-cta:hover{background:var(--vb-orange-light);color:white !important;transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(242,101,34,0.5)}
+
+.primary,nav.primary a{color:#0B2451;}
+
+.primary .nav-items a{color:#0B2451;}
+
+.primary .nav-cta{color:#FFFFFF !important;}
+
+/* === FOOTER (.vbe-site-footer) === */
+
+.vbe-site-footer { background: linear-gradient(180deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; padding: 80px 24px 32px; font-family: 'Inter', sans-serif; margin-top: 0; }
+
+.vbe-site-footer-inner { max-width: 1280px; margin: 0 auto; }
+
+.vbe-site-footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 48px; margin-bottom: 56px; }
+
+.vbe-site-footer .brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
+
+.vbe-site-footer .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
+
+.vbe-site-footer .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+
+.vbe-site-footer .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
+
+.vbe-site-footer .brand-col a { color: #F26522; text-decoration: none; }
+
+.vbe-site-footer .social { display: flex; gap: 12px; }
+
+.vbe-site-footer .social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-size: 16px; transition: background 0.3s; }
+
+.vbe-site-footer .social a:hover { background: #F26522; }
+
+.vbe-site-footer h5 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F26522; margin-bottom: 18px; }
+
+.vbe-site-footer ul { list-style: none; padding: 0; margin: 0; }
+
+.vbe-site-footer ul li { margin-bottom: 10px; }
+
+.vbe-site-footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+
+.vbe-site-footer ul li a:hover { color: #F26522; }
+
+.vbe-site-footer-base { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.10); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+
+.vbe-site-footer-base .copy { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+.vbe-site-footer-base .badge { font-size: 11px; color: #F26522; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+
+@media (max-width: 900px) { .vbe-site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+
+@media (max-width: 600px) { .vbe-site-footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+.brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
+
+.brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
+
+.brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+
+.brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
+
+.brand-col a { color: #F26522; text-decoration: none; }
+
+.brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
+
+.brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+</style>
+
+<style id="vbe-linkedin-pill-css">
+.vbe-linkedin-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;margin-left:6px;border:1px solid #E5E7EB;border-radius:20px;background:#FFFFFF;color:#0B2451;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;text-decoration:none;line-height:1;transition:border-color .15s,color .15s,background .15s;vertical-align:middle}
+.vbe-linkedin-pill:hover{border-color:#F26522;color:#F26522;background:#FAFAFA}
+.vbe-li-glyph{width:14px;height:14px;flex-shrink:0;fill:#0A66C2}
+.vbe-linkedin-pill:hover .vbe-li-glyph{fill:#F26522}
+.vbe-li-count{color:#0B2451;font-weight:700;letter-spacing:.2px}
+.vbe-linkedin-pill:hover .vbe-li-count{color:#F26522}
+.vbe-li-label{color:#4A5A7A;font-weight:500}
+@media(max-width:768px){.vbe-linkedin-pill{padding:4px 8px;margin-left:4px;font-size:12px}.vbe-li-label{display:none}}
+@media(max-width:480px){.vbe-linkedin-pill{padding:3px 6px;margin-left:3px}.vbe-li-count{font-size:11px}}
+</style>
+<style id="vbe-v1012">.vbe-site-footer{border-top:2px solid rgba(255,255,255,0.14)!important}</style>
+<style id="vbe-v132-logo-img">.mq-logo>img,.client-pill>img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}</style>
+</head>
+<body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDRGZJV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!--#include virtual="/partials/header.html" -->
+<nav class="breadcrumb vbe-breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> › <a href="/services/">Services</a> › <a href="/services/simulation-evaluation/">Discrete Event Simulation</a> › <strong>Port Simulation</strong></div></nav>
+
+<section class="hero-stage"><div class="scene-overlay"></div><div class="scene-frame"><svg viewBox="0 0 1140 480" xmlns="http://www.w3.org/2000/svg" aria-label="Animated port terminal · STS cranes loading container vessel · yard with stacked containers · gate trucks">
+<defs>
+<linearGradient id="port-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#143A78"/><stop offset="100%" stop-color="#0B2451"/></linearGradient>
+<linearGradient id="port-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A2D4F"/><stop offset="100%" stop-color="#091B3A"/></linearGradient>
+<linearGradient id="port-quay" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4A5A7A"/><stop offset="100%" stop-color="#2E3A52"/></linearGradient>
+<radialGradient id="port-beacon" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F26522" stop-opacity="0.9"/><stop offset="100%" stop-color="#F26522" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1140" height="220" fill="url(#port-sky)"/>
+<!-- stars -->
+<g opacity="0.7"><circle cx="100" cy="40" r="1" fill="#FFFFFF"/><circle cx="280" cy="60" r="1.2" fill="#FFFFFF"/><circle cx="460" cy="35" r="1" fill="#FFFFFF"/><circle cx="640" cy="55" r="1.4" fill="#FFFFFF"/><circle cx="820" cy="40" r="1" fill="#FFFFFF"/><circle cx="1000" cy="65" r="1.2" fill="#FFFFFF"/></g>
+<!-- distant city -->
+<g opacity="0.3"><rect x="800" y="170" width="30" height="50" fill="#0B2451"/><rect x="835" y="160" width="40" height="60" fill="#0B2451"/><rect x="880" y="180" width="25" height="40" fill="#0B2451"/><rect x="910" y="155" width="35" height="65" fill="#0B2451"/></g>
+<!-- sea -->
+<rect y="220" width="1140" height="80" fill="url(#port-sea)"/>
+<!-- wave lines -->
+<g stroke="#4A5A7A" stroke-width="0.6" fill="none" opacity="0.7"><path d="M0 250 Q 60 244 120 250 T 240 250 T 360 250 T 480 250 T 600 250 T 720 250 T 840 250 T 960 250 T 1080 250"/><path d="M0 270 Q 60 264 120 270 T 240 270 T 360 270 T 480 270 T 600 270 T 720 270 T 840 270 T 960 270 T 1080 270"/></g>
+<!-- container vessel at berth -->
+<g transform="translate(60,200)">
+<path d="M 0 40 L 20 20 L 540 20 L 570 40 L 540 80 L 30 80 Z" fill="#0B2451" stroke="#4A5A7A" stroke-width="1.5"/>
+<!-- bridge -->
+<rect x="450" y="-10" width="60" height="30" fill="#FAFAFA" stroke="#143A78" stroke-width="1"/>
+<rect x="455" y="-5" width="6" height="6" fill="#0B2451"/><rect x="465" y="-5" width="6" height="6" fill="#0B2451"/><rect x="475" y="-5" width="6" height="6" fill="#0B2451"/><rect x="485" y="-5" width="6" height="6" fill="#0B2451"/><rect x="495" y="-5" width="6" height="6" fill="#0B2451"/>
+<!-- stacked containers on deck -->
+<g><rect x="30" y="0" width="30" height="20" fill="#F26522"/><rect x="62" y="0" width="30" height="20" fill="#4A5A7A"/><rect x="94" y="0" width="30" height="20" fill="#F26522"/><rect x="126" y="0" width="30" height="20" fill="#FAFAFA"/><rect x="158" y="0" width="30" height="20" fill="#F26522"/><rect x="190" y="0" width="30" height="20" fill="#4A5A7A"/><rect x="222" y="0" width="30" height="20" fill="#F26522"/><rect x="254" y="0" width="30" height="20" fill="#FAFAFA"/><rect x="286" y="0" width="30" height="20" fill="#F26522"/><rect x="318" y="0" width="30" height="20" fill="#4A5A7A"/><rect x="350" y="0" width="30" height="20" fill="#F26522"/><rect x="382" y="0" width="30" height="20" fill="#FAFAFA"/><rect x="414" y="0" width="30" height="20" fill="#F26522"/></g>
+<g><rect x="30" y="-20" width="30" height="20" fill="#4A5A7A" opacity="0.85"/><rect x="62" y="-20" width="30" height="20" fill="#F26522" opacity="0.85"/><rect x="94" y="-20" width="30" height="20" fill="#FAFAFA" opacity="0.85"/><rect x="126" y="-20" width="30" height="20" fill="#F26522" opacity="0.85"/><rect x="158" y="-20" width="30" height="20" fill="#4A5A7A" opacity="0.85"/><rect x="190" y="-20" width="30" height="20" fill="#F26522" opacity="0.85"/><rect x="222" y="-20" width="30" height="20" fill="#FAFAFA" opacity="0.85"/><rect x="254" y="-20" width="30" height="20" fill="#F26522" opacity="0.85"/><rect x="286" y="-20" width="30" height="20" fill="#4A5A7A" opacity="0.85"/><rect x="318" y="-20" width="30" height="20" fill="#F26522" opacity="0.85"/><rect x="350" y="-20" width="30" height="20" fill="#FAFAFA" opacity="0.85"/><rect x="382" y="-20" width="30" height="20" fill="#F26522" opacity="0.85"/></g>
+</g>
+<!-- quay -->
+<rect y="300" width="1140" height="40" fill="url(#port-quay)"/>
+<line x1="0" y1="300" x2="1140" y2="300" stroke="#F26522" stroke-width="1.5" opacity="0.6"/>
+<!-- STS crane #1 -->
+<g transform="translate(180,90)">
+<rect x="-4" y="0" width="8" height="200" fill="#FAFAFA"/>
+<rect x="-44" y="0" width="8" height="200" fill="#FAFAFA"/>
+<rect x="-48" y="-20" width="100" height="20" fill="#FAFAFA"/>
+<rect x="-44" y="-10" width="92" height="6" fill="#F26522"/>
+<!-- boom extending over vessel -->
+<rect x="-44" y="-60" width="240" height="6" fill="#FAFAFA"/>
+<!-- trolley -->
+<rect x="40" y="-58" width="20" height="10" fill="#F26522"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="9s" repeatCount="indefinite"/></rect>
+<!-- spreader + container hanging -->
+<g><line x1="50" y1="-50" x2="50" y2="-20" stroke="#FAFAFA" stroke-width="1"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="9s" repeatCount="indefinite"/></line><rect x="42" y="-20" width="16" height="14" fill="#F26522"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="9s" repeatCount="indefinite"/></rect></g>
+</g>
+<!-- STS crane #2 -->
+<g transform="translate(380,90)">
+<rect x="-4" y="0" width="8" height="200" fill="#FAFAFA"/>
+<rect x="-44" y="0" width="8" height="200" fill="#FAFAFA"/>
+<rect x="-48" y="-20" width="100" height="20" fill="#FAFAFA"/>
+<rect x="-44" y="-10" width="92" height="6" fill="#F26522"/>
+<rect x="-44" y="-60" width="240" height="6" fill="#FAFAFA"/>
+<rect x="20" y="-58" width="20" height="10" fill="#F26522"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="11s" begin="2s" repeatCount="indefinite"/></rect>
+<g><line x1="30" y1="-50" x2="30" y2="-20" stroke="#FAFAFA" stroke-width="1"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="11s" begin="2s" repeatCount="indefinite"/></line><rect x="22" y="-20" width="16" height="14" fill="#FAFAFA"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="11s" begin="2s" repeatCount="indefinite"/></rect></g>
+</g>
+<!-- STS crane #3 -->
+<g transform="translate(580,90)">
+<rect x="-4" y="0" width="8" height="200" fill="#FAFAFA"/>
+<rect x="-44" y="0" width="8" height="200" fill="#FAFAFA"/>
+<rect x="-48" y="-20" width="100" height="20" fill="#FAFAFA"/>
+<rect x="-44" y="-10" width="92" height="6" fill="#F26522"/>
+<rect x="-44" y="-60" width="240" height="6" fill="#FAFAFA"/>
+<rect x="60" y="-58" width="20" height="10" fill="#F26522"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="10s" begin="1s" repeatCount="indefinite"/></rect>
+<g><line x1="70" y1="-50" x2="70" y2="-20" stroke="#FAFAFA" stroke-width="1"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="10s" begin="1s" repeatCount="indefinite"/></line><rect x="62" y="-20" width="16" height="14" fill="#F26522"><animateMotion path="M 0 0 L 140 0 L 0 0" dur="10s" begin="1s" repeatCount="indefinite"/></rect></g>
+</g>
+<!-- container yard (right side · stacked containers) -->
+<g transform="translate(740,310)">
+<g><rect x="0" y="0" width="22" height="14" fill="#F26522"/><rect x="0" y="-14" width="22" height="14" fill="#4A5A7A"/><rect x="0" y="-28" width="22" height="14" fill="#F26522"/></g>
+<g transform="translate(24,0)"><rect x="0" y="0" width="22" height="14" fill="#FAFAFA"/><rect x="0" y="-14" width="22" height="14" fill="#F26522"/><rect x="0" y="-28" width="22" height="14" fill="#4A5A7A"/></g>
+<g transform="translate(48,0)"><rect x="0" y="0" width="22" height="14" fill="#F26522"/><rect x="0" y="-14" width="22" height="14" fill="#FAFAFA"/><rect x="0" y="-28" width="22" height="14" fill="#F26522"/></g>
+<g transform="translate(72,0)"><rect x="0" y="0" width="22" height="14" fill="#4A5A7A"/><rect x="0" y="-14" width="22" height="14" fill="#F26522"/><rect x="0" y="-28" width="22" height="14" fill="#FAFAFA"/></g>
+<g transform="translate(120,0)"><rect x="0" y="0" width="22" height="14" fill="#F26522"/><rect x="0" y="-14" width="22" height="14" fill="#4A5A7A"/></g>
+<g transform="translate(144,0)"><rect x="0" y="0" width="22" height="14" fill="#FAFAFA"/><rect x="0" y="-14" width="22" height="14" fill="#F26522"/><rect x="0" y="-28" width="22" height="14" fill="#4A5A7A"/></g>
+<g transform="translate(168,0)"><rect x="0" y="0" width="22" height="14" fill="#F26522"/><rect x="0" y="-14" width="22" height="14" fill="#FAFAFA"/></g>
+<g transform="translate(216,0)"><rect x="0" y="0" width="22" height="14" fill="#4A5A7A"/><rect x="0" y="-14" width="22" height="14" fill="#F26522"/><rect x="0" y="-28" width="22" height="14" fill="#FAFAFA"/></g>
+<g transform="translate(240,0)"><rect x="0" y="0" width="22" height="14" fill="#F26522"/><rect x="0" y="-14" width="22" height="14" fill="#4A5A7A"/></g>
+<g transform="translate(264,0)"><rect x="0" y="0" width="22" height="14" fill="#FAFAFA"/><rect x="0" y="-14" width="22" height="14" fill="#F26522"/><rect x="0" y="-28" width="22" height="14" fill="#4A5A7A"/></g>
+</g>
+<!-- RTG over yard -->
+<g transform="translate(820,260)">
+<rect x="0" y="0" width="200" height="6" fill="#FAFAFA"/>
+<rect x="-2" y="0" width="6" height="44" fill="#FAFAFA"/>
+<rect x="196" y="0" width="6" height="44" fill="#FAFAFA"/>
+<rect x="60" y="4" width="20" height="10" fill="#F26522"><animateMotion path="M 0 0 L 80 0 L 0 0" dur="14s" repeatCount="indefinite"/></rect>
+</g>
+<!-- yard tractor moving -->
+<g fill="#F26522"><rect width="18" height="8" rx="2"><animateMotion path="M 60 360 L 1080 360" dur="16s" repeatCount="indefinite"/></rect><rect width="18" height="8" rx="2"><animateMotion path="M 60 360 L 1080 360" dur="16s" begin="5s" repeatCount="indefinite"/></rect></g>
+<!-- gate area · trucks -->
+<g transform="translate(60,400)">
+<rect x="0" y="0" width="50" height="30" fill="#FAFAFA" stroke="#143A78" stroke-width="1"/>
+<text x="25" y="20" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#0B2451">GATE</text>
+<g fill="#F26522">
+<rect width="22" height="10" rx="2"><animateMotion path="M 60 15 L 400 15" dur="10s" repeatCount="indefinite"/></rect>
+<rect width="22" height="10" rx="2"><animateMotion path="M 60 15 L 400 15" dur="10s" begin="2s" repeatCount="indefinite"/></rect>
+<rect width="22" height="10" rx="2"><animateMotion path="M 60 15 L 400 15" dur="10s" begin="4s" repeatCount="indefinite"/></rect>
+</g>
+</g>
+<!-- lighthouse / beacon -->
+<g transform="translate(1020,230)">
+<polygon points="-10,60 -6,0 6,0 10,60" fill="#FAFAFA" stroke="#143A78" stroke-width="1"/>
+<rect x="-12" y="0" width="24" height="6" fill="#F26522"/>
+<circle cx="0" cy="3" r="14" fill="url(#port-beacon)"><animate attributeName="r" values="6;18;6" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/></circle>
+</g>
+<!-- bottom KPI badges -->
+<g font-family="monospace" font-size="9" font-weight="700" fill="#F26522" letter-spacing="0.08em">
+<rect x="60" y="445" width="120" height="22" fill="rgba(11,36,81,0.85)" rx="3"/><text x="120" y="460" text-anchor="middle">STS · TWIN-LIFT</text>
+<rect x="195" y="445" width="120" height="22" fill="rgba(11,36,81,0.85)" rx="3"/><text x="255" y="460" text-anchor="middle">YARD UTIL</text>
+<rect x="330" y="445" width="120" height="22" fill="rgba(11,36,81,0.85)" rx="3"/><text x="390" y="460" text-anchor="middle">GATE QUEUE</text>
+<rect x="465" y="445" width="160" height="22" fill="rgba(11,36,81,0.85)" rx="3"/><text x="545" y="460" text-anchor="middle">VESSEL TURNAROUND</text>
+<rect x="640" y="445" width="180" height="22" fill="rgba(11,36,81,0.85)" rx="3"/><text x="730" y="460" text-anchor="middle">VV+A · ASA FRAMEWORK</text>
+<rect x="835" y="445" width="120" height="22" fill="rgba(11,36,81,0.85)" rx="3"/><text x="895" y="460" text-anchor="middle">PIANC · ISPS</text>
+<rect x="970" y="445" width="110" height="22" fill="rgba(242,101,34,0.95)" rx="3"/><text x="1025" y="460" text-anchor="middle" fill="#FFFFFF">CEng MIE</text>
+</g>
+</svg></div>
+<div class="scene-caption"><div class="badge">Port Simulation Practice · PIANC · ISPS Code · 21-Country Footprint</div><div class="pin">The platform is the tool. The discipline is the model. The Chartered Engineer is the signature. Every port operational chain modelled · STS crane, yard, gate, vessel turnaround, decisions defended.</div></div></section>
+
+<section class="title-strip"><div class="container">
+<div class="eyebrow">Port + Container Terminal · Vessel Turnaround · Capacity Decisions · Brownfield Digital Engineering</div>
+<h1>Port simulation.<br><span class="accent">STS, yard, gate, vessel turnaround. Every decision modelled.</span></h1>
+<div class="lede">Vessel turnaround targets your shipping line has signed up to. Gate congestion the neighbouring community is complaining about. Yard layout decisions that lock in 30 years of OPEX. STS crane capex business cases at 25 to 40 USD million each. VB Engineering® puts numbers behind those decisions before capex commits. We model the full port operational chain · STS crane productivity, yard movement, gate throughput, vessel turnaround, berth occupancy · validated against PIANC guidelines, ISPS Code, IMO regulations, and ASA VV+A. Every section signed by a Chartered Engineer (CEng MIE FIE).</div>
+<div class="brand-numbers"><div><div class="num">1,000+</div><div class="label">Studies delivered</div></div><div><div class="num">12 yrs</div><div class="label">Practice</div></div><div><div class="num">25+</div><div class="label">Fortune 500 Clients</div></div><div><div class="num">20+</div><div class="label">Industries Served</div></div></div>
+</div></section>
+
+<section class="marquee-band"><div class="label">Trusted by enterprise plant operators · 25 of 63 verified</div><div class="marquee"><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bureau-veritas.png" alt="Bureau Veritas" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/lloyd-logo-1.png" alt="Lloyd's Register" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tvs.png" alt="TVS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/indianoil.png" alt="Indian Oil" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/halliburton.png" alt="Halliburton" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngene.png" alt="Syngene" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bureau-veritas.png" alt="Bureau Veritas" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/lloyd-logo-1.png" alt="Lloyd's Register" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tvs.png" alt="TVS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/indianoil.png" alt="Indian Oil" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/halliburton.png" alt="Halliburton" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngene.png" alt="Syngene" loading="lazy"></div></div></section>
+
+<section class="section"><div class="container">
+<div class="section-label">SECTION 01 · STS CRANE PRODUCTIVITY DECISIONS</div>
+<h2>STS crane productivity · twin-lift, spreader cycle, <span class="accent">crane fleet sizing</span>.</h2>
+<p class="lede">STS crane fleet sizing is the single largest capex decision for a container terminal · 25 to 40 USD million per crane · and twin-lift vs single-lift policy compounds OPEX over decades. The model captures every spreader cycle, the twin-lift hit rate against vessel container mix, dual-hoist vs single-hoist gantry configuration, and operator productivity distributions. Output supports crane fleet right-sizing, twin-lift policy decisions, and gantry layout sign-off.</p>
+<div class="scene-block"><svg viewBox="0 0 1140 320" xmlns="http://www.w3.org/2000/svg" aria-label="STS crane productivity"><defs><linearGradient id="sts-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#143A78"/><stop offset="100%" stop-color="#0B2451"/></linearGradient></defs><rect width="1140" height="320" fill="url(#sts-bg)"/><text x="40" y="40" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#F26522" letter-spacing="0.12em">SECTION 01 · STS CRANE PRODUCTIVITY DECISIONS</text>
+<!-- vessel + 4 STS cranes -->
+<rect x="60" y="180" width="800" height="40" fill="#0B2451" stroke="#4A5A7A" stroke-width="1"/>
+<g><rect x="80" y="170" width="20" height="10" fill="#F26522"/><rect x="105" y="170" width="20" height="10" fill="#4A5A7A"/><rect x="130" y="170" width="20" height="10" fill="#FAFAFA"/><rect x="155" y="170" width="20" height="10" fill="#F26522"/><rect x="180" y="170" width="20" height="10" fill="#4A5A7A"/><rect x="205" y="170" width="20" height="10" fill="#F26522"/><rect x="230" y="170" width="20" height="10" fill="#FAFAFA"/><rect x="255" y="170" width="20" height="10" fill="#F26522"/><rect x="280" y="170" width="20" height="10" fill="#4A5A7A"/><rect x="305" y="170" width="20" height="10" fill="#F26522"/></g>
+<g transform="translate(150,80)"><rect x="-4" y="0" width="8" height="120" fill="#FAFAFA"/><rect x="-34" y="0" width="8" height="120" fill="#FAFAFA"/><rect x="-38" y="-10" width="80" height="10" fill="#FAFAFA"/><rect x="-34" y="-40" width="180" height="6" fill="#FAFAFA"/><rect x="20" y="-38" width="16" height="8" fill="#F26522"><animateMotion path="M 0 0 L 100 0 L 0 0" dur="6s" repeatCount="indefinite"/></rect></g>
+<g transform="translate(350,80)"><rect x="-4" y="0" width="8" height="120" fill="#FAFAFA"/><rect x="-34" y="0" width="8" height="120" fill="#FAFAFA"/><rect x="-38" y="-10" width="80" height="10" fill="#FAFAFA"/><rect x="-34" y="-40" width="180" height="6" fill="#FAFAFA"/><rect x="40" y="-38" width="16" height="8" fill="#F26522"><animateMotion path="M 0 0 L 100 0 L 0 0" dur="7s" begin="1s" repeatCount="indefinite"/></rect></g>
+<g transform="translate(550,80)"><rect x="-4" y="0" width="8" height="120" fill="#FAFAFA"/><rect x="-34" y="0" width="8" height="120" fill="#FAFAFA"/><rect x="-38" y="-10" width="80" height="10" fill="#FAFAFA"/><rect x="-34" y="-40" width="180" height="6" fill="#FAFAFA"/><rect x="20" y="-38" width="16" height="8" fill="#F26522"><animateMotion path="M 0 0 L 100 0 L 0 0" dur="5.5s" begin="0.5s" repeatCount="indefinite"/></rect></g>
+<g transform="translate(750,80)"><rect x="-4" y="0" width="8" height="120" fill="#FAFAFA"/><rect x="-34" y="0" width="8" height="120" fill="#FAFAFA"/><rect x="-38" y="-10" width="80" height="10" fill="#FAFAFA"/><rect x="-34" y="-40" width="180" height="6" fill="#FAFAFA"/><rect x="50" y="-38" width="16" height="8" fill="#F26522"><animateMotion path="M 0 0 L 100 0 L 0 0" dur="6.5s" begin="1.5s" repeatCount="indefinite"/></rect></g>
+<g font-family="JetBrains Mono,monospace" font-size="10" font-weight="700"><rect x="900" y="80" width="200" height="220" fill="rgba(11,36,81,0.85)" stroke="rgba(242,101,34,0.35)" rx="6"/><text x="920" y="105" fill="#F26522">STS CRANE KPIs</text><text x="920" y="135" fill="#FAFAFA" font-size="9">BMPH (gang)</text><text x="920" y="150" fill="#F26522" font-size="14">38 boxes/hr</text><text x="920" y="180" fill="#FAFAFA" font-size="9">TWIN-LIFT %</text><text x="920" y="195" fill="#F26522" font-size="14">62%</text><text x="920" y="225" fill="#FAFAFA" font-size="9">CRANE UTIL</text><text x="920" y="240" fill="#F26522" font-size="14">84%</text><text x="920" y="270" fill="#FAFAFA" font-size="9">SPREADER CYCLE</text><text x="920" y="285" fill="#F26522" font-size="14">95 sec</text></g></svg></div>
+<div class="grid-3" style="margin-top:32px"><div class="card"><h3>What we model</h3><p>STS spreader cycle · twin-lift hit rate · dual-hoist vs single-hoist · gantry travel · operator distributions · maintenance windows.</p></div><div class="card"><h3>KPIs validated</h3><p>Boxes per hour per crane · twin-lift % · crane utilisation · spreader cycle time · gang productivity.</p></div><div class="card"><h3>Decisions enabled</h3><p>Crane fleet right-sizing · twin-lift policy · dual-hoist investment · operator training need · maintenance schedule.</p></div></div>
+</div></section>
+<section class="section section-dark"><div class="container">
+<div class="section-label">SECTION 02 · YARD UTILISATION + RTG / RMG DECISIONS</div>
+<h2>Yard + RTG/RMG · stacking strategy, housekeeping, <span class="accent">yard-tractor fleet</span>.</h2>
+<p class="lede">Yard layout decisions are 30-year decisions. Get the stacking strategy wrong and you bleed yard-tractor hours every operational day. Get RTG fleet sizing wrong and you bottleneck the vessel exchange the moment a tonnage surge arrives. The model captures yard block geometry, RTG/RMG movement, yard-tractor pool sizing, housekeeping moves, and dwell time distributions. Output supports stacking policy, RTG fleet sizing, and yard-tractor fleet right-sizing.</p>
+<div class="scene-block"><svg viewBox="0 0 1140 320" xmlns="http://www.w3.org/2000/svg" aria-label="Yard + RTG simulation"><defs><linearGradient id="yard-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#143A78"/><stop offset="100%" stop-color="#0B2451"/></linearGradient></defs><rect width="1140" height="320" fill="url(#yard-bg)"/><text x="40" y="40" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#F26522" letter-spacing="0.12em">SECTION 02 · YARD UTILISATION + RTG / RMG DECISIONS</text>
+<g transform="translate(60,90)"><!-- 6 yard blocks --><g><g><rect x="0" y="0" width="120" height="20" fill="#143A78" stroke="#4A5A7A"/><rect x="0" y="-18" width="20" height="14" fill="#F26522"/><rect x="22" y="-18" width="20" height="14" fill="#4A5A7A"/><rect x="44" y="-18" width="20" height="14" fill="#FAFAFA"/><rect x="66" y="-18" width="20" height="14" fill="#F26522"/><rect x="88" y="-18" width="20" height="14" fill="#FAFAFA"/></g><g transform="translate(140,0)"><rect x="0" y="0" width="120" height="20" fill="#143A78" stroke="#4A5A7A"/><rect x="0" y="-18" width="20" height="14" fill="#4A5A7A"/><rect x="22" y="-18" width="20" height="14" fill="#F26522"/><rect x="44" y="-18" width="20" height="14" fill="#FAFAFA"/><rect x="66" y="-18" width="20" height="14" fill="#F26522"/><rect x="88" y="-18" width="20" height="14" fill="#4A5A7A"/></g><g transform="translate(280,0)"><rect x="0" y="0" width="120" height="20" fill="#143A78" stroke="#4A5A7A"/><rect x="0" y="-18" width="20" height="14" fill="#F26522"/><rect x="22" y="-18" width="20" height="14" fill="#FAFAFA"/><rect x="44" y="-18" width="20" height="14" fill="#4A5A7A"/><rect x="66" y="-18" width="20" height="14" fill="#F26522"/></g><g transform="translate(420,0)"><rect x="0" y="0" width="120" height="20" fill="#143A78" stroke="#4A5A7A"/><rect x="0" y="-18" width="20" height="14" fill="#FAFAFA"/><rect x="22" y="-18" width="20" height="14" fill="#F26522"/><rect x="44" y="-18" width="20" height="14" fill="#4A5A7A"/><rect x="66" y="-18" width="20" height="14" fill="#F26522"/><rect x="88" y="-18" width="20" height="14" fill="#FAFAFA"/></g></g>
+<!-- RTG -->
+<g transform="translate(0,-40)"><rect x="0" y="0" width="540" height="6" fill="#FAFAFA"/><rect x="-2" y="0" width="6" height="40" fill="#FAFAFA"/><rect x="536" y="0" width="6" height="40" fill="#FAFAFA"/><rect x="100" y="4" width="18" height="8" fill="#F26522"><animateMotion path="M 0 0 L 400 0 L 0 0" dur="14s" repeatCount="indefinite"/></rect></g>
+<!-- yard tractors animated -->
+<g fill="#F26522"><rect width="20" height="8" rx="2"><animateMotion path="M 0 60 L 540 60" dur="10s" repeatCount="indefinite"/></rect><rect width="20" height="8" rx="2"><animateMotion path="M 0 60 L 540 60" dur="10s" begin="3s" repeatCount="indefinite"/></rect></g>
+</g>
+<g font-family="JetBrains Mono,monospace" font-size="10" font-weight="700"><rect x="650" y="80" width="450" height="220" fill="rgba(11,36,81,0.85)" stroke="rgba(242,101,34,0.35)" rx="6"/><text x="670" y="105" fill="#F26522">YARD KPIs</text><text x="670" y="135" fill="#FAFAFA" font-size="9">YARD UTILISATION</text><text x="670" y="150" fill="#F26522" font-size="14">78%</text><text x="670" y="180" fill="#FAFAFA" font-size="9">RTG MOVES/HR</text><text x="670" y="195" fill="#F26522" font-size="14">22 / hr</text><text x="670" y="225" fill="#FAFAFA" font-size="9">YARD-TRACTOR FLEET</text><text x="670" y="240" fill="#F26522" font-size="14">28 units</text><text x="670" y="270" fill="#FAFAFA" font-size="9">HOUSEKEEPING %</text><text x="670" y="285" fill="#F26522" font-size="14">11%</text><text x="900" y="135" fill="#FAFAFA" font-size="9">STACK HEIGHT MAX</text><text x="900" y="150" fill="#F26522" font-size="14">6 high</text><text x="900" y="180" fill="#FAFAFA" font-size="9">BLOCK CONGESTION</text><text x="900" y="195" fill="#F26522" font-size="14">low</text><text x="900" y="225" fill="#FAFAFA" font-size="9">DWELL TIME P95</text><text x="900" y="240" fill="#F26522" font-size="14">5.2 days</text></g></svg></div>
+<div class="grid-3" style="margin-top:32px"><div class="card"><h3>What we model</h3><p>Yard block geometry · RTG / RMG movement · yard-tractor pool · housekeeping moves · stacking strategy · dwell time distribution.</p></div><div class="card"><h3>KPIs validated</h3><p>Yard utilisation % · RTG moves per hour · yard-tractor fleet size · housekeeping % · stack height max · dwell time P95.</p></div><div class="card"><h3>Decisions enabled</h3><p>Stacking policy · RTG fleet sizing · yard-tractor right-sizing · block reconfiguration · automation business case.</p></div></div>
+</div></section>
+<section class="section"><div class="container">
+<div class="section-label">SECTION 03 · GATE THROUGHPUT + TRUCK QUEUE DECISIONS</div>
+<h2>Gate throughput · truck arrival profile, OCR, <span class="accent">empties policy</span>.</h2>
+<p class="lede">Gate congestion is the most visible operational pain for a port · trucks queuing on access roads, neighbouring communities complaining, regulators threatening service-level penalties. The model captures truck arrival profile, OCR processing, empty vs laden split, and lane allocation. ISPS Code requirements are layered onto the security-affected scenarios. Output supports gate sizing, OCR investment business cases, and appointment system business cases.</p>
+<div class="scene-block"><svg viewBox="0 0 1140 320" xmlns="http://www.w3.org/2000/svg" aria-label="Gate throughput simulation"><defs><linearGradient id="gate-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#143A78"/><stop offset="100%" stop-color="#0B2451"/></linearGradient></defs><rect width="1140" height="320" fill="url(#gate-bg)"/><text x="40" y="40" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#F26522" letter-spacing="0.12em">SECTION 03 · GATE THROUGHPUT + TRUCK QUEUE DECISIONS</text>
+<g transform="translate(60,100)"><!-- 5 gate lanes --><g><g><rect x="0" y="0" width="40" height="60" fill="#FAFAFA" stroke="#143A78" stroke-width="1"/><text x="20" y="-6" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700" fill="#FFFFFF">IN-1</text><circle cx="20" cy="30" r="4" fill="#F26522"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/></circle></g><g transform="translate(80,0)"><rect x="0" y="0" width="40" height="60" fill="#FAFAFA" stroke="#143A78" stroke-width="1"/><text x="20" y="-6" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700" fill="#FFFFFF">IN-2</text><circle cx="20" cy="30" r="4" fill="#F26522"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" begin="0.3s" repeatCount="indefinite"/></circle></g><g transform="translate(160,0)"><rect x="0" y="0" width="40" height="60" fill="#F26522" stroke="#143A78" stroke-width="1"/><text x="20" y="-6" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700" fill="#F26522">OCR</text></g><g transform="translate(240,0)"><rect x="0" y="0" width="40" height="60" fill="#FAFAFA" stroke="#143A78" stroke-width="1"/><text x="20" y="-6" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700" fill="#FFFFFF">OUT-1</text><circle cx="20" cy="30" r="4" fill="#F26522"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" begin="0.6s" repeatCount="indefinite"/></circle></g><g transform="translate(320,0)"><rect x="0" y="0" width="40" height="60" fill="#FAFAFA" stroke="#143A78" stroke-width="1"/><text x="20" y="-6" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700" fill="#FFFFFF">OUT-2</text><circle cx="20" cy="30" r="4" fill="#F26522"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" begin="0.9s" repeatCount="indefinite"/></circle></g></g></g>
+<!-- trucks queuing on each lane -->
+<g fill="#F26522"><rect x="20" y="190" width="20" height="10" rx="2"/><rect x="50" y="190" width="20" height="10" rx="2"/><rect x="80" y="190" width="20" height="10" rx="2"/><rect x="100" y="190" width="20" height="10" rx="2"/><rect x="130" y="190" width="20" height="10" rx="2"/><rect x="160" y="190" width="20" height="10" rx="2"/><rect x="190" y="190" width="20" height="10" rx="2"/><rect x="220" y="190" width="20" height="10" rx="2"/><rect x="250" y="190" width="20" height="10" rx="2"/><rect x="280" y="190" width="20" height="10" rx="2"/></g>
+<g font-family="JetBrains Mono,monospace" font-size="10" font-weight="700"><rect x="520" y="80" width="580" height="220" fill="rgba(11,36,81,0.85)" stroke="rgba(242,101,34,0.35)" rx="6"/><text x="540" y="105" fill="#F26522">GATE KPIs</text><text x="540" y="135" fill="#FAFAFA" font-size="9">PROCESSING TIME</text><text x="540" y="150" fill="#F26522" font-size="14">62 sec/truck</text><text x="540" y="180" fill="#FAFAFA" font-size="9">QUEUE LENGTH P95</text><text x="540" y="195" fill="#F26522" font-size="14">12 trucks</text><text x="540" y="225" fill="#FAFAFA" font-size="9">GATE UTIL</text><text x="540" y="240" fill="#F26522" font-size="14">78%</text><text x="540" y="270" fill="#FAFAFA" font-size="9">OCR ACCURACY</text><text x="540" y="285" fill="#F26522" font-size="14">99.2%</text><text x="850" y="135" fill="#FAFAFA" font-size="9">TURN-TIME (TRUCK)</text><text x="850" y="150" fill="#F26522" font-size="14">42 min</text><text x="850" y="180" fill="#FAFAFA" font-size="9">EMPTIES %</text><text x="850" y="195" fill="#F26522" font-size="14">31%</text><text x="850" y="225" fill="#FAFAFA" font-size="9">PEAK ARRIVAL RATE</text><text x="850" y="240" fill="#F26522" font-size="14">180/hr</text><text x="850" y="270" fill="#FAFAFA" font-size="9">ISPS COMPLIANT</text><text x="850" y="285" fill="#F26522" font-size="14">✓</text></g></svg></div>
+<div class="grid-3" style="margin-top:32px"><div class="card"><h3>What we model</h3><p>Truck arrival profile · OCR processing · empty vs laden split · lane allocation · ISPS Code-affected screening.</p></div><div class="card"><h3>KPIs validated</h3><p>Processing time per truck · queue length P95 · gate utilisation · OCR accuracy · truck turn-time · peak arrival rate.</p></div><div class="card"><h3>Decisions enabled</h3><p>Gate sizing · OCR investment · appointment system · empties policy · ISPS Code-compliant lane configuration.</p></div></div>
+</div></section>
+<section class="section section-dark"><div class="container">
+<div class="section-label">SECTION 04 · VESSEL TURNAROUND + BERTH OCCUPANCY DECISIONS</div>
+<h2>Vessel turnaround · port stay, berth occupancy, <span class="accent">pre/post-berth delays</span>.</h2>
+<p class="lede">Vessel turnaround is the metric that gets you the next shipping line contract or loses you the current one. Berth occupancy north of 80% means you're losing flexibility. Pre-berth delays compound up the supply chain to inland depots. The model captures vessel arrival pattern, berth allocation, cargo operations window, pre-berth and post-berth delays. Output supports berth capex business cases, schedule reliability evidence for shipping line contracts, and departure punctuality target validation.</p>
+<div class="scene-block"><svg viewBox="0 0 1140 320" xmlns="http://www.w3.org/2000/svg" aria-label="Vessel turnaround simulation"><defs><linearGradient id="vsl-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#143A78"/><stop offset="100%" stop-color="#0B2451"/></linearGradient></defs><rect width="1140" height="320" fill="url(#vsl-bg)"/><text x="40" y="40" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#F26522" letter-spacing="0.12em">SECTION 04 · VESSEL TURNAROUND + BERTH OCCUPANCY DECISIONS</text>
+<!-- berth + vessel timeline -->
+<g transform="translate(60,80)"><rect x="0" y="0" width="1020" height="60" fill="#1A2D4F" stroke="#4A5A7A"/><text x="0" y="-10" font-family="JetBrains Mono,monospace" font-size="9" fill="#FFFFFF">BERTH 1 · PRE-BERTH → BERTHING → OPERATIONS → POST-BERTH → DEPARTURE</text>
+<g><rect x="0" y="10" width="100" height="40" fill="#4A5A7A" opacity="0.6"/><text x="50" y="35" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#FFFFFF">PRE-BERTH</text></g>
+<g><rect x="100" y="10" width="80" height="40" fill="#F26522" opacity="0.6"/><text x="140" y="35" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#FFFFFF">BERTH</text></g>
+<g><rect x="180" y="10" width="600" height="40" fill="#0B2451" stroke="#F26522" stroke-width="0.5"/><text x="480" y="35" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#F26522">CARGO OPERATIONS · 14 hrs</text></g>
+<g><rect x="780" y="10" width="80" height="40" fill="#F26522" opacity="0.6"/><text x="820" y="35" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#FFFFFF">UNBERTH</text></g>
+<g><rect x="860" y="10" width="160" height="40" fill="#4A5A7A" opacity="0.6"/><text x="940" y="35" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#FFFFFF">DEPARTURE</text></g>
+</g>
+<g transform="translate(60,180)"><rect x="0" y="0" width="1020" height="60" fill="#1A2D4F" stroke="#4A5A7A"/><text x="0" y="-10" font-family="JetBrains Mono,monospace" font-size="9" fill="#FFFFFF">BERTH 2 · OVERLAPPING SCHEDULE · STAGGERED OPERATIONS</text>
+<g><rect x="50" y="10" width="100" height="40" fill="#4A5A7A" opacity="0.6"/></g>
+<g><rect x="150" y="10" width="80" height="40" fill="#F26522" opacity="0.6"/></g>
+<g><rect x="230" y="10" width="550" height="40" fill="#0B2451" stroke="#F26522" stroke-width="0.5"/><text x="505" y="35" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#F26522">CARGO OPERATIONS · 12 hrs</text></g>
+<g><rect x="780" y="10" width="80" height="40" fill="#F26522" opacity="0.6"/></g>
+<g><rect x="860" y="10" width="160" height="40" fill="#4A5A7A" opacity="0.6"/></g>
+</g>
+<g font-family="JetBrains Mono,monospace" font-size="10" font-weight="700"><rect x="60" y="270" width="1020" height="40" fill="rgba(11,36,81,0.85)" stroke="rgba(242,101,34,0.35)" rx="6"/><text x="80" y="295" fill="#F26522">VESSEL TURNAROUND ·</text><text x="240" y="295" fill="#FAFAFA">PORT STAY 24 hrs</text><text x="380" y="295" fill="#FAFAFA">·</text><text x="400" y="295" fill="#FAFAFA">BERTH OCCUPANCY 82%</text><text x="600" y="295" fill="#FAFAFA">·</text><text x="620" y="295" fill="#FAFAFA">PRE-BERTH DELAY 1.4 hrs</text><text x="830" y="295" fill="#FAFAFA">·</text><text x="850" y="295" fill="#FAFAFA">DEPARTURE PUNCT 88%</text></g></svg></div>
+<div class="grid-3" style="margin-top:32px"><div class="card"><h3>What we model</h3><p>Vessel arrival pattern · berth allocation policy · cargo operations window · pre-berth and post-berth delay distributions · weather-affected scenarios.</p></div><div class="card"><h3>KPIs validated</h3><p>Average port stay · berth occupancy % · pre-berth delay · post-berth delay · departure punctuality · BMPH per gang.</p></div><div class="card"><h3>Decisions enabled</h3><p>Berth capex business case · shipping line schedule reliability evidence · departure punctuality target validation · pilotage service-level definition.</p></div></div>
+</div></section>
+<section class="section"><div class="container">
+<div class="section-label">SECTION 05 · YARD BLOCK + STACKING STRATEGY DECISIONS</div>
+<h2>Yard block + stacking · pooling vs dedicated rows, <span class="accent">restack moves saved</span>.</h2>
+<p class="lede">Stacking strategy is the lever that most directly translates into operational economics. Pooling vs dedicated rows. Reefer vs dry block separation. Hazmat handling rules. The model runs the strategies head-to-head against your fleet mix, your dwell time distribution, and your operational pattern. Output supports stacking policy sign-off, yard reconfiguration capex business cases, and operations training material.</p>
+<div class="scene-block"><svg viewBox="0 0 1140 320" xmlns="http://www.w3.org/2000/svg" aria-label="Yard block stacking strategy"><defs><linearGradient id="stk-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#143A78"/><stop offset="100%" stop-color="#0B2451"/></linearGradient></defs><rect width="1140" height="320" fill="url(#stk-bg)"/><text x="40" y="40" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#F26522" letter-spacing="0.12em">SECTION 05 · YARD BLOCK + STACKING STRATEGY DECISIONS</text>
+<!-- two stacking strategies side-by-side -->
+<g transform="translate(60,80)"><text x="0" y="-10" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#FFFFFF">STRATEGY A · POOLING</text>
+<g><g><rect x="0" y="120" width="32" height="20" fill="#4A5A7A"/><rect x="0" y="100" width="32" height="20" fill="#F26522"/><rect x="0" y="80" width="32" height="20" fill="#FAFAFA"/><rect x="0" y="60" width="32" height="20" fill="#F26522"/><rect x="0" y="40" width="32" height="20" fill="#4A5A7A"/></g><g transform="translate(36,0)"><rect x="0" y="120" width="32" height="20" fill="#F26522"/><rect x="0" y="100" width="32" height="20" fill="#FAFAFA"/><rect x="0" y="80" width="32" height="20" fill="#F26522"/><rect x="0" y="60" width="32" height="20" fill="#4A5A7A"/></g><g transform="translate(72,0)"><rect x="0" y="120" width="32" height="20" fill="#FAFAFA"/><rect x="0" y="100" width="32" height="20" fill="#F26522"/><rect x="0" y="80" width="32" height="20" fill="#4A5A7A"/><rect x="0" y="60" width="32" height="20" fill="#F26522"/><rect x="0" y="40" width="32" height="20" fill="#FAFAFA"/></g><g transform="translate(108,0)"><rect x="0" y="120" width="32" height="20" fill="#F26522"/><rect x="0" y="100" width="32" height="20" fill="#4A5A7A"/><rect x="0" y="80" width="32" height="20" fill="#F26522"/></g></g>
+<text x="80" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#F26522">RESTACK 18%</text>
+</g>
+<g transform="translate(360,80)"><text x="0" y="-10" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#F26522">STRATEGY B · DEDICATED ROWS</text>
+<g><g><rect x="0" y="120" width="32" height="20" fill="#F26522"/><rect x="0" y="100" width="32" height="20" fill="#F26522"/><rect x="0" y="80" width="32" height="20" fill="#F26522"/></g><g transform="translate(36,0)"><rect x="0" y="120" width="32" height="20" fill="#F26522"/><rect x="0" y="100" width="32" height="20" fill="#F26522"/></g><g transform="translate(72,0)"><rect x="0" y="120" width="32" height="20" fill="#4A5A7A"/><rect x="0" y="100" width="32" height="20" fill="#4A5A7A"/><rect x="0" y="80" width="32" height="20" fill="#4A5A7A"/><rect x="0" y="60" width="32" height="20" fill="#4A5A7A"/></g><g transform="translate(108,0)"><rect x="0" y="120" width="32" height="20" fill="#FAFAFA"/><rect x="0" y="100" width="32" height="20" fill="#FAFAFA"/><rect x="0" y="80" width="32" height="20" fill="#FAFAFA"/></g></g>
+<text x="80" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#F26522">RESTACK 4%</text>
+</g>
+<g font-family="JetBrains Mono,monospace" font-size="10" font-weight="700"><rect x="700" y="80" width="400" height="220" fill="rgba(11,36,81,0.85)" stroke="rgba(242,101,34,0.35)" rx="6"/><text x="720" y="105" fill="#F26522">STRATEGY COMPARISON</text><text x="720" y="135" fill="#FAFAFA" font-size="9">RESTACK MOVES SAVED</text><text x="720" y="150" fill="#F26522" font-size="14">14%/day</text><text x="720" y="180" fill="#FAFAFA" font-size="9">YARD-TRACTOR HOURS</text><text x="720" y="195" fill="#F26522" font-size="14">-22%</text><text x="720" y="225" fill="#FAFAFA" font-size="9">RTG MOVES/HR</text><text x="720" y="240" fill="#F26522" font-size="14">+11%</text><text x="720" y="270" fill="#FAFAFA" font-size="9">TEU PER GANG HOUR</text><text x="720" y="285" fill="#F26522" font-size="14">+8%</text></g></svg></div>
+<div class="grid-3" style="margin-top:32px"><div class="card"><h3>What we model</h3><p>Stacking strategy · pooling vs dedicated rows · reefer / dry / hazmat block separation · dwell time per category · re-stack triggers.</p></div><div class="card"><h3>KPIs validated</h3><p>Re-stack moves per day · yard-tractor hours · RTG moves per hour · TEU per gang hour · operational cost per TEU.</p></div><div class="card"><h3>Decisions enabled</h3><p>Stacking policy sign-off · yard reconfiguration capex · operations training material · automation business case input.</p></div></div>
+</div></section>
+<section class="section section-dark"><div class="container">
+<div class="section-label">SECTION 06 · DISRUPTION + RECOVERY DECISIONS</div>
+<h2>Disruption + recovery · crane fault, IT outage, weather, <span class="accent">labour, vessel late</span>.</h2>
+<p class="lede">Standard disruption scenarios are how an operations director defends the next quarter's KPIs and how a CFO defends the next year's budget against the board. The model runs every disruption against the steady-state baseline and computes the recovery time, the KPI shortfall, and the contingency cost. Output supports IROPS policy validation, business continuity plans, and shipping line indemnity discussions.</p>
+<div class="scene-block"><svg viewBox="0 0 1140 320" xmlns="http://www.w3.org/2000/svg" aria-label="Disruption simulation"><defs><linearGradient id="dis-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#143A78"/><stop offset="100%" stop-color="#0B2451"/></linearGradient></defs><rect width="1140" height="320" fill="url(#dis-bg)"/><text x="40" y="40" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#F26522" letter-spacing="0.12em">SECTION 06 · DISRUPTION + RECOVERY DECISIONS</text>
+<!-- recovery curve graph -->
+<g transform="translate(60,80)"><line x1="0" y1="200" x2="900" y2="200" stroke="#4A5A7A" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="200" stroke="#4A5A7A" stroke-width="1"/>
+<polyline points="0,180 100,180 100,80 200,80 250,200 400,200 450,140 600,140 650,200 800,200" fill="none" stroke="#F26522" stroke-width="2"/>
+<g fill="#F26522"><circle cx="100" cy="80" r="4"/><circle cx="250" cy="200" r="4"/><circle cx="450" cy="140" r="4"/><circle cx="650" cy="200" r="4"/></g>
+<text x="100" y="65" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#F26522">CRANE FAULT</text>
+<text x="450" y="125" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#F26522">IT OUTAGE</text>
+<text x="900" y="210" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="9" fill="#FAFAFA">TIME (hrs)</text>
+<text x="0" y="-10" font-family="JetBrains Mono,monospace" font-size="9" fill="#FAFAFA">THROUGHPUT (TEU/hr)</text>
+</g>
+<g font-family="JetBrains Mono,monospace" font-size="10" font-weight="700"><rect x="60" y="265" width="1020" height="45" fill="rgba(11,36,81,0.85)" stroke="rgba(242,101,34,0.35)" rx="6"/><text x="80" y="285" fill="#F26522">DISRUPTION SCENARIOS ·</text><text x="260" y="285" fill="#FAFAFA">CRANE FAULT</text><text x="370" y="285" fill="#FAFAFA">·</text><text x="385" y="285" fill="#FAFAFA">IT OUTAGE</text><text x="475" y="285" fill="#FAFAFA">·</text><text x="490" y="285" fill="#FAFAFA">GATE CLOSURE</text><text x="610" y="285" fill="#FAFAFA">·</text><text x="625" y="285" fill="#FAFAFA">WEATHER</text><text x="710" y="285" fill="#FAFAFA">·</text><text x="725" y="285" fill="#FAFAFA">LABOUR</text><text x="800" y="285" fill="#FAFAFA">·</text><text x="815" y="285" fill="#FAFAFA">VESSEL LATE</text><text x="80" y="304" fill="#F26522">RECOVERY TIME P95 · 4.2 hrs</text><text x="320" y="304" fill="#FAFAFA">·</text><text x="340" y="304" fill="#FAFAFA">KPI SHORTFALL · 9%</text><text x="540" y="304" fill="#FAFAFA">·</text><text x="560" y="304" fill="#F26522">DECISION · validated against PIANC + ISPS</text></g></svg></div>
+<div class="grid-3" style="margin-top:32px"><div class="card"><h3>What we model</h3><p>Crane fault · IT outage · gate closure · weather delay · labour disruption · vessel late arrival · cascading scenarios.</p></div><div class="card"><h3>KPIs validated</h3><p>Recovery time P95 · KPI shortfall · contingency cost · downstream supply chain impact · ISPS Code-affected throughput.</p></div><div class="card"><h3>Decisions enabled</h3><p>IROPS policy · business continuity plan · shipping line indemnity discussions · regulator reporting · insurance premium reduction.</p></div></div>
+</div></section>
+
+
+<section class="section"><div class="container">
+<div class="section-label">STANDARDS STACK</div>
+<h2>Eight standards · the layered <span class="accent">discipline behind every decision</span>.</h2>
+<p class="lede">Every port simulation engagement conforms to eight layered standards covering platform, validation, terminal design, security, maritime, navigation, berthing, and live data exchange. The platform is the tool. The discipline is the model. The Chartered Engineer is the signature.</p>
+<div class="grid-3"><div class="card"><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#F26522;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">DES Platform</div><h3>FlexSim DES</h3><p>Hero discrete event simulation platform · the simulation model is the canonical deliverable</p></div><div class="card"><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#F26522;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Validation</div><h3>ASA VV+A</h3><p>Validation, Verification and Accreditation framework · the discipline every model is built to</p></div><div class="card"><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#F26522;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Terminal Design</div><h3>PIANC guidelines</h3><p>International navigation association guidelines for terminal design · the reference standard</p></div><div class="card"><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#F26522;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Security</div><h3>ISPS Code</h3><p>International Ship and Port Facility Security Code · the security framework</p></div><div class="card"><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#F26522;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Maritime</div><h3>IMO regulations</h3><p>International Maritime Organization rules for vessel arrivals and operations</p></div><div class="card"><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#F26522;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Navigation</div><h3>IALA recommendations</h3><p>International Association of Marine Aids to Navigation · for navigation aids</p></div><div class="card"><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#F26522;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Berthing</div><h3>Marine Class Society guidelines</h3><p>Berth + mooring loading guidelines per the relevant class society</p></div><div class="card"><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#F26522;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Integration</div><h3>OPC UA</h3><p>Live data exchange standard · for TOS and ECS integration</p></div></div>
+</div></section>
+
+<section class="section section-dark"><div class="container">
+<div class="section-label">DELIVERABLES</div>
+<h2>Six artifacts ship with every <span class="accent">port engagement</span>.</h2>
+<p class="lede">The model is the proof. The report is the audit trail. The recommendations are the executable artifact. Outputs map to <a href="https://wistwin.in/" target="_blank" rel="noopener noreferrer" style="color:inherit;border-bottom:1px dotted currentColor;text-decoration:none">Wistwin</a> digital twin layer for live-vs-design comparison once the terminal is operational.</p>
+<div class="grid-3">
+<div class="card"><h3>Native simulation model</h3><p>Delivered to client as a FlexSim .fsm file · runs on client license · documented with parameter sheets and assumption log.</p></div>
+<div class="card"><h3>Verification + validation report</h3><p>Build-spec verification · historical TOS data validation · sensitivity analysis on top 3 drivers · ASA VV+A framework.</p></div>
+<div class="card"><h3>KPI scorecard</h3><p>BMPH per gang · vessel turnaround · berth occupancy · gate throughput · yard utilisation · target vs simulated.</p></div>
+<div class="card"><h3>Recommendation register</h3><p>Equipment fleet sizing · yard layout · operating policy interventions · order-of-magnitude costed.</p></div>
+<div class="card"><h3>Scenario log</h3><p>Every run captured · scenario name · input set · output set · timestamp · audit-ready and reproducible.</p></div>
+<div class="card"><h3>CEng MIE FIE signature</h3><p>Every section signed · audit-ready · regulator-ready · lender-ready · concessionaire-ready.</p></div>
+</div></div></section>
+
+<section class="section"><div class="container">
+<div class="section-label">REPRESENTATIVE ENGAGEMENTS</div>
+<h2>Three engagements · <span class="accent">representative of the port simulation practice</span>.</h2>
+<p class="lede">Client names withheld. Representative of multiple engagements in the port simulation category.</p>
+<div class="grid-3"><div class="card"><h3>Container terminal · Middle East</h3><div style="color:var(--vb-orange);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:6px 0 10px">TEU throughput uplift</div><p>Twin-lift policy redesign + yard stacking strategy modelled head-to-head against the current operation. 14% TEU per gang hour uplift validated. Implementation in progress with board sign-off based on the simulation evidence.</p></div><div class="card"><h3>Bulk port · Australia</h3><div style="color:var(--vb-orange);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:6px 0 10px">Greenfield capacity design</div><p>Two-berth bulk terminal designed against 25 mtpa target. Capex optimised by 9% through fleet right-sizing. Lender approval secured on the strength of the simulation throughput validation.</p></div><div class="card"><h3>Multi-purpose port · India</h3><div style="color:var(--vb-orange);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:6px 0 10px">Gate redesign + ISPS compliance</div><p>Gate reconfiguration modelled to absorb a 28% truck volume increase whilst maintaining ISPS Code throughput discipline. Appointment system policy validated. Roll-out plan sequenced against operational risk.</p></div></div>
+</div></section>
+
+<section class="section section-dark"><div class="container">
+<div class="section-label">FREQUENTLY ASKED · ANSWER ENGINE OPTIMISED</div>
+<h2>Thirteen questions · <span class="accent">the buyer journey from scoping to sign-off</span>.</h2>
+<div class="grid-3"><div class="card"><h3>What is port discrete event simulation and when do you need it?</h3><p>Port discrete event simulation is a computer-based modeling technique that represents container terminal, bulk port, and RoRo operations as sequences of discrete events · vessel arrivals, STS crane cycles, yard moves, gate transactions, train loadout. You need it when a capex decision is too big to commit on spreadsheet evidence · STS crane fleet sizing, yard expansion business cases, gate redesign, vessel turnaround targets the operator has signed up to with a shipping line, greenfield terminal master planning.</p></div><div class="card"><h3>Which platforms does VB Engineering use for port simulation?</h3><p>The hero discrete event simulation platform for port work is FlexSim · current production release. AnyLogic and Simio are available where the client has standardised on those platforms. The platform is the tool · the model and the Chartered Engineer signature are the value.</p></div><div class="card"><h3>How long does a port simulation engagement take?</h3><p>Six to eight weeks for a single terminal · container, bulk, or RoRo. Twelve to sixteen weeks for a multi-terminal port. Twenty weeks for a pit-to-port logistics chain. Faster if TOS exports, AIS data, and historical operations data are clean and available on day one.</p></div><div class="card"><h3>Can VB Engineering model a greenfield port?</h3><p>Yes. Greenfield port design is a frequent use case. The model runs against design-day throughput targets, vessel mix scenarios, equipment fleet alternatives, and yard layout options before capex commitment. Outputs inform terminal layout final-fix, fleet right-sizing, and pre-commissioning validation.</p></div><div class="card"><h3>Does the model integrate with the TOS?</h3><p>Yes for offline data integration · TOS exports (Navis N4, RBS, CATOS, OPUS, etc.) are standard inputs. Live TOS integration is possible but most engagements use historical exports for validation, then run against design scenarios.</p></div><div class="card"><h3>What does a port simulation deliverable contain?</h3><p>Six artifacts · native simulation model (FlexSim .fsm file delivered to client), verification + validation report against ASA VV+A, KPI scorecard mapped to operator and lender targets, recommendation register with order-of-magnitude cost estimates, scenario log for audit, and CEng MIE FIE signature on every section.</p></div><div class="card"><h3>Is the output bank-ready and concession-ready?</h3><p>Yes. Bank and lender financial models for port capex frequently require simulation-based throughput validation. Concession-holder reporting requires evidence of design-day performance under operator and regulator targets. Our deliverable package is structured for direct lender, concession-holder, and regulator submission.</p></div><div class="card"><h3>Which port types does VB Engineering model?</h3><p>Container terminals (TEU throughput, STS productivity, yard moves), bulk terminals (coal, iron ore, agri, grain), liquid bulk (LNG, crude, products), RoRo facilities, multi-purpose ports, and inland container depots. Each has the same simulation engine with cargo-specific resource libraries.</p></div><div class="card"><h3>How does VB Engineering simulate STS crane productivity?</h3><p>The model captures every STS cycle · spreader cycle time, twin-lift vs single-lift strategy, single-hoist vs dual-hoist crane configuration, gantry travel, and operator behaviour distributions. The output drives crane fleet sizing, single-vs-twin-lift policy decisions, and gantry layout decisions.</p></div><div class="card"><h3>Can the model run disruption scenarios?</h3><p>Yes. Standard disruption scenarios · crane breakdown, IT outage, gate closure, weather delay, vessel late arrival, labour disruption. Each runs against steady-state baseline to compute recovery time, vessel turnaround impact, and KPI shortfall.</p></div><div class="card"><h3>Does the model integrate with port BIM or digital twin?</h3><p>Yes when the client has BIM in place. The simulation imports IFC geometry. Output KPIs publish to the digital twin layer (the digital twin platform or any equivalent platform) for live-vs-design comparison once the terminal is operational.</p></div><div class="card"><h3>Which marine standards does VB Engineering apply?</h3><p>Port simulation references PIANC guidelines for terminal design, IMO regulations for vessel arrivals, ISPS Code requirements for security-affected scenarios, IALA recommendations for navigation aids, and class society guidelines for berth and mooring loading. Standards depth is the discipline behind the model.</p></div><div class="card"><h3>What is the cost of a port simulation engagement?</h3><p>Engagement scope is confirmed during a 30-minute consultation. Written estimate within five business days. We do not publish standard prices · every engagement is scoped against the operational decision, the data availability, and the validation depth required.</p></div></div>
+</div></section>
+
+<section class="cta-band"><div class="container"><h2>Scoping a port capacity decision?</h2><p>Tell us the port, the decision you need to defend, and the timeline. A practice lead responds within one business day with scoping questions. Written estimate within 5 business days · no published price · scope drives the proposal.</p><a href="/contact/?service=simulation&source=port-discrete-event-simulation" class="cta-btn">Scope your model</a></div></section>
+
+<!--#include virtual="/partials/footer.html" -->
+
+
+<!-- Kiwi WhatsApp -->
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vbengg.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.vbengg.com/services/"},{"@type":"ListItem","position":3,"name":"Discrete Event Simulation","item":"https://www.vbengg.com/services/discrete-event-simulation/"},{"@type":"ListItem","position":4,"name":"Port Simulation","item":"https://www.vbengg.com/services/discrete-event-simulation/port-discrete-event-simulation/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Port + Terminal Discrete Event Simulation","serviceType":"Discrete Event Simulation \u00b7 Ports","provider":{"@type":"Organization","name":"VB Engineering","url":"https://www.vbengg.com/"},"areaServed":["India","USA","UAE","Saudi Arabia","Qatar","Australia","Singapore","UK","China","Indonesia"],"description":"Discrete event simulation of port and container terminal operations \u00b7 STS crane productivity, yard utilisation, gate throughput, vessel turnaround, and pit-to-port logistics chain. ASA VV+A validated. CEng MIE signature on every deliverable.","hasOfferCatalog":{"@type":"OfferCatalog","name":"Port Simulation Deliverables","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"STS Crane Productivity Simulation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Yard + RTG Movement Simulation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gate Throughput + Truck Queue Simulation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vessel Turnaround + Berth Occupancy Simulation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Yard Block + Stacking Strategy Simulation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pre-commissioning Throughput Validation"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How VB Engineering Delivers a Port Simulation Engagement","description":"Five-step methodology for delivering a port and container terminal discrete event simulation with ASA VV+A validation and CEng MIE FIE signature.","totalTime":"PT10W","step":[{"@type":"HowToStep","position":1,"name":"Scope + data collection","text":"Confirm the operational decision \u00b7 which terminal, which cargo, which time window. Collect TOS exports, AIS data, gate movement logs, STS productivity records."},{"@type":"HowToStep","position":2,"name":"Model build","text":"Build the discrete event model. Configure resources, cycle times, schedules, routing logic. Document every assumption."},{"@type":"HowToStep","position":3,"name":"Verification + validation","text":"Verify the build against the spec. Validate the output against historical operations data. Sensitivity analysis on top three drivers. ASA VV+A framework."},{"@type":"HowToStep","position":4,"name":"Scenario analysis","text":"Run against design-day throughput, vessel mix, gate peaks, growth scenarios. KPIs against operator and lender thresholds."},{"@type":"HowToStep","position":5,"name":"Deliverable + sign-off","text":"Deliver native simulation model, verification + validation report, KPI scorecard, recommendation register. CEng MIE FIE signature on every section."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is port discrete event simulation and when do you need it?","acceptedAnswer":{"@type":"Answer","text":"Port discrete event simulation is a computer-based modeling technique that represents container terminal, bulk port, and RoRo operations as sequences of discrete events \u00b7 vessel arrivals, STS crane cycles, yard moves, gate transactions, train loadout. You need it when a capex decision is too big to commit on spreadsheet evidence \u00b7 STS crane fleet sizing, yard expansion business cases, gate redesign, vessel turnaround targets the operator has signed up to with a shipping line, greenfield terminal master planning."}},{"@type":"Question","name":"Which platforms does VB Engineering use for port simulation?","acceptedAnswer":{"@type":"Answer","text":"The hero discrete event simulation platform for port work is FlexSim \u00b7 current production release. AnyLogic and Simio are available where the client has standardised on those platforms. The platform is the tool \u00b7 the model and the Chartered Engineer signature are the value."}},{"@type":"Question","name":"How long does a port simulation engagement take?","acceptedAnswer":{"@type":"Answer","text":"Six to eight weeks for a single terminal \u00b7 container, bulk, or RoRo. Twelve to sixteen weeks for a multi-terminal port. Twenty weeks for a pit-to-port logistics chain. Faster if TOS exports, AIS data, and historical operations data are clean and available on day one."}},{"@type":"Question","name":"Can VB Engineering model a greenfield port?","acceptedAnswer":{"@type":"Answer","text":"Yes. Greenfield port design is a frequent use case. The model runs against design-day throughput targets, vessel mix scenarios, equipment fleet alternatives, and yard layout options before capex commitment. Outputs inform terminal layout final-fix, fleet right-sizing, and pre-commissioning validation."}},{"@type":"Question","name":"Does the model integrate with the TOS?","acceptedAnswer":{"@type":"Answer","text":"Yes for offline data integration \u00b7 TOS exports (Navis N4, RBS, CATOS, OPUS, etc.) are standard inputs. Live TOS integration is possible but most engagements use historical exports for validation, then run against design scenarios."}},{"@type":"Question","name":"What does a port simulation deliverable contain?","acceptedAnswer":{"@type":"Answer","text":"Six artifacts \u00b7 native simulation model (FlexSim .fsm file delivered to client), verification + validation report against ASA VV+A, KPI scorecard mapped to operator and lender targets, recommendation register with order-of-magnitude cost estimates, scenario log for audit, and CEng MIE FIE signature on every section."}},{"@type":"Question","name":"Is the output bank-ready and concession-ready?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bank and lender financial models for port capex frequently require simulation-based throughput validation. Concession-holder reporting requires evidence of design-day performance under operator and regulator targets. Our deliverable package is structured for direct lender, concession-holder, and regulator submission."}},{"@type":"Question","name":"Which port types does VB Engineering model?","acceptedAnswer":{"@type":"Answer","text":"Container terminals (TEU throughput, STS productivity, yard moves), bulk terminals (coal, iron ore, agri, grain), liquid bulk (LNG, crude, products), RoRo facilities, multi-purpose ports, and inland container depots. Each has the same simulation engine with cargo-specific resource libraries."}},{"@type":"Question","name":"How does VB Engineering simulate STS crane productivity?","acceptedAnswer":{"@type":"Answer","text":"The model captures every STS cycle \u00b7 spreader cycle time, twin-lift vs single-lift strategy, single-hoist vs dual-hoist crane configuration, gantry travel, and operator behaviour distributions. The output drives crane fleet sizing, single-vs-twin-lift policy decisions, and gantry layout decisions."}},{"@type":"Question","name":"Can the model run disruption scenarios?","acceptedAnswer":{"@type":"Answer","text":"Yes. Standard disruption scenarios \u00b7 crane breakdown, IT outage, gate closure, weather delay, vessel late arrival, labour disruption. Each runs against steady-state baseline to compute recovery time, vessel turnaround impact, and KPI shortfall."}},{"@type":"Question","name":"Does the model integrate with port BIM or digital twin?","acceptedAnswer":{"@type":"Answer","text":"Yes when the client has BIM in place. The simulation imports IFC geometry. Output KPIs publish to the digital twin layer (Wistwin or any equivalent platform) for live-vs-design comparison once the terminal is operational."}},{"@type":"Question","name":"Which marine standards does VB Engineering apply?","acceptedAnswer":{"@type":"Answer","text":"Port simulation references PIANC guidelines for terminal design, IMO regulations for vessel arrivals, ISPS Code requirements for security-affected scenarios, IALA recommendations for navigation aids, and class society guidelines for berth and mooring loading. Standards depth is the discipline behind the model."}},{"@type":"Question","name":"What is the cost of a port simulation engagement?","acceptedAnswer":{"@type":"Answer","text":"Engagement scope is confirmed during a 30-minute consultation. Written estimate within five business days. We do not publish standard prices \u00b7 every engagement is scoped against the operational decision, the data availability, and the validation depth required."}}]}</script>
+<!-- SCOPE YOUR PLANT · MODAL COMPONENT · v10.8.4 · Bitrix Master Form A (230/wna9sd) -->
+<style id="vbe-scope-modal-styles">
+  .scope-modal-overlay{position:fixed;inset:0;background:rgba(11,36,81,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;overflow-y:auto}
+  .scope-modal-overlay.open{display:flex}
+  .scope-modal{background:#FFFFFF;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);position:relative;padding:36px 40px}
+  .scope-modal-close{position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:28px;color:#4A5A7A;cursor:pointer;line-height:1;padding:8px;border-radius:8px;transition:background 0.2s}
+  .scope-modal-close:hover{background:#F8F8F8;color:#0B2451}
+  .scope-modal-header{margin-bottom:24px;padding-right:32px}
+  .scope-modal-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F26522;font-weight:700;margin-bottom:8px}
+  .scope-modal-title{font-size:24px;font-weight:800;color:#0B2451;line-height:1.2;margin-bottom:6px}
+  .scope-modal-sub{font-size:14px;color:#4A5A7A;line-height:1.5}
+  .scope-modal-body .form-loader{padding:32px;text-align:center;color:#4A5A7A;font-size:14px}
+  @media (max-width:600px){.scope-modal{padding:28px 20px}.scope-modal-title{font-size:20px}}
+</style>
+<div class="scope-modal-overlay" id="scopeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="scopeModalTitle">
+  <div class="scope-modal">
+    <button class="scope-modal-close" id="scopeModalClose" aria-label="Close">&times;</button>
+    <div class="scope-modal-header">
+      <div class="scope-modal-eyebrow">Scope Your Plant</div>
+      <div class="scope-modal-title" id="scopeModalTitle">Tell us about the plant. We&rsquo;ll scope it in 48 hours.</div>
+      <div class="scope-modal-sub">Chartered Engineer signature on every deliverable. No pitch decks. Just engineering answers.</div>
+    </div>
+    <div class="scope-modal-body">
+      <div class="form-loader">Loading scoping form&hellip;</div>
+      <script data-b24-form="inline/230/wna9sd" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_230.js');</script>
+    </div>
+  </div>
+</div>
+<script id="vbe-scope-modal-js">(function(){
+  var overlay=document.getElementById('scopeModalOverlay');
+  var closeBtn=document.getElementById('scopeModalClose');
+  if(!overlay)return;
+  function openModal(ctx){
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    // Push URL context as hidden fields when Bitrix form is ready
+    if(ctx){
+      var tryFill=function(){
+        var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source};
+        Object.keys(fields).forEach(function(k){
+          if(!fields[k])return;
+          var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]');
+          if(input){input.value=fields[k]}
+        });
+      };
+      setTimeout(tryFill,1500);
+      setTimeout(tryFill,3000);
+      setTimeout(tryFill,5000);
+    }
+    // GA4 event
+    if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});}
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  closeBtn&&closeBtn.addEventListener('click',closeModal);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+  // Intercept all Scope Your Plant CTAs
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a.nav-cta, a[data-scope-cta]');
+    if(!a)return;
+    if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return;
+    e.preventDefault();
+    // Parse the CTA href query params for context
+    var url=a.getAttribute('href')||'';
+    var q=url.split('?')[1]||'';
+    var ctx={};
+    q.split('&').forEach(function(pair){
+      var kv=pair.split('=');
+      if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||'');
+    });
+    openModal(ctx);
+  });
+})();</script>
+
+
+</body></html>

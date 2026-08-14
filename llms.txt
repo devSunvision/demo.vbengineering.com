@@ -1,0 +1,29 @@
+# VB Engineering · Brownfield Digital Engineering · India HQ Hyderabad
+
+Site: https://www.vbengg.com
+Tagline: Brownfield Digital Engineering · Engineered in India · Delivered to Global Standards
+Founded: 2014 (Hyderabad, India)
+
+## What VB Engineering does (7 locked services)
+1. Power System Studies (PSS) · Load Flow, Short Circuit, Arc Flash NFPA 70E + IEEE 1584, Protection Coordination, Transient Stability, Harmonics, Motor Starting, Insulation Coordination, Reliability, DC Arc Flash · sign-off platforms: ETAP, DigSILENT, PSCAD
+2. 3D LiDAR Scanning · Leica RTC360 + Faro Focus + ZEB Horizon · 50,000+ scans delivered
+3. As-Built Engineering · P&ID, isometric, GA, process drawings · LiDAR-powered · 3,000+ km P&ID
+4. FlexSim Discrete Event Simulation · manufacturing flow, ports, mining, healthcare, airports
+5. Risk Assessments · HAZOP, QRA, LOPA, SIL
+6. Safety Audits + Arc Flash AMC · 5-year NFPA 70E recertification retainer (VB Arc360)
+7. Simulation Software Services · 9 approved platforms only (ETAP, DigSILENT, PSCAD, FlexSim, AnyLogic, Simio, AspenPlus, HYSYS, gPROMS)
+
+## Where (10 countries · production-ready)
+India (Hyderabad HQ + 9 sites) · USA (Houston/Katy) · UAE (Dubai partnership) · Saudi Arabia · Qatar · Australia (Perth) · Singapore · Indonesia · UK · China (Shanghai operations entity)
+
+## Sign-off discipline
+CEng MIE (India) · CPEng + RPEQ (Australia) · PE (USA) · principal-reviewer cross-check on every deliverable.
+
+## Marquee clients (Verified-63)
+Bayer · Pfizer · TATA · ISRO · Adani · JSW · Asian Paints · Bosch · DuPont · Dr. Reddy's · Aditya Birla · ITC · Mahindra · Kia · Hindalco · Amazon · Siemens · AMNS · Jindal Steel · GMR · Nestlé · Coca-Cola · Syngene · Syngenta · Rolls-Royce · Halliburton · Emerson · Sandvik · Aurobindo · Hetero · Bureau Veritas · Lloyd's Register (full roster of 63 on /resources/)
+
+## Master form
+Inline scoping form on every landing page · routed to CRM via Bitrix24 · 24-hour response from a Chartered Engineer.
+
+## Companion platform
+Wistwin · Industry 4.0 digital twin SaaS · every VB Engineering deliverable can be handed over as a Wistwin-ready asset.

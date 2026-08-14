@@ -1,0 +1,121 @@
+{
+  "page": "arc-flash-electrical-safety-for-oil-and-gas-rigs.html",
+  "country_context": "unknown",
+  "audit_script_version": "1.7.0",
+  "rule_book_edition": "1.13.3",
+  "timestamp": "2026-06-27T22:36:01.949241+00:00",
+  "passed": 14,
+  "total": 22,
+  "checks": [
+    {
+      "check": "\u00a714A \u00b7 No country map SVG",
+      "result": "PASS",
+      "detail": "clean"
+    },
+    {
+      "check": "\u00a73 \u00b7 No forbidden brands (Approved-25 discipline)",
+      "result": "PASS",
+      "detail": "clean"
+    },
+    {
+      "check": "\u00a75 Rule 6.amend.1 \u00b7 No class society names (Edition 1.13.3)",
+      "result": "PASS",
+      "detail": "clean"
+    },
+    {
+      "check": "\u00a74 \u00b7 0 em-dashes (use \u00b7 or -)",
+      "result": "PASS",
+      "detail": "clean"
+    },
+    {
+      "check": "\u00a76.4 F1 \u00b7 Hex allow-list (chrome zones)",
+      "result": "FAIL",
+      "detail": "5 off-palette hex(es) in chrome: ['#0a1f45', '#6b7a99', '#c5cbd6', '#e6ecf5', '#ff8a4d']"
+    },
+    {
+      "check": "\u00a76.4 F2 \u00b7 No forbidden hex signatures (legacy / US flag / traffic-light)",
+      "result": "PASS",
+      "detail": "clean"
+    },
+    {
+      "check": "\u00a76.4 F3 \u00b7 Canonical :root block (\u22642, no off-brand redefinition)",
+      "result": "PASS",
+      "detail": "1 :root blocks \u00b7 0 with off-brand tokens"
+    },
+    {
+      "check": "\u00a76.4 F4 \u00b7 Houston/USA flag chrome hidden (display:none) or absent",
+      "result": "PASS",
+      "detail": "absent"
+    },
+    {
+      "check": "\u00a76.4 F5 \u00b7 Traffic-light green dot hidden or absent",
+      "result": "PASS",
+      "detail": "absent or hidden"
+    },
+    {
+      "check": "\u00a76.4 F6 \u00b7 WCAG AA contrast \u22654.5:1 on text-on-bg CSS pairs",
+      "result": "FAIL",
+      "detail": "1 failing pair(s): ['#FFFFFF on #F26522 = 3.15:1']"
+    },
+    {
+      "check": "\u00a717.8 \u00b7 IA Position Indicator (visible breadcrumb)",
+      "result": "FAIL",
+      "detail": "MISMATCH \u00b7 visible=['Home', 'Resources', 'Offshore Oil + Gas Rigs'] vs schema=['Home', 'Offshore Oil + Gas Rigs']"
+    },
+    {
+      "check": "\u00a718A \u00b7 <title> length 50-65 chars",
+      "result": "FAIL",
+      "detail": "94 chars \u00b7 'Arc Flash \u00b7 Oil + Gas Upstream + Offshore \u00b7 API RP 14F + IEEE 1584 + NFPA 70E \u00b7 '"
+    },
+    {
+      "check": "\u00a718A \u00b7 meta description 140-165 chars",
+      "result": "FAIL",
+      "detail": "304 chars"
+    },
+    {
+      "check": "\u00a718D \u00b7 no banned <head> meta tags",
+      "result": "PASS",
+      "detail": "clean"
+    },
+    {
+      "check": "\u00a718C \u00b7 Direct-Answer Paragraph after H1 (40-80 words)",
+      "result": "PASS",
+      "detail": "109 words"
+    },
+    {
+      "check": "\u00a718G \u00b7 unknown body word count 200-5000",
+      "result": "PASS",
+      "detail": "3763 words"
+    },
+    {
+      "check": "\u00a718G \u00b7 SECTION PURPOSE comment coverage (informational)",
+      "result": "FAIL",
+      "detail": "0/12 sections have SECTION PURPOSE comment"
+    },
+    {
+      "check": "\u00a718H \u00b7 \u226510 Verified-63 brands present in marquee",
+      "result": "PASS",
+      "detail": "29/63 verified brands present"
+    },
+    {
+      "check": "\u00a712 \u00b7 WhatsApp Business widget (Interakt/Kiwi SDK) present",
+      "result": "FAIL",
+      "detail": "missing tokens: ['KiwiObject', 'interakt.ai/kiwi-sdk', \"kiwi.init('', 'iiDGsTOgtTbXcKt9VozbwZlbpIQz1E8A'\"]"
+    },
+    {
+      "check": "\u00a712 \u00b7 No dummy contact placeholders (href=\"#\" or form-placeholder)",
+      "result": "PASS",
+      "detail": "clean"
+    },
+    {
+      "check": "FAQ schema sync (visible == JSON-LD)",
+      "result": "FAIL",
+      "detail": "visible=0, JSON-LD=9"
+    },
+    {
+      "check": "\u00a73 \u00b7 \u226510 approved-25 brands present",
+      "result": "PASS",
+      "detail": "21/25 approved brands present"
+    }
+  ]
+}
