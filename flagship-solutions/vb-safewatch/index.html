@@ -29,9 +29,7 @@
 html,body{margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;color:var(--deep);background:var(--cream);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-img{max-width:100%;height:auto;display:block;}
-
-/* NAV */
+img{max-width:100%;height:auto;display:block;} /* NAV */
 .vb-nav{position:fixed;top:0;left:0;right:0;z-index:1030;background:rgba(10,37,64,0.4);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 0;transition:all 0.35s ease;}
 .vb-nav.scrolled{background:rgba(250,248,244,0.96);border-bottom-color:var(--hair);}
 .vb-nav.scrolled .n-name{color:var(--deep);}
@@ -40,25 +38,14 @@ img{max-width:100%;height:auto;display:block;}
 .n-name{font-size:16px;font-weight:800;color:#fff;letter-spacing:-0.01em;line-height:1.1;}
 .n-tag{font-size:10px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:1.5px;text-transform:uppercase;line-height:1.1;margin-top:2px;}
 .n-cta{background:var(--orange);color:#fff!important;padding:11px 22px;border-radius:4px;font-weight:600;font-size:13px;text-decoration:none;transition:all 0.2s;border:none;box-shadow:0 0 0 0 var(--orange-glow);}
-.n-cta:hover{transform:translateY(-1px);box-shadow:0 8px 26px -6px var(--orange-glow);color:#fff;}
-
-/* =========================================
-   HERO v11 · FRESH CINEMATIC SHORT-CIRCUIT DEMO · all procedural
+.n-cta:hover{transform:translateY(-1px);box-shadow:0 8px 26px -6px var(--orange-glow);color:#fff;} /* ========================================= HERO v11 · FRESH CINEMATIC SHORT-CIRCUIT DEMO · all procedural
 ========================================= */
-.hero{position:relative;width:100%;min-height:100vh;background:linear-gradient(180deg,#050912 0%,#0A1530 45%,#040810 100%);overflow:hidden;color:#fff;}
-
-/* INDUSTRIAL FLOOR with strong reflection of the fault light */
+.hero{position:relative;width:100%;min-height:100vh;background:linear-gradient(180deg,#050912 0%,#0A1530 45%,#040810 100%);overflow:hidden;color:#fff;} /* INDUSTRIAL FLOOR with strong reflection of the fault light */
 .fx-floor{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,transparent 0%,rgba(20,35,70,0.35) 40%,rgba(2,6,12,0.95) 100%);z-index:1;}
 .fx-floor::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0px,transparent 70px,rgba(100,140,200,0.06) 70px,rgba(100,140,200,0.06) 71px);}
 .fx-floor::after{content:'';position:absolute;left:0;bottom:0;width:65%;height:100%;background:radial-gradient(ellipse at 25% 35%,rgba(255,140,80,0.55) 0%,rgba(255,100,40,0.2) 35%,transparent 75%);animation:floor-flicker 0.4s steps(2) infinite;z-index:2;mix-blend-mode:screen;}
-@keyframes floor-flicker{0%,82%{opacity:1;}87%{opacity:0.55;}92%,100%{opacity:1;}}
-
-/* CEILING */
-.fx-ceiling{position:absolute;left:0;right:0;top:0;height:22%;background:linear-gradient(180deg,rgba(15,30,55,0.55) 0%,transparent 100%);z-index:1;}
-
-.hero-vig{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,8,18,0.5) 0%,transparent 22%,transparent 60%,rgba(2,8,18,0.97) 100%);z-index:9;pointer-events:none;}
-
-/* ============ INDUSTRIAL SWITCHGEAR PANEL · BIGGER, LEFT ============ */
+@keyframes floor-flicker{0%,82%{opacity:1;}87%{opacity:0.55;}92%,100%{opacity:1;}} /* CEILING */
+.fx-ceiling{position:absolute;left:0;right:0;top:0;height:22%;background:linear-gradient(180deg,rgba(15,30,55,0.55) 0%,transparent 100%);z-index:1;} .hero-vig{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,8,18,0.5) 0%,transparent 22%,transparent 60%,rgba(2,8,18,0.97) 100%);z-index:9;pointer-events:none;} /* ============ INDUSTRIAL SWITCHGEAR PANEL · BIGGER, LEFT ============ */
 .fx-panel{position:absolute;left:5%;top:15%;width:30vw;max-width:440px;min-width:220px;height:68vh;z-index:3;display:flex;gap:5px;}
 .panel-bay{flex:1;background:linear-gradient(180deg,#2D3C56 0%,#15203C 100%);border:1px solid #3A4D6E;border-radius:3px;padding:9px;display:flex;flex-direction:column;gap:7px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.06),0 10px 35px -10px rgba(0,0,0,0.7);position:relative;}
 .panel-bay::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(180deg,#46588A,transparent);}
@@ -77,16 +64,10 @@ img{max-width:100%;height:auto;display:block;}
 .bay-knob{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#7A8AA8,#2A3850);border:1px solid #15202E;align-self:center;}
 .bay-handle{margin-top:auto;height:22px;background:linear-gradient(180deg,#6B7B9A,#2A3850);border-radius:2px;border:1px solid #15202E;}
 .bay-meter{background:#0A1A2E;border:1px solid #2D4870;border-radius:1px;height:16px;display:flex;align-items:center;padding:0 5px;font-family:var(--mono);font-size:8px;color:#88AAFF;}
-.bay-meter::before{content:'I=125A';}
-
-/* === ARC FAULT · WHITE-HOT EXPLOSION (3x bigger than v10) === */
+.bay-meter::before{content:'I=125A';} /* === ARC FAULT · WHITE-HOT EXPLOSION (3x bigger than v10) === */
 .fx-arc-core{position:absolute;left:20%;top:46%;width:14vw;max-width:220px;min-width:140px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#FFFFFF 0%,#FFFFD0 12%,#FFE090 22%,#FFA060 38%,#FF6030 58%,rgba(255,80,30,0.4) 78%,transparent 100%);transform:translate(-50%,-50%);filter:blur(2px);animation:arc-core 0.12s steps(2) infinite;mix-blend-mode:screen;z-index:6;}
-@keyframes arc-core{0%,60%{transform:translate(-50%,-50%) scale(1);opacity:1;}30%{transform:translate(-50%,-50%) scale(1.5);opacity:1;}80%{transform:translate(-50%,-50%) scale(0.75);opacity:0.6;}}
-
-.fx-arc-halo{position:absolute;left:20%;top:46%;width:40vw;max-width:600px;min-width:300px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,180,100,0.6) 0%,rgba(242,101,34,0.3) 30%,rgba(255,80,30,0.1) 55%,transparent 80%);transform:translate(-50%,-50%);filter:blur(28px);animation:arc-halo 0.7s ease-in-out infinite alternate;mix-blend-mode:screen;z-index:5;}
-@keyframes arc-halo{0%{transform:translate(-50%,-50%) scale(0.85);opacity:0.65;}100%{transform:translate(-50%,-50%) scale(1.2);opacity:1;}}
-
-/* === LIGHTNING BOLTS · 8 jagged streaks radiating from the arc === */
+@keyframes arc-core{0%,60%{transform:translate(-50%,-50%) scale(1);opacity:1;}30%{transform:translate(-50%,-50%) scale(1.5);opacity:1;}80%{transform:translate(-50%,-50%) scale(0.75);opacity:0.6;}} .fx-arc-halo{position:absolute;left:20%;top:46%;width:40vw;max-width:600px;min-width:300px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,180,100,0.6) 0%,rgba(242,101,34,0.3) 30%,rgba(255,80,30,0.1) 55%,transparent 80%);transform:translate(-50%,-50%);filter:blur(28px);animation:arc-halo 0.7s ease-in-out infinite alternate;mix-blend-mode:screen;z-index:5;}
+@keyframes arc-halo{0%{transform:translate(-50%,-50%) scale(0.85);opacity:0.65;}100%{transform:translate(-50%,-50%) scale(1.2);opacity:1;}} /* === LIGHTNING BOLTS · 8 jagged streaks radiating from the arc === */
 .fx-bolts{position:absolute;left:20%;top:46%;width:0;height:0;z-index:7;pointer-events:none;}
 .bolt{position:absolute;left:0;top:-30vh;width:3px;height:30vh;background:linear-gradient(180deg,transparent 0%,#FFE090 30%,#FFFFFF 50%,#FFE090 70%,transparent 100%);opacity:0;transform-origin:50% 100%;filter:drop-shadow(0 0 6px rgba(255,200,120,1)) drop-shadow(0 0 14px rgba(255,140,80,0.8));animation:bolt-flash 0.6s linear infinite;}
 .bolt.b1{transform:translateX(-50%) rotate(-15deg);animation-delay:0s;}
@@ -97,13 +78,9 @@ img{max-width:100%;height:auto;display:block;}
 .bolt.b6{transform:translateX(-50%) rotate(75deg);animation-delay:0.30s;height:18vh;}
 .bolt.b7{transform:translateX(-50%) rotate(95deg);animation-delay:0.38s;height:15vh;}
 .bolt.b8{transform:translateX(-50%) rotate(-95deg);animation-delay:0.45s;height:15vh;}
-@keyframes bolt-flash{0%,8%,16%,100%{opacity:0;}4%,12%{opacity:1;}}
-
-/* === STROBE FLASH from arc bursts === */
+@keyframes bolt-flash{0%,8%,16%,100%{opacity:0;}4%,12%{opacity:1;}} /* === STROBE FLASH from arc bursts === */
 .fx-strobe{position:absolute;inset:0;background:radial-gradient(ellipse at 22% 46%,rgba(255,240,200,0.55) 0%,rgba(255,180,100,0.2) 30%,transparent 60%);opacity:0;z-index:7;animation:strobe 3.6s linear infinite;mix-blend-mode:screen;}
-@keyframes strobe{0%,5%,8%,11%,14%,98%,100%{opacity:0;}6%,9%,12%{opacity:1;}}
-
-/* === FLAMES · TALL LICKING FIRE (7 flames) === */
+@keyframes strobe{0%,5%,8%,11%,14%,98%,100%{opacity:0;}6%,9%,12%{opacity:1;}} /* === FLAMES · TALL LICKING FIRE (7 flames) === */
 .fx-flames{position:absolute;left:6%;top:22%;width:28vw;max-width:420px;height:60vh;z-index:6;pointer-events:none;}
 .flame{position:absolute;bottom:0;left:50%;width:85px;height:200px;background:linear-gradient(180deg,transparent 0%,rgba(255,140,50,0.6) 12%,#FF7020 38%,#FFA040 65%,#FFD080 88%,#FFFFE0 100%);border-radius:50% 50% 35% 35% / 75% 75% 25% 25%;filter:blur(4px);mix-blend-mode:screen;animation:flame-lick 0.28s ease-in-out infinite alternate;transform-origin:50% 100%;}
 .flame.f1{left:25%;animation-delay:0s;height:180px;width:75px;}
@@ -113,9 +90,7 @@ img{max-width:100%;height:auto;display:block;}
 .flame.f5{left:74%;animation-delay:0.16s;height:170px;width:70px;}
 .flame.f6{left:44%;animation-delay:0.20s;height:150px;width:60px;opacity:0.75;}
 .flame.f7{left:58%;animation-delay:0.24s;height:170px;width:65px;opacity:0.8;}
-@keyframes flame-lick{0%{transform:translateX(-50%) scale(0.9,0.85);opacity:0.85;}100%{transform:translateX(-50%) scale(1.15,1.25) translateY(-10px);opacity:1;}}
-
-/* === SMOKE · 6 columns rising === */
+@keyframes flame-lick{0%{transform:translateX(-50%) scale(0.9,0.85);opacity:0.85;}100%{transform:translateX(-50%) scale(1.15,1.25) translateY(-10px);opacity:1;}} /* === SMOKE · 6 columns rising === */
 .fx-smoke{position:absolute;left:6%;top:0;width:30vw;max-width:460px;height:50vh;z-index:7;pointer-events:none;}
 .smoke{position:absolute;bottom:0;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(110,75,55,0.4) 0%,rgba(50,35,25,0.18) 55%,transparent 85%);filter:blur(26px);opacity:0;mix-blend-mode:multiply;animation:smoke-rise 6s linear infinite;}
 .smoke.s1{left:30%;animation-delay:0s;}
@@ -124,45 +99,27 @@ img{max-width:100%;height:auto;display:block;}
 .smoke.s4{left:40%;animation-delay:3.0s;}
 .smoke.s5{left:50%;animation-delay:4.0s;}
 .smoke.s6{left:60%;animation-delay:5.0s;}
-@keyframes smoke-rise{0%{transform:translate(0,40vh) scale(0.4);opacity:0;}15%{opacity:0.65;}100%{transform:translate(-4vw,-25vh) scale(2.4);opacity:0;}}
-
-/* === BOUNDARY · clear glowing line between chaos and worker === */
+@keyframes smoke-rise{0%{transform:translate(0,40vh) scale(0.4);opacity:0;}15%{opacity:0.65;}100%{transform:translate(-4vw,-25vh) scale(2.4);opacity:0;}} /* === BOUNDARY · clear glowing line between chaos and worker === */
 .fx-boundary{position:absolute;left:58%;top:18%;width:0;height:65vh;border-left:3px solid rgba(255,160,80,0.85);box-shadow:-4px 0 30px rgba(242,101,34,0.7),inset 0 0 30px rgba(255,140,80,0.4);animation:boundary-pulse 1.4s ease-in-out infinite;z-index:5;border-radius:50%;}
-@keyframes boundary-pulse{0%,100%{border-left-color:rgba(255,160,80,0.75);box-shadow:-4px 0 30px rgba(242,101,34,0.55);}50%{border-left-color:rgba(255,230,140,1);box-shadow:-8px 0 60px rgba(242,101,34,0.95);}}
-
-/* === FLOOR ARC-RING boundary on the floor === */
+@keyframes boundary-pulse{0%,100%{border-left-color:rgba(255,160,80,0.75);box-shadow:-4px 0 30px rgba(242,101,34,0.55);}50%{border-left-color:rgba(255,230,140,1);box-shadow:-8px 0 60px rgba(242,101,34,0.95);}} /* === FLOOR ARC-RING boundary on the floor === */
 .fx-floor-ring{position:absolute;left:62%;top:73%;width:26vw;max-width:420px;aspect-ratio:5/1;border-radius:50%;border:3px solid rgba(255,160,80,0.85);box-shadow:0 0 70px 12px rgba(242,101,34,0.65),inset 0 0 36px 8px rgba(255,160,80,0.45);transform:translate(-50%,-50%);animation:floor-ring-pulse 1.4s ease-in-out infinite;z-index:5;}
-@keyframes floor-ring-pulse{0%,100%{opacity:0.75;border-color:rgba(255,160,80,0.75);}50%{opacity:1;border-color:rgba(255,230,140,1);box-shadow:0 0 100px 20px rgba(242,101,34,0.95),inset 0 0 50px 10px rgba(255,200,140,0.65);}}
-
-/* === FLOOR EMBERS at the boundary === */
+@keyframes floor-ring-pulse{0%,100%{opacity:0.75;border-color:rgba(255,160,80,0.75);}50%{opacity:1;border-color:rgba(255,230,140,1);box-shadow:0 0 100px 20px rgba(242,101,34,0.95),inset 0 0 50px 10px rgba(255,200,140,0.65);}} /* === FLOOR EMBERS at the boundary === */
 .fx-floor-embers{position:absolute;left:54%;top:75%;width:18vw;height:8vh;z-index:5;pointer-events:none;}
 .ember-pile{position:absolute;bottom:0;border-radius:50%;background:radial-gradient(ellipse at center bottom,rgba(255,200,120,0.9) 0%,rgba(242,101,34,0.5) 45%,transparent 80%);filter:blur(4px);mix-blend-mode:screen;}
 .ember-pile.p1{left:10%;width:110px;height:30px;animation:ember-glow 1.4s ease-in-out infinite alternate;}
 .ember-pile.p2{left:35%;width:140px;height:36px;animation:ember-glow 1.2s ease-in-out infinite alternate-reverse;}
 .ember-pile.p3{left:60%;width:100px;height:26px;animation:ember-glow 1.6s ease-in-out infinite alternate;}
-@keyframes ember-glow{0%{opacity:0.55;transform:scale(0.92);}100%{opacity:1;transform:scale(1.12);}}
-
-/* === SPARKS · 60 sparks in 4 parabolic trajectories === */
+@keyframes ember-glow{0%{opacity:0.55;transform:scale(0.92);}100%{opacity:1;transform:scale(1.12);}} /* === SPARKS · 60 sparks in 4 parabolic trajectories === */
 .spark{position:absolute;left:20%;top:46%;width:5px;height:5px;border-radius:50%;background:radial-gradient(circle,#FFFFFF 0%,#FFD080 30%,#FF7020 70%,transparent 100%);box-shadow:0 0 16px 5px rgba(255,180,80,1),0 0 36px 12px rgba(242,101,34,0.7);opacity:0;animation:spark-arc 2.8s linear infinite;will-change:transform,opacity;z-index:8;}
 .spark::before{content:'';position:absolute;width:22px;height:2.5px;background:linear-gradient(90deg,transparent,#FFD080);border-radius:2px;top:50%;right:100%;transform:translateY(-50%);filter:drop-shadow(0 0 4px rgba(255,180,100,1));}
-@keyframes spark-arc{
-  0%   {opacity:0;transform:translate(-50%,-50%) scale(0.5);}
-  5%   {opacity:1;transform:translate(0vw,-3vh) scale(1);}
-  28%  {opacity:1;transform:translate(15vw,-14vh) scale(1.15);}
-  52%  {opacity:1;transform:translate(28vw,3vh) scale(1.2);}
-  72%  {opacity:1;transform:translate(36vw,20vh) scale(1.1);}
-  84%  {opacity:0.9;transform:translate(38vw,28vh) scale(0.7);}
-  92%  {opacity:0.4;transform:translate(39vw,29vh) scale(0.4);}
-  100% {opacity:0;transform:translate(40vw,30vh) scale(0.2);}
+@keyframes spark-arc{ 0% {opacity:0;transform:translate(-50%,-50%) scale(0.5);} 5% {opacity:1;transform:translate(0vw,-3vh) scale(1);} 28% {opacity:1;transform:translate(15vw,-14vh) scale(1.15);} 52% {opacity:1;transform:translate(28vw,3vh) scale(1.2);} 72% {opacity:1;transform:translate(36vw,20vh) scale(1.1);} 84% {opacity:0.9;transform:translate(38vw,28vh) scale(0.7);} 92% {opacity:0.4;transform:translate(39vw,29vh) scale(0.4);} 100% {opacity:0;transform:translate(40vw,30vh) scale(0.2);}
 }
 .spark.tA{animation-name:spark-arcA;}
 .spark.tB{animation-name:spark-arcB;}
 .spark.tC{animation-name:spark-arcC;}
 @keyframes spark-arcA{0%{opacity:0;}5%{opacity:1;}28%{transform:translate(12vw,-18vh) scale(1.15);}55%{transform:translate(24vw,0vh) scale(1.2);}75%{transform:translate(33vw,20vh) scale(1.1);}85%{transform:translate(35vw,28vh) scale(0.6);opacity:0.4;}100%{opacity:0;}}
 @keyframes spark-arcB{0%{opacity:0;}5%{opacity:1;}28%{transform:translate(18vw,-10vh) scale(1.15);}55%{transform:translate(32vw,6vh) scale(1.2);}75%{transform:translate(40vw,22vh) scale(1.1);}85%{transform:translate(42vw,30vh) scale(0.6);opacity:0.4;}100%{opacity:0;}}
-@keyframes spark-arcC{0%{opacity:0;}5%{opacity:1;}26%{transform:translate(20vw,-20vh) scale(1.15);}54%{transform:translate(34vw,-2vh) scale(1.2);}74%{transform:translate(41vw,20vh) scale(1.1);}85%{transform:translate(43vw,29vh) scale(0.6);opacity:0.4;}100%{opacity:0;}}
-
-/* === IMPACT FLASHES at the boundary === */
+@keyframes spark-arcC{0%{opacity:0;}5%{opacity:1;}26%{transform:translate(20vw,-20vh) scale(1.15);}54%{transform:translate(34vw,-2vh) scale(1.2);}74%{transform:translate(41vw,20vh) scale(1.1);}85%{transform:translate(43vw,29vh) scale(0.6);opacity:0.4;}100%{opacity:0;}} /* === IMPACT FLASHES at the boundary === */
 .fx-impact{position:absolute;left:58%;width:5vw;min-width:50px;aspect-ratio:1/2;border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,230,150,1) 0%,rgba(255,140,80,0.5) 35%,transparent 70%);transform:translate(-50%,-50%);filter:blur(6px);opacity:0;mix-blend-mode:screen;animation:impactflash 0.45s ease-out infinite;z-index:8;}
 .fx-impact.i1{top:55%;animation-delay:0s;}
 .fx-impact.i2{top:62%;animation-delay:0.25s;}
@@ -171,32 +128,20 @@ img{max-width:100%;height:auto;display:block;}
 .fx-impact.i5{top:60%;animation-delay:1.0s;}
 .fx-impact.i6{top:66%;animation-delay:1.25s;}
 .fx-impact.i7{top:71%;animation-delay:1.5s;}
-@keyframes impactflash{0%,100%{opacity:0;}30%{opacity:1;transform:translate(-50%,-50%) scale(2);}80%{opacity:0;}}
-
-/* ============ LARGE WORKER SILHOUETTE · RIGHT (SVG) ============ */
+@keyframes impactflash{0%,100%{opacity:0;}30%{opacity:1;transform:translate(-50%,-50%) scale(2);}80%{opacity:0;}} /* ============ LARGE WORKER SILHOUETTE · RIGHT (SVG) ============ */
 .fx-worker{position:absolute;left:74%;bottom:6%;width:18vw;max-width:280px;min-width:160px;height:68vh;z-index:6;display:flex;align-items:flex-end;justify-content:center;}
 .fx-worker svg{width:100%;height:auto;filter:drop-shadow(-30px 0 60px rgba(255,140,80,0.55));}
 .worker-helmet{fill:#F4F4F4;}
 .worker-body{fill:#152035;}
 .worker-vest{fill:#FFD820;opacity:0.7;}
-.worker-vest-stripe{fill:#C0C0C0;opacity:0.8;}
-
-/* ============ FULL SHORT-CIRCUIT DEMONSTRATION STAGE ============ */
-.fx-stage{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden;}
-
-/* === ARC FAULT · bright pulsing arc explosion inside the panel === */
+.worker-vest-stripe{fill:#C0C0C0;opacity:0.8;} /* ============ FULL SHORT-CIRCUIT DEMONSTRATION STAGE ============ */
+.fx-stage{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden;} /* === ARC FAULT · bright pulsing arc explosion inside the panel === */
 .fx-arc-source{position:absolute;left:14%;top:42%;width:10vw;max-width:160px;min-width:80px;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,#FFFFFF 0%,#FFE090 14%,#FFB070 32%,#FF7030 55%,rgba(255,80,30,0.4) 75%,transparent 100%);transform:translate(-50%,-50%);filter:blur(3px);animation:arcburst 0.18s steps(2) infinite;mix-blend-mode:screen;}
-@keyframes arcburst{0%,70%{transform:translate(-50%,-50%) scale(1);opacity:0.95;}40%{transform:translate(-50%,-50%) scale(1.35);opacity:1;}85%{transform:translate(-50%,-50%) scale(0.85);opacity:0.55;}}
-
-/* Outer arc halo · slower pulse */
+@keyframes arcburst{0%,70%{transform:translate(-50%,-50%) scale(1);opacity:0.95;}40%{transform:translate(-50%,-50%) scale(1.35);opacity:1;}85%{transform:translate(-50%,-50%) scale(0.85);opacity:0.55;}} /* Outer arc halo · slower pulse */
 .fx-arc-halo{position:absolute;left:14%;top:42%;width:22vw;max-width:340px;min-width:160px;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,rgba(255,140,80,0.5) 0%,rgba(242,101,34,0.2) 35%,transparent 70%);transform:translate(-50%,-50%);filter:blur(14px);animation:archalo 0.8s ease-in-out infinite alternate;mix-blend-mode:screen;}
-@keyframes archalo{0%{transform:translate(-50%,-50%) scale(0.9);opacity:0.7;}100%{transform:translate(-50%,-50%) scale(1.15);opacity:1;}}
-
-/* Lightning radial flash across whole hero · stroboscopic */
+@keyframes archalo{0%{transform:translate(-50%,-50%) scale(0.9);opacity:0.7;}100%{transform:translate(-50%,-50%) scale(1.15);opacity:1;}} /* Lightning radial flash across whole hero · stroboscopic */
 .fx-strobe{position:absolute;inset:0;background:radial-gradient(ellipse at 16% 42%, rgba(255,230,180,0.42) 0%, transparent 50%);opacity:0;z-index:5;animation:strobe 4s linear infinite;}
-@keyframes strobe{0%,6%,8%,10%,12%,99%,100%{opacity:0;}7%,9%,11%{opacity:0.95;}}
-
-/* === FLAMES erupting from the panel === */
+@keyframes strobe{0%,6%,8%,10%,12%,99%,100%{opacity:0;}7%,9%,11%{opacity:0.95;}} /* === FLAMES erupting from the panel === */
 .fx-flames{position:absolute;left:8%;top:30%;width:22vw;height:35vh;z-index:5;pointer-events:none;}
 .flame{position:absolute;bottom:0;left:50%;width:55px;height:120px;background:linear-gradient(180deg,transparent 0%,rgba(255,160,80,0.7) 25%,#FF8030 60%,#FFC060 88%,#FFE080 100%);border-radius:50% 50% 25% 25% / 70% 70% 30% 30%;filter:blur(4px);mix-blend-mode:screen;animation:flameflicker 0.32s ease-in-out infinite alternate;transform-origin:50% 100%;}
 .flame.f1{left:30%;animation-delay:0s;height:140px;width:60px;}
@@ -204,56 +149,34 @@ img{max-width:100%;height:auto;display:block;}
 .flame.f3{left:66%;animation-delay:0.05s;height:130px;width:55px;}
 .flame.f4{left:42%;animation-delay:0.15s;height:100px;width:45px;opacity:0.7;}
 .flame.f5{left:58%;animation-delay:0.22s;height:115px;width:50px;}
-@keyframes flameflicker{0%{transform:translateX(-50%) scaleY(0.95) scaleX(0.95);opacity:0.85;}100%{transform:translateX(-50%) scaleY(1.15) scaleX(1.05) translateY(-6px);opacity:1;}}
-
-/* === SMOKE rising from the panel === */
+@keyframes flameflicker{0%{transform:translateX(-50%) scaleY(0.95) scaleX(0.95);opacity:0.85;}100%{transform:translateX(-50%) scaleY(1.15) scaleX(1.05) translateY(-6px);opacity:1;}} /* === SMOKE rising from the panel === */
 .fx-smoke{position:absolute;left:8%;top:0;width:25vw;height:50vh;z-index:6;pointer-events:none;}
 .smoke{position:absolute;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(120,80,60,0.35) 0%,rgba(60,40,30,0.18) 50%,transparent 80%);filter:blur(22px);opacity:0;animation:smokerise 5.5s linear infinite;mix-blend-mode:multiply;}
 .smoke.s1{left:35%;animation-delay:0s;}
 .smoke.s2{left:50%;animation-delay:1.4s;}
 .smoke.s3{left:45%;animation-delay:2.8s;}
 .smoke.s4{left:55%;animation-delay:4.2s;}
-@keyframes smokerise{0%{transform:translate(0,30vh) scale(0.5);opacity:0;}15%{opacity:0.7;}100%{transform:translate(-3vw,-30vh) scale(2.2);opacity:0;}}
-
-/* === SHIELD · the protective boundary in front of the worker === */
+@keyframes smokerise{0%{transform:translate(0,30vh) scale(0.5);opacity:0;}15%{opacity:0.7;}100%{transform:translate(-3vw,-30vh) scale(2.2);opacity:0;}} /* === SHIELD · the protective boundary in front of the worker === */
 .fx-shield{position:absolute;left:58%;top:50%;width:8vw;max-width:140px;min-width:60px;height:65vh;border-radius:50%;border-left:3px solid rgba(255,140,80,0.6);box-shadow:-22px 0 50px -8px rgba(242,101,34,0.5), inset 18px 0 36px -8px rgba(255,140,80,0.22);background:linear-gradient(90deg, rgba(242,101,34,0.08) 0%, rgba(242,101,34,0.02) 60%, transparent 100%);transform:translate(-100%,-50%);animation:shieldglow 1.8s ease-in-out infinite;z-index:6;}
-@keyframes shieldglow{0%,100%{border-left-color:rgba(255,140,80,0.6);box-shadow:-22px 0 50px -8px rgba(242,101,34,0.5), inset 18px 0 36px -8px rgba(255,140,80,0.22);}50%{border-left-color:rgba(255,220,140,1);box-shadow:-38px 0 90px -4px rgba(242,101,34,0.85), inset 32px 0 70px -6px rgba(255,200,140,0.55);}}
-
-/* === FLOOR EMBER PILE · accumulated sparks fading on the floor at the boundary === */
+@keyframes shieldglow{0%,100%{border-left-color:rgba(255,140,80,0.6);box-shadow:-22px 0 50px -8px rgba(242,101,34,0.5), inset 18px 0 36px -8px rgba(255,140,80,0.22);}50%{border-left-color:rgba(255,220,140,1);box-shadow:-38px 0 90px -4px rgba(242,101,34,0.85), inset 32px 0 70px -6px rgba(255,200,140,0.55);}} /* === FLOOR EMBER PILE · accumulated sparks fading on the floor at the boundary === */
 .fx-floor-embers{position:absolute;left:55%;top:74%;width:18vw;height:6vh;z-index:5;pointer-events:none;}
 .ember-pile{position:absolute;border-radius:50%;background:radial-gradient(ellipse at center bottom, rgba(255,180,100,0.85) 0%, rgba(255,100,40,0.4) 50%, transparent 80%);filter:blur(3px);}
 .ember-pile.p1{left:20%;bottom:0;width:90px;height:24px;animation:emberglow 1.6s ease-in-out infinite alternate;}
 .ember-pile.p2{left:45%;bottom:0;width:120px;height:30px;animation:emberglow 1.4s ease-in-out infinite alternate-reverse;}
 .ember-pile.p3{left:68%;bottom:0;width:80px;height:22px;animation:emberglow 1.8s ease-in-out infinite alternate;}
-@keyframes emberglow{0%{opacity:0.55;transform:scale(0.92);}100%{opacity:1;transform:scale(1.08);}}
-
-/* === FLOOR ARC-RING · the protection boundary on the floor === */
+@keyframes emberglow{0%{opacity:0.55;transform:scale(0.92);}100%{opacity:1;transform:scale(1.08);}} /* === FLOOR ARC-RING · the protection boundary on the floor === */
 .fx-floor-ring{position:absolute;left:62%;top:73%;width:24vw;max-width:380px;min-width:200px;aspect-ratio:5/1;border-radius:50%;border:3px solid rgba(255,160,80,0.7);box-shadow:0 0 60px 10px rgba(242,101,34,0.6), inset 0 0 30px 6px rgba(255,160,80,0.4);transform:translate(-50%,-50%);animation:floorglow 1.8s ease-in-out infinite;z-index:5;}
-@keyframes floorglow{0%,100%{opacity:0.75;border-color:rgba(255,160,80,0.65);}50%{opacity:1;border-color:rgba(255,220,140,1);box-shadow:0 0 90px 18px rgba(242,101,34,0.9), inset 0 0 48px 10px rgba(255,200,140,0.6);}}
-
-/* === SPARKS · PARABOLIC trajectories from the arc fault to the floor at the boundary === */
+@keyframes floorglow{0%,100%{opacity:0.75;border-color:rgba(255,160,80,0.65);}50%{opacity:1;border-color:rgba(255,220,140,1);box-shadow:0 0 90px 18px rgba(242,101,34,0.9), inset 0 0 48px 10px rgba(255,200,140,0.6);}} /* === SPARKS · PARABOLIC trajectories from the arc fault to the floor at the boundary === */
 .spark{position:absolute;left:14%;top:42%;width:4px;height:4px;border-radius:50%;background:radial-gradient(circle,#FFFFFF 0%,#FFD088 30%,#FF7030 70%,transparent 100%);box-shadow:0 0 14px 4px rgba(255,180,80,1), 0 0 30px 10px rgba(242,101,34,0.7);opacity:0;animation:sparkarc 2.6s linear infinite;will-change:transform,opacity;z-index:7;}
 .spark::before{content:'';position:absolute;width:18px;height:2px;background:linear-gradient(90deg,transparent,#FFD088);border-radius:2px;top:50%;right:100%;transform:translateY(-50%);filter:drop-shadow(0 0 3px rgba(255,180,100,0.9));}
-@keyframes sparkarc{
-  0%   {opacity:0;transform:translate(-50%,-50%) scale(0.5);}
-  4%   {opacity:1;transform:translate(0vw,-2vh) scale(1);}
-  30%  {opacity:1;transform:translate(18vw,-12vh) scale(1.1);}     /* PEAK · sparks arc upward */
-  55%  {opacity:1;transform:translate(33vw,5vh) scale(1.2);}        /* FALLING · gravity */
-  72%  {opacity:1;transform:translate(40vw,22vh) scale(1.15);}      /* near floor boundary */
-  82%  {opacity:1;transform:translate(42vw,30vh) scale(0.9);}       /* hits boundary */
-  90%  {opacity:0.6;transform:translate(43vw,31vh) scale(0.5);}
-  100% {opacity:0;transform:translate(44vw,32vh) scale(0.2);}
-}
-
-/* SPARK VARIANTS · different arc trajectories so sparks fan out */
+@keyframes sparkarc{ 0% {opacity:0;transform:translate(-50%,-50%) scale(0.5);} 4% {opacity:1;transform:translate(0vw,-2vh) scale(1);} 30% {opacity:1;transform:translate(18vw,-12vh) scale(1.1);} /* PEAK · sparks arc upward */ 55% {opacity:1;transform:translate(33vw,5vh) scale(1.2);} /* FALLING · gravity */ 72% {opacity:1;transform:translate(40vw,22vh) scale(1.15);} /* near floor boundary */ 82% {opacity:1;transform:translate(42vw,30vh) scale(0.9);} /* hits boundary */ 90% {opacity:0.6;transform:translate(43vw,31vh) scale(0.5);} 100% {opacity:0;transform:translate(44vw,32vh) scale(0.2);}
+} /* SPARK VARIANTS · different arc trajectories so sparks fan out */
 .spark.tA{animation-name:sparkarcA;}
 .spark.tB{animation-name:sparkarcB;}
 .spark.tC{animation-name:sparkarcC;}
 @keyframes sparkarcA{0%{opacity:0;}4%{opacity:1;}30%{transform:translate(15vw,-15vh);}55%{transform:translate(30vw,2vh);}75%{transform:translate(38vw,20vh);opacity:1;}85%{transform:translate(40vw,28vh) scale(0.6);opacity:0.3;}100%{opacity:0;transform:translate(40vw,29vh) scale(0.2);}}
 @keyframes sparkarcB{0%{opacity:0;}5%{opacity:1;}28%{transform:translate(20vw,-8vh);}55%{transform:translate(36vw,10vh);}73%{transform:translate(43vw,25vh);opacity:1;}85%{transform:translate(44vw,31vh) scale(0.6);opacity:0.3;}100%{opacity:0;transform:translate(44vw,32vh) scale(0.2);}}
-@keyframes sparkarcC{0%{opacity:0;}5%{opacity:1;}25%{transform:translate(22vw,-18vh);}55%{transform:translate(35vw,-2vh);}74%{transform:translate(41vw,20vh);opacity:1;}85%{transform:translate(43vw,30vh) scale(0.6);opacity:0.3;}100%{opacity:0;transform:translate(43vw,31vh) scale(0.2);}}
-
-/* SHIELD IMPACT FLASHES · staggered along boundary */
+@keyframes sparkarcC{0%{opacity:0;}5%{opacity:1;}25%{transform:translate(22vw,-18vh);}55%{transform:translate(35vw,-2vh);}74%{transform:translate(41vw,20vh);opacity:1;}85%{transform:translate(43vw,30vh) scale(0.6);opacity:0.3;}100%{opacity:0;transform:translate(43vw,31vh) scale(0.2);}} /* SHIELD IMPACT FLASHES · staggered along boundary */
 .fx-impact{position:absolute;left:58%;width:5vw;min-width:42px;aspect-ratio:1/2;border-radius:50%;background:radial-gradient(ellipse at center, rgba(255,220,140,0.9) 0%, rgba(255,140,80,0.4) 35%, transparent 70%);transform:translate(-50%,-50%);filter:blur(5px);opacity:0;animation:impactflash 0.5s ease-out infinite;z-index:7;}
 .fx-impact.i1{top:55%;animation-delay:0s;}
 .fx-impact.i2{top:62%;animation-delay:0.3s;}
@@ -262,9 +185,7 @@ img{max-width:100%;height:auto;display:block;}
 .fx-impact.i5{top:60%;animation-delay:1.2s;}
 .fx-impact.i6{top:65%;animation-delay:1.5s;}
 .fx-impact.i7{top:70%;animation-delay:1.8s;}
-@keyframes impactflash{0%,100%{opacity:0;}25%{opacity:1;transform:translate(-50%,-50%) scale(1.8);}80%{opacity:0;}}
-
-/* Hero content */
+@keyframes impactflash{0%,100%{opacity:0;}25%{opacity:1;transform:translate(-50%,-50%) scale(1.8);}80%{opacity:0;}} /* Hero content */
 .hero-content{position:relative;z-index:7;display:flex;flex-direction:column;justify-content:flex-end;min-height:100vh;padding:96px 0 90px;}
 .hero-eye{font-size:11px;font-weight:700;letter-spacing:3.2px;color:var(--orange);text-transform:uppercase;margin-bottom:18px;opacity:0;animation:fu 1s 0.4s forwards;}
 .hero-h1{font-size:clamp(44px,8vw,108px);font-weight:900;line-height:0.95;letter-spacing:-0.035em;margin-bottom:24px;color:#fff;opacity:0;animation:fu 1.1s 0.65s forwards;text-shadow:0 6px 40px rgba(0,0,0,0.7);}
@@ -277,23 +198,14 @@ img{max-width:100%;height:auto;display:block;}
 .hero-cta:hover{transform:translateY(-2px);box-shadow:0 18px 48px -12px var(--orange-glow);color:#fff;}
 .hero-cta-g{display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;padding:18px 32px;border-radius:4px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid rgba(255,255,255,0.4);transition:all 0.25s;}
 .hero-cta-g:hover{background:rgba(255,255,255,0.08);color:#fff;border-color:#fff;}
-@keyframes fu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-
-/* Lockup */
+@keyframes fu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}} /* Lockup */
 .hero-lockup{position:absolute;top:108px;right:32px;z-index:8;width:240px;background:rgba(255,255,255,0.97);padding:18px 22px;border-radius:8px;box-shadow:0 24px 60px -16px rgba(0,0,0,0.7);opacity:0;animation:fu 1.1s 1.6s forwards;}
 .hero-lockup img{width:100%;}
-@media(max-width:991px){.hero-lockup{position:relative;top:auto;right:auto;margin:0 auto 30px;width:200px;}}
-
-.scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.5);font-size:10px;letter-spacing:2.4px;text-transform:uppercase;z-index:7;animation:bob 2.4s ease-in-out infinite;}
-@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
-
-/* Breadcrumb in hero */
+@media(max-width:991px){.hero-lockup{position:relative;top:auto;right:auto;margin:0 auto 30px;width:200px;}} .scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.5);font-size:10px;letter-spacing:2.4px;text-transform:uppercase;z-index:7;animation:bob 2.4s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}} /* Breadcrumb in hero */
 .crumb{font-size:12px;color:rgba(255,255,255,0.7);background:rgba(10,37,64,0.4);backdrop-filter:blur(8px);padding:8px 16px;border-radius:4px;display:inline-block;border:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
 .crumb a{color:rgba(255,255,255,0.7);text-decoration:none;}.crumb a:hover{color:var(--orange);}
-.crumb .sp{margin:0 8px;opacity:0.4;}.crumb .lf{color:#fff;font-weight:600;}
-
-/* =========================================
-   TRUST + FOUNDER + DIVIDERS + SECTIONS
+.crumb .sp{margin:0 8px;opacity:0.4;}.crumb .lf{color:#fff;font-weight:600;} /* ========================================= TRUST + FOUNDER + DIVIDERS + SECTIONS
 ========================================= */
 .trust{padding:50px 0;background:#fff;border-bottom:1px solid var(--hair);overflow:hidden;}
 .tn-row{display:flex;justify-content:center;gap:clamp(20px,3.5vw,52px);flex-wrap:wrap;margin-bottom:30px;}
@@ -307,9 +219,7 @@ img{max-width:100%;height:auto;display:block;}
 .lg-cell{flex-shrink:0;height:44px;display:flex;align-items:center;}
 .lg-cell img{max-height:40px;max-width:130px;object-fit:contain;filter:grayscale(100%) opacity(0.55);transition:filter 0.3s;}
 .lg-cell:hover img{filter:grayscale(0%) opacity(1);}
-@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
-.section{padding:120px 0;}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}} .section{padding:120px 0;}
 .section.cream{background:var(--cream);}
 .section.white{background:#fff;}
 .section.deep{background:var(--deep);color:#fff;}
@@ -319,9 +229,7 @@ img{max-width:100%;height:auto;display:block;}
 .sh2{font-size:clamp(32px,4.6vw,52px);font-weight:800;letter-spacing:-0.025em;line-height:1.08;color:var(--deep);margin-bottom:22px;}
 .sh2 .ac{color:var(--orange);}
 .sb{font-size:16.5px;line-height:1.75;color:var(--slate);}
-.sb strong{color:var(--deep);font-weight:600;}
-
-/* Founder */
+.sb strong{color:var(--deep);font-weight:600;} /* Founder */
 .founder-section{padding:110px 0;background:linear-gradient(180deg,var(--cream) 0%,#FAFAFA 100%);}
 .f-img-wrap{position:relative;border-left:3px solid var(--orange);padding-left:24px;}
 .f-img{width:100%;border-radius:4px;box-shadow:0 30px 70px -22px rgba(10,37,64,0.5);}
@@ -333,15 +241,11 @@ img{max-width:100%;height:auto;display:block;}
 .f-role{font-size:11px;font-weight:600;color:var(--slate);letter-spacing:1.8px;text-transform:uppercase;margin-top:4px;}
 .f-stats{display:flex;gap:32px;margin-top:32px;}
 .f-stat strong{display:block;font-size:24px;font-weight:800;color:var(--orange);letter-spacing:-0.02em;line-height:1;}
-.f-stat{font-size:11px;color:var(--slate);letter-spacing:0.5px;}
-
-/* Hazard pull-quote · brand-defining line */
+.f-stat{font-size:11px;color:var(--slate);letter-spacing:0.5px;} /* Hazard pull-quote · brand-defining line */
 .hazard-pull{margin-top:80px;padding:48px 32px;border-top:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);text-align:center;position:relative;}
 .hazard-pull::before{content:'"';display:block;font-family:Georgia,serif;font-size:80px;line-height:0.4;color:var(--orange);margin-bottom:18px;font-weight:800;}
 .hazard-pull p{font-size:clamp(24px,3.2vw,38px);font-weight:300;line-height:1.25;letter-spacing:-0.015em;color:#fff;max-width:880px;margin:0 auto;}
-.hazard-pull p .ac{color:var(--orange);}
-
-/* Cinematic divider */
+.hazard-pull p .ac{color:var(--orange);} /* Cinematic divider */
 .cdv{position:relative;height:65vh;min-height:520px;overflow:hidden;background:#000;}
 .cdv-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:kbslow 36s linear infinite alternate;}
 @keyframes kbslow{0%{transform:scale(1.05);}100%{transform:scale(1.18) translate(-2%,1%);}}
@@ -350,28 +254,21 @@ img{max-width:100%;height:auto;display:block;}
 .cdv-eye{font-size:11px;font-weight:700;letter-spacing:2.6px;color:var(--orange);text-transform:uppercase;margin-bottom:14px;}
 .cdv-h2{font-size:clamp(30px,4.5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-0.025em;color:#fff;margin-bottom:14px;text-shadow:0 4px 30px rgba(0,0,0,0.5);}
 .cdv-h2 .ac{color:var(--orange);}
-.cdv-l{font-size:18px;line-height:1.6;color:rgba(255,255,255,0.88);max-width:600px;}
-
-/* Hazard stats */
+.cdv-l{font-size:18px;line-height:1.6;color:rgba(255,255,255,0.88);max-width:600px;} /* Hazard stats */
 .hz{background:rgba(255,255,255,0.04);border-left:3px solid var(--orange);padding:24px 26px;height:100%;border-radius:0 4px 4px 0;}
 .hz-big{font-size:clamp(30px,3.8vw,44px);font-weight:800;color:var(--orange);letter-spacing:-0.02em;line-height:1;}
 .hz-l{font-size:12.5px;color:rgba(255,255,255,0.75);margin-top:10px;line-height:1.5;}
 .lib{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:22px 24px;height:100%;}
 .lib.alert{border-color:var(--orange);background:rgba(242,101,34,0.08);}
 .lib h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;}
-.lib p{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.55;margin:0;}
-
-/* 360 dial */
+.lib p{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.55;margin:0;} /* 360 dial */
 .dial-svg{width:100%;max-width:500px;}
 .dst{display:grid;grid-template-columns:68px 1fr;gap:18px;padding:24px 0;border-top:1px solid var(--hair);}
 .dst:first-child{border-top:none;padding-top:0;}
 .dst-n{font-size:36px;font-weight:800;color:var(--orange);line-height:1;letter-spacing:-0.03em;}
 .dst-d{font-size:10px;font-weight:700;color:var(--slate);letter-spacing:1.4px;text-transform:uppercase;margin-top:4px;}
 .dst h3{font-size:20px;font-weight:700;color:var(--deep);margin-bottom:6px;}
-.dst p{font-size:14.5px;color:var(--slate);line-height:1.65;margin:0;}
-
-/* ===== STAGE SHOWPIECES ===== */
-/* Stage 1 ASSESS */
+.dst p{font-size:14.5px;color:var(--slate);line-height:1.65;margin:0;} /* ===== STAGE SHOWPIECES ===== */* Stage 1 ASSESS */
 .stage-num{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--orange);letter-spacing:2.4px;font-weight:700;margin-bottom:18px;text-transform:uppercase;}
 .stage-num::before{content:"01 ";opacity:0.5;}
 .stage-num.s2::before{content:"02 ";}
@@ -389,9 +286,7 @@ img{max-width:100%;height:auto;display:block;}
 .proof-img img{width:100%;display:block;}
 .electwin-card{background:#fff;border:1px solid var(--hair);border-radius:8px;padding:8px;box-shadow:0 24px 60px -18px rgba(10,37,64,0.3);overflow:hidden;}
 .electwin-card img{width:100%;border-radius:4px;display:block;}
-.electwin-cap{font-family:var(--mono);font-size:10px;color:var(--orange);letter-spacing:1.4px;padding:10px 6px 4px;font-weight:700;}
-
-/* Stage 2 LABEL · 4-language strip */
+.electwin-cap{font-family:var(--mono);font-size:10px;color:var(--orange);letter-spacing:1.4px;padding:10px 6px 4px;font-weight:700;} /* Stage 2 LABEL · 4-language strip */
 .lbl-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
 @media(max-width:900px){.lbl-strip{grid-template-columns:1fr 1fr;}}
 .lbl-card{background:#fff;border:1px solid var(--hair);border-radius:6px;overflow:hidden;transition:all 0.25s;}
@@ -400,9 +295,7 @@ img{max-width:100%;height:auto;display:block;}
 .lbl-cap{padding:10px 14px;display:flex;justify-content:space-between;align-items:center;background:var(--cream);border-top:1px solid var(--hair);}
 .lbl-lang{font-size:11px;font-weight:700;color:var(--deep);letter-spacing:0.5px;}
 .lbl-script{font-size:12px;color:var(--orange);font-weight:600;}
-.lbl-tag{font-size:13.5px;color:var(--slate);text-align:center;margin-top:18px;font-style:italic;}
-
-/* Stage 3 TRAIN · 3-card showpiece */
+.lbl-tag{font-size:13.5px;color:var(--slate);text-align:center;margin-top:18px;font-style:italic;} /* Stage 3 TRAIN · 3-card showpiece */
 .train-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
 @media(max-width:991px){.train-grid{grid-template-columns:1fr;}}
 .train-card{background:#fff;border:1px solid var(--hair);border-radius:10px;overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;height:100%;}
@@ -417,87 +310,59 @@ img{max-width:100%;height:auto;display:block;}
 .train-spec{list-style:none;padding:0;margin:0 0 18px;border-top:1px solid var(--hair);padding-top:14px;}
 .train-spec li{font-size:12px;color:var(--slate);padding:5px 0 5px 18px;position:relative;}
 .train-spec li::before{content:'›';position:absolute;left:0;color:var(--orange);font-weight:700;}
-.train-anchor{margin-top:auto;font-size:11px;color:var(--deep);font-weight:600;letter-spacing:0.5px;}
-
-/* Stage 4 ENFORCE · VijAI PPEAI · 25 cal REQUIRED vs 8 cal DETECTED · ENTRY DENIED */
+.train-anchor{margin-top:auto;font-size:11px;color:var(--deep);font-weight:600;letter-spacing:0.5px;} /* Stage 4 ENFORCE · VijAI PPEAI · 25 cal REQUIRED vs 8 cal DETECTED · ENTRY DENIED */
 .ppeai-frame{background:#020812;border:1px solid rgba(242,101,34,0.3);border-radius:10px;overflow:hidden;font-family:var(--mono);position:relative;box-shadow:0 36px 80px -20px rgba(0,0,0,0.5);}
 .ppeai-hd{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:rgba(242,101,34,0.08);border-bottom:1px solid rgba(242,101,34,0.2);}
 .ppeai-hd-l{font-size:10.5px;color:#FFB070;letter-spacing:2px;font-weight:700;text-transform:uppercase;display:flex;align-items:center;gap:10px;}
 .live-dot{width:8px;height:8px;border-radius:50%;background:#FF3030;box-shadow:0 0 10px #FF3030;animation:pulse 1.2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
 .ppeai-brand-tag{font-size:9.5px;color:var(--orange);letter-spacing:1.6px;font-weight:800;background:rgba(242,101,34,0.15);padding:4px 8px;border-radius:3px;}
-.ppeai-scene{position:relative;aspect-ratio:16/9;background:linear-gradient(160deg,#0A1A30 0%,#15294F 100%);overflow:hidden;}
-
-/* MCC PANEL · with WARNING label showing REQUIRED 25 cal/cm² */
+.ppeai-scene{position:relative;aspect-ratio:16/9;background:linear-gradient(160deg,#0A1A30 0%,#15294F 100%);overflow:hidden;} /* MCC PANEL · with WARNING label showing REQUIRED 25 cal/cm² */
 .mcc-panel{position:absolute;left:6%;top:15%;width:30%;height:70%;background:linear-gradient(180deg,#2A3E5A,#1A2E48);border:1px solid #3A5078;border-radius:3px;display:grid;grid-template-rows:repeat(4,1fr);gap:4px;padding:6px;}
 .mcc-row{background:rgba(255,255,255,0.04);border-radius:2px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;}
 .mcc-cell{background:rgba(0,0,0,0.3);border-radius:1px;position:relative;}
-.mcc-cell::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:#5A7BA7;border-radius:50%;}
-
-/* Warning label on the panel · REQUIRED PPE 25 cal/cm² */
+.mcc-cell::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:#5A7BA7;border-radius:50%;} /* Warning label on the panel · REQUIRED PPE 25 cal/cm² */
 .panel-warn-label{position:absolute;left:7%;top:42%;width:18%;background:#FFC020;color:#000;border:2px solid #000;border-radius:2px;padding:5px 4px 4px;text-align:center;font-family:var(--mono);box-shadow:0 0 12px rgba(255,200,40,0.5);z-index:3;}
 .pwl-warn{font-size:9px;font-weight:800;letter-spacing:0.5px;line-height:1;background:#FFA000;color:#000;padding:2px 0;margin:-5px -4px 3px;}
 .pwl-warn::before{content:'⚠ ';}
 .pwl-req{font-size:6.5px;font-weight:600;color:#333;letter-spacing:0.5px;}
-.pwl-cal{font-size:14px;font-weight:800;color:#000;line-height:1;letter-spacing:-0.02em;margin-top:2px;}
-
-/* PPEAI WORKER · arc flash suit with visible chest label · OCR target */
+.pwl-cal{font-size:14px;font-weight:800;color:#000;line-height:1;letter-spacing:-0.02em;margin-top:2px;} /* PPEAI WORKER · arc flash suit with visible chest label · OCR target */
 .ppeai-worker{position:absolute;left:50%;top:12%;width:34%;height:78%;display:flex;align-items:flex-end;justify-content:center;}
-.ppeai-worker svg.suit-svg{height:100%;width:auto;display:block;}
-
-/* Outer red detection bounding box · person detected · pulsing */
+.ppeai-worker svg.suit-svg{height:100%;width:auto;display:block;} /* Outer red detection bounding box · person detected · pulsing */
 .detect-box{position:absolute;inset:0;border:2px solid #FF4040;border-radius:6px;box-shadow:0 0 18px rgba(255,80,80,0.6), inset 0 0 12px rgba(255,80,80,0.18);animation:detectpulse 1.2s ease-in-out infinite;z-index:4;pointer-events:none;}
 .detect-box::before,.detect-box::after{content:'';position:absolute;width:14px;height:14px;border:2px solid #FF4040;}
 .detect-box::before{top:-3px;left:-3px;border-right:0;border-bottom:0;}
 .detect-box::after{bottom:-3px;right:-3px;border-left:0;border-top:0;}
-@keyframes detectpulse{0%,100%{box-shadow:0 0 18px rgba(255,80,80,0.6), inset 0 0 12px rgba(255,80,80,0.18);}50%{box-shadow:0 0 36px rgba(255,80,80,1), inset 0 0 22px rgba(255,80,80,0.4);}}
-
-/* The ATPV label patch sewn onto the suit chest · the THING PPEAI reads */
+@keyframes detectpulse{0%,100%{box-shadow:0 0 18px rgba(255,80,80,0.6), inset 0 0 12px rgba(255,80,80,0.18);}50%{box-shadow:0 0 36px rgba(255,80,80,1), inset 0 0 22px rgba(255,80,80,0.4);}} /* The ATPV label patch sewn onto the suit chest · the THING PPEAI reads */
 .suit-label{position:absolute;left:50%;top:39%;transform:translate(-50%,-50%);background:#FFF8E0;border:1.5px solid #1A1A1A;border-radius:2px;padding:3px 8px 4px;text-align:center;font-family:var(--mono);color:#000;z-index:5;box-shadow:0 2px 6px rgba(0,0,0,0.45);min-width:54px;}
 .sl-atpv{font-size:6px;font-weight:700;letter-spacing:1.4px;color:#555;line-height:1;}
-.sl-cal{font-size:11px;font-weight:800;line-height:1;letter-spacing:-0.02em;color:#000;margin-top:1px;white-space:nowrap;}
-
-/* OCR scan box · highlighting the suit label · the AI vision is reading this patch */
+.sl-cal{font-size:11px;font-weight:800;line-height:1;letter-spacing:-0.02em;color:#000;margin-top:1px;white-space:nowrap;} /* OCR scan box · highlighting the suit label · the AI vision is reading this patch */
 .ocr-box{position:absolute;left:50%;top:39%;transform:translate(-50%,-50%);width:62%;height:18%;border:2px dashed #F26522;border-radius:4px;z-index:6;pointer-events:none;animation:ocrpulse 1.3s ease-in-out infinite;box-shadow:0 0 14px rgba(242,101,34,0.55);}
 .ocr-box::before{content:'⚡ OCR · SUIT TAG';position:absolute;bottom:calc(100% + 4px);left:0;font-size:7.5px;color:#FFB070;letter-spacing:1.5px;font-weight:800;background:rgba(2,8,18,0.92);padding:2px 6px;border-radius:2px;white-space:nowrap;font-family:var(--mono);border:1px solid rgba(242,101,34,0.4);}
 .ocr-box::after{content:'';position:absolute;top:50%;right:-100%;width:100%;height:0;border-top:1.5px dashed #F26522;opacity:0.6;}
-@keyframes ocrpulse{0%,100%{box-shadow:0 0 14px rgba(242,101,34,0.55);transform:translate(-50%,-50%) scale(1);}50%{box-shadow:0 0 28px rgba(242,101,34,1);transform:translate(-50%,-50%) scale(1.06);}}
-
-/* Detected badge · OCR output · "SUIT TAG READ · 8 cal/cm²" */
+@keyframes ocrpulse{0%,100%{box-shadow:0 0 14px rgba(242,101,34,0.55);transform:translate(-50%,-50%) scale(1);}50%{box-shadow:0 0 28px rgba(242,101,34,1);transform:translate(-50%,-50%) scale(1.06);}} /* Detected badge · OCR output · "SUIT TAG READ · 8 cal/cm²" */
 .det-badge{position:absolute;top:-44px;left:50%;transform:translateX(-50%);background:#FF3030;color:#fff;padding:6px 10px;border-radius:3px;text-align:center;font-family:var(--mono);box-shadow:0 4px 12px rgba(255,40,40,0.5);white-space:nowrap;z-index:5;}
 .det-badge::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#FF3030;}
 .det-label{font-size:7px;font-weight:700;letter-spacing:1.2px;opacity:0.92;}
-.det-value{font-size:14px;font-weight:800;line-height:1;letter-spacing:-0.02em;margin-top:1px;}
-
-/* Comparison · 8 < 25 mismatch badge */
+.det-value{font-size:14px;font-weight:800;line-height:1;letter-spacing:-0.02em;margin-top:1px;} /* Comparison · 8 < 25 mismatch badge */
 .mismatch-row{position:absolute;left:32%;top:32%;display:flex;align-items:center;gap:6px;z-index:5;background:rgba(2,8,18,0.85);padding:5px 8px;border-radius:3px;border:1px solid rgba(255,80,80,0.5);}
 .mismatch-row .req{font-size:11px;font-weight:800;color:#FFC020;font-family:var(--mono);}
 .mismatch-row .lt{font-size:14px;font-weight:800;color:#FF6060;font-family:var(--mono);margin:0 2px;animation:ltflash 0.8s ease-in-out infinite;}
 .mismatch-row .det{font-size:11px;font-weight:800;color:#FF6060;font-family:var(--mono);}
-@keyframes ltflash{0%,100%{opacity:0.5;transform:scale(1);}50%{opacity:1;transform:scale(1.2);}}
-
-/* Big ENTRY DENIED banner · bottom center */
+@keyframes ltflash{0%,100%{opacity:0.5;transform:scale(1);}50%{opacity:1;transform:scale(1.2);}} /* Big ENTRY DENIED banner · bottom center */
 .entry-denied{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);background:#FF2020;color:#fff;font-family:var(--mono);font-size:13px;font-weight:800;letter-spacing:2px;padding:9px 22px;border-radius:3px;text-transform:uppercase;box-shadow:0 0 30px rgba(255,40,40,0.7), 0 6px 14px rgba(0,0,0,0.5);animation:dangerpulse 0.7s ease-in-out infinite alternate;z-index:6;border:2px solid #FFB020;}
 .entry-denied::before{content:'🛑 ';margin-right:4px;font-size:14px;}
-@keyframes dangerpulse{0%{box-shadow:0 0 22px rgba(255,40,40,0.5), 0 6px 14px rgba(0,0,0,0.5);transform:translateX(-50%) scale(1);}100%{box-shadow:0 0 50px rgba(255,40,40,1), 0 6px 14px rgba(0,0,0,0.5);transform:translateX(-50%) scale(1.04);}}
-
-/* Scan beam · sweeps top-to-bottom over the worker */
+@keyframes dangerpulse{0%{box-shadow:0 0 22px rgba(255,40,40,0.5), 0 6px 14px rgba(0,0,0,0.5);transform:translateX(-50%) scale(1);}100%{box-shadow:0 0 50px rgba(255,40,40,1), 0 6px 14px rgba(0,0,0,0.5);transform:translateX(-50%) scale(1.04);}} /* Scan beam · sweeps top-to-bottom over the worker */
 .scanline{position:absolute;left:54%;right:21%;height:3px;background:linear-gradient(90deg,transparent,rgba(242,101,34,0.95),transparent);box-shadow:0 0 16px rgba(242,101,34,0.9);animation:scan 2.4s ease-in-out infinite;z-index:3;}
-@keyframes scan{0%,100%{top:18%;}50%{top:78%;}}
-
-/* Footer · alert + audit log */
+@keyframes scan{0%,100%{top:18%;}50%{top:78%;}} /* Footer · alert + audit log */
 .ppeai-ft{display:flex;justify-content:space-between;align-items:center;padding:11px 18px;background:rgba(0,0,0,0.45);border-top:1px solid rgba(242,101,34,0.2);font-size:10px;color:rgba(255,255,255,0.78);letter-spacing:1.6px;text-transform:uppercase;}
 .ppeai-ft-l{display:flex;align-items:center;gap:8px;color:#FF8888;}
-.alert-d{width:6px;height:6px;border-radius:50%;background:#FF4040;box-shadow:0 0 8px #FF4040;animation:pulse 0.8s infinite;}
-
-.ppeai-badges{display:flex;gap:10px;margin-top:18px;justify-content:center;}
+.alert-d{width:6px;height:6px;border-radius:50%;background:#FF4040;box-shadow:0 0 8px #FF4040;animation:pulse 0.8s infinite;} .ppeai-badges{display:flex;gap:10px;margin-top:18px;justify-content:center;}
 .ppeai-badges .pb{font-size:9.5px;color:rgba(255,255,255,0.6);letter-spacing:1.4px;border:1px solid rgba(255,255,255,0.15);padding:5px 9px;border-radius:3px;font-family:var(--mono);text-transform:uppercase;}
 .ppeai-stats{display:grid;grid-template-columns:1fr;gap:18px;}
 .ppeai-stat{padding:18px 22px;background:rgba(255,255,255,0.04);border-left:2px solid var(--orange);border-radius:0 4px 4px 0;}
 .ppeai-stat-big{font-size:30px;font-weight:800;color:var(--orange);letter-spacing:-0.02em;line-height:1;}
-.ppeai-stat-l{font-size:11.5px;color:rgba(255,255,255,0.7);margin-top:6px;line-height:1.45;}
-
-/* Lifecycle */
+.ppeai-stat-l{font-size:11.5px;color:rgba(255,255,255,0.7);margin-top:6px;line-height:1.45;} /* Lifecycle */
 .life{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px;}
 @media(max-width:800px){.life{grid-template-columns:repeat(2,1fr);}}
 .ls{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:22px 20px;text-align:center;height:100%;transition:all 0.25s;}
@@ -505,44 +370,32 @@ img{max-width:100%;height:auto;display:block;}
 .ls.h{border-color:var(--orange);background:rgba(242,101,34,0.12);}
 .lsy{font-size:11px;font-weight:700;color:var(--orange);letter-spacing:1.6px;margin-bottom:10px;}
 .ls h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
-.ls p{font-size:12px;color:rgba(255,255,255,0.72);line-height:1.5;margin:0;}
-
-/* Differentiator */
+.ls p{font-size:12px;color:rgba(255,255,255,0.72);line-height:1.5;margin:0;} /* Differentiator */
 .diff{background:#fff;border:1px solid var(--hair);border-radius:10px;padding:32px;height:100%;transition:all 0.3s;}
 .diff:hover{transform:translateY(-3px);box-shadow:0 30px 70px -22px rgba(10,37,64,0.18);border-color:var(--orange);}
 .diff.pri{border-left:4px solid var(--orange);background:linear-gradient(135deg,#fff 0%,#FFFFFF 100%);}
 .d-tag{display:inline-block;font-family:var(--mono);font-size:9.5px;color:var(--orange);letter-spacing:1.8px;text-transform:uppercase;margin-bottom:14px;font-weight:700;}
 .diff h3{font-size:22px;font-weight:700;color:var(--deep);margin-bottom:12px;letter-spacing:-0.01em;}
-.diff p{font-size:15px;color:var(--slate);line-height:1.7;}
-
-/* India pills */
+.diff p{font-size:15px;color:var(--slate);line-height:1.7;} /* India pills */
 .std-p{display:inline-block;font-size:11px;font-weight:600;color:var(--mid);border:1px solid var(--hair);padding:8px 14px;border-radius:2px;background:#fff;letter-spacing:0.4px;margin:4px 6px 4px 0;transition:all 0.2s;}
-.std-p:hover{border-color:var(--orange);color:var(--orange);}
-
-/* Proof gallery */
+.std-p:hover{border-color:var(--orange);color:var(--orange);} /* Proof gallery */
 .pgc{position:relative;border-radius:6px;overflow:hidden;background:var(--deep);aspect-ratio:4/3;height:100%;}
 .pgc img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s;}
 .pgc:hover img{transform:scale(1.05);}
 .pgc-tag{position:absolute;top:14px;left:14px;background:rgba(242,101,34,0.95);color:#fff;font-size:10px;font-weight:700;padding:5px 10px;border-radius:2px;letter-spacing:1.4px;text-transform:uppercase;font-family:var(--mono);}
-.pgc-cap{position:absolute;bottom:0;left:0;right:0;padding:18px;background:linear-gradient(to top,rgba(2,8,18,0.94),transparent);color:#fff;font-size:12.5px;font-weight:500;}
-
-/* Guarantees */
+.pgc-cap{position:absolute;bottom:0;left:0;right:0;padding:18px;background:linear-gradient(to top,rgba(2,8,18,0.94),transparent);color:#fff;font-size:12.5px;font-weight:500;} /* Guarantees */
 .guar{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--orange);border-radius:4px;padding:28px;height:100%;transition:all 0.25s;}
 .guar:hover{transform:translateY(-2px);box-shadow:0 20px 50px -16px rgba(10,37,64,0.15);}
 .guar-n{font-family:var(--mono);font-size:11px;font-weight:800;color:var(--orange);letter-spacing:1.6px;margin-bottom:12px;}
 .guar h3{font-size:16px;font-weight:700;color:var(--deep);margin-bottom:10px;}
-.guar p{font-size:13.5px;color:var(--slate);line-height:1.65;}
-
-/* FAQ */
+.guar p{font-size:13.5px;color:var(--slate);line-height:1.65;} /* FAQ */
 .accordion-item{background:#fff;border:1px solid var(--hair);border-radius:6px!important;margin-bottom:12px;overflow:hidden;}
 .accordion-button{font-weight:600;color:var(--deep);font-size:15.5px;padding:22px 24px;background:#fff;box-shadow:none;}
 .accordion-button:not(.collapsed){color:var(--deep);background:#fff;box-shadow:none;}
 .accordion-button:focus{box-shadow:none;border-color:transparent;}
 .accordion-button::after{background-image:none;content:'+';font-size:24px;color:var(--orange);font-weight:300;width:24px;height:24px;display:flex;align-items:center;justify-content:center;transition:transform 0.2s;}
 .accordion-button:not(.collapsed)::after{transform:rotate(45deg);}
-.accordion-body{padding:0 24px 22px;color:var(--slate);line-height:1.7;font-size:14.5px;}
-
-/* CTA */
+.accordion-body{padding:0 24px 22px;color:var(--slate);line-height:1.7;font-size:14.5px;} /* CTA */
 .cta-s{padding:120px 0;background:linear-gradient(135deg,var(--deep) 0%,#0B2451 100%);color:#fff;position:relative;overflow:hidden;}
 .cta-s::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 25% 50%,rgba(242,101,34,0.14) 0%,transparent 55%);pointer-events:none;}
 .cta-n h2{font-size:clamp(30px,4vw,44px);font-weight:800;line-height:1.08;letter-spacing:-0.025em;margin-bottom:18px;color:#fff;}
@@ -553,9 +406,7 @@ img{max-width:100%;height:auto;display:block;}
 .cta-n li::before{content:'›';position:absolute;left:0;color:var(--orange);font-weight:700;}
 .cta-e{background:#fff;border-radius:8px;padding:34px 32px;box-shadow:0 32px 70px -22px rgba(0,0,0,0.5);color:var(--deep);}
 .cta-e h3{font-size:18px;font-weight:700;color:var(--deep);margin-bottom:8px;}
-.cta-h{font-size:12.5px;color:var(--slate);margin-bottom:20px;line-height:1.55;}
-
-/* Footer */
+.cta-h{font-size:12.5px;color:var(--slate);margin-bottom:20px;line-height:1.55;} /* Footer */
 .vbf{background:#0B2451;color:rgba(255,255,255,0.6);padding:64px 0 32px;}
 .vbf-b{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px;}
 .vbf-t{font-size:11px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:1.6px;margin-bottom:14px;}
@@ -565,25 +416,15 @@ img{max-width:100%;height:auto;display:block;}
 .vbf li{margin-bottom:9px;font-size:13px;}
 .vbf a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;}
 .vbf a:hover{color:var(--orange);}
-.vbf-bot{padding-top:24px;margin-top:32px;font-size:11.5px;color:rgba(255,255,255,0.4);text-align:center;border-top:1px solid rgba(255,255,255,0.08);}
-
-/* Reveal animation */
+.vbf-bot{padding-top:24px;margin-top:32px;font-size:11.5px;color:rgba(255,255,255,0.4);text-align:center;border-top:1px solid rgba(255,255,255,0.08);} /* Reveal animation */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease, transform 0.7s ease;}
-.reveal.show{opacity:1;transform:translateY(0);}
-
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}.reveal{opacity:1;transform:none;}}
-
-/* === v6 BRAND OVERRIDE · enforce locked VB palette + strip USA debris === */
-
-/* Strip USA-themed decorations entirely (Houston card visual chrome + US map stripe + traffic-light live dot) */
+.reveal.show{opacity:1;transform:translateY(0);} @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}.reveal{opacity:1;transform:none;}} /* === v6 BRAND OVERRIDE · enforce locked VB palette + strip USA debris === */* Strip USA-themed decorations entirely (Houston card visual chrome + US map stripe + traffic-light live dot) */
 .houston-flag-bar,
 .us-map-section-stripe::before,
 .us-map-section-stripe::after,
 .ih-live-tag,
 .ih-live-tags,
-.live-dot { display: none !important; }
-
-/* Force WHITE text on every dark-bg section (CEO rule · no dark text on dark bg) */
+.live-dot { display: none !important; } /* Force WHITE text on every dark-bg section (CEO rule · no dark text on dark bg) */
 [style*="background:var(--vb-blue-deep)"],
 [style*="background:var(--vb-blue-deep)"] *,
 [style*="background: var(--vb-blue-deep)"],
@@ -612,179 +453,38 @@ img{max-width:100%;height:auto;display:block;}
 .bg-dark, .bg-dark *,
 .section-dark, .section-dark *,
 .vbe-footer, .vbe-footer *,
-[data-bg="dark"], [data-bg="dark"] * { color: #FFFFFF !important; }
-
-/* Keep orange accent visible on dark bg */
+[data-bg="dark"], [data-bg="dark"] * { color: #FFFFFF !important; } /* Keep orange accent visible on dark bg */
 .cta-cinematic .ac, .cta-cinematic .accent, .cta-cinematic .grad-o,
 .number-wall .ac, .number-wall .accent, .number-wall .grad-o,
 .dark-section .ac, .dark-section .accent,
 .bg-dark .ac, .bg-dark .accent,
-[data-bg="dark"] .ac, [data-bg="dark"] .accent{ color: #F26522 !important; }
-
-/* Pill / chip / tag chrome on dark bg → translucent white */
+[data-bg="dark"] .ac, [data-bg="dark"] .accent{ color: #F26522 !important; } /* Pill / chip / tag chrome on dark bg → translucent white */
 .cta-cinematic .ih-vertical-pill, .number-wall .ih-vertical-pill,
 .cta-cinematic .ih-pain-tag, .number-wall .ih-pain-tag,
 .cta-cinematic .ih-def-term, .number-wall .ih-def-term,
 .cta-cinematic .client-pill, .number-wall .client-pill,
 .cta-cinematic .ic, .number-wall .ic,
 .dark-section .client-pill, .bg-dark .client-pill,
-.cta-cinematic .ih-byline-date, .number-wall .ih-byline-date{
-  background: rgba(255,255,255,0.12) !important;
-  color: #FFFFFF !important;
-  border-color: rgba(255,255,255,0.25) !important;
-}
-
-/* Secondary button on dark bg */
+.cta-cinematic .ih-byline-date, .number-wall .ih-byline-date{ background: rgba(255,255,255,0.12) !important; color: #FFFFFF !important; border-color: rgba(255,255,255,0.25) !important;
+} /* Secondary button on dark bg */
 .cta-cinematic .btn-secondary, .number-wall .btn-secondary,
-.dark-section .btn-secondary, .bg-dark .btn-secondary{
-  background: rgba(255,255,255,0.10) !important;
-  color: #FFFFFF !important;
-  border: 1px solid rgba(255,255,255,0.30) !important;
+.dark-section .btn-secondary, .bg-dark .btn-secondary{ background: rgba(255,255,255,0.10) !important; color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.30) !important;
 }
 .cta-cinematic .btn-secondary:hover, .number-wall .btn-secondary:hover,
-.dark-section .btn-secondary:hover, .bg-dark .btn-secondary:hover{
-  background: rgba(255,255,255,0.20) !important; color: #FFFFFF !important;
-}
-
-/* Footer · enforce white text + orange accent */
+.dark-section .btn-secondary:hover, .bg-dark .btn-secondary:hover{ background: rgba(255,255,255,0.20) !important; color: #FFFFFF !important;
+} /* Footer · enforce white text + orange accent */
 .vbe-footer{ background: #0B2451 !important; }
 .vbe-footer a{ color: rgba(255,255,255,0.85) !important; }
-.vbe-footer a:hover{ color: #F26522 !important; }
-
-</style>
+.vbe-footer a:hover{ color: #F26522 !important; } </style>
 <style id="vbe-canonical-shell">
-:root{
-  --vb-blue-deep:#0B2451;
-  --vb-blue:#143A78;
-  --vb-orange:#F26522;
-  --vb-orange-light:#F26522;
-  --slate:#4A5A7A;
-  --charcoal:#0B2451;
-  --hairline:#E5E7EB;
-}
-
-/* CANONICAL HEADER + FOOTER CSS · Edition 1.13.5 · injected site-wide */
-
-/* === HEADER (.vbe-nav) === */
-
-.vbe-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,252,254,0.85);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border-bottom:1px solid var(--hairline)}
-
-.vbe-nav-inner{max-width:1400px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
-
-.brand-mark{display:flex;align-items:center;gap:12px;text-decoration:none}
-
-.brand-mark img{width:40px;height:auto;display:block}
-
-.brand-wordmark{font-weight:800;font-size:17px;letter-spacing:-0.3px;color:var(--vb-blue-deep)}
-
-.brand-wordmark span{color:var(--vb-orange)}
-
-.brand-tagline{font-size:10px;letter-spacing:1.6px;color:var(--slate);text-transform:uppercase;margin-top:1px}
-
-.nav-menu{list-style:none;display:flex;gap:28px;align-items:center}
-
-.nav-menu a{color:var(--charcoal);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
-
-.nav-menu a:hover{color:var(--vb-orange)}
-
-.nav-cta{color:#FFFFFF !important;}
-
-.nav-cta{padding:10px 20px;background:var(--vb-orange);color:white !important;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:0.3px}
-
-.nav-cta:hover{background:var(--vb-orange-light);color:white !important;transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(242,101,34,0.5)}
-
-.primary,nav.primary a{color:#0B2451;}
-
-.primary .nav-items a{color:#0B2451;}
-
-.primary .nav-cta{color:#FFFFFF !important;}
-
-/* === FOOTER (.vbe-site-footer) === */
-
-.vbe-site-footer { background: linear-gradient(180deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; padding: 80px 24px 32px; font-family: 'Inter', sans-serif; margin-top: 0; }
-
-.vbe-site-footer-inner { max-width: 1280px; margin: 0 auto; }
-
-.vbe-site-footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 48px; margin-bottom: 56px; }
-
-.vbe-site-footer .brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
-
-.vbe-site-footer .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
-
-.vbe-site-footer .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
-
-.vbe-site-footer .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
-
-.vbe-site-footer .brand-col a { color: #F26522; text-decoration: none; }
-
-.vbe-site-footer .social { display: flex; gap: 12px; }
-
-.vbe-site-footer .social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-size: 16px; transition: background 0.3s; }
-
-.vbe-site-footer .social a:hover { background: #F26522; }
-
-.vbe-site-footer h5 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F26522; margin-bottom: 18px; }
-
-.vbe-site-footer ul { list-style: none; padding: 0; margin: 0; }
-
-.vbe-site-footer ul li { margin-bottom: 10px; }
-
-.vbe-site-footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-
-.vbe-site-footer ul li a:hover { color: #F26522; }
-
-.vbe-site-footer-base { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.10); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-
-.vbe-site-footer-base .copy { font-size: 12px; color: rgba(255,255,255,0.55); }
-
-.vbe-site-footer-base .badge { font-size: 11px; color: #F26522; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
-
-@media (max-width: 900px) { .vbe-site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
-
-@media (max-width: 600px) { .vbe-site-footer-grid { grid-template-columns: 1fr; gap: 28px; } }
-
-.brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
-
-.brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
-
-.brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
-
-.brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
-
-.brand-col a { color: #F26522; text-decoration: none; }
-
-.brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
-
-.brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+:root{ --vb-blue-deep:#0B2451; --vb-blue:#143A78; --vb-orange:#F26522; --vb-orange-light:#F26522; --slate:#4A5A7A; --charcoal:#0B2451; --hairline:#E5E7EB;
+} /* CANONICAL HEADER + FOOTER CSS · Edition 1.13.5 · injected site-wide */* === HEADER (.vbe-nav) === */ .vbe-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,252,254,0.85);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border-bottom:1px solid var(--hairline)} .vbe-nav-inner{max-width:1400px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px} .brand-mark{display:flex;align-items:center;gap:12px;text-decoration:none} .brand-mark img{width:40px;height:auto;display:block} .brand-wordmark{font-weight:800;font-size:17px;letter-spacing:-0.3px;color:var(--vb-blue-deep)} .brand-wordmark span{color:var(--vb-orange)} .brand-tagline{font-size:10px;letter-spacing:1.6px;color:var(--slate);text-transform:uppercase;margin-top:1px} .nav-menu{list-style:none;display:flex;gap:28px;align-items:center} .nav-menu a{color:var(--charcoal);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s} .nav-menu a:hover{color:var(--vb-orange)} .nav-cta{color:#FFFFFF !important;} .nav-cta{padding:10px 20px;background:var(--vb-orange);color:white !important;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:0.3px} .nav-cta:hover{background:var(--vb-orange-light);color:white !important;transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(242,101,34,0.5)} .primary,nav.primary a{color:#0B2451;} .primary .nav-items a{color:#0B2451;} .primary .nav-cta{color:#FFFFFF !important;} /* === FOOTER (.vbe-site-footer) === */ .vbe-site-footer { background: linear-gradient(180deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; padding: 80px 24px 32px; font-family: 'Inter', sans-serif; margin-top: 0; } .vbe-site-footer-inner { max-width: 1280px; margin: 0 auto; } .vbe-site-footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 48px; margin-bottom: 56px; } .vbe-site-footer .brand-col img { height: 40px; width: auto; margin-bottom: 16px; } .vbe-site-footer .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .vbe-site-footer .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; } .vbe-site-footer .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; } .vbe-site-footer .brand-col a { color: #F26522; text-decoration: none; } .vbe-site-footer .social { display: flex; gap: 12px; } .vbe-site-footer .social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-size: 16px; transition: background 0.3s; } .vbe-site-footer .social a:hover { background: #F26522; } .vbe-site-footer h5 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F26522; margin-bottom: 18px; } .vbe-site-footer ul { list-style: none; padding: 0; margin: 0; } .vbe-site-footer ul li { margin-bottom: 10px; } .vbe-site-footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; } .vbe-site-footer ul li a:hover { color: #F26522; } .vbe-site-footer-base { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.10); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; } .vbe-site-footer-base .copy { font-size: 12px; color: rgba(255,255,255,0.55); } .vbe-site-footer-base .badge { font-size: 11px; color: #F26522; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; font-family: 'JetBrains Mono', monospace; } @media (max-width: 900px) { .vbe-site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } } @media (max-width: 600px) { .vbe-site-footer-grid { grid-template-columns: 1fr; gap: 28px; } } .brand-col img { height: 40px; width: auto; margin-bottom: 16px; } .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; } .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; } .brand-col a { color: #F26522; text-decoration: none; } .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
 </style>
-<style>.vbe-breadcrumb{max-width:1400px;margin:96px auto 0;padding:0 32px;font-size:13px;color:var(--slate,#4A5A7A);display:flex;gap:8px;flex-wrap:wrap;align-items:center}.vbe-breadcrumb a{color:var(--slate,#4A5A7A);text-decoration:none}.vbe-breadcrumb a:hover{color:var(--vb-orange,#F26522)}.vbe-breadcrumb .sep{color:#E5E7EB}.vbe-breadcrumb .leaf{color:var(--vb-blue-deep,#0B2451);font-weight:700}</style>
-
-<style id="vbe-scope-modal-styles">
-  .scope-modal-overlay{position:fixed;inset:0;background:rgba(11,36,81,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;overflow-y:auto}
-  .scope-modal-overlay.open{display:flex}
-  .scope-modal{background:#FFFFFF;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);position:relative;padding:36px 40px}
-  .scope-modal-close{position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:28px;color:#4A5A7A;cursor:pointer;line-height:1;padding:8px;border-radius:8px;transition:background 0.2s}
-  .scope-modal-close:hover{background:#F8F8F8;color:#0B2451}
-  .scope-modal-header{margin-bottom:24px;padding-right:32px}
-  .scope-modal-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F26522;font-weight:700;margin-bottom:8px}
-  .scope-modal-title{font-size:24px;font-weight:800;color:#0B2451;line-height:1.2;margin-bottom:6px}
-  .scope-modal-sub{font-size:14px;color:#4A5A7A;line-height:1.5}
-  .scope-modal-body .form-loader{padding:32px;text-align:center;color:#4A5A7A;font-size:14px}
-  @media (max-width:600px){.scope-modal{padding:28px 20px}.scope-modal-title{font-size:20px}}
+<style>.vbe-breadcrumb{max-width:1400px;margin:96px auto 0;padding:0 32px;font-size:13px;color:var(--slate,#4A5A7A);display:flex;gap:8px;flex-wrap:wrap;align-items:center}.vbe-breadcrumb a{color:var(--slate,#4A5A7A);text-decoration:none}.vbe-breadcrumb a:hover{color:var(--vb-orange,#F26522)}.vbe-breadcrumb .sep{color:#E5E7EB}.vbe-breadcrumb .leaf{color:var(--vb-blue-deep,#0B2451);font-weight:700}</style> <style id="vbe-scope-modal-styles"> .scope-modal-overlay{position:fixed;inset:0;background:rgba(11,36,81,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;overflow-y:auto} .scope-modal-overlay.open{display:flex} .scope-modal{background:#FFFFFF;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);position:relative;padding:36px 40px} .scope-modal-close{position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:28px;color:#4A5A7A;cursor:pointer;line-height:1;padding:8px;border-radius:8px;transition:background 0.2s} .scope-modal-close:hover{background:#F8F8F8;color:#0B2451} .scope-modal-header{margin-bottom:24px;padding-right:32px} .scope-modal-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F26522;font-weight:700;margin-bottom:8px} .scope-modal-title{font-size:24px;font-weight:800;color:#0B2451;line-height:1.2;margin-bottom:6px} .scope-modal-sub{font-size:14px;color:#4A5A7A;line-height:1.5} .scope-modal-body .form-loader{padding:32px;text-align:center;color:#4A5A7A;font-size:14px} @media (max-width:600px){.scope-modal{padding:28px 20px}.scope-modal-title{font-size:20px}}
 </style></style>
 <style>
-/* === v2.1 · §6.4 canonical palette + WCAG AA contrast · flagship page === */
-/* CANONICAL BRAND PALETTE OVERRIDE · overrides Arc360's cinematic #F26522 with §6.4 canonical #F26522 */
-:root{
-  --cream:#FAFAFA;
-  --deep:#0B2451;
-  --mid:#143A78;
-  --orange:#F26522;               /* §6.4 CANONICAL brand orange · not Arc360's cinematic #F26522 */
-  --orange-glow:rgba(242,101,34,0.55);
-  --slate:#4A5A7A;                /* §6.4 slate · 7:1 contrast on white · passes AAA */
-  --hair:#E5E7EB;                 /* §6.4 hairline */
-  --hairline:#E5E7EB;
-  --mono:'JetBrains Mono',monospace;
+/* === v2.1 · §6.4 canonical palette + WCAG AA contrast · flagship page === */* CANONICAL BRAND PALETTE OVERRIDE · overrides Arc360's cinematic #F26522 with §6.4 canonical #F26522 */
+:root{ --cream:#FAFAFA; --deep:#0B2451; --mid:#143A78; --orange:#F26522; /* §6.4 CANONICAL brand orange · not Arc360's cinematic #F26522 */ --orange-glow:rgba(242,101,34,0.55); --slate:#4A5A7A; /* §6.4 slate · 7:1 contrast on white · passes AAA */ --hair:#E5E7EB; /* §6.4 hairline */ --hairline:#E5E7EB; --mono:'JetBrains Mono',monospace;
 }
 /* Force page-level palette compliance even against Arc360's earlier declaration */
 body{background:var(--cream);color:var(--deep)}
@@ -802,8 +502,7 @@ body{background:var(--cream);color:var(--deep)}
 .sb{font-size:16.5px;line-height:1.75;color:var(--slate);max-width:780px}
 /* EYEBROW · slate on light backgrounds (7:1 · AAA) · orange only on deep backgrounds where contrast holds */
 .eye{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:3.2px;color:var(--slate);text-transform:uppercase;margin-bottom:20px}
-.section.deep .eye{color:var(--orange)}                     /* orange on deep #0B2451 = 5.2:1 · AA passes */
-/* HERO PILLS · white text on deep glass · AAA */
+.section.deep .eye{color:var(--orange)} /* orange on deep #0B2451 = 5.2:1 · AA passes */* HERO PILLS · white text on deep glass · AAA */
 .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.20);border-radius:100px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.14em;color:#fff;text-transform:uppercase}
 /* NUMBER WALL · lives inside section.deep · white bg NEVER · large 44px orange numbers on deep = 5.2:1 pass */
 .num-wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;margin-top:56px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.12)}
@@ -876,7 +575,7 @@ body{background:var(--cream);color:var(--deep)}
 /* FORM BAND · dark H2 on cream section, dark body on white card */
 .form-band{padding:120px 0;background:var(--cream);border-bottom:1px solid var(--hair);color:var(--deep)}
 .form-band .form-wrap{max-width:820px;margin:56px auto 0;background:#fff;color:var(--deep);border:1px solid var(--hair);border-radius:8px;padding:44px;box-shadow:0 6px 24px rgba(11,36,81,0.05)}
-.form-band .form-wrap *{color:var(--deep)}                   /* defensive · Bitrix embed inherits dark text · prevents white-on-white */
+.form-band .form-wrap *{color:var(--deep)} /* defensive · Bitrix embed inherits dark text · prevents white-on-white */
 .form-band .form-wrap input,.form-band .form-wrap textarea,.form-band .form-wrap select{color:var(--deep) !important;background:#fff !important;border-color:var(--hair) !important}
 .form-band h2{text-align:center;color:var(--deep)}
 .form-band p.sb{text-align:center;margin-left:auto;margin-right:auto;color:var(--slate)}
@@ -900,9 +599,7 @@ body{background:var(--cream);color:var(--deep)}
 .hero-flag-content .hero-h1 .ac{color:var(--orange);text-shadow:0 0 60px rgba(242,101,34,0.45)}
 .hero-flag-content .hero-sub{color:rgba(255,255,255,0.90)}
 .hero-flag-content .hero-cta{background:var(--orange);color:#fff;box-shadow:0 8px 24px rgba(242,101,34,0.25)}
-.hero-flag-content .hero-cta:hover{box-shadow:0 18px 48px -12px var(--orange-glow)}
-
-/* SafeWatch hero · P&ID flow into hazard hexagons */
+.hero-flag-content .hero-cta:hover{box-shadow:0 18px 48px -12px var(--orange-glow)} /* SafeWatch hero · P&ID flow into hazard hexagons */
 .sw-pid{position:absolute;inset:0;z-index:2;opacity:0.45;pointer-events:none}
 .sw-pid svg{width:100%;height:100%;display:block}
 .sw-hex{fill:none;stroke:#F26522;stroke-width:2;filter:drop-shadow(0 0 24px rgba(242,101,34,0.55));animation:swpulse 2.6s ease-in-out infinite alternate}
@@ -912,52 +609,20 @@ body{background:var(--cream);color:var(--deep)}
 .sw-node{fill:#F26522;filter:drop-shadow(0 0 12px rgba(242,101,34,0.7))}
 .sw-flow{stroke-dasharray:6 8;animation:swflow 3s linear infinite}
 @keyframes swpulse{0%{opacity:0.55;transform:scale(1)}100%{opacity:1;transform:scale(1.04)}}
-@keyframes swflow{to{stroke-dashoffset:-140}}
-
-</style>
+@keyframes swflow{to{stroke-dashoffset:-140}} </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Product","name":"VB SafeWatch","brand":{"@type":"Brand","name":"VB Engineering"},"description":"VB SafeWatch productizes process safety · from P&ID walkdown to HAZOP + LOPA + SIL determination + 5-year IEC 61511 revalidation retainer. CEng MIE signed. Brownfield plants only.","url":"https://www.vbengg.com/flagship-solutions/vb-safewatch/"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Home","item":"https://www.vbengg.com/"},
-  {"@type":"ListItem","position":2,"name":"Flagship Solutions","item":"https://www.vbengg.com/flagship-solutions/"},
-  {"@type":"ListItem","position":3,"name":"VB SafeWatch","item":"https://www.vbengg.com/flagship-solutions/vb-safewatch/"}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[ {"@type":"ListItem","position":1,"name":"Home","item":"https://www.vbengg.com/"}, {"@type":"ListItem","position":2,"name":"Flagship Solutions","item":"https://www.vbengg.com/flagship-solutions/"}, {"@type":"ListItem","position":3,"name":"VB SafeWatch","item":"https://www.vbengg.com/flagship-solutions/vb-safewatch/"}
 ]}
 </script>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0B2451">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "VB Engineering",
-  "legalName": "Vijaya Bhanu Engineering India Pvt. Ltd.",
-  "url": "https://www.vbengg.com/",
-  "logo": "https://www.vbengg.com/assets/vb-logo.png",
-  "foundingDate": "2014",
-  "founder": {
-    "@type": "Person",
-    "name": "Peri Sastry Peri"
-  },
-  "description": "Brownfield digital engineering practice. 1,000+ power system studies, 50,000+ LiDAR scans, 21 countries. NFPA 70E + IEEE 1584 + IEC compliant. Delivered by in-house Chartered Engineers.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Hyderabad",
-    "addressRegion": "Telangana",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/5402803/",
-    "https://www.facebook.com/vbengineeringindia",
-    "https://www.instagram.com/vbengineering",
-    "https://x.com/VBengineering",
-    "https://www.youtube.com/channel/UCiOyDMTcIsGKkFucNRmd_fw"
-  ]
+{ "@context": "https://schema.org", "@type": "Organization", "name": "VB Engineering", "legalName": "Vijaya Bhanu Engineering India Pvt. Ltd.", "url": "https://www.vbengg.com/", "logo": "https://www.vbengg.com/assets/vb-logo.png", "foundingDate": "2014", "founder": { "@type": "Person", "name": "Peri Sastry Peri" }, "description": "Brownfield digital engineering practice. 1,000+ power system studies, 50,000+ LiDAR scans, 21 countries. NFPA 70E + IEEE 1584 + IEC compliant. Delivered by in-house Chartered Engineers.", "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" }, "sameAs": [ "https://www.linkedin.com/company/5402803/", "https://www.facebook.com/vbengineeringindia", "https://www.instagram.com/vbengineering", "https://x.com/VBengineering", "https://www.youtube.com/channel/UCiOyDMTcIsGKkFucNRmd_fw" ]
 }
-</script>
-
-<style id="vbe-linkedin-pill-css">
+</script> <style id="vbe-linkedin-pill-css">
 .vbe-linkedin-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;margin-left:6px;border:1px solid #E5E7EB;border-radius:20px;background:#FFFFFF;color:#0B2451;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;text-decoration:none;line-height:1;transition:border-color .15s,color .15s,background .15s;vertical-align:middle}
 .vbe-linkedin-pill:hover{border-color:#F26522;color:#F26522;background:#FAFAFA}
 .vbe-li-glyph{width:14px;height:14px;flex-shrink:0;fill:#0A66C2}
@@ -973,284 +638,32 @@ body{background:var(--cream);color:var(--deep)}
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDRGZJV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!--#include virtual="/partials/header.html" --><nav class="vbe-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/flagship-solutions/">Flagship Solutions</a><span class="sep">›</span><strong>VB SafeWatch</strong></nav><header class="hero-flag">
-  <div class="hero-vig"></div>
-  
-<div class="sw-pid">
-<svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-  <!-- Piping schematic backdrop -->
-  <path class="sw-line sw-flow" d="M40 380 L 280 380 L 320 340 L 480 340 L 520 380 L 780 380"/>
-  <path class="sw-line sw-flow" d="M780 380 L 820 340 L 980 340 L 1020 380 L 1160 380" style="animation-delay:0.3s"/>
-  <path class="sw-line sw-flow" d="M480 340 L 480 200 L 720 200 L 720 340" style="animation-delay:0.6s"/>
-  <path class="sw-line sw-flow" d="M320 380 L 320 540 L 620 540 L 620 380" style="animation-delay:0.9s"/>
-  <!-- Vessels (circles) -->
-  <circle cx="180" cy="380" r="34" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5"/>
-  <circle cx="620" cy="380" r="34" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5"/>
-  <circle cx="1100" cy="380" r="34" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5"/>
-  <!-- Valves (rotated squares) -->
-  <rect x="440" y="326" width="28" height="28" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5" transform="rotate(45 454 340)"/>
-  <rect x="768" y="326" width="28" height="28" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5" transform="rotate(45 782 340)"/>
-  <!-- Instrument bubbles -->
-  <circle cx="180" cy="290" r="22" fill="none" stroke="rgba(180,200,230,0.4)" stroke-width="1"/>
-  <text x="180" y="295" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="rgba(180,200,230,0.65)">PT-101</text>
-  <circle cx="620" cy="290" r="22" fill="none" stroke="rgba(180,200,230,0.4)" stroke-width="1"/>
-  <text x="620" y="295" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="rgba(180,200,230,0.65)">FT-202</text>
-  <!-- HAZOP hexagon nodes -->
-  <polygon class="sw-hex" points="440,540 490,510 540,540 540,600 490,630 440,600"/>
-  <text x="490" y="575" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#F26522" font-weight="700">NODE 04</text>
-  <polygon class="sw-hex h2" points="720,140 770,110 820,140 820,200 770,230 720,200"/>
-  <text x="770" y="175" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#F26522" font-weight="700">NODE 11</text>
-  <polygon class="sw-hex h3" points="960,540 1010,510 1060,540 1060,600 1010,630 960,600"/>
-  <text x="1010" y="575" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#F26522" font-weight="700">NODE 18</text>
-  <!-- Emit points at HAZOP nodes -->
-  <circle class="sw-node" cx="490" cy="570" r="4"/>
-  <circle class="sw-node" cx="770" cy="170" r="4"/>
-  <circle class="sw-node" cx="1010" cy="570" r="4"/>
+<!--#include virtual="/partials/header.html" --><nav class="vbe-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/flagship-solutions/">Flagship Solutions</a><span class="sep">›</span><strong>VB SafeWatch</strong></nav><header class="hero-flag"> <div class="hero-vig"></div> <div class="sw-pid">
+<svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice"> <!-- Piping schematic backdrop --> <path class="sw-line sw-flow" d="M40 380 L 280 380 L 320 340 L 480 340 L 520 380 L 780 380"/> <path class="sw-line sw-flow" d="M780 380 L 820 340 L 980 340 L 1020 380 L 1160 380" style="animation-delay:0.3s"/> <path class="sw-line sw-flow" d="M480 340 L 480 200 L 720 200 L 720 340" style="animation-delay:0.6s"/> <path class="sw-line sw-flow" d="M320 380 L 320 540 L 620 540 L 620 380" style="animation-delay:0.9s"/> <!-- Vessels (circles) --> <circle cx="180" cy="380" r="34" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5"/> <circle cx="620" cy="380" r="34" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5"/> <circle cx="1100" cy="380" r="34" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5"/> <!-- Valves (rotated squares) --> <rect x="440" y="326" width="28" height="28" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5" transform="rotate(45 454 340)"/> <rect x="768" y="326" width="28" height="28" fill="none" stroke="rgba(180,200,230,0.6)" stroke-width="1.5" transform="rotate(45 782 340)"/> <!-- Instrument bubbles --> <circle cx="180" cy="290" r="22" fill="none" stroke="rgba(180,200,230,0.4)" stroke-width="1"/> <text x="180" y="295" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="rgba(180,200,230,0.65)">PT-101</text> <circle cx="620" cy="290" r="22" fill="none" stroke="rgba(180,200,230,0.4)" stroke-width="1"/> <text x="620" y="295" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="rgba(180,200,230,0.65)">FT-202</text> <!-- HAZOP hexagon nodes --> <polygon class="sw-hex" points="440,540 490,510 540,540 540,600 490,630 440,600"/> <text x="490" y="575" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#F26522" font-weight="700">NODE 04</text> <polygon class="sw-hex h2" points="720,140 770,110 820,140 820,200 770,230 720,200"/> <text x="770" y="175" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#F26522" font-weight="700">NODE 11</text> <polygon class="sw-hex h3" points="960,540 1010,510 1060,540 1060,600 1010,630 960,600"/> <text x="1010" y="575" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#F26522" font-weight="700">NODE 18</text> <!-- Emit points at HAZOP nodes --> <circle class="sw-node" cx="490" cy="570" r="4"/> <circle class="sw-node" cx="770" cy="170" r="4"/> <circle class="sw-node" cx="1010" cy="570" r="4"/>
 </svg>
-</div>
-
-  <div class="hero-flag-content">
-    <div class="wrap">
-      <div class="hero-eye" style="animation:fu 1s 0.4s forwards">Flagship Solution · Process Safety</div>
-      <h1 class="hero-h1" style="animation:fu 1.1s 0.65s forwards">From P&ID to HAZOP.<br><span class="ac">From HAZOP to closed loops.</span></h1>
-      <p class="hero-sub" style="animation:fu 1.1s 0.9s forwards">VB SafeWatch is the productized process safety flagship. Bring us your P&IDs. We deliver HAZOP + LOPA + SIL determination + a 5-year IEC 61511 revalidation retainer that keeps the loops honest as the plant changes.</p>
-      <div class="hero-pills" style="animation:fu 1.1s 1.15s forwards">
-        <span class="pill">IEC 61511 lifecycle</span><span class="pill">HAZOP + LOPA + SIL</span><span class="pill">5-year revalidation</span><span class="pill">CEng MIE signed</span>
-      </div>
-      <div class="hero-ctas" style="animation:fu 1.1s 1.4s forwards;display:flex;gap:16px;flex-wrap:wrap">
-        <a href="?product=vb-safewatch&service=vb-safewatch&source=flagship-vb-safewatch-hero" class="hero-cta nav-cta" data-scope-cta="1">Scope Your Plant <span aria-hidden="true">→</span></a>
-        <a href="#program" class="hero-cta-g">See the 5-stage program</a>
-      </div>
-    </div>
-  </div>
-</header><section class="section white reveal" id="hazard">
-  <div class="wrap-narrow">
-    <div class="eye">The problem</div>
-    <h2 class="sh2">A HAZOP alone <span class="ac">is not process safety.</span></h2>
-    <p class="sb" style="font-size:19px;line-height:1.7;margin-bottom:24px;color:var(--deep);font-weight:500">A HAZOP study is a moment in time. IEC 61511 says the safety lifecycle is continuous.</p>
-    <p class="sb">A plant that closed its HAZOP three years ago and added a compressor, a new feed line, and two SIL 2 loops without reopening the register is running unmanaged risk. That is the gap VB SafeWatch closes. HAZOP + LOPA + SIL are treated as one integrated lifecycle · every recommendation tracked to closure · every management-of-change event triggers revalidation · every safety instrumented function is proof-tested, evidenced, re-verified. When the auditor asks for the register on Monday morning, it opens in seconds.</p>
-  </div>
-</section><section class="section deep reveal">
-  <div class="wrap">
-    <div class="eye">Practice signal</div>
-    <h2 class="sh2">What the process safety practice <span class="ac">has closed.</span></h2>
-    <p class="sb" style="color:rgba(255,255,255,0.82);max-width:820px">Twelve years of brownfield HAZOP · LOPA · SIL work across refineries, petrochem, LNG, pharma, and specialty chemicals plants.</p>
-    <div class="num-wall"><div class="num"><div class="v">800+</div><div class="l">HAZOP nodes closed</div></div><div class="num"><div class="v">220+</div><div class="l">LOPA scenarios credited</div></div><div class="num"><div class="v">420+</div><div class="l">SIL loops verified</div></div><div class="num"><div class="v">85+</div><div class="l">plants under revalidation</div></div></div>
-  </div>
-</section><section class="section cream reveal" id="program">
-  <div class="wrap">
-    <div class="eye">The program</div>
-    <h2 class="sh2">Five stages · <span class="ac">one signature.</span></h2>
-    <p class="sb">Every deliverable stands up to the toughest process safety audit. The retainer at Stage 05 is where recurring revenue meets IEC 61511 discipline.</p>
-    <div class="stages-row"><div class="st"><div class="n">STAGE 01</div><h4>SCOPE</h4><p>P&ID walkdown · boundary definition · node discretization</p></div><div class="st"><div class="n">STAGE 02</div><h4>HAZOP</h4><p>Deviation analysis · cause-consequence · safeguards catalog</p></div><div class="st"><div class="n">STAGE 03</div><h4>LOPA</h4><p>Initiating event frequency · IPL credit · mitigated frequency</p></div><div class="st"><div class="n">STAGE 04</div><h4>SIL</h4><p>SIL determination · verification · loop design</p></div><div class="st"><div class="n">STAGE 05</div><h4>REVALIDATE</h4><p>5-year IEC 61511 revalidation + management of change retainer</p></div></div>
-  </div>
-</section><section class="stage-detail reveal" id="stage-scope">
-  <div class="wrap">
-    <div class="row">
-      <div class="col-l">
-        <div class="eye">Stage 01 · SCOPE</div>
-        <h3>The P&IDs decide the scope. <span class="ac">We walk down every one.</span></h3>
-        <p>Boundary drawings are marked up on-site. Every process node is discretized against the P&ID revision that matches physical reality. Old drawings do not survive walkdown · they get redlined and re-issued before HAZOP starts.</p>
-        <p>Deviations from the drawing set are logged in the register with photographs, tie-in coordinates, and a proposed as-built resolution. The HAZOP that follows is discussing the plant that exists · not the plant the drawings remember.</p>
-      </div>
-      <div class="col-r">
-        <h5>What ships in this stage</h5>
-        <ul><li>Node boundary drawings · marked-up A0 P&IDs · redline set</li><li>Node discretization worksheet · guide words framed per node</li><li>Walkdown deviation log · photographs + tie-in coordinates</li><li>Pre-HAZOP briefing pack for the study team</li><li>CEng MIE walkdown sign-off certificate</li></ul>
-      </div>
-    </div>
-  </div>
-</section><section class="stage-detail cream reveal" id="stage-hazop">
-  <div class="wrap">
-    <div class="row">
-      <div class="col-l">
-        <div class="eye">Stage 02 · HAZOP</div>
-        <h3>A HAZOP that <span class="ac">actually closes.</span></h3>
-        <p>Guide-word driven study, IEC 61882 compliant. Every deviation gets a documented cause, consequence, existing safeguard, and recommendation. We do not close a node until every consequence has either a credited safeguard or an open recommendation with an owner and a date.</p>
-        <p>Facilitator, scribe, and process safety engineer are all CEng MIE. The client team stays in the room for the whole study · this is not a black box handed back six weeks later.</p>
-      </div>
-      <div class="col-r">
-        <h5>What ships in this stage</h5>
-        <ul><li>HAZOP worksheet · one row per deviation · fully populated</li><li>Cause-consequence-safeguard-recommendation matrix</li><li>Recommendation register with owner and due date</li><li>Node closure certificates · CEng MIE signed</li><li>Study report bound to IEC 61882 · audit-ready</li></ul>
-      </div>
-    </div>
-  </div>
-</section><section class="stage-detail reveal" id="stage-lopa">
-  <div class="wrap">
-    <div class="row">
-      <div class="col-l">
-        <div class="eye">Stage 03 · LOPA</div>
-        <h3>LOPA sizes the residual risk <span class="ac">after safeguards.</span></h3>
-        <p>Layer of Protection Analysis quantifies whether existing safeguards actually get the frequency of a consequence down to the tolerable risk criterion. Initiating event frequency, conditional modifiers, and IPL credit are documented against CCPS guidance.</p>
-        <p>The result is a mitigated frequency for every scenario · which then determines whether an existing SIF is credited correctly, whether a new SIF is required, and what target SIL that SIF needs to achieve. LOPA is the bridge from HAZOP to SIL.</p>
-      </div>
-      <div class="col-r">
-        <h5>What ships in this stage</h5>
-        <ul><li>LOPA workbook · one scenario per credited consequence</li><li>IPL credit register · fault tree if credit exceeds 10^-2</li><li>Mitigated frequency vs tolerable risk criterion table</li><li>New SIF requirement list · target SIL identified</li><li>CCPS-aligned methodology statement</li></ul>
-      </div>
-    </div>
-  </div>
-</section><section class="stage-detail cream reveal" id="stage-sil">
-  <div class="wrap">
-    <div class="row">
-      <div class="col-l">
-        <div class="eye">Stage 04 · SIL</div>
-        <h3>SIL is verified, <span class="ac">not assumed.</span></h3>
-        <p>SIL determination uses the LOPA output · calibrated risk graph or matrix as fallback where the client register demands it. SIL verification is a PFDavg calculation against IEC 61508 Part 6 formulae, using vendor-published or industry-recognised failure rates. We do not accept a marketing SIL claim without the certificate.</p>
-        <p>For loops that miss target SIL, we re-design · redundant sensors, voting logic, diagnostic coverage · until PFDavg lands inside the target band. Every SIF gets a proof-test procedure and a proof-test interval consistent with the assumed PFDavg.</p>
-      </div>
-      <div class="col-r">
-        <h5>What ships in this stage</h5>
-        <ul><li>SIL determination report per SIF</li><li>PFDavg calculation workbook · IEC 61508-6 aligned</li><li>SIF architecture recommendation · 1oo1 · 1oo2 · 2oo3</li><li>Proof-test procedures · one per SIF · field-executable</li><li>SIS design specification · handoff to controls engineer</li></ul>
-      </div>
-    </div>
-  </div>
-</section><section class="stage-detail reveal" id="stage-revalidate">
-  <div class="wrap">
-    <div class="row">
-      <div class="col-l">
-        <div class="eye">Stage 05 · REVALIDATE</div>
-        <h3>The retainer that <span class="ac">keeps the register alive.</span></h3>
-        <p>The 5-year revalidation cycle is mandated by IEC 61511. But most plants only realise it 18 months before the audit. VB SafeWatch runs on an annual cadence · so on Year 5 the revalidation is a signature, not a rebuild.</p>
-        <p>Every management-of-change event is triaged against the recommendation register. Every new tie-in triggers a mini-HAZOP. Every SIF proof-test is logged and reviewed against its PFDavg. When the DDG-QA auditor walks in, the file is closed.</p>
-      </div>
-      <div class="col-r">
-        <h5>What ships in this stage</h5>
-        <ul><li>Annual HAZOP register review · closure evidence collected</li><li>MoC-triggered mini-HAZOPs · one per material change</li><li>SIF proof-test log · gap analysis · re-verification if needed</li><li>Year 5 IEC 61511 revalidation report · CEng MIE signed</li><li>Auditor-ready binder + digital register</li></ul>
-      </div>
-    </div>
-  </div>
-</section><section class="section deep reveal">
-  <div class="wrap">
-    <div class="eye">The codes</div>
-    <h2 class="sh2">The <span class="ac">standards</span> we sign against.</h2>
-    <p class="sb">Every deliverable is written to withstand an audit by any regulator on this list. The signature at the bottom stands behind the code above.</p>
-    <div class="std-grid"><div class="std"><div class="c">IEC 61511</div><div class="d">Safety instrumented systems for process industry</div></div><div class="std"><div class="c">IEC 61508</div><div class="d">Functional safety of electrical safety-related systems</div></div><div class="std"><div class="c">IEC 61882</div><div class="d">HAZOP study application guide</div></div><div class="std"><div class="c">CCPS</div><div class="d">Center for Chemical Process Safety guidelines</div></div><div class="std"><div class="c">OISD 116</div><div class="d">Fire protection facilities · Indian oil and gas</div></div><div class="std"><div class="c">API RP 754</div><div class="d">Process safety performance indicators</div></div><div class="std"><div class="c">OSHA 1910.119</div><div class="d">Process Safety Management · USA</div></div><div class="std"><div class="c">Seveso III</div><div class="d">Major accident hazards · EU directive</div></div></div>
-  </div>
-</section><section class="section white reveal" id="differentiator">
-  <div class="wrap">
-    <div class="eye">Why VB</div>
-    <h2 class="sh2">What makes VB SafeWatch <span class="ac">a flagship.</span></h2>
-    <p class="sb">Four things make VB SafeWatch different from a one-off HAZOP consultant. Every one is a productization decision that compounds over the retainer.</p>
-    <div class="diff-row"><div class="d"><div class="n">DIFF 01</div><h4>Two-signature discipline</h4><p>Practice Lead + Principal Reviewer both sign every deliverable. Two CEng MIEs looking at the same page · no drawing leaves with one signature.</p></div><div class="d"><div class="n">DIFF 02</div><h4>Register that opens on Monday</h4><p>The recommendation register lives in your CMMS or SharePoint · not our hard drive. Any auditor, any reviewer, any inspector opens the current state in seconds.</p></div><div class="d"><div class="n">DIFF 03</div><h4>MoC that triggers itself</h4><p>Every management-of-change event is routed through the register automatically. No forgotten HAZOP · no orphan SIF · no drift between drawing and plant.</p></div><div class="d"><div class="n">DIFF 04</div><h4>Year 5 is a signature</h4><p>Because the annual cadence holds, Year 5 revalidation is evidence review · not a rebuild. Compresses 18-month audit prep to 2 weeks.</p></div></div>
-  </div>
-</section><section class="section deep reveal" id="retainer">
-  <div class="wrap">
-    <div class="eye">Recurring economics</div>
-    <h2 class="sh2">Year 1 delivers. <span class="ac">Years 2-5 earn.</span></h2>
-    <p class="sb">Year 1 is the study. Years 2 to 5 are where the flagship earns its name. Where a plant carries a live continuous safety twin, the HAZOP register and SIF proof-test log push into <a href="https://wistwin.in/platform/aviratwin.html" target="_blank" rel="noopener noreferrer" style="color:inherit;border-bottom:1px dotted currentColor;text-decoration:none">Wistwin AviraTwin</a> for real-time gas + safety monitoring.</p>
-    <div class="retainer-row"><div class="yr"><div class="y">YEAR 01</div><h4>Baseline study + full close-out</h4><p>HAZOP + LOPA + SIL determination + verification + SIS specification. Recommendation register handed to owner-operator. Baseline PFDavg documented.</p></div><div class="yr"><div class="y">YEAR 02</div><h4>MoC review + first proof-test cycle</h4><p>Every management of change routed through the register. First round of SIF proof-tests witnessed. Any gap triggers re-verification.</p></div><div class="yr"><div class="y">YEAR 03</div><h4>Mid-cycle SIL re-verification</h4><p>PFDavg re-run against real proof-test data. SIF architecture adjusted if diagnostic coverage or demand rate has drifted from baseline assumption.</p></div><div class="yr"><div class="y">YEAR 04</div><h4>Full register audit + closure sweep</h4><p>Open recommendations pushed to closure. Documentation gaps closed. Year 5 revalidation pack pre-staged.</p></div><div class="yr"><div class="y">YEAR 05</div><h4>IEC 61511 revalidation · CEng MIE signature</h4><p>Formal 5-year revalidation report. If the annual cadence held, this is a signature on evidence · not a rebuild. Auditor-ready.</p></div></div>
-  </div>
-</section><section class="section cream reveal" id="proof">
-  <div class="wrap">
-    <div class="eye">Proof</div>
-    <h2 class="sh2">Three brownfield engagements · <span class="ac">what shipped.</span></h2>
-    <p class="sb">Three brownfield process safety engagements delivered under the VB SafeWatch discipline. Names withheld · descriptive framing preserves technical integrity.</p>
-    <div class="cases"><div class="c"><span class="tag">CASE 01 · REFINING</span><h4>Landmark East Coast refinery · HAZOP + LOPA + SIL on the CDU-VDU + FCC + hydrocracker package.</h4><p>800 HAZOP nodes across three units. 62 LOPA scenarios credited. 34 new SIF requirements identified · 22 confirmed as SIL 1 · 12 as SIL 2. Proof-test cadence set at 12 months for SIL 1 and 6 months for SIL 2. Retainer live since Year 1.</p><div class="out">Closed baseline in 14 weeks · retainer entering Year 3</div></div><div class="c"><span class="tag">CASE 02 · PETROCHEM</span><h4>Landmark specialty petrochemicals complex · pre-commissioning SIS verification on ethylene oxide loops.</h4><p>Client SIL claims did not close. VB SafeWatch redid the PFDavg workbook from first principles · discovered 4 SIL 2 loops were running at SIL 1 architecture due to sensor diversity gap. Re-designed to 1oo2D with certified transmitters. Pre-commissioning delayed by 3 weeks · post-commissioning demand rate confirmed target SIL.</p><div class="out">4 loops rebuilt · commissioning risk retired before startup</div></div><div class="c"><span class="tag">CASE 03 · PHARMA API</span><h4>Landmark GMP API manufacturing facility · HAZOP revalidation on Year 5 as auditor walked in.</h4><p>Client had missed the Year 3 mid-cycle review. VB SafeWatch executed a 90-day compressed revalidation · full register sweep, 6 MoCs retrospectively HAZOPped, all 18 SIF proof-tests witnessed, PFDavg re-run. Auditor accepted evidence. Zero deficiencies raised.</p><div class="out">Audit passed clean · plant onto annual cadence from Year 6</div></div></div>
-  </div>
-</section><section class="section white reveal" style="padding:64px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);overflow:hidden">
-  <div class="wrap" style="max-width:1240px;margin:0 auto;padding:0 32px">
-    <div style="text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:3.2px;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:28px">Verified brownfield clients · process safety engagements</div>
-    <div style="overflow:hidden"><div class="mq-scroll" style="display:flex;gap:44px;width:max-content;animation:mqscroll 60s linear infinite"><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/rolls-royce.png" alt="Rolls-Royce" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngenta.png" alt="Syngenta" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/coca-cola.png" alt="Coca-Cola" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jindal-steel.png" alt="Jindal Steel" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/grace.png" alt="Grace" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/rolls-royce.png" alt="Rolls-Royce" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngenta.png" alt="Syngenta" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/coca-cola.png" alt="Coca-Cola" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jindal-steel.png" alt="Jindal Steel" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/grace.png" alt="Grace" loading="lazy"></div></div></div>
-  </div>
-</section><section class="section form-band reveal" id="scope">
-  <div class="wrap-narrow">
-    <div class="eye" style="text-align:center">Start a conversation</div>
-    <h2 class="sh2" style="text-align:center">Scope your <span class="ac">VB SafeWatch</span> engagement.</h2>
-    <p class="sb">A 5-minute form. Practice Lead PSS routes to the process safety desk within 2 business hours. Every response signed by CEng MIE.</p>
-    <div class="form-wrap">
-      <script data-b24-form="inline/282/2m1y7u" data-skip-moving="true">
-      (function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_282/2m1y7u.js');
-      </script>
-    </div>
-  </div>
-</section><section class="cta-band reveal">
-  <div class="cta-band-inner">
-    <div class="eye">The 5-year commitment</div>
-    <h2>The 5-year risk register<br><span class="ac">you always wished you had.</span></h2>
-    <p>Bring us your P&IDs and your open recommendation register. We will show you what closure looks like.</p>
-    <a href="?product=vb-safewatch&service=vb-safewatch&source=flagship-vb-safewatch-cta" class="cta-btn-big nav-cta" data-scope-cta="1">Scope Your Plant <span aria-hidden="true">→</span></a>
-  </div>
+</div> <div class="hero-flag-content"> <div class="wrap"> <div class="hero-eye" style="animation:fu 1s 0.4s forwards">Flagship Solution · Process Safety</div> <h1 class="hero-h1" style="animation:fu 1.1s 0.65s forwards">From P&ID to HAZOP.<br><span class="ac">From HAZOP to closed loops.</span></h1> <p class="hero-sub" style="animation:fu 1.1s 0.9s forwards">VB SafeWatch is the productized process safety flagship. Bring us your P&IDs. We deliver HAZOP + LOPA + SIL determination + a 5-year IEC 61511 revalidation retainer that keeps the loops honest as the plant changes.</p> <div class="hero-pills" style="animation:fu 1.1s 1.15s forwards"> <span class="pill">IEC 61511 lifecycle</span><span class="pill">HAZOP + LOPA + SIL</span><span class="pill">5-year revalidation</span><span class="pill">CEng MIE signed</span> </div> <div class="hero-ctas" style="animation:fu 1.1s 1.4s forwards;display:flex;gap:16px;flex-wrap:wrap"> <a href="?product=vb-safewatch&service=vb-safewatch&source=flagship-vb-safewatch-hero" class="hero-cta nav-cta" data-scope-cta="1">Scope Your Plant <span aria-hidden="true">→</span></a> <a href="#program" class="hero-cta-g">See the 5-stage program</a> </div> </div> </div>
+</header><section class="section white reveal" id="hazard"> <div class="wrap-narrow"> <div class="eye">The problem</div> <h2 class="sh2">A HAZOP alone <span class="ac">is not process safety.</span></h2> <p class="sb" style="font-size:19px;line-height:1.7;margin-bottom:24px;color:var(--deep);font-weight:500">A HAZOP study is a moment in time. IEC 61511 says the safety lifecycle is continuous.</p> <p class="sb">A plant that closed its HAZOP three years ago and added a compressor, a new feed line, and two SIL 2 loops without reopening the register is running unmanaged risk. That is the gap VB SafeWatch closes. HAZOP + LOPA + SIL are treated as one integrated lifecycle · every recommendation tracked to closure · every management-of-change event triggers revalidation · every safety instrumented function is proof-tested, evidenced, re-verified. When the auditor asks for the register on Monday morning, it opens in seconds.</p> </div>
+</section><section class="section deep reveal"> <div class="wrap"> <div class="eye">Practice signal</div> <h2 class="sh2">What the process safety practice <span class="ac">has closed.</span></h2> <p class="sb" style="color:rgba(255,255,255,0.82);max-width:820px">Twelve years of brownfield HAZOP · LOPA · SIL work across refineries, petrochem, LNG, pharma, and specialty chemicals plants.</p> <div class="num-wall"><div class="num"><div class="v">800+</div><div class="l">HAZOP nodes closed</div></div><div class="num"><div class="v">220+</div><div class="l">LOPA scenarios credited</div></div><div class="num"><div class="v">420+</div><div class="l">SIL loops verified</div></div><div class="num"><div class="v">85+</div><div class="l">plants under revalidation</div></div></div> </div>
+</section><section class="section cream reveal" id="program"> <div class="wrap"> <div class="eye">The program</div> <h2 class="sh2">Five stages · <span class="ac">one signature.</span></h2> <p class="sb">Every deliverable stands up to the toughest process safety audit. The retainer at Stage 05 is where recurring revenue meets IEC 61511 discipline.</p> <div class="stages-row"><div class="st"><div class="n">STAGE 01</div><h4>SCOPE</h4><p>P&ID walkdown · boundary definition · node discretization</p></div><div class="st"><div class="n">STAGE 02</div><h4>HAZOP</h4><p>Deviation analysis · cause-consequence · safeguards catalog</p></div><div class="st"><div class="n">STAGE 03</div><h4>LOPA</h4><p>Initiating event frequency · IPL credit · mitigated frequency</p></div><div class="st"><div class="n">STAGE 04</div><h4>SIL</h4><p>SIL determination · verification · loop design</p></div><div class="st"><div class="n">STAGE 05</div><h4>REVALIDATE</h4><p>5-year IEC 61511 revalidation + management of change retainer</p></div></div> </div>
+</section><section class="stage-detail reveal" id="stage-scope"> <div class="wrap"> <div class="row"> <div class="col-l"> <div class="eye">Stage 01 · SCOPE</div> <h3>The P&IDs decide the scope. <span class="ac">We walk down every one.</span></h3> <p>Boundary drawings are marked up on-site. Every process node is discretized against the P&ID revision that matches physical reality. Old drawings do not survive walkdown · they get redlined and re-issued before HAZOP starts.</p> <p>Deviations from the drawing set are logged in the register with photographs, tie-in coordinates, and a proposed as-built resolution. The HAZOP that follows is discussing the plant that exists · not the plant the drawings remember.</p> </div> <div class="col-r"> <h5>What ships in this stage</h5> <ul><li>Node boundary drawings · marked-up A0 P&IDs · redline set</li><li>Node discretization worksheet · guide words framed per node</li><li>Walkdown deviation log · photographs + tie-in coordinates</li><li>Pre-HAZOP briefing pack for the study team</li><li>CEng MIE walkdown sign-off certificate</li></ul> </div> </div> </div>
+</section><section class="stage-detail cream reveal" id="stage-hazop"> <div class="wrap"> <div class="row"> <div class="col-l"> <div class="eye">Stage 02 · HAZOP</div> <h3>A HAZOP that <span class="ac">actually closes.</span></h3> <p>Guide-word driven study, IEC 61882 compliant. Every deviation gets a documented cause, consequence, existing safeguard, and recommendation. We do not close a node until every consequence has either a credited safeguard or an open recommendation with an owner and a date.</p> <p>Facilitator, scribe, and process safety engineer are all CEng MIE. The client team stays in the room for the whole study · this is not a black box handed back six weeks later.</p> </div> <div class="col-r"> <h5>What ships in this stage</h5> <ul><li>HAZOP worksheet · one row per deviation · fully populated</li><li>Cause-consequence-safeguard-recommendation matrix</li><li>Recommendation register with owner and due date</li><li>Node closure certificates · CEng MIE signed</li><li>Study report bound to IEC 61882 · audit-ready</li></ul> </div> </div> </div>
+</section><section class="stage-detail reveal" id="stage-lopa"> <div class="wrap"> <div class="row"> <div class="col-l"> <div class="eye">Stage 03 · LOPA</div> <h3>LOPA sizes the residual risk <span class="ac">after safeguards.</span></h3> <p>Layer of Protection Analysis quantifies whether existing safeguards actually get the frequency of a consequence down to the tolerable risk criterion. Initiating event frequency, conditional modifiers, and IPL credit are documented against CCPS guidance.</p> <p>The result is a mitigated frequency for every scenario · which then determines whether an existing SIF is credited correctly, whether a new SIF is required, and what target SIL that SIF needs to achieve. LOPA is the bridge from HAZOP to SIL.</p> </div> <div class="col-r"> <h5>What ships in this stage</h5> <ul><li>LOPA workbook · one scenario per credited consequence</li><li>IPL credit register · fault tree if credit exceeds 10^-2</li><li>Mitigated frequency vs tolerable risk criterion table</li><li>New SIF requirement list · target SIL identified</li><li>CCPS-aligned methodology statement</li></ul> </div> </div> </div>
+</section><section class="stage-detail cream reveal" id="stage-sil"> <div class="wrap"> <div class="row"> <div class="col-l"> <div class="eye">Stage 04 · SIL</div> <h3>SIL is verified, <span class="ac">not assumed.</span></h3> <p>SIL determination uses the LOPA output · calibrated risk graph or matrix as fallback where the client register demands it. SIL verification is a PFDavg calculation against IEC 61508 Part 6 formulae, using vendor-published or industry-recognised failure rates. We do not accept a marketing SIL claim without the certificate.</p> <p>For loops that miss target SIL, we re-design · redundant sensors, voting logic, diagnostic coverage · until PFDavg lands inside the target band. Every SIF gets a proof-test procedure and a proof-test interval consistent with the assumed PFDavg.</p> </div> <div class="col-r"> <h5>What ships in this stage</h5> <ul><li>SIL determination report per SIF</li><li>PFDavg calculation workbook · IEC 61508-6 aligned</li><li>SIF architecture recommendation · 1oo1 · 1oo2 · 2oo3</li><li>Proof-test procedures · one per SIF · field-executable</li><li>SIS design specification · handoff to controls engineer</li></ul> </div> </div> </div>
+</section><section class="stage-detail reveal" id="stage-revalidate"> <div class="wrap"> <div class="row"> <div class="col-l"> <div class="eye">Stage 05 · REVALIDATE</div> <h3>The retainer that <span class="ac">keeps the register alive.</span></h3> <p>The 5-year revalidation cycle is mandated by IEC 61511. But most plants only realise it 18 months before the audit. VB SafeWatch runs on an annual cadence · so on Year 5 the revalidation is a signature, not a rebuild.</p> <p>Every management-of-change event is triaged against the recommendation register. Every new tie-in triggers a mini-HAZOP. Every SIF proof-test is logged and reviewed against its PFDavg. When the DDG-QA auditor walks in, the file is closed.</p> </div> <div class="col-r"> <h5>What ships in this stage</h5> <ul><li>Annual HAZOP register review · closure evidence collected</li><li>MoC-triggered mini-HAZOPs · one per material change</li><li>SIF proof-test log · gap analysis · re-verification if needed</li><li>Year 5 IEC 61511 revalidation report · CEng MIE signed</li><li>Auditor-ready binder + digital register</li></ul> </div> </div> </div>
+</section><section class="section deep reveal"> <div class="wrap"> <div class="eye">The codes</div> <h2 class="sh2">The <span class="ac">standards</span> we sign against.</h2> <p class="sb">Every deliverable is written to withstand an audit by any regulator on this list. The signature at the bottom stands behind the code above.</p> <div class="std-grid"><div class="std"><div class="c">IEC 61511</div><div class="d">Safety instrumented systems for process industry</div></div><div class="std"><div class="c">IEC 61508</div><div class="d">Functional safety of electrical safety-related systems</div></div><div class="std"><div class="c">IEC 61882</div><div class="d">HAZOP study application guide</div></div><div class="std"><div class="c">CCPS</div><div class="d">Center for Chemical Process Safety guidelines</div></div><div class="std"><div class="c">OISD 116</div><div class="d">Fire protection facilities · Indian oil and gas</div></div><div class="std"><div class="c">API RP 754</div><div class="d">Process safety performance indicators</div></div><div class="std"><div class="c">OSHA 1910.119</div><div class="d">Process Safety Management · USA</div></div><div class="std"><div class="c">Seveso III</div><div class="d">Major accident hazards · EU directive</div></div></div> </div>
+</section><section class="section white reveal" id="differentiator"> <div class="wrap"> <div class="eye">Why VB</div> <h2 class="sh2">What makes VB SafeWatch <span class="ac">a flagship.</span></h2> <p class="sb">Four things make VB SafeWatch different from a one-off HAZOP consultant. Every one is a productization decision that compounds over the retainer.</p> <div class="diff-row"><div class="d"><div class="n">DIFF 01</div><h4>Two-signature discipline</h4><p>Practice Lead + Principal Reviewer both sign every deliverable. Two CEng MIEs looking at the same page · no drawing leaves with one signature.</p></div><div class="d"><div class="n">DIFF 02</div><h4>Register that opens on Monday</h4><p>The recommendation register lives in your CMMS or SharePoint · not our hard drive. Any auditor, any reviewer, any inspector opens the current state in seconds.</p></div><div class="d"><div class="n">DIFF 03</div><h4>MoC that triggers itself</h4><p>Every management-of-change event is routed through the register automatically. No forgotten HAZOP · no orphan SIF · no drift between drawing and plant.</p></div><div class="d"><div class="n">DIFF 04</div><h4>Year 5 is a signature</h4><p>Because the annual cadence holds, Year 5 revalidation is evidence review · not a rebuild. Compresses 18-month audit prep to 2 weeks.</p></div></div> </div>
+</section><section class="section deep reveal" id="retainer"> <div class="wrap"> <div class="eye">Recurring economics</div> <h2 class="sh2">Year 1 delivers. <span class="ac">Years 2-5 earn.</span></h2> <p class="sb">Year 1 is the study. Years 2 to 5 are where the flagship earns its name. Where a plant carries a live continuous safety twin, the HAZOP register and SIF proof-test log push into <a href="https://wistwin.in/platform/aviratwin.html" target="_blank" rel="noopener noreferrer" style="color:inherit;border-bottom:1px dotted currentColor;text-decoration:none">Wistwin AviraTwin</a> for real-time gas + safety monitoring.</p> <div class="retainer-row"><div class="yr"><div class="y">YEAR 01</div><h4>Baseline study + full close-out</h4><p>HAZOP + LOPA + SIL determination + verification + SIS specification. Recommendation register handed to owner-operator. Baseline PFDavg documented.</p></div><div class="yr"><div class="y">YEAR 02</div><h4>MoC review + first proof-test cycle</h4><p>Every management of change routed through the register. First round of SIF proof-tests witnessed. Any gap triggers re-verification.</p></div><div class="yr"><div class="y">YEAR 03</div><h4>Mid-cycle SIL re-verification</h4><p>PFDavg re-run against real proof-test data. SIF architecture adjusted if diagnostic coverage or demand rate has drifted from baseline assumption.</p></div><div class="yr"><div class="y">YEAR 04</div><h4>Full register audit + closure sweep</h4><p>Open recommendations pushed to closure. Documentation gaps closed. Year 5 revalidation pack pre-staged.</p></div><div class="yr"><div class="y">YEAR 05</div><h4>IEC 61511 revalidation · CEng MIE signature</h4><p>Formal 5-year revalidation report. If the annual cadence held, this is a signature on evidence · not a rebuild. Auditor-ready.</p></div></div> </div>
+</section><section class="section cream reveal" id="proof"> <div class="wrap"> <div class="eye">Proof</div> <h2 class="sh2">Three brownfield engagements · <span class="ac">what shipped.</span></h2> <p class="sb">Three brownfield process safety engagements delivered under the VB SafeWatch discipline. Names withheld · descriptive framing preserves technical integrity.</p> <div class="cases"><div class="c"><span class="tag">CASE 01 · REFINING</span><h4>Landmark East Coast refinery · HAZOP + LOPA + SIL on the CDU-VDU + FCC + hydrocracker package.</h4><p>800 HAZOP nodes across three units. 62 LOPA scenarios credited. 34 new SIF requirements identified · 22 confirmed as SIL 1 · 12 as SIL 2. Proof-test cadence set at 12 months for SIL 1 and 6 months for SIL 2. Retainer live since Year 1.</p><div class="out">Closed baseline in 14 weeks · retainer entering Year 3</div></div><div class="c"><span class="tag">CASE 02 · PETROCHEM</span><h4>Landmark specialty petrochemicals complex · pre-commissioning SIS verification on ethylene oxide loops.</h4><p>Client SIL claims did not close. VB SafeWatch redid the PFDavg workbook from first principles · discovered 4 SIL 2 loops were running at SIL 1 architecture due to sensor diversity gap. Re-designed to 1oo2D with certified transmitters. Pre-commissioning delayed by 3 weeks · post-commissioning demand rate confirmed target SIL.</p><div class="out">4 loops rebuilt · commissioning risk retired before startup</div></div><div class="c"><span class="tag">CASE 03 · PHARMA API</span><h4>Landmark GMP API manufacturing facility · HAZOP revalidation on Year 5 as auditor walked in.</h4><p>Client had missed the Year 3 mid-cycle review. VB SafeWatch executed a 90-day compressed revalidation · full register sweep, 6 MoCs retrospectively HAZOPped, all 18 SIF proof-tests witnessed, PFDavg re-run. Auditor accepted evidence. Zero deficiencies raised.</p><div class="out">Audit passed clean · plant onto annual cadence from Year 6</div></div></div> </div>
+</section><section class="section white reveal" style="padding:64px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);overflow:hidden"> <div class="wrap" style="max-width:1240px;margin:0 auto;padding:0 32px"> <div style="text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:3.2px;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:28px">Verified brownfield clients · process safety engagements</div> <div style="overflow:hidden"><div class="mq-scroll" style="display:flex;gap:44px;width:max-content;animation:mqscroll 60s linear infinite"><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/rolls-royce.png" alt="Rolls-Royce" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngenta.png" alt="Syngenta" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/coca-cola.png" alt="Coca-Cola" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jindal-steel.png" alt="Jindal Steel" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/grace.png" alt="Grace" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/rolls-royce.png" alt="Rolls-Royce" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngenta.png" alt="Syngenta" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/coca-cola.png" alt="Coca-Cola" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jindal-steel.png" alt="Jindal Steel" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/grace.png" alt="Grace" loading="lazy"></div></div></div> </div>
+</section><section class="section form-band reveal" id="scope"> <div class="wrap-narrow"> <div class="eye" style="text-align:center">Start a conversation</div> <h2 class="sh2" style="text-align:center">Scope your <span class="ac">VB SafeWatch</span> engagement.</h2> <p class="sb">A 5-minute form. Practice Lead PSS routes to the process safety desk within 2 business hours. Every response signed by CEng MIE.</p> <div class="form-wrap"> <script data-b24-form="inline/282/2m1y7u" data-skip-moving="true"> (function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_282/2m1y7u.js'); </script> </div> </div>
+</section><section class="cta-band reveal"> <div class="cta-band-inner"> <div class="eye">The 5-year commitment</div> <h2>The 5-year risk register<br><span class="ac">you always wished you had.</span></h2> <p>Bring us your P&IDs and your open recommendation register. We will show you what closure looks like.</p> <a href="?product=vb-safewatch&service=vb-safewatch&source=flagship-vb-safewatch-cta" class="cta-btn-big nav-cta" data-scope-cta="1">Scope Your Plant <span aria-hidden="true">→</span></a> </div>
 </section><!--#include virtual="/partials/footer.html" --><!-- SCOPE YOUR PLANT · MODAL COMPONENT · v10.8.5 · Bitrix Flagship Form G (282/2m1y7u) -->
-<style id="vbe-scope-modal-styles">
-  .scope-modal-overlay{position:fixed;inset:0;background:rgba(11,36,81,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;overflow-y:auto}
-  .scope-modal-overlay.open{display:flex}
-  .scope-modal{background:#FFFFFF;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);position:relative;padding:36px 40px}
-  .scope-modal-close{position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:28px;color:#4A5A7A;cursor:pointer;line-height:1;padding:8px;border-radius:8px;transition:background 0.2s}
-  .scope-modal-close:hover{background:#F8F8F8;color:#0B2451}
-  .scope-modal-header{margin-bottom:24px;padding-right:32px}
-  .scope-modal-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F26522;font-weight:700;margin-bottom:8px}
-  .scope-modal-title{font-size:24px;font-weight:800;color:#0B2451;line-height:1.2;margin-bottom:6px}
-  .scope-modal-sub{font-size:14px;color:#4A5A7A;line-height:1.5}
-  .scope-modal-body .form-loader{padding:32px;text-align:center;color:#4A5A7A;font-size:14px}
-  @media (max-width:600px){.scope-modal{padding:28px 20px}.scope-modal-title{font-size:20px}}
+<style id="vbe-scope-modal-styles"> .scope-modal-overlay{position:fixed;inset:0;background:rgba(11,36,81,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;overflow-y:auto} .scope-modal-overlay.open{display:flex} .scope-modal{background:#FFFFFF;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);position:relative;padding:36px 40px} .scope-modal-close{position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:28px;color:#4A5A7A;cursor:pointer;line-height:1;padding:8px;border-radius:8px;transition:background 0.2s} .scope-modal-close:hover{background:#F8F8F8;color:#0B2451} .scope-modal-header{margin-bottom:24px;padding-right:32px} .scope-modal-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F26522;font-weight:700;margin-bottom:8px} .scope-modal-title{font-size:24px;font-weight:800;color:#0B2451;line-height:1.2;margin-bottom:6px} .scope-modal-sub{font-size:14px;color:#4A5A7A;line-height:1.5} .scope-modal-body .form-loader{padding:32px;text-align:center;color:#4A5A7A;font-size:14px} @media (max-width:600px){.scope-modal{padding:28px 20px}.scope-modal-title{font-size:20px}}
 </style>
-<div class="scope-modal-overlay" id="scopeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="scopeModalTitle">
-  <div class="scope-modal">
-    <button class="scope-modal-close" id="scopeModalClose" aria-label="Close">&times;</button>
-    <div class="scope-modal-header">
-      <div class="scope-modal-eyebrow">Scope Your Plant</div>
-      <div class="scope-modal-title" id="scopeModalTitle">Reserve your VB SafeWatch engagement. Business Head responds in 48 hours.</div>
-      <div class="scope-modal-sub">Flagship enrolments route to the Business Head. Every proposal signed by a Chartered Engineer.</div>
-    </div>
-    <div class="scope-modal-body">
-      <div class="form-loader">Loading scoping form&hellip;</div>
-      <script data-b24-form="inline/282/2m1y7u" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_282.js');</script>
-    </div>
-  </div>
+<div class="scope-modal-overlay" id="scopeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="scopeModalTitle"> <div class="scope-modal"> <button class="scope-modal-close" id="scopeModalClose" aria-label="Close">&times;</button> <div class="scope-modal-header"> <div class="scope-modal-eyebrow">Scope Your Plant</div> <div class="scope-modal-title" id="scopeModalTitle">Reserve your VB SafeWatch engagement. Business Head responds in 48 hours.</div> <div class="scope-modal-sub">Flagship enrolments route to the Business Head. Every proposal signed by a Chartered Engineer.</div> </div> <div class="scope-modal-body"> <div class="form-loader">Loading scoping form&hellip;</div> <script data-b24-form="inline/282/2m1y7u" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_282.js');</script> </div> </div>
 </div>
-<script id="vbe-scope-modal-js">(function(){
-  var overlay=document.getElementById('scopeModalOverlay');
-  var closeBtn=document.getElementById('scopeModalClose');
-  if(!overlay)return;
-  function openModal(ctx){
-    overlay.classList.add('open');
-    document.body.style.overflow='hidden';
-    // Push URL context as hidden fields when Bitrix form is ready
-    if(ctx){
-      var tryFill=function(){
-        var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source};
-        Object.keys(fields).forEach(function(k){
-          if(!fields[k])return;
-          var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]');
-          if(input){input.value=fields[k]}
-        });
-      };
-      setTimeout(tryFill,1500);
-      setTimeout(tryFill,3000);
-      setTimeout(tryFill,5000);
-    }
-    // GA4 event
-    if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});}
-  }
-  function closeModal(){
-    overlay.classList.remove('open');
-    document.body.style.overflow='';
-  }
-  closeBtn&&closeBtn.addEventListener('click',closeModal);
-  overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
-  // Intercept all Scope Your Plant CTAs
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('a.nav-cta, a[data-scope-cta]');
-    if(!a)return;
-    if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return;
-    e.preventDefault();
-    // Parse the CTA href query params for context
-    var url=a.getAttribute('href')||'';
-    var q=url.split('?')[1]||'';
-    var ctx={};
-    q.split('&').forEach(function(pair){
-      var kv=pair.split('=');
-      if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||'');
-    });
-    openModal(ctx);
-  });
-})();</script>
-
-<script>
+<script id="vbe-scope-modal-js">(function(){ var overlay=document.getElementById('scopeModalOverlay'); var closeBtn=document.getElementById('scopeModalClose'); if(!overlay)return; function openModal(ctx){ overlay.classList.add('open'); document.body.style.overflow='hidden'; / Push URL context as hidden fields when Bitrix form is ready if(ctx){ var tryFill=function(){ var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source}; Object.keys(fields).forEach(function(k){ if(!fields[k])return; var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]'); if(input){input.value=fields[k]} }); }; setTimeout(tryFill,1500); setTimeout(tryFill,3000); setTimeout(tryFill,5000); } / GA4 event if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});} } function closeModal(){ overlay.classList.remove('open'); document.body.style.overflow=''; } closeBtn&&closeBtn.addEventListener('click',closeModal); overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()}); document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()}); / Intercept all Scope Your Plant CTAs document.addEventListener('click',function(e){ var a=e.target.closest('a.nav-cta, a[data-scope-cta]'); if(!a)return; if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return; e.preventDefault(); / Parse the CTA href query params for context var url=a.getAttribute('href')||''; var q=url.split('?')[1]||''; var ctx={}; q.split('&').forEach(function(pair){ var kv=pair.split('='); if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||''); }); openModal(ctx); });
+})();</script> <script>
 (function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(ents){ents.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{rootMargin:'0px 0px -80px 0px'});els.forEach(function(el){el.classList.add('r-init');io.observe(el)});setTimeout(function(){document.querySelectorAll('.reveal:not(.show)').forEach(function(el){el.classList.add('show')})},4000);})();
-</script>
-
-
-</body>
+</script> </body>
 </html>
