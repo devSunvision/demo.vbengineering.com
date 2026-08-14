@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VB Exit Module · Working Mockup v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F4;--blue-deep:#0A2540;--blue-mid:#1B3A6B;--orange:#FF6B35;
+ --ink:#22282F;--grey:#6B7480;--line:#E6E2DA;--panel:#FFFFFF;
+ --ok:#1E7A4C;--warn:#B8860B;--bad:#B3261E;--pro:#5B2E9E}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:var(--ink);font-size:14px;line-height:1.55}
+.wrap{max-width:1340px;margin:0 auto;padding:0 24px}.pad{padding-bottom:70px}
+header{background:var(--blue-deep);color:#fff}
+.brandbar{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:14px 0 12px}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{background:#fff;border-radius:10px;padding:7px 11px;display:grid;place-items:center;flex:none}
+.mark img{height:46px;display:block}
+.brandtx .nm{font-size:15px;font-weight:600;line-height:1.2}
+.brandtx .tag{font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#9FB0C4;margin-top:3px}
+.appname{border-left:1px solid rgba(255,255,255,.2);padding-left:14px}
+.appname .a{font-size:13.5px;font-weight:500}
+.appname .b{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#9FB0C4;margin-top:2px}
+.ctrl{display:flex;gap:9px;align-items:center;flex-wrap:wrap;padding-top:5px}
+.box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:9px;padding:6px 12px;display:flex;gap:10px;align-items:center}
+.box .k{font-size:9px;color:#9FB0C4;letter-spacing:1.3px;text-transform:uppercase}
+.box .v{font-weight:600;font-size:13px}
+nav{display:flex;gap:2px;flex-wrap:wrap}
+nav button{background:transparent;color:#9FB0C4;border-radius:7px 7px 0 0;padding:10px 16px;font-size:12.5px;border-bottom:3px solid transparent}
+nav button:hover{color:#fff}
+nav button.on{background:var(--cream);color:var(--blue-deep);font-weight:600;border-bottom-color:var(--orange)}
+button{font-family:inherit;cursor:pointer;border:none;border-radius:7px;font-size:12px;font-weight:500;padding:6px 13px;transition:.14s}
+.bo{background:var(--orange);color:#fff}.bo:hover{filter:brightness(1.07)}
+.bg{background:#fff;color:var(--blue-deep);border:1px solid var(--line)}.bg:hover{background:#F3F0EA}
+.bgh{background:rgba(255,255,255,.11);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.bgh:hover{background:rgba(255,255,255,.2)}
+.bd{background:var(--blue-deep);color:#fff}
+button:disabled{opacity:.34;cursor:not-allowed}
+select.role{font-family:inherit;font-size:12.5px;padding:5px 9px;border-radius:6px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.09);color:#fff}
+select.role option{color:var(--ink)}
+h2{font-size:17px;font-weight:600;color:var(--blue-deep);margin:26px 0 3px;letter-spacing:-.2px}
+h2 .n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--orange);color:#fff;font-size:11.5px;font-weight:700;margin-right:9px;vertical-align:2px}
+.lede{color:var(--grey);font-size:12.5px;margin-bottom:14px;max-width:920px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:16px 18px;margin-bottom:12px}
+.card>b{font-size:13px;color:var(--blue-deep)}
+.grid{display:grid;gap:12px}.g4{grid-template-columns:repeat(auto-fit,minmax(206px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(345px,1fr))}
+table{width:100%;border-collapse:collapse;font-size:12.3px}
+th{background:var(--blue-deep);color:#fff;text-align:left;padding:8px 10px;font-weight:500;font-size:10.2px;letter-spacing:.8px;text-transform:uppercase}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#FBFAF7}
+.pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:.5px}
+.p-ok{background:#E3F3EA;color:var(--ok)}.p-run{background:#E6EDF7;color:var(--blue-mid)}
+.p-lock{background:#EFECE6;color:var(--grey)}.p-warn{background:#FAF0D8;color:var(--warn)}
+.p-bad{background:#FBE6E4;color:var(--bad)}.p-forced{background:#F1E8FA;color:var(--pro)}
+.stage{border:1px solid var(--line);border-radius:11px;margin-bottom:9px;background:var(--panel);overflow:hidden}
+.stage.locked{opacity:.55}
+.sh{display:flex;align-items:center;gap:14px;padding:13px 17px;cursor:pointer}
+.sh:hover{background:#FBFAF7}
+.sl{width:33px;height:33px;border-radius:9px;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff;background:var(--grey);flex:none}
+.stage.open .sl{background:var(--orange)}.stage.done .sl{background:var(--ok)}
+.st{flex:1;min-width:0}.st b{display:block;font-size:13.5px;color:var(--blue-deep);font-weight:600}
+.st small{color:var(--grey);font-size:11.2px}
+.sb{border-top:1px solid var(--line);padding:15px 17px;background:#FBFAF7;display:none}
+.stage.exp .sb{display:block}
+.gate{background:#fff;border-left:3px solid var(--orange);padding:9px 13px;border-radius:0 7px 7px 0;margin-bottom:12px;font-size:12px}
+.item{display:flex;align-items:flex-start;gap:12px;padding:9px 11px;background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:5px;font-size:12.3px}
+.item.cl{background:#F7FBF9}
+.item .c{font-weight:700;color:var(--orange);width:52px;flex:none;font-size:11px;padding-top:1px}
+.item .n{flex:1;min-width:0}.item .a{display:flex;gap:5px;flex:none;flex-wrap:wrap;justify-content:flex-end}
+.sum{margin-top:4px;display:flex;gap:5px;flex-wrap:wrap}
+.chip{background:#F2EFE9;border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:10.4px;color:#4A525C}
+.chip b{color:var(--blue-deep);font-weight:600}
+.chip.w{background:#FAF0D8;border-color:#E8D9AE;color:#7A5C0B}
+.chip.b{background:#FBE6E4;border-color:#F0C9C5;color:#7A1C15}
+.floor{background:linear-gradient(135deg,#0A2540,#16365E);color:#fff;border-radius:11px;padding:19px 21px;margin-bottom:13px;position:relative;overflow:hidden}
+.floor:after{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,107,53,.12)}
+.floor .k{font-size:9.5px;letter-spacing:1.7px;text-transform:uppercase;color:#9FB0C4}
+.floor .v{font-size:25px;font-weight:700;margin:2px 0 8px;letter-spacing:-.4px}
+.floor p{font-size:12.2px;color:#C9D5E2;max-width:680px;position:relative}
+.lockrow{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;position:relative}
+.lockrow span{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.17);border-radius:7px;padding:4px 11px;font-size:11.2px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.kpi .k{font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--grey)}
+.kpi .v{font-size:24px;font-weight:700;color:var(--blue-deep);line-height:1.2;margin-top:3px;letter-spacing:-.5px}
+.kpi .d{font-size:11.2px;color:var(--grey)}.kpi.al .v{color:var(--bad)}
+.log{font-size:11.6px;max-height:600px;overflow-y:auto}
+.log .e{display:grid;grid-template-columns:96px 140px 1fr;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
+.log .t{color:var(--grey)}.log .a{font-weight:600;color:var(--blue-mid)}
+.modal{position:fixed;inset:0;background:rgba(10,37,64,.6);display:none;place-items:center;z-index:50;padding:20px}
+.modal.on{display:grid}
+.mb{background:#fff;border-radius:13px;max-width:760px;width:100%;padding:0;max-height:90vh;display:flex;flex-direction:column}
+.mh{padding:18px 24px 12px;border-bottom:1px solid var(--line)}
+.mh h3{font-size:15.5px;color:var(--blue-deep);font-weight:600}
+.mh p{font-size:12.2px;color:var(--grey);margin-top:3px}
+.mc{padding:16px 24px;overflow-y:auto;flex:1}
+.mf{padding:13px 24px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.mf .lf{margin-right:auto;font-size:11.3px;color:var(--grey)}
+textarea,input,select.f{width:100%;font-family:inherit;font-size:12.8px;padding:8px 11px;border:1px solid var(--line);border-radius:8px;background:#FBFAF7;color:var(--ink)}
+input[type=checkbox]{width:auto}
+textarea{min-height:70px;resize:vertical}
+label{display:block;font-size:10.5px;font-weight:600;color:var(--blue-deep);margin:11px 0 4px;letter-spacing:.6px;text-transform:uppercase}
+label .rq{color:var(--orange)}
+.fh{font-size:11.1px;color:var(--grey);margin-top:4px}
+.ff{display:grid;gap:0 14px}.ff.c2{grid-template-columns:1fr 1fr}
+.wb{background:#FBE6E4;border-left:3px solid var(--bad);padding:10px 13px;border-radius:0 7px 7px 0;font-size:12.1px;color:#7A1C15;margin:9px 0}
+.ob{background:#E3F3EA;border-left:3px solid var(--ok);padding:10px 13px;border-radius:0 7px 7px 0;font-size:12.1px;color:#145033;margin:9px 0}
+.pb{background:#F1E8FA;border-left:3px solid var(--pro);padding:10px 13px;border-radius:0 7px 7px 0;font-size:12.1px;color:#452070;margin:9px 0}
+.yb{background:#FAF0D8;border-left:3px solid var(--warn);padding:10px 13px;border-radius:0 7px 7px 0;font-size:12.1px;color:#6E5309;margin:9px 0}
+.carr{background:#F4F8FD;border:1px solid #D9E4F2;border-radius:9px;padding:11px 13px;margin:11px 0}
+.carr .t{font-size:9.8px;letter-spacing:1.1px;text-transform:uppercase;color:var(--blue-mid);font-weight:700;margin-bottom:6px}
+.carr .r{display:flex;justify-content:space-between;gap:12px;font-size:12.1px;padding:2px 0}
+.carr .r span:first-child{color:var(--grey)}
+.carr .r span:last-child{font-weight:600;color:var(--blue-deep);text-align:right}
+.hint{font-size:11.2px;color:var(--grey);margin-top:4px}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--blue-deep);color:#fff;padding:11px 19px;border-radius:9px;font-size:12.5px;z-index:80;opacity:0;pointer-events:none;transition:.24s;max-width:80vw;text-align:center}
+.toast.on{opacity:1}
+.row{display:grid;grid-template-columns:1fr 196px 118px;gap:9px;align-items:center;padding:8px 11px;border:1px solid var(--line);border-radius:8px;margin-bottom:5px;background:#fff;font-size:12.2px}
+.row.miss{border:1.5px solid var(--bad)}
+.grp{font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--grey);margin:12px 0 5px;font-weight:600}
+.tag{font-size:9.6px;padding:2px 7px;border-radius:5px;background:#EFECE6;color:var(--grey);letter-spacing:.6px;text-transform:uppercase;font-weight:600}
+.noaccess{background:#fff;border:1px dashed var(--line);border-radius:11px;padding:28px;text-align:center;color:var(--grey);font-size:12.6px}
+.gt-tbl{width:100%;font-size:11.8px;border-collapse:collapse;margin-top:5px}
+.gt-tbl th{background:#F2EFE9;color:var(--blue-deep);font-size:9.6px;padding:6px 7px}
+.gt-tbl td{padding:4px 5px;border-bottom:1px solid var(--line)}
+.gt-tbl input,.gt-tbl select{padding:5px 7px;font-size:11.8px;border-radius:6px}
+/* document preview */
+.paper{background:#fff;border:1px solid #D8D2C6;border-radius:4px;padding:26px 30px;font-size:12.2px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.paper .ph{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--blue-deep);padding-bottom:9px;margin-bottom:14px}
+.paper .ph .co{font-size:13.5px;font-weight:700;color:var(--blue-deep);letter-spacing:.3px}
+.paper .ph .ad{font-size:10px;color:var(--grey);line-height:1.4;margin-top:2px}
+.paper .ph .cd{font-size:9.6px;color:var(--grey);text-align:right;line-height:1.5}
+.paper h4{font-size:13px;color:var(--blue-deep);text-align:center;margin:4px 0 12px;letter-spacing:.4px;text-transform:uppercase}
+.paper .pr{display:grid;grid-template-columns:170px 1fr;gap:3px 10px;font-size:11.9px;margin-bottom:12px}
+.paper .pr .k{color:var(--grey)}
+.paper .bdy{font-size:12px;line-height:1.65;margin-bottom:12px}
+.paper .sig{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px;font-size:11.4px}
+.paper .sig div{border-top:1px solid var(--ink);padding-top:5px;color:var(--grey)}
+.paper .pf{border-top:1px solid var(--line);margin-top:20px;padding-top:7px;font-size:9.4px;color:var(--grey);display:flex;justify-content:space-between}
+.scroll{overflow-x:auto;padding-bottom:6px}
+.swim{min-width:1180px;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--panel)}
+.swimr{display:grid;grid-template-columns:150px repeat(7,minmax(146px,1fr))}
+.swimr.hd{background:var(--blue-deep);color:#fff}
+.swimr.hd>div{padding:9px 10px;border-left:1px solid rgba(255,255,255,.13)}
+.swimr.hd>div:first-child{border-left:none}
+.swimr.hd .t{font-size:11px;font-weight:600;line-height:1.3}
+.swimr.hd .s{font-size:9.2px;color:#9FB0C4;letter-spacing:.7px;text-transform:uppercase;margin-top:3px}
+.swimr.hd .gt{display:inline-block;background:var(--orange);color:#fff;font-size:8.2px;font-weight:700;letter-spacing:1px;padding:1px 6px;border-radius:4px;margin-bottom:4px}
+.lane{border-top:1px solid var(--line)}
+.lane>div{padding:8px;border-left:1px solid var(--line);min-height:56px}
+.lane>div:first-child{border-left:none;background:#F6F3EE;font-size:10.5px;font-weight:600;color:var(--blue-deep);display:flex;align-items:center;flex-direction:column;justify-content:center;text-align:left;line-height:1.35}
+.lane>div:first-child span{display:block;width:100%}
+.lane>div:first-child .sub{font-weight:400;color:var(--grey);font-size:9.5px;margin-top:2px}
+.lane.sys{background:#F8FAFD}
+.nd{background:#fff;border:1px solid var(--line);border-left:3px solid var(--grey);border-radius:6px;padding:5px 8px;margin-bottom:5px;font-size:10.8px;line-height:1.35}
+.nd:last-child{margin-bottom:0}
+.nd b{display:block;font-size:10px;letter-spacing:.5px;color:var(--orange);font-weight:700;margin-bottom:1px}
+.nd.doc{border-left-color:var(--blue-mid)}
+.nd.sign{border-left-color:var(--orange);background:#FFF9F6}
+.nd.auto{border-left-color:#4E7BB8;background:#F4F8FD}
+.nd.act{border-left-color:var(--ok)}
+.nd.stop{border-left-color:var(--bad);background:#FDF2F1}
+.nd .h{color:var(--grey);font-size:9.9px;margin-top:3px;display:block;line-height:1.35}
+.lgd{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--grey);margin:9px 0 0}
+.lgd i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.rail{position:relative;margin:14px 58px 4px;padding:30px 0 8px}
+.rail .bar{height:5px;background:linear-gradient(90deg,#1B3A6B,#1B3A6B 64%,var(--orange) 64%,var(--orange) 76%,#1B3A6B 76%);border-radius:3px}
+.rail .mk{position:absolute;top:0;transform:translateX(-50%);text-align:center;width:120px}
+.rail .mk .d{font-size:10px;font-weight:700;color:var(--blue-deep)}
+.rail .mk .l{font-size:9.6px;color:var(--grey);line-height:1.3}
+.rail .mk:after{content:'';position:absolute;left:50%;bottom:-13px;width:2px;height:11px;background:var(--grey);transform:translateX(-50%)}
+.rail .mk.hot .d{color:var(--orange)}.rail .mk.hot:after{background:var(--orange);width:3px}
+.step{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.step .num{width:26px;height:26px;border-radius:8px;background:var(--blue-deep);color:#fff;display:grid;place-items:center;font-size:11.5px;font-weight:700}
+.step .who{font-size:9.6px;letter-spacing:1.1px;text-transform:uppercase;color:var(--orange);font-weight:700}
+.step .wt{font-size:12.8px;font-weight:600;color:var(--blue-deep);margin:1px 0 3px}
+.step .bdy{font-size:12.2px;color:#3D4650}
+.step .hn{font-size:11.3px;color:var(--grey);margin-top:5px;padding-left:10px;border-left:2px solid var(--line)}
+.calc{width:100%;font-size:12.4px;border-collapse:collapse}
+.calc td{padding:6px 4px;border-bottom:1px solid var(--line)}
+.calc td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.calc tr.tot td{border-top:2px solid var(--blue-deep);border-bottom:none;font-weight:700;color:var(--blue-deep);font-size:14px;padding-top:9px}
+.calc tr.neg td:last-child{color:var(--bad)}
+.calc tr.mut td{color:var(--grey);font-size:11.6px}
+.secx{grid-column:1/-1;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange);
+ font-weight:700;margin:18px 0 2px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.xb{background:transparent;color:var(--grey);border:none;font-size:15px;line-height:1;padding:2px 5px;border-radius:5px}
+.xb:hover{background:#FBE6E4;color:var(--bad)}
+footer{background:var(--blue-deep);color:#8FA1B7;font-size:11.2px;padding:13px 0;margin-top:34px}
+footer .fr{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer b{color:#C9D5E2;font-weight:500}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <div class="brandbar">
+  <div class="brand">
+   <div class="mark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC0CAYAAAC3x8haAAB8y0lEQVR42u29ebwcZZU+/pzzVi93SULCvu+OJihqcJnFCbiOCipi33EfHRT3DVdUptMqOuroOOroyHcQUES9/RPEBRV1QtQZFYhs5iLKIm5s2XOX7q56z/n9UdXdVW+91ffeEEIgtz6fzr3prq7uW8tTz3nOOc8hLCwLy8KyRy5ag6EmLAD8+eQDh20QPk4NHiuih4MwrErbDOmtpLjmF8HGX40l66bfl15oYZcuLAvLHgYiAKEOogbk1pOXHlap0OuE6DRVOrbMlAEFBdC2GgWsN6jSRTNTct7Dvr9pmw9QFsBkYVlY9jAgSS56veP5+7ylxKgPBbR0e6gQBSqGYCgGBgUQCtARRZkJIwFhMpTbWyJvP+bSTZeO12DGUoCyACYLy8KyBwHJaoBOWQmz7+H7fHFJmV66uaOqABaXiKZCbQlwA6B/IGC7Ki0D6VFMdNxwQLQ91KjEFFQZ2B7p6qMu2dBIM5QFMFlYFpY9JbSpgdGE/P75+4zvXeEX3NuS1miJqh2rW6H6aTL4yiHNjTen37dmFYKHLdvnUcJ4lQJnEMFEFp1lVS7f07KNYy/duLoLKAtgsrAsLHvA0g1Jbj1178a+VfMv97Rsa68yV6etXhm2+YVHf/ueu2fbxu+fv+/fGtIvBUxHta20F5W4sq1tTzvym5su0RrMApgsLAvLHgIkvz1tn8cME66JBNFwQOWZSH+8fnqvZz9iaNNjqsYcOqPSUYUAgCFSq9IaNWbDN2+7d/1r1iEEgN+euuyQYcNrARwJhUSqG9iEyw9tbtscLOzqhWVheWgvteVQACgJ6pUSsaqattU/znRaL3zW929p337q3ucuKtMjSxFjKOjzi1AY20LByUfsfd2th8jL/7Bl800Pu3TTn3536j61YYP/ayvMsjLvv6kVvJ6ADy0wk4VlYXkoayV1MDUgvztl32PKJV1vFcGiMvG2trzs6G9uvEgBuv3UvdcuLvPfbOvo3YZwkyoMAFXoPkT0yGUVwsa2XH/EPhsfh5uhtBbRLc/b+5NLK/y26Ug1FL01CIYexQu7e2FZWB7Cy5VgAOAS/mGkROWAwds6crttLW1qHUyAEqAjARmo/uTwSzY89YhLN5x0xKUbnvz7TRsfq6r/MWMhBHrUHffu80hai6gO8Cibz06F2ooUFDAdbe3MExfAZGFZWB7Ky35xiEOqfy0KVA2BiH7wsO/f0l53J0x6VaZ43e5y0lpECvwPA0QEWKVhADhxFfiAS+65LYJeVzWEMhOp0JMWNJOFZWF5KC/NWFAl0oOtEgIGiPT6TCgEkCgghL1uef4+x5bVVjoADPM+qnRWiYlsJPegZG8EQIv+CoS1AAldH5TwxEgAEI5cAJOFZWF56C5ESNiGYh+rQKAALG111jPbIwWDnjlk6JmRGLBCSwQaKTGmrcxA9Y1HNzdv1ToYV8bbVMImjsUVADqyEOYsLAvLQ3dR7RamEk0xEP+PpZJBHEADAlSxacbqryPFtioTqcJOhva87dNy7FGXbmoq4n6eK5O3MbSiCWIRqB0owE3U4g+sAbVBX215U6kR06aFxX8n0N3pywD6kP/4oo9YvXoOmcrVg1+eaO6cbOfymmY+q7Fae7vo/t5JcdWrFeAu06UOSkcjW/1uRwLC9lB+dNQlG//xz7Wlh4Vivj5s6IktwVNNhc8H8GfUQWhATzwRgrVQCzzcJmilqvcGBAjQ7MZXczl29ACfpA8czCe9DatrNbrynnvoxP32i/fD8uWKRkMTZXyPAE3U64SJFVSDc+osX69oNDTZXbsEsuYJM6ml8QDtPudz63WuTazo/SX33LOe9ttvhTaXr9cU8OzYNXdPvIdI9UZDdEpHQAI8GcDZt212iEHyCQc3N//hN6cseTGVSteOlPhwEfnWHc/Z+5HAxru0BoMG5Nba0iUU4XFtqwiIQERX0aZHP/74yEaLlUiJyRCzIRa2QoZIDJiZjBKDhsTitn2vvvqaPQlQFKBmrcY1ANRs2lnXX4Xgyvvpu5zoPrE2+bkq/nElgBOxCueuXUvPPOSJwWF/+sXMTiTMhLFmfG9rjtk5vIGw8twAow9TTP6WsLL/ykoAM5uXEgB0DhilcNvdBBwBO30v4RAgvLfFACDtKi1bVCbb3k4yUiHbLpGG04QlSyCdgEY70yRDAUkYkFRmSMOAhiJDoU4b4RKX2bLlEgcKIxSwVTUBWVZhkkhYDZOS5SBg0khYhcmQsEbCaogCZVKxpHE5KCtbCpRIhUiNxBe/JE24yR4xIkQsGpEqR4FV1ghAB4QOa9hS4akqy8zWzdIpL6q0JppjnTkeAKrVmj1Zog80g9lNt2/m1ufu86ShEv1kxqpWGALgcYd8Y8O1AHD78/e+cv+qedLdM7Z55KUbX3T7qsMrR669o3Xr85b982jJnAcCpkJpHnXpxrFf11A+ronOLacue+VeZfPFyVAhqpsp4OV07/EnnFEKzBciVQsmQ5TEQKmHEmHIMCZtdGeJy8cv+tnPNqwGqIGHbsgTN0bV2AWQjc894VAVfTgpDgfxoRA6DMAiUlokqqNMqKo6h1f6G9X0odfsa72fmnqfOncO32vafwggw6DqjMhF+1579UfHazUzNgcQLFzqdcbECsoASG3cHL1P6SCKKkexkcNU9FBiPRAweyvRXqQ6DKAK1TKYAFGgF7CDoARQTOKUmKBK/dBbSRWcrEcgEKkwiEgBou5rUCYQKZShlPwflNzCmeJPJAJYNVlf4+3HlRUan92UAGX3i2nvTk49EI0/kLpUqJdBzfAv7f2uUJBqrFioiiqEAVGIhVKbVGcATEN1kpS2AboNqpsAuZeU71a1d5Po3RLwXUGkdyOc3rruO6+ZLoxkauO9FG+zWROXxShA61YiWHrYPtdWDR4RMPFkKFccfenGZ4zXYE6we//siJHgib/fHl161Dc3Pl9rccqYmrC3nbr3t5dWzMmiim0dfdGRl2742m//Ydniyghdy6AjhgPibR296MhLN7yMFKCNKx/3o8VB6cnbbWRBZOJD0j3EPSoZ7VUypU1R+PH9/vfqd2mtZui+nKS7M5Ck/jYFePNzH/u3UH52zAHoESXmJUPMfYatgChBFIgbup2L3gEDdYFBPetr/qFa/FpXbQtAmIpsaMk+ct9rrrk5ubB2APSVUGtyF0Qedsa39iGiE5X4qVB9HAhHE5klXKr2HTJ6Xy/9ZftfmZzQRIsiEvX8R/seGz1ZUZG9sN3fNb+N/kXvHCf3+e7nxMCSOlbJc+ntq/P/9LbS6ggouZyy/+PeRRbvN1KF2A4kCiOCbofSPQr9M0T+QKq/I+bfie3crh2647rvn77B3WNdcOkCy5pVCE5ai+j3p+390sUl/vLmlnT2qnB5S9u+9+hvbvrI75+/9yX7VM0TNrTkm0dcsuENWoNBMz6zbnnu0kPKgfluhWnvlpXfbbhj49P2Pnyf8xeX6CXbOhqWDIIwpMceedm91xEA3L1y5d8OcbA2AiDJ3xbfE/pgooCWmFSgM6HKY/f92dW/Q71O1GjIQ4qNJA5U1z3tUSNHjJZeSmROJ8XjRgKDSBRtUUSiClVxrwFSSs4h6l9MPsAYBAzwMw4vEGXWI6jCLjamtLkTfuyAX1397h1mJXVlNEgA4KjXfvu4AMEZgJzGpepBxAEgEdRGUFgoyHb/mPQ9PL6z01zFiwI5hJx3k2drSmmg6L+HcoAG1Rj33P0M9SgSqedUPaChKQk1BRoO9cxsQzW1Pmn8fVU1BzwKEsS1YkRgYoAMCARShYqFDVtCqhug8nuAbiLRX6noNdsDufHmb71qexpYli9frysmGrR+OfTl1+/zo70qdNL2UNtVQ5WOlXccesnGT6IG/iMOKd96z59CADhxP+iV94BOWovomjNQOuFchLc/d8leZIJPjZb4n7Z2pLVv1VTvbdtPHX3JxrdpDYa6J9zdKx/31WXl0gu32sgSU0ybuH8XicMdtUtKgdkShl/d56dXv1jrdX6ogEm3hwEANp722LESBf8yYswKK4ppK1BRm1wpfa6mnjupphIZvhDFYRJFYFP4/zQQpcMngZaIEIlulKhz/D7XXntnctjmd3xq4wbNMXvYi7+ydGjJXv8C4jNMaXhYojZUItHulUq9fZGnHD4AIXL5yTxTNh5w8H1iDms0wyDTv2Sfd1hE6rMy/++xlWxok3m/s24fhFLrpwFJ+wCVBh9SVY2BpXfUk3WJiJiIwWRAlARR4QwEcjup/lSBy3Qm/PG6H71mKwCcsfKM0oEnH2hfcsNnDhpm/kXAdPBMpJ1FZSpPR/KNMDKNoy+758aiI3D78/c+yRCdMxzQX2/taGtZhapb2/LTw2eWPq256Jao1oRQEs3qvU94wjEl4FfENBypUpqZUIqhECABQ6c1OnH/tet+dp9j8t0irIlFqtufe/xee5cr/15hfoUCmAmtRXx74DxgePQPLxOhgSChcwETT+ijjnYiqnYvE5gtYfiBfa++ur5DYWgCJEeefsnjy5Xh87k8vFw6U1BVC4BBRAOBg2ieGReaf85XC4DGBY4CcKE0IKWZSe4Cd1hJhoX418mGPmm244JOGlTyoVQajNLMh1J3IVKoQkBCCpXumWYMBSAuQSWERO3fQ/E1iVoXXPOD198cwznjN6fs86hFVbm8wnTwtlDbowFVZiK1IP2RVfwPWfwWzC2oHQbRowzTMwKmJxKAmUg7yypc3hbJL0GdZx3W3LapXgc3GogV6e6Jd8/jHvfRpZXSu7ZGCTvJ3oeT60LtaCkw26Jw7Zr9rn5KbXldqZcKfPACyd3PW3n0UIXHFwWlx27tRFYVRAQuZh8OwxgILDQwhJkVUHTA++KHlIioY+XucrvzqEXXXbfBgbE5A8kxr7rsZK4MXcwmWGTDVkQE0xMq+5dMMXhQPxxRH2DsKDHJbEJnxx1NgYQHWLLhiLP+rKCSXPizspQEUHLbKwKU1HbUCZXSYVIarNJgBChUFRLHmMwBMwew4cykin4ZYfTxq354xu0AcM3zDj36gGDm/40EdNJkqOgIdDggKjFgJU5OGYofbQu0rMpwQBwQ0BK9cOu99Mbj1t47WQe4m4iJw5mJCboSgBx44LXTpC+tGLM4ApQ4OV04xUyYuKMio+XgyEOmDvr18AUXr9dazTQmJh50YKJ1MH0Ocs/zHvew4Sp/fzgIVmwNo4iIgh4zQxZMfb8TJSdC0XrI5gN6P7X/NLkXGvmUS0/kAEBVZdQYnhZ7zt7rfnXF6lrN0MSEzBdIHvbay57M5aFvEmNEbMcScxAHNIQ4iYI+Ve3lTpKkC1GST+k/3/udPSnCHX0AAHNqf6a+S/xVU/s5/b7ua84O7x7o7muZ9fp0PB3VxetQ5iBQat3e69RXfnrvTX/P3mlBqV1LGcWoX8BKDl6nRFxK/RazxzjTpSJiO8JsqqY09DiQvPTgY59jX1WqrHvJT3++Yd2+7/zKs6q/vJOJjhkKaF/DsYG01fhWIImqUzbxhlX1522rbzzsko0f/dwd0516HdxY2w+jyc1g3P3XJ7xhaan82W02stzP7CArxqoMBYZnrL2pNWxPOHflutbqRub+u9svXWp2z6krD6xWzZohw381GdqIiAIvC8Fs4UwBU3FEUgzK5GTZxmCG0gtvIBUialn5YzDdPn6v66/fOi9WUq8zGg05+vWXHWO48r/EwX5qQwuQ0V7KhHIgp15WQvMhGP73qM4vINJu1dNs4YuTefEwFvJkgTK6SjrsgF8fyTGRFIvxaiU9JpIOl5zQRh2GktNWcgylHzapAhCFqjAFxpgybNj6n3J7yxt/8qO33QQQ1qw6rHrMflNPEatPB3C8KB2g0ABEHSj+HBBdZQy+d3Dz3p91b8LwXO+U2ccA/X7VqvKicPoXI6Xg+GkrQpzKXFE6rad2STkwW8LozH1+fNW/P5hSxdqt4LzzO2bTNvrB0krppK2dKCJQMGcAmeVnIaC44qxPR5E5hj2xViJLTMBbO+Fb9vn51Z+e53Eg1JVW3nmu2WoO/VFQHfl72562YDa+C15z7ImKpFJ4gWiuCDEbDDqAQwXr9EidRyT1AotPgFUXVPLhSU7nGKClpMXWPvhILqTKAMqOhTyOsBvXLShgS6Ya2Kh9jw1nTr/mitd/R5PCnzRjxwQITYgLGEUDuLoBTF8OqdXoyLVrW0x6tiIPIL09zQAx0bSIssG7tz/5Cfuj2RSt48HROFirMTUasmEbVi8bKp3UDW16fysXhDRzeSAvWmdfT25D7j5N3/y5YN/DBXTIkDG0LQpvseWpLypAaDbnE94wGiRbzCFvCoYW/X3UmekDSSqE6ZEqQj7kQPf1eF30fsIJeZKTrLvN3radRxIupddxt+GGPtrdrgOA1F2Hu7JVantIfZ/0Qeu6BaXDlt73ROYzM4m9VNjT66vobi+97aRyoP++/gFXV5fqfR/K1PtlvkPqMzOgD2T+1uQ7EIGCMJyxxLyfKQ1/8/FP/69XAqT/8Q//UFmzCkG3mS9xm1etg9esQjCeKmQrOp0yFz81m1brdV72v9d8e9JGVywKDCvU+k54ELgjIktKwf6tQN5NgGKittu3pmi9ztRs2o3/+Oi/GSmbd01G1hKRoSIA4cGgkXuk9aVBoNIFFCrSWAo+I43+pCgxERgf3X/txCRqNZ5XeNOsyVFnfOswMsH7JewIJTVG/QsZGW0EXWCBsw6l9RP0AYGpdwFkgWHAPvT83ZraLrraDPtBKwtUyAIF9y/Ofr2s875U2rIPKqn1XKBNgYp6QC6zLWT3UxpQlCgFFlmQ7gESHEBxpOj0d8s+R5nvToaNSCQEZS4PffGJT/vCP73l+99vf26/8W6FVO/spAbkpLWIxgaAiBdMAKA50Yj/FKvvn1EbclzGrL4DTkw8Za1UDJ+x7VmPecTuzk7iHdTANWesLFEQfLJsOIhUibivadEgACkAjUImk2YpXgFXs/93gGjQ5ysgw8bQtihaPxWar8yblUysiGvaS6X3mOrIUtFIlZjUFVCBFIg4rCTHNBzhEugBSvcPVEo/yPPg1M/4kf7DNRNyOSDALmBRll05omzvvUwZ0ba3vRR4aeqA9FlKnomol6WkLm4HeNMir2aYlgdQChhKL+Rk6gFW9jtQj/L2M3HMoqpQUSpX/vtxzzj3Gc3mmK3Vxg3184/z0kBzF/5YE1ZrNbPvz6+5uiPypYSdiO+uwQSKVHUkMCOhlBrxF6jv5uEN5OhpeumSaukJk9Za5gRKPIzCYbL9dXj2u+kOAYqznUK5IXmfYZCq/Othv/jFzPxZyZgc9ZorjiUOXi6dGUVPG6MUXaZM+NLtdtGkEyZz4ab+0FwY02Mq7v7xZWzckAY9lpPeHtLhSfcCgj+U6us7lBWOiZxQwsNWkAbOVAcQKMM0+nd+yoEG0kAMh6E4Wb40M0pnerwMpcdU0ul6JzxKVSekbwzJecyioiAExgRfPuHZ5x3VbI5Z1Os7RAj8b1reVAXImOCDkzbaXDacYyd9sCPeFlmpGD5t0z+csIoaDRmv1cxuyUqaTbm7tmoUjLOiWK0i+MDCYRxEcVhLmCNTKXh4tRA35OEsaHg/U9UOB4a3RfbauzdNj9cBnj8rgVJJX8/VkRGBCogpfWfVLnhgFvaRYxQuMxicGs7pJgNTw9kLHUwpoOHMBZu+ILthEZhSf09eL0kDVpZ9cXZ76ZDJZSlADozTuk0eUJABu973dRgKMhpKChg4D2YKZNlO6r3Zi5cAIhYbWRNU9jXW/netNm7qO1gR5AUTakBQq/GyNT+/o6P4j+GAuS8556qnSaFaDojF0Ie0XudaAka7HSsBtDw0/cIlldKx05FV6rKSuYY2PoZBs9ShOOtQobCtg+tUMhpCUlTA8qHjJiY6q2s1mjcree0P9lPGSzRqgQDu02nni7JbCOMwDvgudEdXKU5G9T+j+xi0vicsynxf7n6vFLCBUuECUrUw2RAuy1ZSOkYqFe7VUzwsxS/OpoCAKPMedRlK7z2c3a/IhkK5Ej5XkHVOotz37YVHbCLbioLyyEl3bNvy2kajIbXa+LzZCQ3WF4DNT125WJWvqxpzeEtVicBUUHsyWjK8td15yb7fW3fx7pQq7l2mZ6wMNnf4l6Nl8+jp0CrFXKE4LTlLClhna8wbUFOi3u5gKkwD9+tP1A6zMdtD+/N91hz+JNSbSo15xLfjajBG9ug3XvFGMzTyGdueymZw0nfN9JNpip1ps6F8UUu6mc4RA9MnnJK/Nm/WO9GgWhT1V8dSQRcx5WpN8l3DuQ5gzaaTyZdG9tSlUK4UP5tmdreT6+lJVc9SJg09e8rYX6KfSUELE5NIdK+gdfzVl7/hbmA1AXPvveMBKKOo1XjZj9ZtjUQ/UDJMCs0Kg06Mb6FqAqrfvWr5KHYndpKwkm0hPXW4zI+ZjiRmJXNkI0VaCbntBpg9ZQwqKNGgVKFBESOKL2iyUDDshwhNm2TQ5iiUKaEGOeZNl1fU6KtFrYI5dUOgzN0L8KVo4aRvnd4cct+XvYu7rML7O1MutMpvK18Z67KX9L7MhGnIip5p8MzqDx5NBW545OgthSwl+70z2Rw3TZ0hFFkNJXvyFKSMHZZVGO5kwycWiaRUGtnPaOWtAGmttmJe1+9gKtNsitbr/MdtetHWKLxqUckwuqni/PfhmcjKknLpYcGS4dd1Q6XdAkyWN1XrYGF6d2D6djnzrR2Z7UKf83bc97EHUPy3XTtaMjwjds2yNeu+pwDPi/3VmgwiDdm8yFRGH6VhW0Ew+fqLPICktZNcQZsXOLK6ik9YRVHoAp9QC49Og0xIlcskebeZBkEHVNwUt4P86mZjMqEKsoDru9B9gJKrRclqNvm0sUeQHQAouXqVnACcEc/Z2rYq6PTHrfrsAc3mmAXmLsbyLDGQYmKCTli3LiTi90eatL8V1Ez0CtmY3nnPqSsPRLPZ89h6wEKcWs1QA7L5jyecPFwyqyZDESpoEyjUTuYirs6lFoULAAUDBNkMYBN1RFSJPtQtMpzHniCM1+TAM741bMDv1ng7TrqRsndqpwYjDSB9duIraEMq41Osd2hBusq7bvd5TnuqeYrXkKzjspa0xuKkjd30rDqMRFOp1wwT4VRGJid4DgAUt/jNyUZlwAVZIPZljHIZHq8mRJmsjvprZ0jESlAa3gfV8otjUj93djLrhd4tZNvnil/+cMbaby0qJYVs5BEOkRSylYN9jdJZBCjqD2iqmGJWsiqAofcZA9B8WUlRCIP8a0QFAuuA9+SAyCfe9Lq1DbfVfm/fH171P93iuznviXEwiHRoaOifeGj04da2JXHdKcyJay79mi/U8laiUi5j4GUzc27sc6m9yzrSYMbpFLWTLoXDYthz4aZCjuwFSQ4Tc4vQXECh+QOKk+XJhl/J5eqpPM5meJwKWMBf5+BW/vYL4kghykwvXrWqHjSbYzLXzM68WEMkcvaUtS2TLmRztkZEPBlZKRl+9cZTTzjugUwVa1JXsvXP25+/uGIePxVaIfL73DrHaXZ2MoCteIR0bx2J9zk/mCkT0Yy1lqDnxMWFE3NnJdrTShaD8E61ocb+qemKVbcIDJ7wxcM+MuGPh724qWPmQpbifRSsD6cQzGUw+YpYR/dAViPKAKFbmUpOGhhueAJ/1sYFlAzoeLIz7K6PPKtI6UcEt4YmnxL2Omh49JPuZxIxi+2AODh+auigxwDQel13Hph0AeGAH627sSPy34tKhlVVMqwk2RITyKrqSMlUhfQDAFBbvnyXdxMrQKubTf3tm46pIOD36iCQSNWQEHtCFp4lhOGCsIfnzn6ooDAtnSlrq1y29xXX/J/WwfMypBqLtRIblF/N1UVHStRR5cRgwqXz7h2T0qXoHvZBVKx9+IrR8mnu3CO/nwvqU7wpYsoLrkXsCW4IlA33cmlghqdPJwVKswBK78J2rzq3CG9Q6T1c3Skt2mYBJVd/ktFc3GK2fugjUDFBNWDwMwFgYo7zg+bMTNY34+zMkMqHt4TRhnLAjK4HGLm0ncz2yMpwKXje5lMf+2RqNER3NTup1bgByD7hkhcuqgTHT0VR0gHd7TxwHwMyNfMUVgtrSmgWpuJ5XRNWMm1tR1USVjKfLFmdMV6TQ972/WUgepvYjmb8QDLaBTkl4OTJ9PgZQe6iT2W71bnzp4vUfDso1/jnsCP1hEsKZFiMjyHldB1GDhBdnxb4QpYMMOaL9NL1N8r+UGcuIY+rl2S/Rzbzk83CFeknyNXAuJWR/T5nAZhOivMwY7JTwaSBODsz+oN1dyrwseGAY4tKOBdP70urlphIDJ+jq1YFWL58l6WKFSCMN+XPZ6wcJqL3WIl9KAenf7VvRpFiHIRZKl99ugrmCDhuZJA+Kv0uY1lUMtwRGd/vB+t+pfU6z6Xpqg+qKwhEGsC8nquLDhaJBLF5aI6NqHM3zWU54GZ1KMNc1JP6zaIzctWs6u3vgWddX9VtKkxhV1Nhb1+MplhWrwnRl7Fxa2syWkqqHseno+Q0iSyg5C52+MKZVD+UCxapStb0NnJl9OQqcJ6/BXCydgQisIgFgOP++mmf2y+5p9FOA5NeqhjgTtj63JZOePNQybBSd8q6S9vJTEZWllRKT9y839SLqNHYdaniWo2JoCMGL19SDR4+ba2SAXdDmlxjXvpq5hSwuCX1O9I5PBtDKaqwjWuJlBk8aaMZEvzrvME46Qw+8s0/3x9s3qxRW4mI8iDihiXIMY60htELexjebls305K1FIAnVIK/g9cDNm5KtX9Rp5r2elNzOP/3ZepRkAOnfPYHvXJ9t/am9/e7Ogq5vTfZ53s2BOwJPdKCqmNElW/0g6eMPh2+OH8jUFgd63x/UrVKbPaOSuWHx5dUk3cqmHTTkQf+8IYpqK5mAqmTdciuTwhVVQ3V733O3yzaFYVsXVai7/ybRcR4ZyiqxDT3nppsXUcuBCouh5+DqOqtHSl4f8JKFpcMdUS+svcPrl7fTHxY5rwzks5gDabeYqqj+4pEotSv+nUtBHQAiGSApitewlMYhsGi7bwyOk4mBiCrQASQFSBSUO8BUAQggiISpUi1+zyS1/rPKSiCxs8rxY/uepraLpQi6W1fIyVEClgoLACrIAvAgsgqYFXj34F48FYsA3Qt5lPWS5RlLrn6kVwI4j9/cv09PsBJazRu41+6O9nJPihU2FQIqg+b6+kWzDvX2rMZuGZ8469OeP3iSvCkqcjGw7vyNRTcEmuXloOjN6HzRmrgI1qrGdyfZfa1GhM17eY3tF+911DpqG3tyPbqStKcz71wfe5qaR86RWayg84R2dLnhA6a9OCsKwo1hnl7aCcV0cc0SXPPi5U0anLQmd8/FGxeK1FbezcPt7fD8cAAUfJdHVrc/fIpSy1141sasJOpN+/OSX1n6Vh6/f41SKDysEF6+Fl6/b7FW7/U3FnPdUtzHdRch7WsfWLqPEhyD/3Sdk1sNGObvPhSTF4TieeQiIBUREjj1iqJPZ9BcQShlMz8UU0GGXYnA1LS/ZbML+xOFMw8392r6fenI5O+tWUvC9Q9GRM6EH+N9LRCAsWM8rD7DUwQmyAxNZt203PlfR2RK5mIksGKPmNQnraiZcNv3/CSR34ZX2n+OT2jZqeyEgWBmrLl9CcuA0dntq0oZcYzOCjvm+/kIoULKsmtmeBEkTogFdy/HvxtJb7PVpVFJWM2tsMv7vfd634XF9/NA4RjViJl+vGZXB1daluTloiNZsyUs3oBkG/F98barkjmuGHn6xeQo9KzumSnQr04RwjY9tQPCLSeSEvxEKuCU0gSwBP0cgTd/cqZbVtiSaXPmQErxPGFHFu1iTKBWEUMM1gVhuJHoBBDqkZBASkCqJYJKBO0AtWqKg0RdJhUhxUYNqVy2XAQnwRRBxqFIiBlUhNPJu0PEetiea+1PaE3PkDpzyFzALT7/u62e+2g2p9j5Dfm7X4DMNHe9yeY9ArZqNH46abnnvD1vaqlF20NUwwgy06oI2KXVoO9N7cr7yXg9eMTNQaaO5+VjNWY0LSbhsPXLR0qHbytnRooNhcWQfNb0ctQ5jNnSj1A0p2eaJi3RdEWo/qJxD5h3qzk0Hf8+Gjl4HTpzCgRccbFy+nzUMdtXSkfT2e7U8kv8HmBOzuAS+e8cwBiVpCBjcI33/2Bv/4sHgxLXXn5RDPYvLQalIcWlUtTM6NSwjKV1iGkWM7QJwB4oilVDmEykM50ot0Sa7dpr48k6Bae9wAFfWDpYUoq9KEuO9E0XevfyTKnW4otUprV9DN6w/crmHTzOwrQNqLVk2F0SsA0HHWZkstuQbw9tFI2/MrtL3/Mfy36UvOGnT0NUOtgrG7KXa86bn9j6E2tKGYlRAOuYXIYhaZeLAp9gP5cCx9D8V0tvimXg+IlVRkpGbOlZb+w7Dvr/jD/QWer4/uR/s+7THlkkW1PJjOkPaY5bvoQeQ+NIiPp3Pyc/hka39nSxgiZ6kvFrP758ckvCCpkw9bNd6/4w+ehSnjNuQGeesYumiLZ9P7aW5bXtLe/V69OumChaJBMAB3Ej2kAWwD8CcANAC4HgENO//6yqrZPYsKryZSeASJC1EmmAiALCEQZQOmFi9qzTuqHBT2mopnjST3Q6c5jj7enqrkxrE5mie93MKEGRGs1s6TZ/O2GU1d+fu9S+Z2bo8gSUqNF++cFCVRGy0F1a1s/AOB586rgnBOtrxFRU7a+tfqmxdVg/+0tj1biuZYzBR00F/3Ew1DUA0wF7ydHFvAgnZQM89Yw2hAZ/Y/5ayXKaJAe8K4rH0FEL5NwWuPZ2D73rWzIoTnGkWcwORbi+mqwoyZzgXDoai0FSEymROjMfBZjYxbjanDua0Kc+5rdj400Gs4fk/o76qsJWA1MNKkGoLm8pn9q0CYA3wDwjb967feeI4x/M6WhY7UzYxEPPsuO8Si6IaXRIvldSR0NpK+R9GAncyL2w1dSdWppKNoFzARYnRSybQ/xsS0meknF8IEdUUma+53qTjLbO1aqZX7ulpevfPpeX2pesbM8T+I5Hk2ZetMjD1HG62Yi0bjvBPPKHWWklNk0ECoAlNmYiec4ZjetOhwY3mLl0/tduu7OeWslyWYqqu/hyuiQbU+ltBIHSOAJaVwdJQMilNNJtEvNPLU26vvD534UhEpVsq2pmzGy9YLkNvxgmGutuROnAQUaDsFRQq3JWL5eb24881tHnn7ZL1HWrwXloROlPS0aD9LqM5IU/8gIsz39BP3Qp3cg++xG3UFx2g9zetvL0XRASSfn+offp7qPbiHb4u+s26CqH64GTFl3GTipQ9Ug7tP44DVnrCztvFRxHQRoGFTOHKkGyyIVIQbNWs4OFLrKzzryovd/nVtR2tz8YqUcMG8No78YxefmbRIdsxI5/B1rHg0OXiidGaGuXbave5Y9Ix28PiF5Z/lM4Rr708PZFDAKS+H9XcIENSUC80fvfuczptAEF/szPBgXUjTHLBoNQX1NcPt5z727tXXz823YvoHKVdZ4oF62MI2crl+vXpWqZKWc3gBvZSyQ8z1R6k4/og27BExiqI1TxUtHR87b1oluGC4ZE/ftOPpbqpBtUcU8/oiQXrozPE9iVtLQLW894ajA4PTpUBQgHnhxz6HnprBIzQcMs9145wiXSqpDhklUP7Xkm1dvnJdJdDqZQfo+rgyVEQ+dJddUGW7rusfLtHuSqnfmDecyPgry+5p67QpmqUYmFaoMkW1tv/HuxYsuhiph7EHBSnbwrnxStGrVmuAPF79kc0ejV6vYNjFlAhv1BOiZqtpcMRty4ax6zsecb2yGmygA/HGXgUl3Xg5duLalLP+S+5vzYiwigQagsze85PGL7zs7qXc9f985UgkWZ1gJMNAprbcHBvXXzNZbM9sMnKJKV2c/KSCVWCu5g4yeuwMDtQwaJAe/a80TOag+Tzozol3RFfm5NZmy77TxM8gxG/K5m3XvcE4Va7oilru+IvBW+nmHb3V/KkGJSRkfxlse1n7osZL8snbtSRFq4+b2L5xylUTtS7g8QqC4GsU1VsqGrI4XClIVwR524quMdbN1cZkHsbWhguxtu46ZoJ8qXvr1dd+aDKMrFpWD/vAud10Gt6yVJZXgSC7rW+4LO+mykm1nrnx4YOjl06HVHq3v/nXsAZT078DslgLzcU/zsZFB1a99XxitxNaYH1/WXLd13qwkySww6H1UKgcK1Zy7F7JAknebR85ASNOt1JQCAW/5e57S5a0XnfVSRtIJmFmqjrBtT1294Q7+Bup1xhgJ9phFSYALrO2gW7uabYDz1AF1j2Fa8vD0U8HXRAjkx2QAIDakard0bHBrHICs110CJnE2ZYIo9kl+fyuSkJGlaY7yz1ORqDF426aXrTxsx4d3xaxEGO8Zrphhqyq91DRj7lPyBjGJ2UIX8uhu89x2MuaTt3bC3y6d0fN3lJUcctZPVnFQfpZ0ZiTOCLjepcgOafKFNOmwJ+OxgQIHtozy3+8UTou8jvGQM0ys3ysTgyopFMp6Ds49IcSK1fPwuH2QL+M1AUhbtnWNROFfEJQJ6REzcP1JKJMdy/vKUk5cz+guPi9YJPbUHADA7dcPD9+VxGK7Dky67GTf8Wuublv58qKKYVCineSNtihSkcWVYCkqeN+ODO/q1qlMvu3Rx5cMv3Cq44yuKPAtGWhyNEAopdlGeVI+sp1NP+lvUzVgECk+St9ZNz1/VrI+TgRaezaVynEBp8d+MN3iD28LfN6rJDvJD/6xmG5oBKeVP7nHKhf4kHSbB4ksqqNs2zM/29g64dsJK7HYU5YkFfOn88Y2EdOtxAGUSHItD5Q1S8qzEV/KP2vvmBNegfQ2hdgARNcimfI3F0DfyV28cSEbgz842bFbA2LOFez2PU94e8dK2ZhXTL72hMfsqCNbFJj3DZdNJR4kBZpt9u9A57RZTJBoR2blzMJwVCHDxvC20P56y/C9F+8YK2nIwe9a+w9cHnqKtKelaxKdcwNz/VqRdxLLGSp7QQQZFpL1R0WuSzgGCy7O5nTZCROptVDQB9EgwYoVhD1t6U7TU70bzI4WkhVNAeTtLAdmeVIaXTqzk2tXB6kqROVn8/nqOxVMuvrH0q//8veRyr+PlJh6o0XzFxWJqg6XTDm0+BAwd0e28RoMNRqy9e0rn1A2fOpUx8YeHUChyRF5bE7n4jw/p1Bnjko1CrxemUBq5cNHXnhHa4dYSW3cMOF9MAFApOl0r2T8M9JeHp55tEy5VCTgAxHKWzgCfu9Xz1CtDDXrv8dSZYQlav1w03sfcwXqyhgbs3scmGB199h0QOnaVPKYMjn2Az524nqbuA7m+RBKybCx0cyMRPq/ANBcvl53OZggVmpEAaJS+B9bO9Hvh4zhpB3bw+riQrbhsnnW1tee8My5OrLVltc1oWTvGyqZQKBKnGUl5Ju+55t7w7OAxixm0IUhzMAYrSe62pGS4W1RdM3tt+H/m/eYz/GYlRxyzAGncHn4b7WdyuBwt4gJObU/ky4k3xzctAmRAyLp+Mxn4egCSNFMYXbnCTOJDcUyfwgAsKK557GSNJhAh9x9nWYb6k2rFvU+UfZ95AWR7iJkylDotdd9945bARDm2Pay08GkO7xr6YXXb1HVD5ZMgedJ30kMHJ+QH9Ta8vJsqeK4IrQh2979uL+vlMyzJzuxSXRhOMKY3V5xltddMX2wY73OjdFQd+CaglXPOWHdunBeYz6hhPXrFWdcU4LK+/NWgGnH8b5/aQZIupkaTsXU6TAnrYv4wpnczGDPDJsCkyMnzLFUHWEJW5dveefxP9lzWQnQvXCJeH+oxO1fzlydrFWjT2R1UsA58KB8GJS6CRAbqOJyYH5jQu8f57MkO7PXiH55azu6ZtQdj5FlJzwVWllcNiu37D308llTxYn9o0RydiVgVqjOWhcySBPxJBxmBYP5hjYeqtIdXTEV2f/9YbTu2/X6PAdqjTcZjYYcsnSyZiqjK6XTEhBzWnDL9tJR1o0debOj3BwVb81JF5w4Zy3oc2pT7+Bx927CJGE7IsEH48zgnspK4iN31BnjSxQ4RNUWmCJhFiqdfb3vRFccp/dCHGa24Uw7Uvut+YQ49xuY9ArZzl0Xiur7Iu1auOTDte452LGqzHT2ltc9cunqAnbSZSVbz3zs04cq5qlTaVYC+CYHz8uDdU4l776RoHMBldxTRJEqWOiDY03Y1RO1+W2xVpPD62uqBDpLVVXdC9Wrg8DJ7PgyOR424pmap857s5Wu7pwWyoCZY8koqI6y2OiSTe95zFWoK6O5h7KSenL0SouOBvNBKhYgsJLP0NrDTsgXxhSMFqW8gz4IwqYKEf35jZf9868BnXOIc/8xE6SGd31l3RWtSL61qGyKC9lA3LJWFleCw1TLb2142In2BmqBwfz+gAkZVjIXI2fMg53sIEjMDWljVjIdyY/2+urVP9B5s5LxeHRFi17MQ6PHaaelxMyZOpJ0ChFu+NPty8mHPi4byYUzcMyPUrOHs7UzKcDg7lweuEbRCmaWzkwbZXx4z2YlACZ69dSPN+XhQFRt7xL1dWjnhpuhMLOTdZ93C8CS55L+crB8Kb53N+eFD/ezwXMj+eLRv0zbqGXgDO+ibLgzHYoGAb9l82uOPyJXyJYM1No+tfKUkbL5u6mOSM/uYC4ZFF+YM5fwZIdAY8C84LhVk9tWBKSx2DgxzzGftZrs//brRoj4PSpW/aMQ4GUe3tm25GsC8zCPdMaABw86h1NZ2609yVTDggTVURIJv77lzY+8fo9mJQCwfLUmocbT3Juh+ubmOFkxdUNbGlzlmjlblYSDEkXhzJ8ktJfGakVNdhsw6XqeLPvStTe0Lc4bjdmJ+C4yAigSkdGyWaJBcDYB2kwusp5J9BkrS1bx/njfZU0+abZwBjugicxlPZo9s+NqJYtLhtpiL1/25WvWznvMZy0e81kqbX0lD40eq1FHwMT5ky1vIZAFCb8+ksvqUD6Lk3ZnT6eKM/0eHpNqh0Yq2LC0p6dtgI/MZZTCQzvEqTMaDTn89d85AMCJEnVAAOsAN3L13ro8x90HQHCbOFXJlAlE519/2Su3xIVq8+uHuv9HTyT6hy3LOds60b1lZtacWaX22Mlkx0ol4Jdted2jHzfWbNrxWs10R1dsHcILFleCE6Y7VlDESmgeF70HXGgQwdhRYEltkYloJrIRS8xK5j3mcxyy9N3XLAHoHRpFicWnb6Zsup0cSaevM/DJByS94VRwak6cMnxPj04OQHzFPv3PFgyNkkr0pck3P+o3saC8J/XguCFOXKAXlMqnmOrIMlVr4eiMSvkB5/k6EmTWyc48yoY6GVxhw1FnZnMU2nMB0HyE110GJt3szH7nrrtToB8fCjhu4fF/VRJVHQpMSQLzwd4uGm/K7f+0qgpDZ4neT30aOjBAmcOLc/mIZMynlUuXXLTul/FArXmwkmY85nNEJ19jhhYdrlE7ZQLlm5uC7KQ5N572AQn1G/syTMUdwo1iEPEPNEdaeFUEAUt7ahtUPh6nuWuKPXchjNcEtXGjIqf3nLM8xy3LOlzjKhqY6ckNOEudlxxUSWHPu/HSl/2pVhtn7ICl6q4ZitVsSr0O7myf/vzWtv3tUOAWsqUBmMz2tpWRUvCMTW96zMljzaYlgu61bOpFi6vmkTPx8HH2XuiKYt9WRTKOwHnMpp3oPAFJ/e9RQBnE05FtE9GH05rSnGlwrSYHnrlmHxjzVo3iMZ/qgoM7Sc4zhyU/zKmgFLug5N4/wDw1/Z1SDX+uh0qWlZy39cxH3bbHs5JaLKgffsDSp3F56AnSaQkA4/rLeAeS58aU5MXVgQADEuYSR53pDUEonwR0h1jJLgMTAnT1RI32b05MitrVhmKzSVXPBR+f4soAmPiDWl8V/OFtTxwywHsiC82OUCsgDe5F7QMRd90dYSJatA1f6ZnKopKh0MrXl1549XVxo+I8DH9WxGM+Tdm8gYcWHag27A/U8s2/hVtL4gtTUgDDqdqRzDxeZ3JeWoAlOKFMesh3dqZvariXIiixndm+KUT0SWhSfLfHLkpYXlPUlQ3re2FM108kFqwHVLVmjyNyg+HzJfZOzQkRlES5VCGBfmzdpS+7s1Zr7hAr2XXMBAAnqeJlh637+tZO9NPRUmCQThWnWQKRmepYWTJUPn7rxsnaEts+bdFQ8LBWaIVct+xBAFHEVNzXip6bDVTm6qAGqCHiydDOWI4+ukNjPsdqss971x5IRG/UsNU3BnXL4T0eJppZD3AHaCt58NHJIGRn9CKnh2guW+RYO/a3L6iOEMR+fuYtx/8JTezwyfvQYCVgNEiO3HzFi7k68iRtzwhStVPZ+hBPFqZwnnCBiU66RkVVjKmasDO9vjw18p+o13m+GZwHBEw0ERupASG1729HVsibo0rSN0TU6liFoY8Rmw+1Oyk7xgJGoYNARVIMBX7Q0NnAI9mWzoXVZL+YjJYMhSIX7nP+dRM7OuazKngLDy3aBzaS/giCgvSfE0unn8+lCV2NxB3S5cTd2QbBbOGTO7M3M8sXUJTKLDPb7xapfAaqhBr2XCCp1xlNyOHvWHMAgtJH1VpVT8iZTfN7jI7Ik8WZteYECk7UBqtvX/ed50zXkvNstwcTABjrspMvXvuTttXxRWXDqkWFbKBOpFRmPiRgPrxjtVvm5A8z5so60tqJFLyuszCcOYNIbBBuiHl7J9rOhI8rQLX5jq5o1uSAt//4cHDwGunMxKVFyBoMZ08cGuy0RR7BNiP45WtRekO24TQBwmEmqe+ilPN9FaoMk0I/M/XWo+9GM05z77Gi64rVBJCSyOe4MnxQrIPl9UAtqmkoqoVya04oD0oKiCkNGRt1zrth/IU/qNXGTfM+1vjwrt+HseeJUV092bFTATGp5iYA9UA2tKqhVSUUXMzOT9VZWEnBQ2cDkB0UYeMMDlNk5by9zr/mtm7x3dxZSZMAUlMK3m6qo3tBrcST2F0fVyc+LtJJPA7l+foSjz6SZhlcUCHb+y6UHZYdrydaqrCd2f4nboWfX2AlawzGyB525o/PNkOjp0pn2oKZ0/ssndGBzwgpDdxeqc6fAVJV4aBios7UbTbid6Fe5+Z47T4fi10OJt1U8ZIvXnNzKPKfw2VmuIVsmhZjQel5ygP1j+4FLAk4iAd4ZBYgwQ6yHc0HsQpoiZm3d6LNCvrkDg3Uatbk4HdeeSxz8ErpTKWGj7sn1expRHV9LnLpX48XhiOy6ixzijNt85wyWVIolauk0E9se/txm/ZgVkKorwnQOCk65O3/c7qpDH1AOi3ruxbVo3vk76EpsFEqFmJ771ElY1RFBJE9Y6I5tgkTK2hnHAt+QHbneFNUQS0b/du2dnRnmZlVSAaldXUuYYd63lPEZroD7QeBhVf+mA9BURkJmKzg83tfcM0f581K4jNCYfhdXB0ZhUiPlXg6Pv3ZGw8dzmkaGJQuzoqsPiBxS+g175MiKFfZzmy/bapsz9tjWUm9zqiNMxonRYe+Y80rglLlXLWRqAqDiHLerDSHUKdQWyF//w1gk/CmfuPXX/TjWm3c7KwWhgcETIigGKvxQedfd6+qfLhqCoZ3+RiEzgFUUuyjy1JUUo9B29IBIcsghpJ/j5SZeWs7uieoBDs85vOQt685joPSS6SdjPnMxMIOFc6p/HlWop5sgGvFCK+Qi3yPD5AbtpXVVXp1KaqlMgnRx/GqR2zfI1lJTQ0aDUFzzB72nivfzZXK+VBLUKFeZg7ulEUUhzoZjSt97Ar6OuL1oqAyEoTt7d9cf3HtnEQn2WmgHjxgOzdp5Pv970f/GzR9xkjJPHLaWqE0wNGA276voGyuRWY6YDtSABRSwDMzIEKpaEp12Bje2ok+vei/fn7Pjo75pBKfxaWhIWlPWuU4ZejzBQXyfpTqdJp6w5ucsTS84mqGwXhEXfUNg+oGneUhluntv5nhLV9CLH/tOaykXmdMrCA0yR7+ljV7yUjpk1yqvlJbM6IqRPH08PQFn8mnOBM9M4ez79ORnMRF42njG6E1pWoQdmZuCDh4JdDzKtEHPZgQoDpR4yObzdamV608W2G+mR3A7AcHBfpDNMjDCtLDx9Pr0Cx6yODANDt/eDaRViGVmJX8CVz6fDxofv5jPg9779rHKpVeEJtEJ801cCiw06+RYSWO25bPiNjbIOgDEjclnAaetDjrCISqCpiAxPBHcMYJ01iqZo9wnK/XGStWU/dvPfCsnz7Nsvn3oDy0QmYmLZEwwKRJv2p3JnCfSWRnBveOWWp+8MAbafci0aSeJCgbseGd0rEvuP6rL9jSbSzcmX9y8EDu767nCRqNb21+9Qk/3Ktaetr2MLIEGHTvX5yH5Yxzkn/ecjEbmQU0fD9V57AdpZQWozpkDM+E8u97f/EXm3RbzRDmP6BdBe/joWpZ2tM2Z5idC0lcDcQfX2b+vIIMQWYinJuCHgQkjgGPqgqqIywzk9e1lh71tQfR8PEdW1QJzSZjfU3j9oAGDnnPmmO0VH0PA6cTl2Bbk5YIJt4VKeD3inGpE5pSVESRvUuS+m+6IChEOCixqGy3Ufu033x17HfxRIOdb/UQ7A7HgADdIvr+ViSrGFQSVU2MuQuBoocthTxwDmHPoOwNCnSSWZiJKKQahze3bWzTf+/gQC172LvW/g1M+bmSVET6xDR3ZnCulyOVAtZ0eONsK5018HmH5hoEncxRpjM155TOUKKPYIw6GFcDPFRYiRLqqwkTKwjL9yXgRAGRALAAcMBZP1kOY16txK8wleG9pDUJhK24ulU1xRwcwEh1nPqJdX8KMFGaOVPvlX6EqUImYFXMSNj6x998eeznqKlB8/45Bg84mFCjIclArau2vPqEi5dUSv+0LYoEmrATHaBaa3b/e8Mbn/Yyh7BmoOCa+51SKWbVMhFPq/zbw76ybpvWamZefiXJmE9LenZQqhjtTNuMoFk0ajQ3zc1lLI4C7pmVA/KEUEDessAHJOT0iCgshoaNndl+VevPf7zkPo/5VCWsxs73PEk7u9UyqB7/WH9l//UVJyqazXi8SIMkLpnqLwec86t9tROexIQxEnkmV0eHtT0DaU1agAwInGYgLlj0f3Zrw7Uf1yfv80XsvaOepusiQiZgqLYlbL34pi/VvreqviZY26Do/rqWdwtmgokJUoC2Cr6vwCtUQGTIiWc87IDzqwAeOJ9L6DMotBmor6TCG9VkzGf0mxmDC3eUlRz87rVPNkH5Gd2BWnmBnormrqbA09FKgLze4tJDd7SkF0jSs1r8QJJ8LkEFDPogGidFMSu5DzF6nP25fzNAzfloImuCZaXK/mzLRzHpCST6JEThE4PK0IEgBtrT0NakhSp37d5jSZCSnzqYQfsYOTnXhPrupAQVK2xKrCozUdh50W8vfMFlWFUP1jZOiu7P3bd7gElywU0Z/TY64a9GSsFjp0IRNoliogWhi2QvFsIsB6QIZHxhTRETGaC9qAIBEUHx0YPPXTe9Y6xEiXXt2RSUSEMrvYvWCUeyacF8Otg37KpQpHVZRX4WcjZsSk9pJ6+2YjE0anR629qZVx/1Xfz5voz5TFT5L9y6pBRER8ByBM7SrTIAdHr/oAOgHD8bL4YIUUhqiaARg4mCkBgBs9q2UcsmIDZqo5KQlspkSiphRWAqpFoltcMALWKlxQTdW8UeTIqDCDiYS2ZvKlVjYhC2IOGMkKrGE1yShr2i8zclkqbZR9F9j3KaiXgInFpTrhq10VbpzPzjby94wQ+wqh5gbSO6vy/j3UYz0VrNHHxuc3rr6SvPtoF+l9x4ElkA8Qmv6QY88nHBoqI0N1sDDKw3SaeBu89ZVRkpGd7WCa/fa/v0xfU6GI15DtQaI3vwe658FpeGTpT2jICd7lGPf2cuxHF6dQZZ+7np3DQwZCpZ04wDlC3jTwuu/e2RRqEKBx8CkWJceV7eLZn9AsYYbKVkzubqkrdjZrLTDYEpqTpUVVAAqFZBUJQ1+QsUgArFMMYgFiJNRiyVEKdkTbnXPspBOaGBBEIFASEp7UkEPFWQJMVK1gI2hNoIaE/ZpHiJkfbaSS7+fAp3AHBQShPpaSFaTL1Je+uoaGQqQ4GEnTui1swLb7nwBb/YVUCy+zCTVGaHGo3LN52+8nt7DZWfub0TWWIyucT7QPhO0EmQbaos2sRsAILBjKTLZEgpnr8l9GFqTnS0VjOEOYNJ7OlRXxNwC2cjHhqtmQyJNyIrsuEragbLTujz0jmXlQzw0c05u8UXicXQIqPT23/QftWRP4oHau0gK4knpFicf3sVilMABZhK6CsK8d06AZXeBd87ZgpKbkiU3ABUFd1mMMqWQcf2xEk2NV5HodL9PbZJjd+fgFTfoNX0QF49gh05N8Y0E+mme3uQ5fJsp1nNo7kkG7CmuiiwncmrpD3zolsufMFtuxJIYrjenZbED5Us3j8T2g4TJceU5tYb033NKTxT54G5CKuDqmKFnNfUjgTM29v2qiW3DV+i8x3zmdjkHdbi55rK8BNjTwuYLNknP5qlL26fq7w7lJp8uOlmavLzVXOjKsltMky2wUwatgW0E8Z8NuNRCwGZx1OpcqyGLelBhapCRWOLLVGNwSBWrlQUkNTz8Rhu9wzQbiI/oQ1K1K1GZY1t4zjWrMgACBCPXjXxc8xJ15izQwvYIKmjTyG7z3Pv0cGMtL9YEBNXhoOwPXkR2uFTf3f+C25DbdzsSiDZ7cCky06WXrDuVzOhfGm0ZFg18YvtN3zM7eIXzN8gSQa8twcivXtB7yahQiQKwOo5tHZthPmO+RyvyfL6r8uq8j710S9X6ymcvF50YqZRxBkj6dFKXB1GM6MskB+Y3Qcji6FFLFH7W63TD//ZfR/zWUu+Gp2i1RFCokTEFz0nDyJN/0T8miY/4/9T/ydx/P54Dhq5k+2V8uHdrCFj0ZAsooLQsoANUgG7hI9dqqrCclA1IGrZ1uSZv/uvZ7/s5i8+b/sDNTJk92ImALoWBcOBfnB7224OiFk0CSJdrWKQPwmc/wuyVgTieW4gSFGBdUEyUCu0a5ceec135j26YjzuU5ls3TtmqqOP0XZLMgVq6XBkvm75GV0D+RAnx1SKzvQB4NSvMVEwk3ZmQqvmnPvMSlTj6tHLf1sh0DNhO4jrvApS5FRwsVJBOOj15aJcRiwT6rnb7ZKkuYiC85rDRN7B4tq9i4kKQGSGRo3Y8Dprw6f89gsn/zvq9dhM8wHy093twKRrUTB87ro/RCKfGgmYVFU0d2EXhD7i+SmzsBY3NMo4slE/rHEYSZcbd6yARM6hBgTzGV2BuHv2kLf935AK3guJWXwvpFH/BVN4RhLmRI11gEii6bAqU4wGzxiFzHOCoUWsUfiN6FWHX3OfWUk3xNkwvBJB8AiEbQUR58r701W97MkyZbJT5NeEXCG7R+LUL5BS0UT7IgCmFLMs5qxaeGj7PosgslwZYpCxtjP1iY3Tf/j7Wz9/8v/FZQUNuS9OaQ9BZgJgvCl1gLFN/2NbK7p9iJlVIOplC7OEPhjwnE8vSZ9lmuX8btpYVe1oYLgV2iv2umDdD+c95rMWj67goPMyM7ToERJ7u7Jzx4evjqSfdXHn+g669WVDHP/QsmwaTL1I5VB3jcd8anu6JcQfvs+sJBPi8MkYGmUFRL1WCAVet7mLmvJ3+XSKuwDriwHDZY3qEcfh2ChSnjHOha6oKlQtBWXi8rCRsPPzMGo9+ZbPPOMdG7/4qu3YiTYCDzkwIYKurtVoWXPdVhH9YInihqieWJ4DDcqHP5hFU/EyFOrrIo71gM+ygJSoFVkBeMfGfI7XZO93fnMREd4JG+oAS1zvOIp0miqnc8wx+eVdh/KpG9ehTbPgIxhaRIjCi8N/PuzGOM19X05uAsYg+IKWlPRZsFGc6sjpF+Sv9E2xJvWyBl8mi7y+MANDR/jqfAbtb/WmwrRo24oYRExAXB01ItGfbHvqTbf8762rfv+5k3+C2rgBlHaXkaq7JzOJaa5oHbzXDXrRtk509WhgGIlfrKZ8SvxMJQEFodld0TLvQc4/RQtCIlW1i0qGO5F8e9kFV/10/mM+k4FasviVXBk9RqOOzOl4FBgGZ7I7WiTaedy7qDgLoTSAlPRvmgpjWFtTUxIEH41HV9zHgVp1YYA0GL3rMWRKx2k406scUs/s45wtAgaInGnA6d6gHLApijL6irt6cJeyBMRbmJzVYKjou6oKQAmILDKqstF2ps9By6689dNP/yzWvSbss5Hdxxcm2F2xpGtRQOua4ZZHPvZsK/x9SJKKSxWtqWPlkD8B5kAWfAVsvlt3n60oK9F0aCMinAPswJhPQA57/U+XEkfvUNvRQoGDUjSa5hPGYI5qLfk1GQ/I5FhLvO8F1VGD6S0XdP75yN9iaGd0pF7JAMQCpwTDiwwmN1tlMrGsmJSlp49LfyB8rl0/L2xK/7ygFNVN6yjd/6ZqRzTxDo0PQz8frJKtD/EXmSXgp9lgq5+gS3X+EoErw0zEkJntd0knukBa+l+//9xT7ohvQuMGzTHZHQe8777MBN1UMXivC371g6mOfHtRKXGzLzCEzriozWIg7YY6uTqUAQ72KioxK7Hf2OuCa66e95jPsZiV0HDntaa66FCNQgGBC2NyYFCdwRxVPE+6eSD45L+Ha10Qs5KAdWZyqxL+baeN+WycaLFGAyI8S22IJMWbui+k9YiCAe1AYRpbByvSDu7PBsjpu9mg7tI54DkRVGXGdlo/i2YmzwxFTrjtE08+6/efe8odqI2b2OJgzOL+7lF6qDGTXrQzEe/qCtPZ06F9ugGVrEJJPQWDTpHhrOM/dTBD8bIWjcd8TnZsG5APx9+xMXdWUq8zGjU54E0/2Zc4erNG7XhyaNEX1T4zUSryWkjrGSgAoIL6koEXCQbWTAAkqI4Yndp2bvv0I3+P8Z1gfJQYQ+HuPz+KTPlR6MzEdbCK/J2/V6pO/db7DAOYwzHPsBia/3XaM3J229XnuR1VJQ5IIrlbJfrMHz/xlPHuS6vqa4K1scXBbm11ybs7mIw1YcdrNTN6/lXXdyI5fzRICtlmE1fn5CSPwcVr3m2oLAoMhVYvXvala2+IWQnmfgElg44q5c6buLL4gJiVcF89die30SwO5YPGG8yH0RToKIXDWVQVQcA6tW1jW/GpWCtZvRNO9isZAFjNyRheFEBVembL6doLVzsiT5jj/buoWLj1soUd2W/zeF//e5BKBGZzRFAe+voR7/ifPxx25pp/O/StP16xtnFShAZJj50sgMmOL7XlTVWAKrZ9zvZ2tKkMZpVUIVsaBIoK1Yoes83WSYU7KlAD4snQTlnRZMznPIePj9fk0Hf+7CDi4PUadgdqeSz6ioTXohCIZileKIh6tOA9mhZ0/bd1QWWElPCfeNXhf9lpYz5Xn2gxPm5A9GzYCOqaLdOOXKlFTxUX5OlsAq5vP6uvqWmW75WbUS2qYVs5qBxaGhp5e8nQ1Uee+T8XHv6mHz4GzTELIo2zOAtgsmPaSVLINvKVG/8URfqJ4YAJvTL7OegjhQcf3l6e4m2ojAaGImsv3Pcr19zcnPdArXg+CdmZM7kyureKFf+tMd2hobNeJDt2q6Ji9l9U39K7mDUe8zm17a62lj6701hJXRPX+qcuV2Meg04LyM98GFx2XmAGVbx/54ZB896tO7SNhGsSkUahJKZKQ6Yy/HJTMj8/6q0/+tyhb/jmQWiO2V616wKY7Ih40pR6HSzgz25tRbdV2bBKClBmE1kHlc/r7M+pQAMwb+9E24Dw3+Y/5rPOaNbk8LesOYI5eLV2pvV+2/8DQ5tZHKOIZpVRoBCUh4gUn8LpB92784aPX5nsD/tsGl5cUhGbHtCOgrL2gX8qzUmt3g3voODY4lFUWpOWoBVTGXldubT4qiPf/IOX9qpd68oLYDJ/wNfVEzXa5ytXbROVRolAmi57HxTezAYw7nNelhIP1OqI/r+lF91wO3aElYCUOHqHqYwsVrGxFoAH2aIQlCusU1v/0DLyhZ06UGv1iRb1OpPqKbBRX0raabThwbgQpUAlYqaDg/LQl49+8xXn/dU/f3NRT0tZAJP5sxOt13npH0cv3tqOfjlaCuJUsWDuw7RmK6lHHoBUoAExb21HG4as/WRixzjvMZ9HnvnDh5EJXiHtmd5Arfvl0tC51L3S4JfVc+fudpqVKmRVP4FXHrllpw3U6oY4K970cDCvRGcGqr67rs6dXKTNBuaqqezeoBJoFImGbRtURv/Zjoz88Ih//v8OR3PM7g6A8qACEwIUExNEa9dGBHpfaEVJnNrmom5iH1sZJMKmalYUKsOGKbL6pZGvXfsX1GpMmP+YTxWcxeXhEagVGhiL0LxO953LbnTABlVQqrJOb7ul0x754s4d89kNceiZNLyoArGW0n2zGbF9wOyROc1vpfsPTvS+HBmayyoMwNjW9siUK08ojSz50RGv/eZfxTrKAxvyPLiYCVKeJ1+5+sczHXvZaMmwqFodFM74jmnB+m7xmiqUlXh7x3bY6gXxmM/l8x7zeeSbf/QoMsGLtJ3SStTjqlWUtVEtplKqs5+3uWJQLdYL05KnOheqKZGofBRv3H9yp475XH2ijRO+cgqs7Re161yBbo4wW3CxkwNINF/UJjgZtTnOWNlRNCMKbGs64qB8TDkYvvywV112JBoksTC7ACY7wFRsfTq0bYPYkS0DBIWU13MdqnM9Zi+gOIMj+p1lzXU3ol4nmr/YqGA5y5SrFU3qJu5LyOJma8kFpJ3KW3r9KILyEOn0tvXtgC/aqaykG+J89d5jifB4ak8DKgxNt/Tp7GFZuuVAB1UsakGXo+48+qfzWW/+x4gUIKZA2tMRlypHVcql5jFvunxxslFaAJO57shGQ7RWM8u+du0Nnch+flGQdmRDf2C5OGDh+f+gLJBK3IMzE9rIWPkoMM8enHh0hRz11itOoKB0mrRn4lnKWkTVyWmLRqa4yiXnbnKX5nry5u68OvgET/5PbEgU/4pXHtnaucPHk0I1yDOpumgI1tq4wERzNwJKN9v50H9gCARPPc4cQGrOgEuza1IDwxst1vGKPpYokPZUFFQWraSO/U80GoJakxfAZN5iLHhysvOBbe3o1iE2xpsqHuSwVrRuag7O4sBw28pX9mquu2rePTjxYGio6vuNqZaSNtUdu2voXF0g03ffOdxpZztpE49blIdZW9t/1bpzZjweqLUTx3yuPrG7T58DsfFdN2X2TJr/kjQAQMkFwVn3n85RxtCC40Ke/g2d18fM/xzQtMdvYNuTUVAZfekxr/r2Sx4oQfZBCybx4avj8O/euDkM5fUiqhyLnDqvkvqCdVUgFWLe2onu1ZDfP+9q18T56qg3//Dv2FRO7g3UKhIMvVkHLbjYZzn559waorMPKktdUqLmHDSO62DFatppre+9EOfuown0RGrNANDe5DtKxaCUeS7FoDS1Xoq1UE6eSD3fdax3EUO1H1Jpf53eZ2di47RP/mxMR4uZpXqOMw0+B/KnhLLaSNnQx4555eX7olnb5frJg1szScKdfb6x7opWFH1gcWAM3FTxbGX0nnVi0VWlRETWylv2ufSqP8VayTzuxgkrgdr3symZVNNI/qyZC18hyoMPPCeyb1vdC0Q92oNqjslQGmdULZWHWWe2/3xm2RGX9bxZd9ayIv4YVvs0qo5UYcOQFEKqlkQsFBYKS6IW2n3AQtRS97XU89R9PX5OUgGvdP+vCkHiag9N5ldkLlgquHLzWSB1wiEqCstSK/XfO8d2ZSpmQz1NiYjVdiSojh5kSvZMgDSubdqlN/gH96IAoVZjajbtptoJX1laLr94aycKAZR2OK+qCJeUTWljO/zkPt+45u3znsyXGNcc+cbvPdWUqleoWAWD1fEuVUrPEE45v5PreO64wjOlnvf4oTrPZYeXI/e5cD87uw1Bqco2bD97+nXHXL5TOoOzFwZhNcgce+dPedkBf4PprQD3CVyPcSRNfKQOOCpAKkn3sGbW6YVI3Z/JAC0STX5K/6dI7K8nUCLV+IajRBCCojsjJ7u9Hlhoss0U4+mFZ+n3ZJ+HSJIESr1XUmFZ8rf1mVf/b+w+l/kMEY3r26LNAn3U775wyp/jLvXGLjGYDh7sYEKAalJqv+GXW/6ZR5eOLCmXnru1E0aqZMhrnVUY/ipB7ZJyqbS51fnq3o+85p3jXDPzmoHTZSV1Zd70g7PZlMhKJO6IpT6DyFjkzBqdkJOoiA17KJkV7puB6v7RnBIi0w5TaXjupWUtVUeMTG9fM/2Gh30Pd+l9Gz7uAxIixcV37Ueim3XLPWsgIvG0rL61QJ8PJuZEkO6QeLD0mhITFBRShYGCSTWAagDAKFAmkTKAElRLJCgLpExKVSIqo1QhgImI48pbUUAsyEZAFAE20vi7xSEF3H7tLth5dZsiUXvwOUlaLBb7GSaRirWmPLKMWpMvB/CRXclOHjK1yd17169ry8uHyPAXFpdKr5iMBJGIJUrcdYrfq6oqAbFZVGJsDaPzrt0w/NoT1661wCA/8WJWcvQbvvccrgxdplFHlIiRYgAKitlFeixnhjU47KX3nuQ0yjGPov8DYHZ8W535N5TepvsdWBAEZKPoKVNvOHbNTmclLqjcX0u9zjjoFIPy3mbve1qlzrCWo067WgpGqjaaGWYOholoMdQuY9F9FbQfgQ5klUMUehiLHkAcLKNSNYbfzgwoiuK6GAVnmAqyzCUzabDLUGIBqpi5dNeXfrGTj5GlxekuMyIV4aBC0p7+NW9tnzDRHOv05jUvgMk8zhmAG8l9bPOpJ7y1xPyB4cAsmowsrMT+sZkajyRoZSKzqGQwHdnp0Mrqpd+85uM662CC4hN3FU7kP22Y+V+ujj5eo7bVZHykpoZnKTthTAIWeTBB5vW5gYkDHrl1igAtFeqoWgwvMnZ6++WTb3r4s3umRffvLWEnnI87+aL5wjWlZZNmP4n4KBZ9NDH+nkT+3lSG9yNroZ2WpS5TyQFHSriVfiXkXMMgf0jl2X4ezJRAKtJ50s3/79T/21Xu9cFDCUwaMTmNL49Lr/nUxlMe90Nrw7PAfOqSUjCsACKJw2EGYDiuTd4e2s5UGH1r2nbO2f+y66+rxy/rvIGkFvuf/vENTxgLyiOPl/aMwJDphzHaT2Y6/qVEcbgyKDpJu67ly1RTAi35wiYn9Em206vmUCetyUzotCzB3Pcxnw8UEPiGoXZ/Xb2agNXx7xNNiidrxOM1sP5KwooTFTUIiMJNwJ8RP34K4DP7fuyXB0hr8vkEfh1XRo5DZwawUaqGyM3UafHdO53J0TnUmfRAZ1C8DuHykJGZ6OkA/m/VPfvS2oUw5z7c41Ki6YbnPeYRpHwKEf21AkeQ0ohCZwzRHSL4ZWjoO/tfetX17vvmLySupmM2PWGUhH9FpfJRYkMFM+dE0TiEyIqhHLMFZYeZdOPxQkHVmSNTwE5cppMZhZkwlT5zgsXwYmOntl2y/S2POG3XsJLd9kwi1FcTJlYQajVgPbS7Lw6sf2s4Cg55PTPqbEqj6MxYgAylKiMpAwCaSWFTKuTpp6GLWEd+W9mwJx1CwZpSxUTtqR/f/N/PfepCmLMzToN6EhikUrq6alXwl0WT5YPuREjr1oWD1p03K2mO2aNf892PlIYXv8d2pqwyG7hZEvaBCXKaRQ9EuDiMyWkqs4FJ9zkHsHq/I1EBDKuSiULp/PX0m5b/ancZ8rT7nFhKaIK7+tE+H/jFSsPlL5ug9AhtTwmBOBeWSCrEAeIMEvJ1NMWZnAJgcsEksctgDlij9l+Ckjnuxs+fvHlXAErwUD7mXWDQOvjKK1fxiSeuFWqsjQBEPQCZqBGWN3WHQSQFJMe+/juPJg7eKuGMIBlWqWk6S1QYqsTrejI7OZ/jVGiC/niEfPVl/FzXfrnwu/SyN/FapCqojBid3jY+/Zblv0pYyQKQZE4sUgA2Zi1Xmg3/8sR1y+prns46egWVhh+BzrQAxJkwJn1UM7U9bvYnWw9E3lYBzWd9sg6bpBIBxPtF7egIAJtRB8VjvO+/hfeIY9+AnLR2bUSNWFPpPqgBoWbT3icgSYKMVfU1AYQ/y0G5qmJjoVeLh2v2iILnxCpq1vOdWJkCs67qoPku2BwdzZSspwRpYtaZyVZk9V+x5zkRzV/jaZwUob4m2NQ46U/anjpNo85mMiVAxVPq5oxHn6UXMXfMiJxzxH/OEEAQFTblgIBDAaA2cf9rXrzHHf78FOH7tqy60qA5Zv9y1+Q7g8rI30qnZYlimtsvbfeUWxeVEGiB4Oas3K/iVuTneyBLqbvbydwps98pideFqiMkNrpo6swV61Eb34O1knksjZMi1DW460Mn3qS2/X6YMkPyqm9a68gJraoDtGhPLX1+rkl2XYImp+FBu2o38MKZcB+W2rjB2pOiY1512RMNl+txeKOcvrjJdxKo/05FLvXVgpOo0CnOA1Tq76jNsJOElRAblpnJSQg+CihheU0XDvJcAQUWdeW7Nm09T1qTv+ZKlSGpkSyFgqX6JyB5+8bUKVYrOj/64z4EumwBTHb3pV5nNMfkkNPHlwUmuIAMV2BtL4AhD9UgXx9N7twgzMUOOh+Pe8IX5NOO5HtfItpReYQ0ir647e3H3YLx5gIrmW/IswKEzzyrrZALwEG8o3WAH4vvpqLI6yhF0e/AECoZT6YYAoB77lm/EObslotqnCpUxSgPfZHLw38lYduCEwtknS3U0oxukhXW1Hvx53w8MqXbmhfn1HP3U4cJ9bYpCSvZvoUD+sROGT6+Jy7rk+A2NN+znakWERvS1GBht/MZGGBH6QJEdih9H3iyndC584x2ne61ACbzRxLCWJPRHLMPe/W3PmUqI8+17SlLRCYb+6rTWl4Ugqg3VCZfmOITVhz7hDw7KThhs93HQpURUrFf2PzW4/4Qj65YYCU7EOooAL2r/IdbyMptCEpOa7D6tS9frOKGLOkbjM7JY4KSsvtoAUx219CmvprQHLMPP/2yD5bKI2+27WlLgBlEQcmltGkqW9SqngGgbOqPfCzHw06yMXmq2CkFVKQqZAKWmW33loR34pjPPTTUUSU0xjoquC25vyjNwSipX6iGghjHY9fpO6dSx1dVQMB2ANhvvxX3+zENFk6AuS2rVq0J1jZOigBg+enf/DiXh99hw5YlKKtTLp/v/s3Xj2RK630nWlJi1K2w1253L6W7fDU7dJucp3IbSupOJKlVietdlIIqY3rbZ+9996PvwhFq0Ggs1JXs6DLWZACWSTcScSYc6Yc4BeCeusu4mbji8voB89JUIaobFpjJbhLS1GrjBlBau/ak6KiXfmO/R/zzZU1TGn6HhDOWIAy3/yMVxyKnyvvCk/QJlKp0hHrjaHIYSf45h524rmPaX4+gQqbEdmb7XzrT0ecWWMlOWGrdY0Gd3oFQVyj1FJ3ldTm/1aSqP9yF4wqnwqoWMOYvANDcBX/6HslMail/zGbXEa37Wsr/odkk22zCAsDyV1xSYzIfodLQ0bYzY2MLRkoTgsLANcdW1Kk6hdtnlzEs6Z0gveClyLIkpdGlCUs/Pqc+w0mQjEoVpij81GTjhA1YscBK7vOSXLUiUuWYjZBPEvHdXEizuhm84awbKnl0udj9myTqdNCxdwLoO//dn0HewtEvXv7qOf+9qLRo6VNh8AYqVZ4CAqyNLBGZbM+L4w+Se67IDY16EUu/N8fpq/E1/7m2AT57AW/PTrI9IoBUNKiQROEdgujRm9+9clt8RtACM7lPZDb2ZjnofT/7TlAZeba2pi2gJmNFgHy/Tc56QOB40aafS/mXOMbbSeOgMBuWqPOnKdnyyDsufOWWhd6cnaqd1rnRaMijn/+l04lKj7Vsf6GW7iSijQhoikPRMDDDHGBfVRxNbJ4ApidRUD6G2MBGLQWREpHpuZOl9AxKcRDNOJkhP5ulSxsIfVEkfadJl01Tn8l02Qmhp3f0NRH0qQhRXo+J30v9eEehbEos7Zl/2/y+E7biqPvJ+GgPC4tBpKivCTjCoRCbWD+66WDNCfLkCPLp6mlyQ+Kiiuh+WKzEAUDhrTGQYJd0De8xYNJIjOXJYC1BPlepLH69DWdg1UYAOlo2CAgBqFTmciWuHlQLiToisQOo6XKOviWpZ+iTY8XYPdBeYbbrYxIXFznWQPlmPX/4pJlPyIRSXWBJA1989xKUqizT238blIML4rspFlLB9/mOtZrQgB48M3QAgvCw+NRScsMScjW2TEuEpw4F/j6snE7XF2kUzIDI9UlYz81d0PW9BwmwDanVxs21zZffYkXPhI2gaiMmExgyw0xmmIjL0EglnLFROG016ggITFCTO4BUYHyTqfnQgvjWf0KRFozsdGsM3NqSTKrZYzzsFMJBocSGVPHRu9/56Ck0m7wr7lwP+WVFrLdRYFdwqbIXorDPOzVfZ+Tp9s2uo76eKwwY5dHbLsNaCOEXu/LP36OyOc1klsiWDeF5UThzvTEVA1iralXVao9qKAwpDLrOWc5BjBW2IuFJM17N/buR+gFGndL73kXvGuY4SJXtq8mX5aeyNpm7m6pQqWJ0ZvLGkXDbxfHoirEFVrJTllpyasjfw5QBdMPGAbU+HjZCnhYM8jRnZtzwe0+LEhm24cw0h9HVQD7JsAAmO0dv1trECrpj7StbQvI+VU05KYPSIke/4MtzRynqAk2NxnFZRu7Ok+viRfaE6p0rmiNDGVMct2gt5b7Vj8UdoQ8Mq/qROxonxWM+gQVWshNOLoxBUBs3pHgqJAKpcBrcHVB3bgjwFirmQh23gNF5j8ZaGADcMHHR+tuSGH8BTO4fdjJm63Xl65sv+66NWt82pSFWiPUPTXIim6IXMnCF/DBt9dBT3/sKPo+8n6W5E85XGetU3FoqD7Gd2XbNhj/S/7fTx3zu0XpJnC056NiDHknMj0Gn1XXuzbrOZ8Lh9OAzzZ0HlKuELj7/UtsWYgNY+XE3tN9VN4s9umhNrLxXotYMwSRORvm4NNNElWmsyrITGjDmM8MO4NNOkCl087mR5xvFPNqMuNqIZovUVAkiAOjDOPeEcKeO+dzj9ZJmkniX00x5pAQR6WbgcvOO1e+U5tdK3AmLbt9V+lgrCGRsZ1oty+XArilW26PBpNEgqdXGzQ2XvvzXItHnTanKChUPysOtWJxtjnXWy8SphM2wCc2HNj7bAo91ALkNX16B1vUTVUulIZbW9P/e8+s7voW68kIqeGctShiryYH1a4ZZ6R8RtQEQZUDC9ajxsOCMVuKGtDkQ8phmKYSDMqmNfj1aPvLqmIrvOj1sj2UmzWZN4pxp+V+jzvRfmEscD4fMC5meCsO8XV5umpvmY13k7RVzoqmTlUkzJW92B/kS/PR6qTJ6go0gTB9Ec8xiorlQsLizlnEwQGra08/l8tCxGrYTk6z0Re9Uu2aYLTyM2BHb1QGcXFaoO+IwgAKXrDv3hHBXhjh7eJhDWhtr8nXNsXtJ7QeZS9Q7kqqFMWneayQdcqQrFt34uCBOzn2W5gqUCr1fM7qMZr5Hdt6uxKyk0/rRvfXHX4G68oLb/E5c1q9W1NcERHgbPL1QftHVU1dS5DeTOS9Q5H+iRGSkPdkmNuMA0NzFTnl7tGbSbNakXq8zL334eVE4tc4EVQPEvThZJpFNsWb9V7OUM3+R+04m5ERagk+Pcewf3QyQB1gyOksPrIhgOwLVD8WOYAusZOexEjVoNOSQNmpcGn6ctGcEFJcUEPI3lfQNhDygQDnRHtkKWEd/S4VSwkFFVeTHE+c/byIeWL5rPWn28K5h0omJFbTu3BNCKJ2lEil8Npuu43vqwJJ7pyhiNU7pq6/uhNzPdDSQbLiTrVlIx9ZOZsBSZZgl7Fx+1wf/Zm2cwVlgJTtHKom7rPd+588WEUwDauN2LN+F7xatuS5p7o3H1wGeZig5/UQJYkmJzgWyDasLYLLL2EmcKr6u+eIf2qh9SVAaYlWx6bt7np14SprdpiyfduIxJ0oPofaGMVBPibXzPbz+rt0Qh0jDViSI4jGfD8BJ9pBdVl9p0GjIkAnfZ6qjx2rYkt5sRo8mRl4NzWcKrZ6bVd6kPDXASziokO3M3Bguqn4fUGo2d30h4oKfCYCkbQcCfZ8NW1NMhuLhz64G4cSvTthChWMqsuLsrKlit4sUyGUDSB3xNdd5CgBqqTLMCNuX3v3Bv//lglayM8ObcYPGSdHBb19zIgXVM6U9LaTEbhVzPzxVdMumKWed6RYgusKq5sNc9zwjJlJ8+pbPPKtdqzUfkELEBTABgCRVfGPzZTeLhJ9xU8W58AQeMHDZicM+cuzESRVngCtFhNz5s3AZSzoEy4RGqgRi7cy0VenDMStZ0Ep2ylJXxtiY3e+sH+3P5dIXDbhE1vZOj2xxmnoLF7PsM31D0pzYmhFzXcFWVUxQJtuZ/K2R0a/GrKT2gBQiLoBJSoyFKkmJPhZ1pv5guMQqkJyLeK7JLttM5xXVMiJtNiWYL1pDlv6mi9ngFrNlQ6TMe0SFKyOEqD3+lw//3XULrGRnAUmd0YAe86bLKxVULjbl6pEatiyI2MsgcuENcqwk35ZRwD6QD23jE8MQBB+/4aJnTMWs5IEpRFwAk5QYWxtr8o0Xv2SziDaIA+o52WSYiHqLy3LjBnzjKYCCTJAWiq0uSOSqY+GcuJKwEibW1uRMZPUjWDDB2nmMpNEQYDW1RkcvNJWRJ0trygKxxw2pCw7ZcySTus+w1vy4ikx4pPCHN6JiTMXY9uSNk7TsIqDODxQrWQATHzupK99wz4Ffsu2pXwSmalTVkse71V8+r4X9PWkxNsMwXB9Y+E848syYJd/dLQYl4fIwiY2+dNfHTrxpYcznTlhq4wYNkuW18fKhZz31IlMZ/UeZmYwoDSSeru5eOb2mGzHToOFkbxR5rSxnc5EV+JXo7DsuPKlVq614QNsjFsDEZScTTcLakyIA71EbCcWWBJoze1aHsfiUe4edFB5mhVNkhmLtBW79iaPTqCjYsLQnt3fIfGxhzOd9PylQXxOgOWb3e/OP9t927MHfNpWRF+nMdktAAFWQINfOkLnoU3pH73iKpyYosy7yzDOjwajl8hDbzvT3brrg+d+q13WXGCAtgMm82MmYrdXGzXXNl6y1tvM1E1RZ4+64vIbhNttp0VhQZFmMy058gq7XliDtQC5OeNUDLOHSECGKzrvnX590G2oLYz7vExsBFI2TokPfvebvKqNDa4NS9ekys936GIkLJOqEtFlrxeQYCwa2SfjOg1hcNyRhe0YsvQuANnaD3bUAJj5AWb5eAaWA+V9sOLOdKYhTxd4akKxOkhNjHUZDKAAUX8dwrijNw1A0HVurgg1ra3JTZDufjFnJ+gVWsiPaSFewro+XD33PT94HU/4Rm+CvZGayDySSB5L4GAkABcNz03DLCbzhTb6OyEkniylXWKPOR39z0Wm/riUh2ANP4RYW/02pNm6azTF7fO2iRqm6+F/CcMoSsdGu5yuRxy2+7wafcZfPONkj42LfdaLvr5echr3fU9vrretzmwcAWKouMtHM1g//4RNPeR/Gx81CtescF1VCs8mo1aTr0H/gu658WhAEH+Ty0BO0PQ0SEYDYrfegDMBLlkn4tC2PfWfXbT5d8JazL0iydKZUYenMXDupW//mjiNe0YnHkj7wVhILYFJ8dhHqq+nxtxwz2gnNtRxUjrQSKTFYUTxyojfqIjdmIgUCSI+2SAFGBlDc0Rco2EbvXiYISqRi76FOdPztn37KPckAnQVmUnh8QVgBwnpo+s5+6FlXPgkwbyHm08iUoe0ZS3EXMOX1kHSaPgUk4rHW9AFPOnWcqTFSp8aom6UzQgpr262/v+miWlyIuJuEsQvjQQeKsePcbI5tO752cZ2Ivwyo9Od1Jm7wPWPp1PjN7mgKpCZaIPUcuraMjoN812eeEtf5nuE99cd9pqZr9dzuSWPMCioctrd/9g+ffurdqI0b0I6wEp1lrNjuhgnO/1evTm6Qq+MfE01CDcD6fQkrTlQ0m8B4wj4a/XcfcNZP9g1Unw7mlxPo6VQegranVKNpjcMaFDdcptL7GY3LLR1w11E3y4d82Jv9W60JKoGd3rb6potqv6zVxk2zsft40iwwk9nC57pyY6JJj0b0P6Yy/PdR1EqGcHkYRjqMAQCm/ulABeEOUDhMqxfCJC+l3+cwFIEJSCX6S7u99fi/fPbUTaDVBDRkB4Bkj2Ay+75+zWhlSfkIQJ6gwFOIsMqUhg4iEKQzDajaxFQcuabKnO7lmD5rvmQ+Z1rl6GXkVkPnK12tKQ0b25n84YrJ6JlAUsqwGx2vBWYyyzIx0SQ0xyxO++pZYsO1BOI4tZ8yoU8zhfToztRcnPiETE25odQgc00GiSfDvXprkSbzdCgz+jM7yItAqkpBhe1M55N/+c/nb8Q94waY75jPBEhW1QPst2L3ApRaDVh/ZYKk9zI2jdIhwV4c8naOeISFqzxS7ZioE5kOdcpBqVJhlKoQO8IRFivJYhCWMWh/iB4Kg6OgdBRUDufySIkAIGpD29OSHCUGYLIZO0ccde0TMwCRfSo757kbBgF9bupUNCM9/S8umWcuGQmn70IUvarZHLOo1xkY262O0wIzmSs7aZA8qvaV88vVRa/IibHoRtSUHc2Z1lTS7CIjnGb1j969j1NaSUpk7esryecphEplkqh9O0v0mFs+/cztyWs6jz+Q0WjIIe9aczZXhk/TqN1WECvnzxZNEoDUY0ip6YE04LRiALJjwRPFSEsaozGDwKRqVBHEExYRQLUEoARomYGSKgIAAbFhMgGIgxjuVaEqgI2gUQjSxEy8dwSRE0J9GZuMsZUrsmZCII8pki+UUY+lRFcnIRYQA+3Ws9d/+QU/6CYHdrfrZIGZzGFpYDUAJWO/stp2pp/HHCzW2LuCeoDSPTEoNeWzd8/pj/xMs4u0MtEfOE69ERc9FaXLUNJbTJgJESlxwND2x2/5zLO24a5xM68enLoyGtBD3nPiMUSl9xIHVQqyc5C7gNjlLxnASP1ffThCO+ve5Xba9kXLdJig3VQ8JT+tVURWlVqq6TlGqhRLWGS6+xc5IMlrHH1NxBFg4fN0Rc7UOzNDOAckcIAEIJDloBpEM9vfedOXX/AD7KZAsgAmc0aThtRqK0yz+dI7Hl37yseD0tA5UTRtoWS6HLYvkiIT7nTF1Vy4070Wu2NBtT9SNDPSU4tCHo1ZSbnC0p76zdSmu74cM4wd6c0gJbvmPcHQUNW2tocAm/R1n2Zg2ecLAII8wzlovqRYBz7tvjvtGNGfW0Q9PpjrnUrtx0y16YCwJlcK761KdqcoOowEeQZDmWFtmT8qMpWRIJrZ9sWbvnTav6E2btDcfQemLYQ589EU6qtp+cSK4TJF15ig8jBrIwWD/fUjbrrXVx/iCLK51DJyNShpUVYJlsvDJgqnX3Hbp59xYXKyzZOVkB7y9jUrOAiuJmily48yYRocYOnSrzkBi/9U0zmfnNm5zUUTAci3YfVYQniYBjzNdN5QBXkbzVzLA7KjK/yhjVuw6DIgBURtUB4xtrP9x+07q8++5Qm/DNFYrbuzQL5QATuPu3dtYgVNNMcmLenZIO4ORfFaApBbdp+rM9B8/07PZqB/cvu3l4hypmKkNXk9q/1aXHS1Qx2jyrBnBaWhKolI2liOxEPdVUEicZVnmo5rt9w//hsyo0nTLfYpE6fuekWPbFdtXuzsfV7GHsL5DOdiJ9WM6VCXGWQMnVU9ad+UKZXbtKfudroAJgOARHMNfKn3WlMaMjacvjFszbzwlu8/q41Uvmh3XcwCSMwrs6P1uvL4Pt+4ab+7Fv9dqTx8tEhoQcSUEkszMkPCLCglmlJKmM1ID90MD5H3zk6pUINUlUyJxEZvufU/n3UDJlYYTBw3dzCpjRt87jg56q1rTqBy6ZMatbnHO9JCDihxdctSBkq+D+U4B2UvkC7R0tTvvtDFN4Ab/Uso/VmUZg59ZakHHJnvlGIa5IQz5NE8MiZTufqRbBjjzlDKGYBnMjTIZ4M8jIRUrQkqRqL27zutyWf97qsv+XPMIE/a7furFpjJfOWTiSah0RCK5CwbdUICJ1VqyPbfZE6kvHEwZe6UyHcYp7eRp+eWS0NsO9NXHbK+egnqdZ53LJ10Eluy72dTKZGo9CGve5d17sK95+AzNE4eAogk0wV7lD3LLlLbyQBFyom991PyrCbu1O2N8ciFCllm4v4NPl0kH5qQerI1fhMqz7HzMJ7u86K5sCv1XsumbMSGf4la7ef87uKX3La79N0sgMn9sXQNqC992dVq2+eboMpxZSw8c3M0CQdcQEG2dDr9nNeBy7mjSTLmU/GhtWtPihKT6LlT4OQEPerMNX9nTPlkaU/HQ6PSYQBcKo98aCBZn44sI0kDTGq7Il5wKHwUbQeuPUM2rCHXmFldG0VNgUg6pBHnfd3vDa/hVYbxqBveuVkbRxdJMywRa0zFiER32VZ4ys0Xj924O2duFsBkpyV3VgNQUtgPRJ3pDUwBQ+Oec59/CTkNXt7UYCZNWAwoBLVcqrKE0z+5Zb9ffjdhJfM74RJWojY8m01gSCXOHTkzjV2HN0oxlqxJU1dLSWsSQHagWVYbmM8jI6bmmJBm2ZICkNTzgpwtIsGpOBU4jCVt2O0cn1ymR7MhEjzvVeRYURbI1JqgakTCP0un/azffOW0X2FVPXiw2WwugMmOwYnUak2+vvmKP8Paj7IpE1KeJ/4u0ezIi7x9AHLhjws4yTZIbaii/CE0GjLv0RUJKzniTT94uilVnibtaYHC5FkJMnfmDDvpAQeyF3zmAsrqErnHrHJ3fn2/4OoCm+Z9Q5B9P3JMI7VeurRdPNvLCa3IMDkS9eoqGaaU2p6KRKY0ZGzUuVXC9jNu+nLtWqyqB1jbiB5sV8WCALvDYuw4UAcfseHAX4XSOtUE1f3VRoJuKRSRq1hmBFSkenYy/+8JrY4oGwuNlsvDxoatH/7u3JMbqCvjc8fNL56uLSfs9wbee7R6Ppeqh6tEQgQmZMXg/jS6fgRFiTicryIpEGNzhSapNK9HK0nrJ7kydTc9TM42PIO8yWEMGVbhGbtKvlRxmhVpgWDrM/qGx0Qr9T6N2VVUKo0ENpxZZ6emT/7Nxf/4O9TGDS5/44PSNmKBmezwEqeKf9Ecm1Gr742rX0nzDV3piyzrppYJYTIeGQ41Ts7oeKBWW1S6A7WaO8BKGnLEAUtP5vLQ32l7WkjVZNmEW8SluRAifXfuawSelKy6Qi4KdZH+RewKtlntorc9V69xMjDkCL4um8qFaM6cZndMhS/sy1Tgepmm5iwbKWYjSko2KI8GUTj17cnW5NNu/vqLfj/vOqEFMHkIabHNMVuv1/m6b7z0Mgnb3zNB1SgSA2rPDOH4IdkQxtvXgaw4160rKVVZo/a3f/ffp/50B7QSwvL1uqq+JjAavb975Tn1DakLNxtCUCZzkr9b5zQOJzSAN2xJ9ApJwKH7u0db8YKPZ7tuvQn5RGU35MkBN3L1M3ktKS3AOmFNbixo/3cVtcyGjCmbqDP5qYntnVP/cPFLNj8URpEslNPfV/UEqwE0IND3UtR6MoFKSIrhtV9T3+2j6fmSkALKyevdTmFKeZokIUb8VlUisEbtUCyfE7OSeWsljMaY/csbn/iPpjx8grZnBJz4dCT+KdC+70qfWbk9OdovVU/MWjKBBHnc+cnzVVXzkVBaX/AGOVqcs0oXhGU27I6a0O5gvSyAe8Kg7DCsvJl4UVjjr6YVqGgUBNVAJNoetSffdtOFLzgv/spKoAe/T+8CM7nPaBJPA7y++dLrJIrODYIhhopkxj2qO5zJORlnq5JUFS4Nk0TtS357wXOunv9dTAnjNTn8n9ZUVfS9kLi3nXxVo7m7tubqYbKiZ5exJKxFNDcPJh+2FIVEHhaSFjXFEV6775FUjUuGvWhmnVzY4zIRcWtDHDbiYSvkCWvITT1bKxBIUBkNxHauteH0STdd+ILzEsPqh4wb3gKY7JRwJzagjkp8ThRO3cVcYlXR/lAsePpENJe16QGKpO52krQJhq2WRObDO/QFa00GkQZD0y8NyiPHadgWQI1XJ/GWeDuFa3CKv9I6UC90k/66XY9TcUO+QY/seiSpUvsegOWzORkAEGdGdKaMP/U5XhDprit5EIFb++N4tfbZiKpqxEGZyQQctSY/G917z6rfXDi2DjXt6iMPGTOqhWzOTlnWaq22wlw5/sLtBz7ieR0TDD9LJRRQ4gxN6Fk2ZrMz6d/6WR3KNseJKQ8bG85cdPOFp57bLYOfFyuZWKGPevvfjNhIvkxMyyAW1M03pUyaqPttNBui5EvU++FPttTdtSVwRRvtZ16AWR5On05BaEPutj0Vw0Ul9pmsjrqhTzZcIsf6wC0+dIFERSwRcVAeYYk6vxHbeeVvzj/1Pzbe/K1OnIV76I0fWWAmO42d1AT1Oi8eif5f1Jm83piKgartnbA6YAqf+grb4jsbkyHpTE+irR/eodEVyezZman26UF55FiEHQHAbnVp7o7sy7zA6YvRgtBBBoUuyFbTFj1y4QwKQyJfpihX8JbLDhUwEbfux9k+OXU/mX0BgERFRcSUhgwpdaL29CemNkR//Zvzn/+dOKxReqjOMVqwINiJS9cB69GnXfRMUypfrmKtAiZjOeAZXeFzVEtOXWsqI0G7tfUNv/ny2Ofm7USuSiDgsNd9d6+q4HoOyoeIDZWIGJ7P7pMOt9EwxQ1osLCqg0TXuZ6BWrCeOpKs6uATWd1Z0JrfvuNRMisTcSfvdd8gKgQFB1WGCkQ6l0cRrf7tBc+5OhHAzUN9cPwCM9mp7GTM1mo1c903Xvo96bQuM0HVoGcLiNzMFORE2d6dXQCSoDwShDPbPvWbL499bocavsZiVlK18pqgPHIooo4QwO4dP5NKddmKuEIpfKMqMyXmvrRunp30J9rlHilNKd/Yl65xQZYpeOpUsjUpXTEYfd0FznS9XAl/vv6n31sjClVLySwbDipsw9ZVUWfmtIn/fu6zf3vBc67usZHmQ39+0QKY7GxAWb48zvUavEM6rc3MJQMVS+qUa8MNeeK8rKpYYmYTVEzU2vbxiYtqb0O9zs15O2zVGc2aHPPKy/dlpbdo2FIkboZ9vxBkQp3s3VezPSzpO3kqLCPNNrrB6YNJs4asHoJiL5N0KT7ylgRZIEtpFQKnhB/57w5kfEYyhWvI15xkQ9GeYCuAWgKRKQ0ZMiWWsPVLac+8ZL9bf/W3v7ng+ZfEZlrdrNue4fi/ACY7e2k0BHXQtc2X3yIS/hOphsxlo6pRYlCaHXEQNwiKApZUKSiNGFVsitqTp//6otq7ErNnna/qX6utIIA04PDNpjxyQDyEPdFK0kVWPt1AkJt7W1RV6i8cmz0lvMMP0R67cJsMs+vB+W6SM2zy6kXImy0lnyGqaqGqbMpsSsNGRTs2nP521Gk9Z2LbRX87ccGpF69d24hiNkK6p814XtBM7jcBJY6RH/P8L55iguEvUFA9UGwHIpGCu4MOiMDEzCVQUEYUzlgl+loo7cZNX33J73YUSOL3rdZjXnXJwSUqX0/ES1Vs0ljj0Ub6LibOWZF2zIfXglEH6SNpW8dU/krnfYJqykybUFi85psF7fyaHiWR00TSzCyepCYJmzFkSmBTgkZtiA1vBnBpZKOv/e780653NDPBQyjduwAmuxmgrDz5wsNQLb9LSJ/PbA4kU+q5y1vbViW+jUi/H1pcuH78hfddsEve+4hXXPLJYHjx26L2VGZwWFpA1UHggbwtmlKRz6vvEk5VAO+sJeWulj+B1SvkkkeMTYmqMVgnA8GTvcLEARGXQESQcAYqcouK/lgI39xu6Cd3nvuc6R5wT6wg7MEgsgAmuxhQAODRtfP2hQ2OB/MRYC6L8kam6LaObr1povnGyd7J2Q2XdmRJWMkjX/mNI4VL1wK8SJGwEjiTBFOgEgMFen7SWcaS+k/OmTkFSFp0Rs3fTLr45HTaidNMI+VAr0qaYjWaKoXXXimPKoOYiBhEBsRBXPYetiBi7yLIjar0UxFaUw23XHvDRS+fyrCQ5et1h4/TApgsLDt6gdcmVtAg16z45Kzd5zi7OzBs+T9d8p+mOvJ625kOCWRyaWAqBgl30FfuMvY50ffbjHYSI1FCLjDqVvWlgYP6BYFpqZa6Xrnc8+LtmSd0dRIbQqJ2m4g2itU/EOlNKno9A9e2O/Y3t1102j25GwMA7GZjORfAZI9clGq1Zkb0jgEEO2eEQTKZ7xGv/OYTDNEv2JR6Q9TzYU26gY8yLIScgVqa8WNBbhtwSInSbKeXZj8bWXaRaaZzaYgmVphiVUE2KQyMQIgIFKoiImioihYRZlR1moDtCmyDYhsUGwHZwNA7SfjPocqdoehf7rjw1C1Fx6u5ACBzWha6hnctdmuzifu93oAiOQyGz4ui6SkCjIDzeTuOL9UMDaKC5B5n/yPOS+Len9iJplQ1FiNIksBE4mZoWBAJEayKChmOVMSSIlKmSFUiVo00MB1YDQG0SWUGbNpqESpsCKNtdEptaKdNiFpMQctQtbWxfU9773Y1nGiuj+Y6wL1WGzf33LMvrd3vXsV4TUC75ng9VJb/HwCQpL33Q6lfAAAAAElFTkSuQmCC" alt="VB Group"></div>
+   <div class="brandtx"><div class="nm">VB Group</div><div class="tag">Brownfield Digital Engineering</div></div>
+   <div class="appname"><div class="a">Exit Module</div><div class="b">Working mockup v3</div></div>
+  </div>
+  <div class="ctrl">
+   <button class="bo" id="newbtn" onclick="newCase()" style="font-size:12.5px;padding:9px 16px">+ Start an exit</button>
+   <div class="box"><div><div class="k">Working on</div>
+     <select class="role" id="casesel" onchange="setCur(this.value)"></select></div></div>
+   <div class="box"><div><div class="k">Acting as</div>
+     <select class="role" id="role" onchange="setRole(this.value)"></select></div>
+     <button class="bgh" onclick="demoJump()">Review my stage</button></div>
+   <div class="box"><div><div class="k">System date</div><div class="v" id="today">·</div></div>
+     <button class="bgh" onclick="adv(1)">+1d</button>
+     <button class="bgh" onclick="adv(5)">+5</button>
+     <button class="bgh" onclick="reset_()">Reset</button></div>
+  </div>
+ </div>
+ <nav id="nav"></nav>
+</div></header>
+<div class="wrap pad"><section id="view"></section></div>
+<footer><div class="wrap"><div class="fr">
+ <div>&copy; VB Engineering India Pvt Ltd &middot; VB Group</div>
+ <div><b>Working mockup</b> &middot; every figure below is calculated live from what you type &middot; nothing is stored outside this page</div>
+</div></div></footer>
+<div class="modal" id="modal"><div class="mb" id="mb"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+/* ============ VB EXIT MODULE · WORKING MOCKUP v3 ============
+   Everything is computed live from what the user types.
+   No database, no server. State lives in one object and in localStorage. */
+
+const DAY=864e5;
+const pdate=s=>(typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s))?new Date(s+'T00:00:00'):new Date(s);
+const fmt=d=>d?pdate(d).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}):'not set';
+const isWD=d=>{const g=new Date(d).getDay();return g!==0&&g!==6};
+function addWD(d,n){const x=new Date(d);const s=n<0?-1:1;let c=Math.abs(n);
+ while(c>0){x.setDate(x.getDate()+s);if(isWD(x))c--}return x}
+function wdBetween(a,b){let n=0;const x=new Date(a);while(x<new Date(b)){x.setDate(x.getDate()+1);if(isWD(x))n++}return n}
+const iso=d=>new Date(d).toISOString().slice(0,10);
+const rs=n=>'Rs '+Math.round(n||0).toLocaleString('en-IN');
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+const ROLES={
+ HR:{label:'Human Resources',stage:'D',all:true},
+ RM:{label:'Reporting Manager',stage:'A'},
+ SU:{label:'Successor',stage:'A',scoped:true},
+ IT:{label:'Information Technology',stage:'B'},
+ AD:{label:'Administration',stage:'C'},
+ FI:{label:'Finance and Payroll',stage:'E'},
+ DO:{label:'Director Operations',stage:null,approver:true}
+};
+const STG=[
+ {k:'A',n:'Reporting Manager',own:'RM',open:-10,due:-5},
+ {k:'B',n:'Information Technology',own:'IT',open:-5,due:-3},
+ {k:'C',n:'Administration',own:'AD',open:-3,due:-3},
+ {k:'D',n:'Human Resources meeting',own:'HR',open:-2,due:0},
+ {k:'E',n:'Finance and Payroll',own:'FI',open:0,due:1}
+];
+/* kind · form = fill and close · sign = fill, print, sign, upload · auto = system · ro = assembled, review and confirm */
+const ITEMS={
+ A:[['RM-2','Project Status and Client Handover Record','form'],
+    ['RM-1','Knowledge Transfer and Handover Certificate','sign'],
+    ['RM-3','Reporting Manager Clearance Certificate','ro']],
+ B:[['IT-0','Pre-Exit Activity Review','auto'],
+    ['IT-1','Access Inventory and Revocation Record','form'],
+    ['IT-2','Technical Offboarding and Secret Rotation','form'],
+    ['IT-3','Device Forensics and Chain of Custody','form'],
+    ['IT-4','Post-Exit Access and Data Security Notice','sign'],
+    ['IT-5','Information Technology Clearance Certificate','ro']],
+ C:[['AD-2','Identity, Access and Facilities Surrender','form'],
+    ['AD-1','Exit Acknowledgment and Declaration','sign'],
+    ['AD-3','Administration Clearance Certificate','ro']],
+ D:[['HR-4','Exit Interview','form'],
+    ['HR-1','Post-Employment Deed and Schedule 3','sign'],
+    ['HR-2','Data Return and Destruction Certification','sign'],
+    ['HR-3','Social Media and Public Communication Undertaking','sign'],
+    ['HR-5','Consolidated No-Dues and Exit Security Clearance','ro']],
+ E:[['FI-1','Advances, Claims and Dues Statement','form'],
+    ['FI-2','Deputation Instruments Position','form'],
+    ['FI-3','Statutory Position and Exit Filings','form'],
+    ['FI-4','Settlement Computation and Finance Clearance','ro']]
+};
+const LEDGER=[
+ {id:'L1',g:'Devices issued',d:'Laptop',sn:'6620B14',src:'JN-1 · asset registry',dev:1},
+ {id:'L2',g:'Devices issued',d:'Mobile handset and SIM',sn:'MH-4471',src:'JN-1',dev:1},
+ {id:'L3',g:'Devices issued',d:'Scanner unit',sn:'2210K',src:'JN-1',dev:1},
+ {id:'L4',g:'Inherited · case EX-2025-0018',d:'Named Client relationship · site account',src:'RM-1 of the earlier case'},
+ {id:'L5',g:'Inherited · case EX-2025-0018',d:'Client drawing set and design basis · 3 projects',src:'RM-1 of the earlier case'},
+ {id:'L6',g:'Direct reports',d:'Employee 4402 · Design Engineer',src:'Employee master'},
+ {id:'L7',g:'Direct reports',d:'Employee 4511 · Site Engineer',src:'Employee master'},
+ {id:'L8',g:'Access and accounts',d:'Client portal · site system',src:'Deputation record'},
+ {id:'L9',g:'Financial commitment',d:'Site Deployment Agreement',src:'Signed at deployment'},
+ {id:'L10',g:'Financial commitment',d:'Training Cost Recovery Bond',src:'Signed at training completion'}
+];
+const REPOS=[
+ {id:'R1',u:'drive.google.com/drive/folders/1xK7…',d:'Site drawings, 3 projects'},
+ {id:'R2',u:'github.com/vb-eng/calc-tools',d:'Calculation macros'}
+];
+const IDCARDS=[
+ {id:'A1',d:'VB photo identity card'},{id:'A2',d:'Client site gate pass'},
+ {id:'A3',d:'Access card · Patancheru office'},{id:'A4',d:'Locker key · site'},
+ {id:'A5',d:'Safety kit · helmet, shoes, jacket'}
+];
+const CLOSURE=[
+ {id:'C1',g:'Statutory',d:'Provident fund exit date filed',p:'Portal screenshot',cost:0},
+ {id:'C2',g:'Statutory',d:'Employees State Insurance exit',p:'Portal screenshot',cost:0},
+ {id:'C3',g:'Statutory',d:'Professional tax · Telangana',p:'Payroll screenshot',cost:0},
+ {id:'C4',g:'Statutory',d:'Labour Welfare Fund',p:'Payroll screenshot',cost:0},
+ {id:'C5',g:'Recurring cost',d:'Group medical · removal from policy',p:'Endorsement',cost:1450},
+ {id:'C6',g:'Recurring cost',d:'Group personal accident and term',p:'Endorsement',cost:390},
+ {id:'C7',g:'Recurring cost',d:'Software licences deallocated',p:'Admin console',cost:4200},
+ {id:'C8',g:'Recurring cost',d:'Corporate SIM and data plan',p:'Operator confirmation',cost:800},
+ {id:'C9',g:'Recurring cost',d:'Client site headcount · canteen, transport',p:'Client confirmation',cost:0},
+ {id:'C10',g:'Evidence',d:'Settlement payment receipt · bank reference',p:'Receipt',cost:0},
+ {id:'C11',g:'Evidence',d:'Gratuity payment receipt',p:'Receipt',cost:0}
+];
+
+/* ---------------- state · many cases at once ---------------- */
+/* D holds everything. S is a view onto D whose case-level keys point at the
+   currently selected case, so every screen below is written as if one case
+   existed while the store holds as many as HR opens. */
+let D;
+const CASEKEYS=new Set(['opened','c','stages','f','exp','disp','succSent','succAccepted',
+ 'succRemark','rmSigned','repos','card','closure','soaIssued','settlementPaid',
+ 'lettersReleased','caseClosed','log','ref']);
+function cur(){return D&&D.cases?D.cases[D.cur]:undefined}
+const S=new Proxy({},{
+ get(_,k){if(CASEKEYS.has(k)){const c=cur();return c?c[k]:undefined}return D[k]},
+ set(_,k,v){if(CASEKEYS.has(k)){const c=cur();if(c)c[k]=v}else D[k]=v;return true},
+ has(_,k){return CASEKEYS.has(k)||k in D}
+});
+function newCaseObj(){
+ const st={};STG.forEach(s=>{st[s.k]={forced:false,demo:false,reason:'',esc:0,items:{}};
+  ITEMS[s.k].forEach(([c,,kd])=>st[s.k].items[c]={state:kd==='auto'?'closed':'pending',rej:0})});
+ return{ref:'',opened:false,c:{},stages:st,f:{},exp:'A',
+  disp:{},succSent:false,succAccepted:false,succRemark:'',rmSigned:false,
+  repos:{R1:{act:'',conf:false},R2:{act:'',conf:false}},
+  card:{A:false,B:false,C:false,D:false},
+  closure:{},soaIssued:false,settlementPaid:false,lettersReleased:false,caseClosed:false,log:[]}}
+function seed(){const t=new Date();t.setHours(0,0,0,0);
+ return{today:+t,origin:+t,role:'HR',view:'case',starting:false,cur:-1,cases:[],seq:41}}
+function load(){const r=localStorage.getItem('vbx4');D=r?JSON.parse(r):seed()}
+function save(){localStorage.setItem('vbx4',JSON.stringify(D))}
+function reset_(){localStorage.removeItem('vbx4');D=seed();render();toast('Everything cleared')}
+function lg(a,ac,d){const c=cur();if(!c)return;c.log.unshift({at:D.today,a,ac,d})}
+function withCase(i,fn){const p=D.cur;D.cur=i;try{return fn()}finally{D.cur=p}}
+function setCur(i){D.cur=+i;save();render()}
+const openCases=()=>D.cases.filter(c=>c.opened);
+
+const LWD=()=>{const c=S.c;return c&&c.lwd?+pdate(c.lwd):D.today};
+const openD=i=>+addWD(LWD(),STG[i].open);
+const dueD=i=>+addWD(LWD(),STG[i].due);
+const settleD=()=>+addWD(LWD(),2);
+const gratD=()=>LWD()+30*DAY;
+const V=(c,k)=>((S.f||{})[c]||{})[k];
+const ROWS=(c,k)=>(((S.f||{})[c]||{})[k])||[];
+
+/* ---------------- gates ---------------- */
+function itemsDone(k){return ITEMS[k].every(([c])=>S.stages[k].items[c].state==='closed')}
+function extraOK(k){
+ if(k==='A')return S.rmSigned&&Object.keys(S.disp).length===LEDGER.length&&S.succAccepted
+  &&REPOS.every(r=>S.repos[r.id].act&&S.repos[r.id].conf);
+ if(k==='D')return S.card.A&&S.card.B&&S.card.C&&S.card.D;
+ return true}
+function stDone(k){return S.stages[k].forced||(itemsDone(k)&&extraOK(k))}
+function stStatus(i){const s=STG[i];
+ if(!S.opened)return 'nocase';
+ if(stDone(s.k))return S.stages[s.k].forced?(S.stages[s.k].demo?'demo':'forced'):'done';
+ if(i>0&&!stDone(STG[i-1].k))return 'blocked';
+ if(S.today<openD(i))return 'notyet';
+ if(S.today>dueD(i))return 'overdue';return 'open'}
+const canWork=i=>['open','overdue'].includes(stStatus(i));
+function roleCanWork(i){const r=ROLES[S.role];
+ if(r.approver||r.scoped)return false;
+ if(S.role==='HR')return true;
+ return STG[i].own===S.role}
+
+/* ---------------- money ---------------- */
+function recoveryLines(){
+ const out=[];
+ ROWS('FI-1','rows').forEach(r=>{if(r.p&&+r.amt>0)out.push({p:r.p,amt:+r.amt,notice:r.notice||'',src:r.src||'entered by Finance'})});
+ const f=S.f['FI-2']||{};
+ if(+f.sdaAmt>0)out.push({p:'Site Deployment Agreement · '+(f.sdaMon||'?')+' months short of the initial tenure',amt:+f.sdaAmt,notice:f.sdaNotice||'',src:'FI-2'});
+ if(+f.bondAmt>0)out.push({p:'Training Cost Recovery Bond · '+(f.bondMon||'?')+' months short of the service period',amt:+f.bondAmt,notice:f.bondNotice||'',src:'FI-2'});
+ return out}
+function calc(){
+ const c=S.c||{};const wage=+c.wage||0;const daily=wage/30;
+ const days=+V('FI-4','days')||(c.lwd?pdate(c.lwd).getDate():0);
+ const earned=Math.round(daily*days);
+ const enc=Math.round(daily*(+c.leaveBal||0));
+ const bonus=+V('FI-1','bonusAmt')||0;
+ const reimb=+V('FI-1','reimb')||0;
+ const gross=earned+enc+bonus;
+ const lines=recoveryLines();
+ const withN=lines.filter(l=>l.notice),noN=lines.filter(l=>!l.notice);
+ const claimed=withN.reduce((a,l)=>a+l.amt,0);
+ const blocked=noN.reduce((a,l)=>a+l.amt,0);
+ const ceiling=Math.round(gross*0.5);
+ const deduct=Math.min(claimed,ceiling);
+ const carried=claimed-deduct;
+ const net=gross-deduct;
+ return{wage,daily,days,earned,enc,bonus,reimb,gross,lines,withN,noN,claimed,blocked,ceiling,deduct,carried,net}}
+
+/* ---------------- clock ---------------- */
+function clock(){if(D&&D.cases)D.cases.forEach((_,i)=>withCase(i,clockOne))}
+function clockOne(){
+ if(!S.opened)return;
+ STG.forEach((s,i)=>{const st=S.stages[s.k];if(stDone(s.k))return;
+  const ss=stStatus(i);if(['blocked','notyet','nocase'].includes(ss))return;
+  const over=Math.floor((S.today-dueD(i))/DAY);
+  [[-2,1,'Reminder',s.n],[0,2,'Overdue notice',s.n+' and department head'],
+   [1,3,'Escalation','Human Resources'],[3,4,'Escalation','Director Operations']]
+   .forEach(([d,l,kind,to])=>{if(over>=d&&st.esc<l){st.esc=l;lg('System',kind,'Stage '+s.k+' · '+s.n+' · to '+to)}})});
+ if(!S.settlementPaid&&S.today>=settleD()){S.settlementPaid=true;
+  const q=calc();const clean=STG.every(s=>stDone(s.k));
+  lg('System','SETTLEMENT INSTRUCTION ISSUED',
+   'Gross '+rs(q.gross)+' less deduction '+rs(q.deduct)+' · net '+rs(q.net)
+   +' released on the second working day. Chain '+(clean?'complete':'INCOMPLETE · released regardless. No role can hold this'))}
+ if(!S.lettersReleased&&STG.every(s=>stDone(s.k))&&S.today>=LWD()){S.lettersReleased=true;
+  lg('System','Letters released','Relieving Letter and Experience and Service Certificate released on full clearance')}}
+function adv(n){for(let i=0;i<n;i++){S.today+=DAY;clock()}save();render()}
+
+/* ---------------- ui plumbing ---------------- */
+function tabsFor(){return ROLES[S.role].scoped
+ ?[['flow','Workflow'],['case','Your handover']]
+ :[['flow','Workflow'],['board','Live board'],['case','Case'],['ledger','Custody ledger'],
+   ['closure','Closure register'],['log','Audit log'],['about','How to read this']]}
+function setRole(r){S.role=r;const st=ROLES[r].stage;if(st)S.exp=st;S.view='case';save();render();
+ toast('Now acting as '+ROLES[r].label)}
+function tab(v){S.view=v;save();render()}
+function toggle(k){S.exp=S.exp===k?null:k;save();render()}
+function open_(h){document.getElementById('mb').innerHTML=h;document.getElementById('modal').classList.add('on')}
+function close_(){document.getElementById('modal').classList.remove('on')}
+let tmo;function toast(m,bad){const t=document.getElementById('toast');t.textContent=m;
+ t.style.background=bad?'#B3261E':'#0A2540';t.classList.add('on');clearTimeout(tmo);
+ tmo=setTimeout(()=>t.classList.remove('on'),3000)}
+function vcode(c){let h=0;const s=c+(S.c.eid||'')+(S.c.lwd||'');
+ for(const ch of s)h=(h*31+ch.charCodeAt(0))>>>0;return h.toString(36).toUpperCase().slice(0,6)}
+
+/* ---------------- generic form engine ---------------- */
+function fldHtml(f,val,idp){
+ if(f.t==='sec')return '<div class="secx">'+f.l+'</div>';
+ const id=idp+'_'+f.k;
+ const lb='<label for="'+id+'">'+f.l+(f.req?' <span class="rq">*</span>':'')+'</label>';
+ const h=f.hint?'<div class="fh">'+f.hint+'</div>':'';
+ let inp='';
+ if(f.t==='ro')inp='<div style="font-size:12.9px;font-weight:600;color:var(--blue-deep);padding:7px 0">'+(val||'not available yet')+'</div>';
+ else if(f.t==='ta')inp='<textarea id="'+id+'">'+esc(val||'')+'</textarea>';
+ else if(f.t==='sel')inp='<select class="f" id="'+id+'"><option value=""></option>'
+   +f.o.map(o=>'<option '+(val===o?'selected':'')+'>'+o+'</option>').join('')+'</select>';
+ else if(f.t==='chk')inp='<div style="padding:6px 0"><label style="display:flex;gap:8px;align-items:center;text-transform:none;letter-spacing:0;font-size:12.6px;font-weight:400;color:var(--ink);margin:0">'
+   +'<input type="checkbox" id="'+id+'" '+(val?'checked':'')+'> '+(f.cl||'Confirmed')+'</label></div>';
+ else if(f.t==='num')inp='<input type="number" id="'+id+'" value="'+esc(val==null?'':val)+'">';
+ else if(f.t==='date')inp='<input type="date" id="'+id+'" value="'+esc(val||'')+'">';
+ else inp='<input type="text" id="'+id+'" value="'+esc(val||'')+'">';
+ return '<div>'+lb+inp+h+'</div>'}
+
+function tabHtml(f,rows,idp,code){
+ let h='<label>'+f.l+'</label>'+(f.hint?'<div class="fh" style="margin:0 0 5px">'+f.hint+'</div>':'')
+  +'<table class="gt-tbl"><thead><tr>'+f.cols.map(c=>'<th style="'+(c.w?'width:'+c.w:'')+'">'+c.l+'</th>').join('')
+  +'<th style="width:26px"></th></tr></thead><tbody>';
+ rows.forEach((r,i)=>{h+='<tr>'+f.cols.map(c=>{
+  const id=idp+'_'+f.k+'_'+i+'_'+c.k;const v=r[c.k];
+  if(c.t==='ro')return '<td style="color:var(--grey);font-size:11.2px">'+esc(v||'')+'</td>';
+  if(c.t==='sel')return '<td><select class="f" id="'+id+'"><option value=""></option>'
+    +c.o.map(o=>'<option '+(v===o?'selected':'')+'>'+o+'</option>').join('')+'</select></td>';
+  if(c.t==='num')return '<td><input type="number" id="'+id+'" value="'+esc(v==null?'':v)+'"></td>';
+  if(c.t==='date')return '<td><input type="date" id="'+id+'" value="'+esc(v||'')+'"></td>';
+  if(c.t==='chk')return '<td style="text-align:center"><input type="checkbox" id="'+id+'" '+(v?'checked':'')+'></td>';
+  return '<td><input type="text" id="'+id+'" value="'+esc(v||'')+'"></td>'}).join('')
+  +'<td style="text-align:center"><button class="xb" title="Remove this line" onclick="delRow(\''+code+'\',\''+f.k+'\','+i+')">&times;</button></td></tr>'});
+ h+='</tbody></table>';
+ h+='<div style="margin-top:6px"><button class="bg" onclick="addRow(\''+code+'\',\''+f.k+'\')">+ Add a line</button>'
+  +'<span class="fh" style="display:inline;margin-left:9px">'+rows.length+' line'+(rows.length===1?'':'s')+'. Add as many as the case needs.</span></div>';
+ return h}
+
+function readForm(code){
+ const F=FORMS[code],idp='ff';const o={};
+ F.fields.forEach(f=>{
+  if(f.t==='ro'||f.t==='sec')return;
+  if(f.t==='tab'){const rows=[];const n=(S.f[code]&&S.f[code][f.k]?S.f[code][f.k].length:0)||curRows(code,f).length;
+   for(let i=0;i<n;i++){const r={};f.cols.forEach(c=>{
+    if(c.t==='ro'){r[c.k]=(curRows(code,f)[i]||{})[c.k];return}
+    const e=document.getElementById(idp+'_'+f.k+'_'+i+'_'+c.k);
+    if(!e){const src=curRows(code,f)[i]||{};r[c.k]=src[c.k];return}
+    r[c.k]=c.t==='chk'?e.checked:e.value});rows.push(r)}
+   o[f.k]=rows;return}
+  const e=document.getElementById(idp+'_'+f.k);if(!e)return;
+  o[f.k]=f.t==='chk'?e.checked:e.value});
+ return o}
+function curRows(code,f){
+ if(S.f[code]&&S.f[code][f.k])return S.f[code][f.k];
+ return f.seed?f.seed():[]}
+function addRow(code,k){
+ const cur=readForm(code);
+ cur[k]=(cur[k]||[]).concat([{}]);S.f[code]=Object.assign({},S.f[code],cur);save();
+ if(code==='SETUP'){render();return}formModal(code)}
+function delRow(code,k,i){
+ const cur=readForm(code);cur[k]=(cur[k]||[]).filter((_,j)=>j!==i);
+ S.f[code]=Object.assign({},S.f[code],cur);save();
+ if(code==='SETUP'){render();return}formModal(code)}
+
+function formModal(code){
+ const F=FORMS[code];const d=S.f[code]||{};
+ let h='<div class="mh"><h3>'+code+' · '+F.t+'</h3><p>'+F.p+'</p></div><div class="mc">';
+ if(F.note)h+='<div class="'+(F.noteType||'gate')+'">'+(typeof F.note==='function'?F.note():F.note)+'</div>';
+ (F.carry?F.carry():[]).forEach(c=>{
+  h+='<div class="carr"><div class="t">'+c.t+'</div>'
+   +c.rows.map(r=>'<div class="r"><span>'+r[0]+'</span><span>'+r[1]+'</span></div>').join('')
+   +(c.foot?'<div class="hint" style="margin-top:6px">'+c.foot+'</div>':'')+'</div>'});
+ if(F.body)h+=F.body();
+ let pair=[];
+ const flush=()=>{if(pair.length){h+='<div class="ff c2">'+pair.join('')+'</div>';pair=[]}};
+ F.fields.forEach(f=>{
+  const val=f.t==='ro'?(f.v?f.v():'') : (d[f.k]!==undefined?d[f.k]:(f.v?f.v():''));
+  if(f.t==='tab'){flush();h+=tabHtml(f,curRows(code,f),'ff',code);return}
+  if(f.t==='ta'||f.full){flush();h+='<div class="ff">'+fldHtml(f,val,'ff')+'</div>';return}
+  pair.push(fldHtml(f,val,'ff'));if(pair.length===2)flush()});
+ flush();
+ h+='</div><div class="mf"><span class="lf">Nothing is sent anywhere. This page is the whole system.</span>'
+  +'<button class="bg" onclick="close_()">Cancel</button>'
+  +'<button class="bo" onclick="saveForm(\''+code+'\')">'+(F.btn||'Save and close the item')+'</button></div>';
+ open_(h)}
+
+function saveForm(code){
+ const F=FORMS[code];const o=readForm(code);
+ const miss=F.fields.filter(f=>f.req&&f.t!=='ro'&&f.t!=='tab'&&!o[f.k]);
+ if(miss.length){toast('Required: '+miss.map(f=>f.l).join(', '),true);return}
+ if(F.check){const e=F.check(o);if(e){toast(e,true);return}}
+ S.f[code]=Object.assign({},S.f[code],o);
+ const st=stageOf(code);const it=S.stages[st].items[code];
+ const kind=ITEMS[st].find(x=>x[0]===code)[2];
+ if(kind==='sign'){it.state='gen';lg(ROLES[S.role].label,'Document generated',code+' · '+F.t+' · verification code '+vcode(code))}
+ else{it.state='closed';lg(ROLES[S.role].label,'Completed',code+' · '+F.t+(F.logx?' · '+F.logx(o):''))}
+ if(F.after)F.after(o);
+ close_();clock();save();render();toast(code+(kind==='sign'?' generated · print it next':' saved'))}
+function stageOf(code){return Object.keys(ITEMS).find(k=>ITEMS[k].some(x=>x[0]===code))}
+
+/* ---------------- carry-forward helpers ---------------- */
+const cCase=()=>({t:'Case particulars · entered once, at opening',rows:[
+ ['Employee',((S.c||{}).name||'')+' · '+(S.c.eid||'')],['Designation',S.c.desig||''],
+ ['Site',S.c.location||''],['Last working day',fmt(S.c.lwd)],['Route',S.c.route||'']]});
+const dispCount=v=>LEDGER.filter(r=>S.disp[r.id]===v).length;
+const tenure=()=>{if(!S.c||!S.c.doj||!S.c.lwd)return '';
+ const y=(LWD()-+pdate(S.c.doj))/(365.25*DAY);return y.toFixed(1)+' years'};
+
+/* ---------------- form definitions ---------------- */
+const FORMS={
+'SETUP':{t:'Start an exit',p:'The decision has already been taken. This screen records it, names everyone who will touch the case, and starts every clock in the module.',
+ note:'<b>The last working day drives everything.</b> Stage open dates, stage due dates, revocation, the closure register and the settlement date are all computed from it. Nobody sets those dates by hand and nobody can move them afterwards.',
+ btn:'Start the exit',
+ fields:[
+  {k:'sec1',l:'Employee',t:'sec'},
+  {k:'name',l:'Employee name',t:'text',req:1,v:()=>'Ravi Teja'},
+  {k:'eid',l:'Employee number',t:'text',req:1,v:()=>'4118'},
+  {k:'desig',l:'Designation',t:'text',req:1,v:()=>'Site Engineer'},
+  {k:'grade',l:'Grade or band',t:'text',v:()=>'E3'},
+  {k:'dept',l:'Division',t:'sel',o:['Detailed Engineering','Digital Manufacturing','META'],req:1,v:()=>'Detailed Engineering'},
+  {k:'location',l:'Base or deputed site',t:'text',req:1,v:()=>'Client site, Ballari'},
+  {k:'doj',l:'Date of joining',t:'date',req:1,v:()=>'2023-02-06'},
+  {k:'empType',l:'Employment type',t:'sel',req:1,o:['Permanent','Probationer','Fixed-term','Contract','Intern'],v:()=>'Permanent'},
+  {k:'offEmail',l:'Official email',t:'text',req:1,v:()=>'ravi.teja@groupvb.com'},
+  {k:'persEmail',l:'Personal email',t:'text',req:1,v:()=>'ravi.teja@gmail.com',
+   hint:'The system matches either address. Both are held so a case can be raised against whichever he uses'},
+  {k:'mobile',l:'Mobile',t:'text',req:1,v:()=>'98xxxxxx21'},
+  {k:'bank',l:'Salary account, last four digits',t:'text',v:()=>'4417'},
+
+  {k:'sec2',l:'The exit itself',t:'sec'},
+  {k:'route',l:'Route',t:'sel',req:1,o:['Resignation','Fixed-term completion','Termination on notice','Retirement','Abandonment','Termination for misconduct'],v:()=>'Resignation',
+   hint:'Misconduct and abandonment run a different chain · immediate revocation, no route card, assets by written demand'},
+  {k:'recvOn',l:'Resignation or decision received on',t:'date',req:1,v:()=>iso(new Date()),
+   hint:'If this differs from today by more than one working day, the case appears on the weekly late-recording report'},
+  {k:'lwd',l:'Last working day',t:'date',req:1,v:()=>iso(addWD(new Date(),8)),hint:'Every other date in this case is computed from this one'},
+  {k:'noticeDays',l:'Notice period, days',t:'num',req:1,v:()=>30},
+  {k:'noticeStatus',l:'Notice position',t:'sel',req:1,o:['Serving in full','Short · buy-out requested','Short · shortfall recoverable','Waived by the Company'],v:()=>'Serving in full'},
+  {k:'reason',l:'Reason stated by him',t:'text',v:()=>'Personal, relocating'},
+  {k:'wage',l:'Monthly gross wage',t:'num',req:1,v:()=>62000,hint:'Drives the settlement. It appears on nothing he signs'},
+  {k:'leaveBal',l:'Earned leave balance, days',t:'num',req:1,v:()=>11,hint:'Provisional. Finance recomputes it on the last working day'},
+
+  {k:'sec3',l:'Who will touch this case',t:'sec'},
+  {k:'rm',l:'Reporting Manager',t:'text',req:1,v:()=>'A. Sridhar',hint:'Resolved from the employee master. Correct it if the master is stale'},
+  {k:'deptHead',l:'Department Head',t:'text',req:1,v:()=>'K. Venkatesh',hint:'Countersigns RM-1 and RM-3'},
+  {k:'pm',l:'Project or Account Manager',t:'text',v:()=>'S. Bhaskar',hint:'RM-2 only, where a Client engagement exists'},
+  {k:'itExec',l:'Information Technology executor',t:'text',req:1,v:()=>'P. Naveen'},
+  {k:'itMgr',l:'IT Manager, certifies IT-2, IT-3, IT-5',t:'text',req:1,v:()=>'S. Kumar'},
+  {k:'adExec',l:'Administration executor',t:'text',req:1,v:()=>'M. Latha'},
+  {k:'adHead',l:'Head of Administration, certifies AD-3',t:'text',req:1,v:()=>'N. Reddy'},
+  {k:'payroll',l:'Accounts and Payroll',t:'text',req:1,v:()=>'commercials@groupvb.com'},
+  {k:'finMgr',l:'Finance Manager, certifies FI-4',t:'text',req:1,v:()=>'R. Anand'},
+  {k:'succ',l:'Successor, if already known',t:'text',
+   hint:'Leave blank. The Reporting Manager names him and the invitation fires the moment a name is entered'},
+  {k:'dirOps',l:'Director Operations',t:'ro',v:()=>'Configured once by the administrator · not named per case',
+   hint:'If HR named the approver per case, HR would be choosing who authorises her own override'},
+  {k:'ceo',l:'CEO',t:'ro',v:()=>'Standing recipient · notified in parallel on every case'}
+ ]},
+
+/* ================= STAGE A · REPORTING MANAGER ================= */
+'RM-2':{t:'Project Status and Client Handover Record',p:'What he was doing, and what state it is in.',
+ carry:()=>[cCase()],
+ note:'Write the Client as it is known internally. Anything that leaves VB is anonymised.',
+ logx:o=>'continuity '+(o.risk||'not stated'),
+ fields:[
+  {k:'sec1',l:'Engagement',t:'sec'},
+  {k:'client',l:'Client',t:'text',req:1,v:()=>'Integrated steel plant, South India'},
+  {k:'site',l:'Site',t:'text',req:1,v:()=>'Ballari works'},
+  {k:'contact',l:'Named Client contact',t:'text',req:1,hint:'Told at demobilisation, with a named replacement'},
+  {k:'demob',l:'Demobilisation date at the Client',t:'date',req:1,v:()=>S.c.lwd},
+  {k:'clientInformed',l:'Client informed',t:'sel',req:1,o:['Not yet · at demobilisation','Yes, with a named replacement','Client raised it first'],
+   hint:'Not before acceptance is issued. That is the standing instruction in the notification'},
+  {k:'replacement',l:'Replacement proposed to the Client',t:'text'},
+  {k:'billing',l:'Billing impact',t:'sel',req:1,o:['None · replacement in place','Gap of under a week','Gap over a week','Milestone at risk']},
+  {k:'sec2',l:'Live work',t:'sec'},
+  {k:'projects',l:'Live projects handed over',t:'num',req:1,v:()=>3},
+  {k:'rows',l:'Project by project',t:'tab',
+   cols:[{k:'p',l:'Project',t:'text'},{k:'pct',l:'Per cent complete',t:'num'},
+    {k:'due',l:'Next milestone',t:'date'},{k:'to',l:'Handed to',t:'text'},
+    {k:'st',l:'State',t:'sel',o:['Fully handed over','Partly handed over','Not started']}],
+   seed:()=>[{p:'',pct:'',due:'',to:'',st:''},{p:'',pct:'',due:'',to:'',st:''},{p:'',pct:'',due:'',to:'',st:''}]},
+  {k:'deliv',l:'Deliverables open on the last working day',t:'ta',req:1,
+   hint:'Be specific. This becomes Schedule 3 of the Post-Employment Deed without anyone retyping it'},
+  {k:'issues',l:'Open technical issues the successor will inherit',t:'ta'},
+  {k:'risk',l:'Continuity risk',t:'sel',req:1,o:['None','Watch','At risk'],
+   hint:'At risk re-opens the Department Head invitation and appears on RM-4'}
+ ]},
+
+'RM-1':{t:'Knowledge Transfer and Handover Certificate',p:'The one document in Stage A that both he and the successor sign.',
+ btn:'Generate the certificate',
+ carry:()=>[
+  {t:'Custody dispositions you recorded',rows:[
+   ['Transfers to the successor',dispCount('Transfers to successor')+' of '+LEDGER.length],
+   ['Returns to the Company',String(dispCount('Returns to the Company'))],
+   ['Closes',String(dispCount('Closes'))],
+   ['Reassigned to a named manager',String(dispCount('Reassign to a named manager'))]],
+   foot:'These rows print on the certificate, and they are what the successor own exit will start from in two years.'},
+  {t:'Successor',rows:[['Name',S.c.succ||'not named'],
+   ['Acceptance',S.succAccepted?'confirmed':'not yet'],['Remark',S.succRemark||'none']]}],
+ note:'<b>No figure appears on this document.</b> Two employees sign it and it carries none.',
+ fields:[
+  {k:'mode',l:'How the handover was done',t:'sel',req:1,o:['Sitting together at site','Video sessions','Written notes only','Mixed'],
+   hint:'Written notes only, on a three-year engagement, is worth a question'},
+  {k:'sessions',l:'Handover sessions held',t:'num',req:1,v:()=>4},
+  {k:'from',l:'Handover began',t:'date',req:1},
+  {k:'to',l:'Handover completed',t:'date',req:1,v:()=>S.c.lwd},
+  {k:'shadow',l:'Shadowing days at site',t:'num',v:()=>3},
+  {k:'docs',l:'Documents and drawings handed over',t:'num',v:()=>42},
+  {k:'rows',l:'Session log',t:'tab',
+   cols:[{k:'d',l:'Date',t:'date'},{k:'top',l:'Topic covered',t:'text'},
+    {k:'att',l:'Attendees',t:'text'},{k:'ok',l:'Successor confident',t:'sel',o:['Yes','Partly','No']}],
+   seed:()=>[{d:'',top:'',att:'',ok:''},{d:'',top:'',att:'',ok:''}]},
+  {k:'gaps',l:'Anything not fully transferred',t:'ta',
+   hint:'Silence here is what a successor complains about a year later. Write it down'}
+ ]},
+
+'RM-3':{t:'Reporting Manager Clearance Certificate',p:'Assembled from what you have already entered. You confirm it and add what only you know.',
+ btn:'Certify and close',
+ carry:()=>[
+  {t:'Carried from RM-2',rows:[['Client',V('RM-2','client')||'not entered'],
+   ['Live projects',String(V('RM-2','projects')||'0')],['Billing impact',V('RM-2','billing')||''],
+   ['Continuity risk',V('RM-2','risk')||'not stated']]},
+  {t:'Carried from RM-1',rows:[['Handover sessions',String(V('RM-1','sessions')||'0')],
+   ['Successor acceptance',S.succAccepted?'confirmed':'outstanding'],
+   ['Successor remark',S.succRemark||'none']]}],
+ fields:[
+  {k:'team',l:'Team informed at the right time',t:'chk',cl:'Confirmed. Not before acceptance was issued'},
+  {k:'approvals',l:'Approvals still sitting with him',t:'ta',hint:'Purchase requisitions, timesheets, drawings pending release'},
+  {k:'timesheet',l:'Timesheets up to date',t:'sel',req:1,o:['Yes','No · pending days recorded below','Not applicable']},
+  {k:'tsDays',l:'Timesheet days pending',t:'num'},
+  {k:'assets',l:'Anything of the Company still with him, to your knowledge',t:'ta',
+   hint:'Administration will check the registry. This is the sense-check from the person who worked beside him'},
+  {k:'rec',l:'Recommendation',t:'sel',req:1,o:['Clear','Clear with a note','Not clear · reason below']},
+  {k:'note',l:'Note, if any',t:'ta'},
+  {k:'rehire',l:'Would you take him back',t:'sel',o:['Yes','With reservation','No'],
+   hint:'A recommendation only. Rehire status is decided by Human Resources and is never disclosed to him or to a verifier'},
+  {k:'conduct',l:'Conduct feedback',t:'ta',full:1,
+   hint:'Goes to Human Resources alone. It never appears on a certificate, in a verification response, or on any other screen in this module'}
+ ]},
+
+/* ================= STAGE B · INFORMATION TECHNOLOGY ================= */
+'IT-1':{t:'Access Inventory and Revocation Record',p:'Every system he can reach, and when it closes.',
+ carry:()=>[{t:'Pre-filled from the directory',rows:[['Rows found','6'],
+  ['Client-issued accounts','the module cannot see these · add them by hand']]}],
+ note:()=>'Revocation is set for close of business on <b>'+fmt(LWD())+'</b>. Not earlier. He needs access to finish the handover, and an early cut tells him where he stands.',
+ fields:[
+  {k:'rows',l:'Access inventory',t:'tab',
+   cols:[{k:'sys',l:'System',t:'text'},{k:'acct',l:'Account',t:'text'},
+    {k:'act',l:'Action',t:'sel',o:['Revoke','Transfer to successor','Retain 90 days']},
+    {k:'on',l:'Effective',t:'date'},{k:'by',l:'Done by',t:'text'},{k:'src',l:'Source',t:'ro'}],
+   seed:()=>[{sys:'VB email and calendar',acct:(S.c.offEmail||''),act:'Revoke',on:iso(LWD()),by:'',src:'directory'},
+    {sys:'VPN',acct:'emp'+(S.c.eid||''),act:'Revoke',on:iso(LWD()),by:'',src:'directory'},
+    {sys:'ERP',acct:'emp'+(S.c.eid||''),act:'Revoke',on:iso(LWD()),by:'',src:'directory'},
+    {sys:'Shared drive',acct:'emp'+(S.c.eid||''),act:'Transfer to successor',on:iso(LWD()),by:'',src:'directory'},
+    {sys:'Code repository',acct:'vb-'+(S.c.eid||''),act:'Revoke',on:iso(LWD()),by:'',src:'directory'},
+    {sys:'Client portal · site system',acct:'',act:'',on:'',by:'',src:'add by hand · Client system'}]},
+  {k:'sec1',l:'Directory and identity',t:'sec'},
+  {k:'adAction',l:'Directory account',t:'sel',req:1,o:['Disable, retain 90 days','Disable and delete','Convert to a service account']},
+  {k:'mfa',l:'Second factor and recovery codes',t:'chk',cl:'Removed from his devices and from the directory'},
+  {k:'autoReply',l:'Auto reply set to',t:'text',v:()=>'Please write to the Reporting Manager'},
+  {k:'sec2',l:'Data',t:'sec'},
+  {k:'backup',l:'Mailbox and drive backed up',t:'sel',req:1,o:['Yes','No · nothing to preserve']},
+  {k:'backupRef',l:'Backup reference or path',t:'text'},
+  {k:'retain',l:'Retention, days',t:'num',v:()=>90,hint:'Set against the retention schedule, not against a hunch'},
+  {k:'clientContact',l:'Named Client contact who confirmed the site accounts',t:'text',req:1,full:1,
+   hint:'The module sees the VB directory. It cannot see a Client one. This row is answered by a person or it is not answered'}
+ ]},
+
+'IT-2':{t:'Technical Offboarding and Secret Rotation',p:'What he knew, not only what he held.',
+ note:'A password he memorised leaves with him. Rotation is the only answer.',
+ fields:[
+  {k:'mailbox',l:'Mailbox treatment',t:'sel',req:1,o:['Convert to a shared mailbox','Forward to the Reporting Manager','Retain 90 days then close']},
+  {k:'fwd',l:'Forwarding to',t:'text'},
+  {k:'privileged',l:'Had privileged or administrator access',t:'sel',req:1,o:['No','Yes · rotation mandatory'],
+   hint:'A yes here makes every row in the table below compulsory, not optional'},
+  {k:'shared',l:'Shared credentials he had sight of',t:'sel',req:1,o:['None','Rotated','Rotation scheduled']},
+  {k:'rows',l:'Secrets, keys and certificates',t:'tab',
+   cols:[{k:'w',l:'What',t:'text'},{k:'sysm',l:'System',t:'text'},
+    {k:'act',l:'Action',t:'sel',o:['Rotated','Revoked','Scheduled','Not applicable']},
+    {k:'on',l:'On',t:'date'},{k:'by',l:'By',t:'text'}],
+   seed:()=>[{w:'API token',sysm:'ERP integration',act:'',on:'',by:''},
+    {w:'Signing certificate',sysm:'Drawing release',act:'',on:'',by:''},
+    {w:'Site VPN profile',sysm:'Client network',act:'',on:'',by:''},
+    {w:'Shared drawing account',sysm:'Client portal',act:'',on:'',by:''}]},
+  {k:'auditExport',l:'Activity log exported and hashed',t:'chk',cl:'Exported, hashed and stored'},
+  {k:'exportRef',l:'Export reference',t:'text'},
+  {k:'notes',l:'Anything the successor needs technically',t:'ta',full:1}
+ ]},
+
+'IT-3':{t:'Device Forensics and Chain of Custody',p:'What came back, in what state, and who holds it now.',
+ carry:()=>[{t:'Devices on the custody ledger',rows:LEDGER.filter(r=>r.dev).map(r=>[r.d,r.sn])}],
+ note:'A device held for review is not a clearance failure. It is a preservation step, and it is recorded as one.',
+ logx:o=>{const n=(o.rows||[]).filter(r=>r.recd==='No').length;return n?n+' device not returned':'all devices returned'},
+ fields:[
+  {k:'rows',l:'Devices',t:'tab',
+   cols:[{k:'dev',l:'Device',t:'text'},{k:'sn',l:'Serial',t:'text'},
+    {k:'recd',l:'Received',t:'sel',o:['Yes','No']},{k:'on',l:'On',t:'date'},
+    {k:'cond',l:'Condition',t:'sel',o:['Good','Minor damage','Damaged','Not returned']},
+    {k:'photo',l:'Photo',t:'chk'},{k:'wipe',l:'Wiped',t:'sel',o:['Yes','No','Held for review']}],
+   seed:()=>LEDGER.filter(r=>r.dev).map(r=>({dev:r.d,sn:r.sn,recd:'',on:'',cond:'',photo:false,wipe:''}))},
+  {k:'method',l:'Wipe method',t:'sel',req:1,o:['Full disk re-image','Secure erase','Factory reset','Not wiped · held for review']},
+  {k:'custody',l:'Held by',t:'text',req:1,v:()=>'IT store · Patancheru'},
+  {k:'tags',l:'Asset tags updated in the registry',t:'chk',cl:'Updated'},
+  {k:'hold',l:'Anything preserved for review',t:'ta',
+   hint:'If IT-0 raised an indicator, say so here in neutral words. Record and preserve. Do not investigate the person'}
+ ]},
+
+'IT-4':{t:'Post-Exit Access and Data Security Notice',p:'The only paper he signs at this stage.',
+ btn:'Generate the notice',
+ note:'<b>No figure appears on this document</b>, and it names no system he was not already using.',
+ fields:[
+  {k:'effective',l:'Effective from',t:'date',req:1,v:()=>S.c.lwd},
+  {k:'personal',l:'Personal devices declared at joining',t:'sel',req:1,o:['Cleared','To be cleared','None declared'],
+   hint:'Carried from JN-2. A declaration made on joining is what this rests on'},
+  {k:'byWhen',l:'Personal devices to be cleared by',t:'date'},
+  {k:'served',l:'Served',t:'sel',req:1,o:['In person at the exit meeting','By registered post','Both']}
+ ]},
+
+'IT-5':{t:'Information Technology Clearance Certificate',p:'Assembled. You certify it.',
+ btn:'Certify and close',
+ carry:()=>[{t:'Carried from your own entries',rows:[
+  ['Access rows recorded',String(ROWS('IT-1','rows').length)],
+  ['Directory account',V('IT-1','adAction')||'not set'],
+  ['Mailbox',V('IT-2','mailbox')||'not set'],
+  ['Privileged access',V('IT-2','privileged')||'not set'],
+  ['Secrets rotated',String(ROWS('IT-2','rows').filter(r=>r.act==='Rotated'||r.act==='Revoked').length)+' of '+ROWS('IT-2','rows').length],
+  ['Devices not returned',String(ROWS('IT-3','rows').filter(r=>r.recd==='No').length)],
+  ['Devices damaged',String(ROWS('IT-3','rows').filter(r=>(r.cond||'').includes('amage')).length)]],
+  foot:'Anything not returned or damaged travels to Finance at Stage E as a recovery line. It does not travel to the employee.'}],
+ fields:[{k:'cert',l:'Certified by, IT Manager',t:'text',req:1,v:()=>S.c.itMgr},
+  {k:'clear',l:'Position',t:'sel',req:1,o:['Clear','Clear with items outstanding to Finance','Not clear']},
+  {k:'pending',l:'Anything still open',t:'ta'},
+  {k:'note',l:'Note',t:'ta'}]},
+
+/* ================= STAGE C · ADMINISTRATION ================= */
+'AD-2':{t:'Identity, Access and Facilities Surrender',p:'Everything with the VB name on it, coming back.',
+ note:'Photograph every returned item. The <b>recommended value</b> is visible to Human Resources and Finance only, and appears on nothing he signs.',
+ logx:o=>{const n=(o.rows||[]).filter(r=>r.ret==='No').length;return n?n+' item not surrendered':'all items surrendered'},
+ fields:[
+  {k:'rows',l:'Items',t:'tab',
+   cols:[{k:'it',l:'Item',t:'text'},{k:'ret',l:'Returned',t:'sel',o:['Yes','No','Not applicable']},
+    {k:'on',l:'On',t:'date'},{k:'cond',l:'Condition',t:'sel',o:['Good','Damaged','Not applicable']},
+    {k:'photo',l:'Photo',t:'chk'},{k:'val',l:'Recommended value',t:'num'}],
+   seed:()=>IDCARDS.map(r=>({it:r.d,ret:'',on:'',cond:'',photo:false,val:''}))},
+  {k:'sec1',l:'Facilities',t:'sec'},
+  {k:'seat',l:'Seat or workstation vacated',t:'sel',req:1,o:['Yes','Not applicable · site based']},
+  {k:'locker',l:'Locker cleared',t:'sel',req:1,o:['Yes','No','Not allotted']},
+  {k:'personalItems',l:'Personal belongings collected',t:'chk',cl:'Collected, nothing left behind'},
+  {k:'transport',l:'Company transport and canteen removed',t:'sel',req:1,o:['Yes','Not applicable']},
+  {k:'sec2',l:'Asset registry',t:'sec'},
+  {k:'regRef',l:'Asset registry reference',t:'text',req:1,hint:'From your own asset registry software'},
+  {k:'regDate',l:'Registry screenshot taken on',t:'date',req:1,
+   hint:'Older than 5 working days at certification and it is flagged, not blocked'},
+  {k:'regPos',l:'Registry position',t:'sel',req:1,o:['Nil open','Items still open'],
+   hint:'Upload the position, whatever it says. A screenshot showing three items open is exactly what Finance needs'},
+  {k:'regNote',l:'What the registry shows',t:'ta',full:1}
+ ]},
+
+'AD-1':{t:'Exit Acknowledgment and Declaration',p:'His declaration, in his own hand.',
+ btn:'Generate the declaration',
+ note:'<b>No figure appears on this document.</b> The declaration content routes to the Human Resources record and never into a verification response.',
+ fields:[
+  {k:'addr',l:'Address after leaving',t:'text',req:1},
+  {k:'city',l:'City and state',t:'text',req:1},
+  {k:'phone',l:'Contact number after leaving',t:'text',req:1},
+  {k:'altEmail',l:'Email for post-exit correspondence',t:'text',req:1,v:()=>S.c.persEmail},
+  {k:'pdata',l:'Company data on personal devices or accounts',t:'sel',req:1,o:['None','Declared and removed','Declared, removal in progress']},
+  {k:'clientProp',l:'Client property held',t:'sel',req:1,o:['None','Declared below'],
+   hint:'A Client gate pass or drawing set is not VB property, and is still a problem if it walks'},
+  {k:'clientDetail',l:'If declared, what',t:'ta'},
+  {k:'undertaking',l:'Reimbursement undertaking',t:'chk',full:1,
+   cl:'He acknowledges anything found later remains payable, and undertakes to reimburse it',
+   hint:'This is the sentence a later recovery rests on. Without it, a claim made after clearance is difficult to argue'}
+ ]},
+
+'AD-3':{t:'Administration Clearance Certificate',p:'Assembled. You certify it.',
+ btn:'Certify and close',
+ carry:()=>[{t:'Carried from AD-2',rows:[
+  ['Items surrendered',String(ROWS('AD-2','rows').filter(r=>r.ret==='Yes').length)+' of '+ROWS('AD-2','rows').length],
+  ['Not surrendered',String(ROWS('AD-2','rows').filter(r=>r.ret==='No').length)],
+  ['Photographs taken',String(ROWS('AD-2','rows').filter(r=>r.photo).length)],
+  ['Registry position',V('AD-2','regPos')||'not set'],
+  ['Recommended value of open items',rs(ROWS('AD-2','rows').filter(r=>r.ret==='No').reduce((a,r)=>a+(+r.val||0),0))]],
+  foot:'The value goes to Finance. It does not go on anything he carries or signs.'}],
+ fields:[{k:'cert',l:'Certified by, Head of Administration',t:'text',req:1,v:()=>S.c.adHead},
+  {k:'clear',l:'Position',t:'sel',req:1,o:['Clear','Clear with items outstanding to Finance','Not clear']},
+  {k:'pending',l:'Anything still open',t:'ta'},
+  {k:'note',l:'Note',t:'ta'}]},
+
+/* ================= STAGE D · HUMAN RESOURCES ================= */
+'HR-4':{t:'Exit Interview',p:'Held before the deed is signed. A person who has just signed says less.',
+ note:'<b>Confidential.</b> Nothing recorded here appears on a certificate, in a verification response, on the Reporting Manager screen, or in any export. It exists to be read once by Human Resources and to change something.',
+ noteType:'wb',
+ carry:()=>[{t:'Context',rows:[['Tenure',tenure()],['Route',S.c.route||''],
+  ['Reason stated at resignation',S.c.reason||'not recorded'],['Site',S.c.location||'']]}],
+ fields:[
+  {k:'mode',l:'Interview held',t:'sel',req:1,o:['In person','Video','Telephone']},
+  {k:'by',l:'Conducted by',t:'text',req:1},
+  {k:'on',l:'On',t:'date',req:1,v:()=>iso(new Date())},
+  {k:'reason',l:'Primary reason, in his words',t:'sel',req:1,
+   o:['Better opportunity','Compensation','Site location or travel','Personal or family','Health','Manager or team','Nature of the work','Career growth','Other']},
+  {k:'second',l:'Secondary reason',t:'sel',o:['None','Compensation','Site location or travel','Manager or team','Career growth','Workload','Other']},
+  {k:'newRole',l:'Going to',t:'sel',o:['Another employer','Higher study','Own venture','Break','Not disclosed']},
+  {k:'counter',l:'Was a counter offer discussed',t:'sel',o:['No','Yes · declined','Yes · accepted then reversed']},
+  {k:'sec1',l:'How it felt from inside',t:'sec'},
+  {k:'pay',l:'Pay felt fair for the work',t:'sel',o:['Yes','Broadly','No']},
+  {k:'growth',l:'Growth and learning',t:'sel',o:['Good','Adequate','Poor']},
+  {k:'mgr',l:'Support from the manager',t:'sel',o:['Good','Adequate','Poor']},
+  {k:'site',l:'Site conditions',t:'sel',o:['Good','Acceptable','Difficult','Not applicable']},
+  {k:'workload',l:'Workload',t:'sel',o:['Reasonable','Heavy','Unsustainable']},
+  {k:'again',l:'Would consider returning',t:'sel',req:1,o:['Yes','No','Unsure']},
+  {k:'ref',l:'Would recommend VB to an engineer',t:'sel',o:['Yes','No','Unsure']},
+  {k:'worked',l:'What worked',t:'ta'},
+  {k:'didnt',l:'What did not',t:'ta'},
+  {k:'fix',l:'One thing VB should change',t:'ta',
+   hint:'If three people in a row write the same sentence here, that is the finding, not the interview'},
+  {k:'grievance',l:'Anything raised that needs a separate process',t:'sel',req:1,
+   o:['Nothing','Yes · POSH','Yes · safety','Yes · payment or statutory','Yes · other'],
+   hint:'A matter raised here does not die here. It opens its own process, and the exit does not close it'}
+ ]},
+
+'HR-1':{t:'Post-Employment Deed and Schedule 3',p:'The instrument. Schedule 3 assembles itself.',
+ btn:'Generate the deed',
+ carry:()=>[{t:'Schedule 3, compiled from RM-2 and the reporting structure · nobody retypes this',
+  rows:[['Client',V('RM-2','client')||'not entered'],['Site',V('RM-2','site')||''],
+   ['Projects',String(V('RM-2','projects')||0)],
+   ['People who reported to him',String(LEDGER.filter(r=>r.g==='Direct reports').length)],
+   ['Non-solicitation','12 months, concurrent with the appointment letter'],
+   ['Confidentiality','perpetual as to trade secrets']]}],
+ note:'<b>No figure appears on the instrument.</b> Stamp particulars are recorded on the file, never printed on it. Schedule 1 amounts stay in the file copy held by Human Resources.',
+ fields:[
+  {k:'stamp',l:'Stamp particulars, recorded on file',t:'text',req:1,v:()=>'Telangana e-stamp, Rs 100',hint:'Recorded here, printed nowhere'},
+  {k:'stampNo',l:'Stamp certificate number',t:'text'},
+  {k:'deedDate',l:'Date of execution',t:'date',req:1,v:()=>iso(new Date())},
+  {k:'place',l:'Place of execution',t:'text',req:1,v:()=>'Patancheru, Telangana'},
+  {k:'witness',l:'Witness',t:'text',req:1},
+  {k:'witness2',l:'Second witness',t:'text'},
+  {k:'forCo',l:'Signed for the Company by',t:'text',req:1,v:()=>'A. Vijay, Director Operations'},
+  {k:'law',l:'Jurisdiction',t:'ro',v:()=>'Courts at Patancheru, Telangana'},
+  {k:'nonSolicit',l:'Non-solicitation period',t:'ro',v:()=>'12 months from the last working day'}
+ ]},
+
+'HR-2':{t:'Data Return and Destruction Certification',p:'He certifies what he no longer holds.',
+ btn:'Generate the certification',
+ carry:()=>[{t:'Carried from IT-3 and AD-1',rows:[
+  ['Devices returned',String(ROWS('IT-3','rows').filter(r=>r.recd==='Yes').length)+' of '+ROWS('IT-3','rows').length],
+  ['Personal devices or accounts',V('AD-1','pdata')||'not declared'],
+  ['Client property declared',V('AD-1','clientProp')||'not declared']]}],
+ fields:[
+  {k:'rows',l:'Where Company information could still sit',t:'tab',
+   cols:[{k:'w',l:'Location',t:'text'},{k:'act',l:'Action',t:'sel',o:['Deleted','Returned','Never held']},
+    {k:'on',l:'On',t:'date'}],
+   seed:()=>[{w:'Personal laptop',act:'',on:''},{w:'Personal phone',act:'',on:''},
+    {w:'Personal cloud storage',act:'',on:''},{w:'Personal email',act:'',on:''},
+    {w:'Messaging applications',act:'',on:''},{w:'Printed drawings at home',act:'',on:''}]},
+  {k:'cloud',l:'Personal cloud and messaging cleared',t:'sel',req:1,o:['Confirmed','Not applicable']},
+  {k:'on',l:'Certified as at',t:'date',req:1,v:()=>S.c.lwd}]},
+
+'HR-3':{t:'Social Media and Public Communication Undertaking',p:'What he may and may not say afterwards.',
+ btn:'Generate the undertaking',
+ note:'This restrains disparagement and Client identification. It does not restrain him from working, and it does not restrain a lawful complaint to an authority.',
+ fields:[
+  {k:'platforms',l:'Profiles to be updated',t:'ta',req:1,v:()=>'Professional networking profile'},
+  {k:'by',l:'To be updated by',t:'date',req:1,v:()=>iso(addWD(LWD(),5))},
+  {k:'clientNaming',l:'Client naming',t:'sel',req:1,o:['Not to be named in any public post','Generic description permitted'],
+   hint:'Generic description permitted is the practical answer. A blanket ban on describing his own work history is not enforceable'},
+  {k:'refCheck',l:'Who he may give as a reference',t:'text',v:()=>'Human Resources only'}]},
+
+'HR-5':{t:'Consolidated No-Dues and Exit Security Clearance',p:'Assembled from the three departments. You certify it.',
+ btn:'Certify and close the meeting',
+ carry:()=>[
+  {t:'Departmental position',rows:[
+   ['Stage A · Reporting Manager',stDone('A')?'cleared':'outstanding'],
+   ['Stage B · Information Technology',stDone('B')?'cleared':'outstanding'],
+   ['Stage C · Administration',stDone('C')?'cleared':'outstanding'],
+   ['IT position',V('IT-5','clear')||'not certified'],
+   ['Administration position',V('AD-3','clear')||'not certified']]},
+  {t:'Route card he carried',rows:[['Stops signed',['A','B','C','D'].filter(x=>S.card[x]).length+' of 4']],
+   foot:'The clearance certificates never travelled with him. Only the card did.'}],
+ fields:[
+  {k:'hr',l:'Certified by, Human Resources',t:'text',req:1},
+  {k:'withhold',l:'Any ground to withhold the letters',t:'sel',req:1,
+   o:['None','Yes · unreturned Company property','Yes · unresolved disciplinary proceeding','Yes · unsettled recovery under a written notice','Yes · pending statutory or Client obligation'],
+   hint:'Four grounds only, and each needs Director Operations sign-off. Anything else and the letters release on clearance'},
+  {k:'relieveOn',l:'Relieving date on the letter',t:'date',req:1,v:()=>S.c.lwd},
+  {k:'expFrom',l:'Experience certificate covers',t:'ro',v:()=>fmt(S.c.doj)+' to '+fmt(S.c.lwd)+' · '+tenure()},
+  {k:'rehire',l:'Rehire status, held internally',t:'sel',req:1,o:['Eligible','Eligible with review','Not eligible'],
+   hint:'Never disclosed to him and never in a verification response. A verification answers dates and designation only'},
+  {k:'note',l:'Note',t:'ta'}]},
+
+/* ================= STAGE E · FINANCE ================= */
+'FI-1':{t:'Advances, Claims and Dues Statement',p:'Assembled from what the other departments recorded. You add what only payroll knows.',
+ carry:()=>[{t:'Arriving from Administration and Information Technology',
+  rows:(function(){const a=ROWS('AD-2','rows').filter(r=>r.ret==='No'||r.cond==='Damaged');
+   const b=ROWS('IT-3','rows').filter(r=>r.recd==='No'||(r.cond||'').includes('amage'));
+   const rows=a.map(r=>[(r.it||'item')+' · '+(r.ret==='No'?'not surrendered':'damaged'),rs(r.val)])
+    .concat(b.map(r=>[(r.dev||'device')+' · '+(r.recd==='No'?'not returned':'damaged'),'value to be set']));
+   return rows.length?rows:[['Nothing outstanding from A, B or C','none']]})(),
+  foot:'Pre-loaded into the table below. You set the amount and, critically, the date the written notice was issued.'}],
+ note:'<b>Section 18 of the Code on Wages.</b> A deduction without a prior written notice cannot be made, whatever its merits. A line with no notice date below is shown, totalled separately, and left out of the settlement.',
+ noteType:'yb',
+ fields:[
+  {k:'rows',l:'Recoverable items',t:'tab',
+   cols:[{k:'p',l:'Particular',t:'text'},{k:'amt',l:'Amount',t:'num'},
+    {k:'notice',l:'Written notice issued on',t:'date'},{k:'resp',l:'His response',t:'sel',o:['Awaited','Accepted','Disputed','No response']},
+    {k:'src',l:'Source',t:'ro'}],
+   seed:()=>{const a=ROWS('AD-2','rows').filter(r=>r.ret==='No'||r.cond==='Damaged')
+     .map(r=>({p:(r.it||'item')+' · '+(r.ret==='No'?'not surrendered':'damaged'),amt:r.val||'',notice:'',resp:'',src:'AD-2'}));
+    const b=ROWS('IT-3','rows').filter(r=>r.recd==='No'||(r.cond||'').includes('amage'))
+     .map(r=>({p:(r.dev||'device')+' · '+(r.recd==='No'?'not returned':'damaged'),amt:'',notice:'',resp:'',src:'IT-3'}));
+    return a.concat(b).concat([{p:'',amt:'',notice:'',resp:'',src:'entered by Finance'}])}},
+  {k:'sec1',l:'Payroll position',t:'sec'},
+  {k:'leaveDays',l:'Earned leave balance confirmed on the last working day',t:'num',req:1,
+   v:()=>S.c.leaveBal,hint:'Recomputed here. The figure entered at opening was provisional'},
+  {k:'lastPayroll',l:'Last payroll processed for',t:'date'},
+  {k:'salaryHold',l:'Salary on hold for any month',t:'sel',req:1,o:['No','Yes · reason below'],
+   hint:'A held salary is a Section 18 question in itself, not an administrative convenience'},
+  {k:'holdReason',l:'If held, why',t:'text'},
+  {k:'bonusAmt',l:'Statutory bonus payable',t:'num',hint:'Part of wages. It sits inside the day-two settlement'},
+  {k:'reimb',l:'Reimbursements pending',t:'num',
+   hint:'Not part of the day-two floor. These release with the letters, on clearance'},
+  {k:'notice',l:'Notice period position',t:'sel',req:1,
+   o:['Served in full','Short · buy-out approved','Short · shortfall recoverable','Waived by the Company']},
+  {k:'buyoutDays',l:'If short, days short',t:'num'},
+  {k:'buyoutApproved',l:'Buy-out approved by',t:'sel',o:['Not applicable','Director Operations','Not approved'],
+   hint:'Company discretion, Director approval. It is not an entitlement he can claim'}
+ ],
+ after:o=>{S.c.leaveBal=+o.leaveDays}},
+
+'FI-2':{t:'Deputation Instruments Position',p:'The site agreement and the training bond, each measured against its own clock.',
+ note:'Leave the amount blank where the instrument does not apply. A blank line does not become a deduction.',
+ fields:[
+  {k:'sec1',l:'Site Deployment Agreement',t:'sec'},
+  {k:'sdaApplies',l:'Applies',t:'sel',req:1,o:['Yes','No · not deputed under one']},
+  {k:'sdaTenure',l:'Initial tenure, months',t:'num',v:()=>9},
+  {k:'sdaDone',l:'Months completed',t:'num'},
+  {k:'sdaMon',l:'Months short',t:'num'},
+  {k:'sdaStep',l:'Recovery step applied',t:'sel',o:['100 per cent','75 per cent','50 per cent','25 per cent','Not applicable'],
+   hint:'Stepped and front-loaded, as locked in the agreement'},
+  {k:'sdaAmt',l:'Amount claimed',t:'num'},
+  {k:'sdaNotice',l:'Written notice issued on',t:'date'},
+  {k:'sec2',l:'Training Cost Recovery Bond',t:'sec'},
+  {k:'bondApplies',l:'Applies',t:'sel',req:1,o:['Yes','No · no funded training']},
+  {k:'bondScp',l:'Service commitment period, months',t:'num'},
+  {k:'bondDone',l:'Months completed',t:'num'},
+  {k:'bondMon',l:'Months short',t:'num'},
+  {k:'bondAmt',l:'Amount claimed',t:'num'},
+  {k:'bondNotice',l:'Written notice issued on',t:'date'},
+  {k:'sec3',l:'Other instruments',t:'sec'},
+  {k:'relocation',l:'Relocation advance recoverable',t:'num'},
+  {k:'joiningBonus',l:'Joining or retention bonus recoverable',t:'num'},
+  {k:'curtail',l:'Company-initiated exit',t:'sel',req:1,o:['No','Yes · carve-out applies, nothing recoverable'],
+   hint:'If the Company ended it, neither instrument recovers. That carve-out is what makes them enforceable at all'}
+ ]},
+
+'FI-3':{t:'Statutory Position and Exit Filings',p:'The filings that do not wait for the settlement.',
+ fields:[
+  {k:'rows',l:'Filings',t:'tab',
+   cols:[{k:'w',l:'Filing',t:'text'},{k:'ref',l:'Reference or number',t:'text'},
+    {k:'on',l:'Filed on',t:'date'},{k:'st',l:'Status',t:'sel',o:['Filed','Pending','Not applicable']}],
+   seed:()=>[{w:'Provident fund exit date',ref:'',on:'',st:''},
+    {w:'Employees State Insurance exit',ref:'',on:'',st:''},
+    {w:'Professional tax · Telangana',ref:'',on:'',st:''},
+    {w:'Labour Welfare Fund',ref:'',on:'',st:''},
+    {w:'Form 16 issue',ref:'',on:'',st:''}]},
+  {k:'uan',l:'Universal Account Number',t:'text'},
+  {k:'esiIc',l:'ESI insurance number',t:'text'},
+  {k:'tds',l:'Tax deducted this year',t:'num'},
+  {k:'grEl',l:'Gratuity',t:'sel',req:1,
+   o:['Payable · five years completed','Not payable · under five years','Payable · death or disablement']},
+  {k:'grAmt',l:'Gratuity amount',t:'num',hint:'Its own timer, within 30 days. It is not part of the day-two settlement'},
+  {k:'grDue',l:'Gratuity due by',t:'ro',v:()=>fmt(gratD())},
+  {k:'tenureRo',l:'Tenure for gratuity',t:'ro',v:()=>tenure()}
+ ]},
+
+'FI-4':{t:'Settlement Computation and Finance Clearance',p:'Nothing here is typed except the days worked. Everything else is arithmetic.',
+ btn:'Certify and release the settlement instruction',
+ body:()=>calcHtml(),
+ fields:[
+  {k:'days',l:'Days worked in the final month',t:'num',req:1,v:()=>S.c.lwd?pdate(S.c.lwd).getDate():30,
+   hint:'Change it and every figure above moves'},
+  {k:'cert',l:'Certified by, Finance Manager',t:'text',req:1,v:()=>S.c.finMgr},
+  {k:'mode',l:'Payment mode',t:'sel',req:1,o:['Bank transfer to the salary account','Bank transfer to a nominated account']},
+  {k:'acct',l:'Account, last four digits',t:'text',v:()=>S.c.bank},
+  {k:'payOn',l:'Instruction to the bank on',t:'ro',v:()=>fmt(settleD())},
+  {k:'bankRef',l:'Bank reference, once paid',t:'text'},
+  {k:'remarks',l:'Remarks',t:'ta',full:1}
+ ]}
+};
+
+/* ---------------- live computation panel ---------------- */
+function calcHtml(){
+ const q=calc();const c=S.c;
+ let h='<div class="carr"><div class="t">Computed live from the case</div><table class="calc">'
+  +'<tr><td>Monthly gross wage</td><td>'+rs(q.wage)+'</td></tr>'
+  +'<tr class="mut"><td>Daily rate, thirty-day month</td><td>'+rs(q.daily)+'</td></tr>'
+  +'<tr><td>Earned salary · '+q.days+' days</td><td>'+rs(q.earned)+'</td></tr>'
+  +'<tr><td>Leave encashment · '+(c.leaveBal||0)+' days</td><td>'+rs(q.enc)+'</td></tr>'
+  +(q.bonus?'<tr><td>Statutory bonus</td><td>'+rs(q.bonus)+'</td></tr>':'')
+  +'<tr class="tot"><td>Wages payable</td><td>'+rs(q.gross)+'</td></tr></table>'
+  +(q.reimb?'<div class="hint" style="margin-top:6px">Reimbursements of '+rs(q.reimb)+' are not in this figure. They release with the letters, on clearance. Holding a reimbursement is lawful. Holding wages is not.</div>':'')
+  +'</div>';
+ h+='<div class="carr"><div class="t">Deductions · Section 18</div><table class="calc">';
+ if(!q.lines.length)h+='<tr class="mut"><td>Nothing recoverable recorded</td><td>Nil</td></tr>';
+ q.withN.forEach(l=>{h+='<tr class="neg"><td>'+esc(l.p)+'<div class="hint">notice issued '+fmt(l.notice)+' · from '+l.src+'</div></td><td>'+rs(l.amt)+'</td></tr>'});
+ q.noN.forEach(l=>{h+='<tr class="mut"><td>'+esc(l.p)+'<div class="hint" style="color:var(--bad)">no written notice · cannot be deducted, whatever the merits</div></td><td>excluded</td></tr>'});
+ h+='<tr><td>Claimed, with a valid notice</td><td>'+rs(q.claimed)+'</td></tr>'
+  +'<tr class="mut"><td>Statutory ceiling · 50 per cent of wages payable</td><td>'+rs(q.ceiling)+'</td></tr>'
+  +'<tr class="tot neg"><td>Deduction applied</td><td>'+rs(q.deduct)+'</td></tr></table>'
+  +(q.carried>0?'<div class="hint" style="color:var(--bad);margin-top:6px">'+rs(q.carried)+' exceeds the ceiling. It cannot come out of this settlement. It moves to the recovery register and is pursued separately.</div>':'')
+  +(q.blocked>0?'<div class="hint" style="color:var(--bad);margin-top:4px">'+rs(q.blocked)+' sits on lines with no written notice. Issue the notices and it becomes deductible. Deduct it now and VB pays interest and a penalty.</div>':'')
+  +'</div>';
+ h+='<div class="carr" style="background:#0A2540;border-color:#0A2540"><div class="t" style="color:#9FB0C4">Net settlement · payable '+fmt(settleD())+'</div>'
+  +'<div style="font-size:27px;font-weight:700;color:#fff;letter-spacing:-.5px">'+rs(q.net)+'</div>'
+  +'<div class="hint" style="color:#C9D5E2">Section 17(2) of the Code on Wages · two working days from the last working day. '
+  +'Section 56 voids any contract clause to the contrary. This figure issues whether or not the chain is complete.</div></div>';
+ return h}
+
+/* ---------------- document previews ---------------- */
+function paper(code,title,rows,body,sigs,foot){
+ return '<div class="paper"><div class="ph"><div><div class="co">VIJAYA BHANU ENGINEERING INDIA PRIVATE LIMITED</div>'
+ +'<div class="ad">Patancheru, Hyderabad, Telangana</div></div>'
+ +'<div class="cd">'+code+' &middot; v1.0<br>'+(S.c.eid?'Case EX/'+S.c.eid:'')+'<br>'+fmt(S.today)+'</div></div>'
+ +'<h4>'+title+'</h4>'
+ +'<div class="pr">'+rows.map(r=>'<div class="k">'+r[0]+'</div><div>'+esc(r[1])+'</div>').join('')+'</div>'
+ +'<div class="bdy">'+body+'</div>'
+ +'<div class="sig">'+sigs.map(s=>'<div>'+s+'</div>').join('')+'</div>'
+ +'<div class="pf"><span>'+(foot||'No monetary particulars appear on this document.')+'</span>'
+ +'<span>Verification code '+vcode(code)+'</span></div></div>'}
+
+const PREV={
+ 'RM-1':()=>paper('RM-1','Knowledge Transfer and Handover Certificate',
+  [['Employee',(S.c.name||'')+' ('+(S.c.eid||'')+')'],['Designation',S.c.desig||''],
+   ['Last working day',fmt(S.c.lwd)],['Successor',S.c.succ||'not named'],
+   ['Handover',(V('RM-1','mode')||'')+' · '+(V('RM-1','sessions')||'')+' sessions'],
+   ['Period',fmt(V('RM-1','from'))+' to '+fmt(V('RM-1','to'))]],
+  'The following responsibilities, records and access have been handed over and accepted.'
+  +'<table class="gt-tbl" style="margin-top:8px"><thead><tr><th>Item</th><th style="width:190px">Disposition</th></tr></thead><tbody>'
+  +LEDGER.map(r=>'<tr><td>'+r.d+(r.sn?' · '+r.sn:'')+'</td><td>'+(S.disp[r.id]||'not recorded')+'</td></tr>').join('')
+  +'</tbody></table>'
+  +(V('RM-1','gaps')?'<p style="margin-top:10px"><b>Not fully transferred:</b> '+esc(V('RM-1','gaps'))+'</p>':'')
+  +(S.succRemark?'<p style="margin-top:6px"><b>Recorded by the successor:</b> '+esc(S.succRemark)+'</p>':''),
+  ['Outgoing employee','Successor','Reporting Manager','Department Head']),
+
+ 'IT-4':()=>paper('IT-4','Post-Exit Access and Data Security Notice',
+  [['Employee',(S.c.name||'')+' ('+(S.c.eid||'')+')'],['Effective from',fmt(V('IT-4','effective'))],
+   ['Personal devices declared at joining',V('IT-4','personal')||''],['Served',V('IT-4','served')||'']],
+  'All access granted to you is withdrawn with effect from close of business on the effective date. '
+  +'You are not to attempt access to any Company or Client system after that time, and any credential you retain is to be treated as revoked. '
+  +'Company information held on any personal device or account is to be deleted and not retained in any form. '
+  +'This notice records an obligation that already exists under your appointment letter and under law. It creates no new liability.',
+  ['Employee','For the Company']),
+
+ 'AD-1':()=>paper('AD-1','Exit Acknowledgment and Declaration',
+  [['Employee',(S.c.name||'')+' ('+(S.c.eid||'')+')'],['Last working day',fmt(S.c.lwd)],
+   ['Address after leaving',(V('AD-1','addr')||'')+', '+(V('AD-1','city')||'')],
+   ['Contact',(V('AD-1','phone')||'')+' · '+(V('AD-1','altEmail')||'')],
+   ['Company data on personal devices',V('AD-1','pdata')||''],
+   ['Client property held',V('AD-1','clientProp')||'']],
+  'I confirm that I have surrendered the identity, access and facility items issued to me, and that I hold no Company or Client property except as recorded above. '
+  +(V('AD-1','undertaking')?'I acknowledge that anything found afterwards to be outstanding remains payable by me, and I undertake to reimburse the Company for it.':''),
+  ['Employee','Administration']),
+
+ 'HR-1':()=>paper('HR-1','Post-Employment Deed',
+  [['Employee',(S.c.name||'')+' ('+(S.c.eid||'')+')'],['Place',V('HR-1','place')||''],
+   ['Date of execution',fmt(V('HR-1','deedDate'))],['Witness',V('HR-1','witness')||''],
+   ['For the Company',V('HR-1','forCo')||''],['Jurisdiction','Courts at Patancheru, Telangana']],
+  'Confidentiality continues without limit of time as to trade secrets and Client information. '
+  +'Non-solicitation of employees and of the Clients named in Schedule 3 continues for twelve months, concurrent with the corresponding clause of the appointment letter. '
+  +'Nothing in this deed restrains you from taking up employment, nor from making a lawful disclosure to an authority.'
+  +'<p style="margin-top:10px"><b>Schedule 3 · Clients and engagements</b></p>'
+  +'<table class="gt-tbl"><thead><tr><th>Client</th><th>Site</th><th>Projects</th></tr></thead>'
+  +'<tbody><tr><td>'+esc(V('RM-2','client')||'')+'</td><td>'+esc(V('RM-2','site')||'')+'</td><td>'+esc(String(V('RM-2','projects')||''))+'</td></tr></tbody></table>'
+  +'<p class="hint" style="margin-top:8px">Compiled from RM-2. Nobody retyped it, so nobody could mistype it.</p>',
+  ['Employee','For the Company'],
+  'Stamp particulars are recorded on the file and are not printed on this instrument. No monetary particulars appear.'),
+
+ 'HR-2':()=>paper('HR-2','Data Return and Destruction Certification',
+  [['Employee',(S.c.name||'')+' ('+(S.c.eid||'')+')'],['Certified as at',fmt(V('HR-2','on'))],
+   ['Personal cloud and messaging',V('HR-2','cloud')||'']],
+  'I certify that I have returned all Company devices and records in my possession, and that I have deleted Company and Client information from every personal device, account and storage service under my control.'
+  +'<table class="gt-tbl" style="margin-top:8px"><thead><tr><th>Location</th><th style="width:150px">Action</th></tr></thead><tbody>'
+  +ROWS('HR-2','rows').filter(r=>r.act).map(r=>'<tr><td>'+esc(r.w)+'</td><td>'+esc(r.act)+'</td></tr>').join('')
+  +'</tbody></table>',
+  ['Employee','Human Resources']),
+
+ 'HR-3':()=>paper('HR-3','Social Media and Public Communication Undertaking',
+  [['Employee',(S.c.name||'')+' ('+(S.c.eid||'')+')'],['Profiles to be updated by',fmt(V('HR-3','by'))],
+   ['Client naming',V('HR-3','clientNaming')||''],['Reference enquiries to',V('HR-3','refCheck')||'']],
+  'I will not identify any Client of the Company by name in any public communication, and I will not make any disparaging statement about the Company, its people or its Clients. '
+  +'I will update the profiles listed below to reflect the end of my employment.'
+  +'<p style="margin-top:8px">'+esc(V('HR-3','platforms')||'')+'</p>'
+  +'<p class="hint" style="margin-top:8px">This does not restrain lawful disclosure to an authority, nor comment on matters of public interest unconnected with the Company.</p>',
+  ['Employee','Human Resources']),
+
+ 'SOA':()=>{const q=calc();
+  return paper('SOA','Statement of Account',
+  [['Employee',(S.c.name||'')+' ('+(S.c.eid||'')+')'],['Last working day',fmt(S.c.lwd)],
+   ['Settlement date',fmt(settleD())],['Mode',V('FI-4','mode')||''],
+   ['Account',V('FI-4','acct')?'ending '+V('FI-4','acct'):'']],
+  '<table class="calc">'
+  +'<tr><td>Earned salary · '+q.days+' days</td><td>'+rs(q.earned)+'</td></tr>'
+  +'<tr><td>Leave encashment · '+(S.c.leaveBal||0)+' days</td><td>'+rs(q.enc)+'</td></tr>'
+  +(q.bonus?'<tr><td>Statutory bonus</td><td>'+rs(q.bonus)+'</td></tr>':'')
+  +'<tr class="tot"><td>Wages payable</td><td>'+rs(q.gross)+'</td></tr>'
+  +q.withN.map(l=>'<tr class="neg"><td>Less · '+esc(l.p)+'<div class="hint">notice issued '+fmt(l.notice)+'</div></td><td>'+rs(l.amt)+'</td></tr>').join('')
+  +'<tr class="mut"><td>Deduction limited to 50 per cent of wages payable</td><td>'+rs(q.ceiling)+'</td></tr>'
+  +'<tr class="tot"><td>Net payable</td><td>'+rs(q.net)+'</td></tr></table>'
+  +(q.reimb?'<p style="margin-top:9px">Reimbursements of '+rs(q.reimb)+' release separately on clearance.</p>':'')
+  +(q.carried>0?'<p style="margin-top:6px">'+rs(q.carried)+' remains outstanding and is pursued separately. It has not been taken from this settlement.</p>':''),
+  ['Employee, on receipt','Finance'],
+  'Internal document. Handed over in person or sent by registered post with acknowledgement due. Never by email or message.')}
+};
+
+function previewModal(code){
+ const P=PREV[code];if(!P){toast('No preview for this item');return}
+ open_('<div class="mh"><h3>'+code+' · preview</h3><p>Exactly what prints, filled with what has been entered on this case.</p></div>'
+ +'<div class="mc" style="background:#F2EFE9">'+P()+'</div>'
+ +'<div class="mf"><span class="lf">Check it before you print. A rejected upload costs a day.</span>'
+ +'<button class="bg" onclick="close_()">Close</button>'
+ +(code!=='SOA'?'<button class="bo" onclick="markPrinted(\''+code+'\')">Print for signature</button>'
+   :'<button class="bo" onclick="issueSOA()">Record as handed over</button>')+'</div>')}
+function markPrinted(code){const st=stageOf(code);S.stages[st].items[code].state='print';
+ lg(ROLES[S.role].label,'Printed for signature',code+' · '+FORMS[code].t);
+ close_();save();render();toast(code+' printed · get it signed, then upload the scan')}
+function issueSOA(){S.soaIssued=true;
+ lg('Finance and Payroll','Statement of Account handed over','In person or by registered post with acknowledgement due. Not emailed, not messaged');
+ close_();save();render();toast('Recorded')}
+
+/* ---------------- workflow map ---------------- */
+const FCOL=[
+ {t:'Trigger',s:'the decision is already taken'},
+ {t:'A · Reporting Manager',s:'opens LWD less 10 working days',g:'Gate · case in notice'},
+ {t:'B · Information Technology',s:'opens LWD less 5 working days',g:'Gate · A closed'},
+ {t:'C · Administration',s:'opens LWD less 3 working days',g:'Gate · B closed'},
+ {t:'D · HR meeting',s:'opens LWD less 2 working days',g:'Gate · C closed'},
+ {t:'E · Finance and Payroll',s:'opens on the last working day',g:'Gate · D closed'},
+ {t:'After the last working day',s:'settlement, closure, case close'}
+];
+const FLANE=[
+ ['HR','Human Resources','runs every case'],
+ ['RM','Reporting Manager','auto-resolved from the employee master'],
+ ['SU','Successor','does not exist until the Reporting Manager names him'],
+ ['IT','Information Technology','per-case invitation'],
+ ['AD','Administration','per-case invitation'],
+ ['FI','Finance and Payroll','sees the complete position'],
+ ['DO','Director Operations','configured once, never per case'],
+ ['SY','System · automatic','no human touch']
+];
+function nd(ty,code,txt,hint){
+ return '<div class="nd '+ty+'">'+(code?'<b>'+code+'</b>':'')+txt+(hint?'<span class="h">'+hint+'</span>':'')+'</div>'}
+const FCELL={
+ 'HR|0':nd('act','','Open the case · particulars, wage, leave balance, last working day',
+   'One way in. A person decided and HR opened it. No watch, feed or calendar raises a case')
+  +nd('doc','PH-1','Acknowledgment issued','Within 1 working day, or it escalates')
+  +nd('act','','Name the stakeholders','Single-use link each, scoped to this one case. No password is ever created'),
+ 'RM|0':nd('act','','Receives notice with HR and the CEO at the same moment',
+   'Standing instruction in the message · do not tell the team or the Client until acceptance is issued'),
+ 'SY|0':nd('auto','','Containment applied silently','Logging on, bulk download off, external sharing off. The employee is not notified')
+  +nd('auto','','Every date computed from the last working day','Stage opens, due dates, revocation, settlement, gratuity')
+  +nd('auto','','Custody ledger assembled from the joining record','Everything ever issued, minus everything returned'),
+
+ 'RM|1':nd('doc','RM-2','Project Status and Client Handover Record','Becomes Schedule 3 of the deed without anyone retyping it')
+  +nd('act','','Name the successor','No name in 2 working days and HR names one, consulting the Department Head')
+  +nd('act','','Disposition every custody row','Transfers, returns, closes or reassigns. Nothing defaults')
+  +nd('act','','Repository register','Set the action. Only the successor can confirm it opens')
+  +nd('doc','RM-3','Reporting Manager Clearance Certificate','Assembled from RM-2 and RM-1. Conduct feedback goes to HR alone'),
+ 'SU|1':nd('auto','','Reaches one screen from a single-use link','He sees the rows coming to him and nothing else on the case')
+  +nd('act','','Accept the rows',
+   'Acceptance is required, rejection is not offered · a handover cannot stall on two people disagreeing while a third walks out')
+  +nd('act','','Confirm each repository opens')
+  +nd('act','','Record a remark','Optional, non-blocking, carried to RM-4'),
+ 'HR|1':nd('sign','RM-1','Handover certificate, signed by both','HR checks page count, verification code and signature blocks before it closes'),
+ 'SY|1':nd('auto','','Reminder, overdue notice, escalation to HR, escalation to Director Operations',
+   'Fires on the calendar. Nobody chases and nobody has to remember'),
+
+ 'SY|2':nd('auto','IT-0','Activity review runs before anyone opens the stage',
+   'Evidence hashed, HR alone notified. Access not altered, Reporting Manager not told, employee not approached')
+  +nd('auto','','Revocation scheduled for close of business on the last working day',
+   'Not earlier · he needs access to finish the handover, and an early cut tells him where he stands'),
+ 'IT|2':nd('doc','IT-1','Access inventory','Pre-filled from the directory. Client-issued accounts are added by hand against a named Client contact')
+  +nd('doc','IT-2','Secret rotation','A password he memorised leaves with him')
+  +nd('doc','IT-3','Device forensics and chain of custody','Condition here becomes a Finance recovery line at Stage E')
+  +nd('sign','IT-4','Post-exit access notice','The only paper he signs at this stage')
+  +nd('doc','IT-5','Clearance certificate'),
+
+ 'AD|3':nd('doc','AD-2','Identity, access and facilities surrender','Photograph everything. Recommended value is seen by HR and Finance only')
+  +nd('sign','AD-1','Exit acknowledgment and declaration','Carries the reimbursement undertaking a later claim rests on')
+  +nd('doc','AD-3','Clearance certificate'),
+ 'SY|3':nd('auto','','Anything unreturned or damaged is queued for Finance','It travels internally. It never travels to the employee'),
+ 'DO|3':nd('act','','Force advance a stalled stage · twenty words on the record',
+   'Available on any stage at any time. Marked permanently, never afterwards shown as complete, reported to the CEO monthly. The single override in the system'),
+
+ 'HR|4':nd('doc','HR-4','Exit interview, held first','Confidential. Never in a certificate, a verification response or an export')
+  +nd('sign','HR-1','Post-employment deed','Schedule 3 compiles itself. Stamp particulars stay on the file, never on the instrument')
+  +nd('sign','HR-2','Data return and destruction certification')
+  +nd('sign','HR-3','Social media undertaking')
+  +nd('act','','Route card back, four stops signed','He carried the card. The certificates travelled internally')
+  +nd('doc','HR-5','Consolidated no-dues'),
+
+ 'FI|5':nd('doc','FI-1','Advances, claims and dues','Pre-loaded from AD-2 and IT-3. Finance sets the amount and the notice date')
+  +nd('doc','FI-2','Site agreement and bond position')
+  +nd('doc','FI-3','Statutory filings and gratuity')
+  +nd('doc','FI-4','Settlement computation','Arithmetic, not judgement. Only lines carrying a written notice are deducted, capped at half of wages payable'),
+ 'SY|5':nd('auto','','Finance sits last because only here is the position complete','One touch instead of three'),
+
+ 'SY|6':nd('stop','','Settlement instruction at LWD plus 2 working days',
+   'It issues whatever the chain looks like. No role holds it, including Director Operations')
+  +nd('auto','','Relieving letter and experience certificate released on full clearance','These are the leverage, and the lawful place to keep it')
+  +nd('auto','','Case cannot reach CLOSED with a closure row unproved'),
+ 'HR|6':nd('act','','Closure register · proof against every row','PF, ESI, professional tax, welfare fund, medical, insurance, licences, SIM, Client site headcount')
+  +nd('doc','SOA','Statement of Account','The only document carrying figures. In person or by registered post. Never emailed, never messaged'),
+ 'FI|6':nd('act','','Gratuity within 30 days','Its own statutory timer, separate from the settlement floor')
+};
+function vFlow(){
+ let h='<h2><span class="n">1</span>How an exit actually flows</h2>'
+ +'<div class="lede">One case, five stages, five departments. Read it left to right. Each vertical bar is a gate that will not open until the stage before it has closed, and two things run underneath the whole flow · a clock nobody controls and a settlement nobody can hold.</div>'
+ +'<div class="scroll"><div class="swim"><div class="swimr hd"><div><div class="t">Who</div><div class="s">role lanes</div></div>';
+ FCOL.forEach(c=>{h+='<div>'+(c.g?'<span class="gt">'+c.g+'</span><br>':'')
+  +'<div class="t">'+c.t+'</div><div class="s">'+c.s+'</div></div>'});
+ h+='</div>';
+ FLANE.forEach(([k,label,sub])=>{
+  h+='<div class="swimr lane'+(k==='SY'?' sys':'')+'"><div><span>'+label+'</span><span class="sub">'+sub+'</span></div>';
+  for(let i=0;i<7;i++)h+='<div>'+(FCELL[k+'|'+i]||'')+'</div>';
+  h+='</div>'});
+ h+='</div></div><div class="lgd">'
+ +'<span><i style="background:#1B3A6B"></i>Document produced</span>'
+ +'<span><i style="background:#FF6B35"></i>Signed by the employee</span>'
+ +'<span><i style="background:#4E7BB8"></i>System, no human touch</span>'
+ +'<span><i style="background:#1E7A4C"></i>Person does something</span>'
+ +'<span><i style="background:#B3261E"></i>Cannot be stopped by anyone</span></div>';
+
+ h+='<h2><span class="n">1</span>The clock</h2>'
+ +'<div class="lede">Every date is computed from the last working day you enter when the case is opened. Nobody sets them and nobody can move them.</div>'
+ +'<div class="card"><div class="rail">'
+ +[[0,'LWD -10','Stage A opens'],[24,'LWD -5','A closes · B opens'],[40,'LWD -3','C opens'],
+   [52,'LWD -2','D opens'],[64,'LWD','Revocation at close of business · closure register raised',1],
+   [76,'LWD +2','SETTLEMENT · cannot be held',1],[100,'LWD +30','Gratuity']]
+  .map(([p,d,l,hot])=>'<div class="mk'+(hot?' hot':'')+'" style="left:'+p+'%"><div class="d">'+d+'</div><div class="l">'+l+'</div></div>').join('')
+ +'<div class="bar"></div></div>'
+ +'<div class="hint" style="margin-top:16px">The orange section is the only part of this process with no discretion in it at all.</div></div>';
+
+ h+='<h2><span class="n">1</span>What happens when nobody does anything</h2>'
+ +'<div class="lede">The commonest failure in an exit is not refusal. It is silence.</div>'
+ +'<div class="grid g2"><div class="card"><b>The escalation ladder</b>'
+ +'<div class="step"><div class="num">1</div><div><div class="who">2 working days before due</div><div class="wt">Reminder to the department</div><div class="bdy">What is due and by when.</div></div></div>'
+ +'<div class="step"><div class="num">2</div><div><div class="who">On the due date</div><div class="wt">Overdue notice</div><div class="bdy">Department and its head, together.</div></div></div>'
+ +'<div class="step"><div class="num">3</div><div><div class="who">Due plus 1 day</div><div class="wt">Escalation to Human Resources</div><div class="bdy">HR is copied on every movement on every case, by standing rule.</div></div></div>'
+ +'<div class="step"><div class="num">4</div><div><div class="who">Due plus 3 days</div><div class="wt">Escalation to Director Operations</div><div class="bdy">The only person who can force it, and only on the record.</div></div></div>'
+ +'<div class="hint" style="margin-top:9px">Nobody triggers any of this. Open a case, do nothing, and press the day advance a few times.</div></div>'
+ +'<div class="card"><b>If the last working day arrives with work still open</b>'
+ +'<div class="ob" style="margin-top:9px"><b>Pays anyway.</b> Earned salary and leave encashment issue on the second working day, net of deductions that carry a written notice and sit inside the statutory ceiling. Section 17(2) of the Code on Wages leaves no room and Section 56 voids any clause that tries to make one.</div>'
+ +'<div class="wb"><b>Stays held.</b> Relieving letter, experience certificate, reimbursements, rehire status. These are the leverage and the lawful place to keep it.</div>'
+ +'<p class="hint">A company that holds wages to force a signature loses, and pays interest and a penalty for the privilege. A company that holds its own letters is on firm ground.</p></div></div>';
+
+ h+='<h2><span class="n">1</span>Three things the team will ask</h2><div class="card">'
+ +'<div class="step"><div class="num">1</div><div><div class="who">Sequencing</div><div class="wt">Why the successor comes after the Reporting Manager</div>'
+ +'<div class="bdy">He is not a participant until someone names him, and the person who names him is the Reporting Manager. Until that field is filled there is nobody to invite, and no rows to send. His screen is inside Stage A, not after it.</div>'
+ +'<div class="hn">Cost of the choice · a manager who has not decided holds up the case. Handled by taking the nomination away from him after two working days and giving it to Human Resources.</div></div></div>'
+ +'<div class="step"><div class="num">2</div><div><div class="who">Sequencing</div><div class="wt">Why Finance sits last, not first</div>'
+ +'<div class="bdy">Finance sees the complete position · handover, devices, registry, notices already issued. One touch instead of three.</div>'
+ +'<div class="hn">Cost of the choice · a recoverable fact found at Stage A waits until Stage E to be totalled. Handled by raising the written notice the day the fact appears, not when Finance opens the file.</div></div></div>'
+ +'<div class="step"><div class="num">3</div><div><div class="who">Scope</div><div class="wt">The module runs exits, it does not decide them</div>'
+ +'<div class="bdy">Nothing before the decision lives here. No attendance watch, no show-cause, no absence detection. A case begins when a person has decided and HR opens it.</div>'
+ +'<div class="hn">Cost of the choice · the fixed-term expiry watch and the superannuation watch move to the HR month-end checklist and still need a named owner.</div></div></div></div>';
+ return h}
+
+/* ---------------- case opening ---------------- */
+function saveSetup(){
+ const o=readForm('SETUP');
+ const miss=FORMS.SETUP.fields.filter(f=>f.req&&!o[f.k]);
+ if(miss.length){toast('Required: '+miss.map(f=>f.l).join(', '),true);return}
+ if(+pdate(o.lwd)<=D.today){toast('The last working day has to be in the future for the stages to have room',true);return}
+ const k=newCaseObj();D.seq++;k.ref='EX-2026-'+String(D.seq).padStart(4,'0');
+ D.cases.push(k);D.cur=D.cases.length-1;D.starting=false;
+ S.c=o;S.opened=true;
+ lg('Human Resources','Case opened',(o.name||'')+' · '+(o.eid||'')+' · route '+o.route+' · last working day '+fmt(o.lwd)
+  +'. Opened after the decision was taken. Nothing in this module raised it');
+ lg('System','Containment applied','Audit logging on, bulk download off, external sharing off. Silent. The employee is not notified');
+ lg('System','Notified in parallel','Reporting Manager, Human Resources, CEO');
+ lg('System','Dates computed','Stage A opens '+fmt(openD(0))+' · HR meeting '+fmt(openD(3))
+  +' · settlement '+fmt(settleD())+' · gratuity by '+fmt(gratD()));
+ lg('System','Custody ledger assembled',LEDGER.length+' rows from the joining record. Nobody typed the exit list');
+ clock();save();render();
+ toast('Case '+S.ref+' open · '+openCases().length+' running in parallel')}
+
+function startExit(){D.starting=true;D.view='case';save();render()}
+function newCase(){
+ if(D.role!=='HR'){toast('Human Resources starts every exit. Switch Acting as to Human Resources',true);return}
+ startExit()}
+function cancelStart(){D.starting=false;save();render()}
+
+function vSetup(){
+ if(S.role!=='HR')return '<h2><span class="n">3</span>No exit is open</h2>'
+  +'<div class="noaccess">Human Resources starts every exit. Switch <b>Acting as</b> to Human Resources.<br><br>'
+  +'<span class="hint">This is the only way a case begins. No attendance watch, no calendar and no feed raises one.</span></div>';
+ if(!D.starting){
+  return '<h2><span class="n">3</span>Exit cases</h2>'
+  +'<div class="lede">Nothing is open. An exit begins here and nowhere else.</div>'
+  +'<div class="card" style="text-align:center;padding:38px 22px">'
+  +'<div style="font-size:15.5px;font-weight:600;color:var(--blue-deep)">No exit is open</div>'
+  +'<p style="font-size:12.6px;color:var(--grey);max-width:560px;margin:7px auto 18px">'
+  +'The decision to end an employment is taken by people, in a conversation. This module does not take it and does not detect it. '
+  +'When it has been taken, Human Resources records it here and the whole chain starts.</p>'
+  +'<button class="bo" style="font-size:14px;padding:11px 26px" onclick="startExit()">Start an exit</button>'
+  +'<div class="hint" style="margin-top:12px">You will name the employee, the last working day and everyone who will touch the case.</div></div>'
+  +'<div class="grid g3">'
+  +'<div class="card"><b>What happens the moment you press it</b>'
+  +'<p class="hint" style="margin-top:6px">Containment is applied silently · audit logging on, bulk download off, external sharing off. He is not notified and nothing changes on his screen.</p></div>'
+  +'<div class="card"><b>Who hears about it</b>'
+  +'<p class="hint" style="margin-top:6px">Reporting Manager, Human Resources and the CEO, in parallel, in the same minute. The Reporting Manager is told not to discuss it with the team or the Client until acceptance is issued.</p></div>'
+  +'<div class="card"><b>What the system does by itself</b>'
+  +'<p class="hint" style="margin-top:6px">Computes every date from the last working day, assembles the custody ledger from the joining record, and opens Stage A on its own date. Nobody assigns anything.</p></div></div>'}
+
+ let h='<h2><span class="n">3</span>Start an exit</h2>'
+ +'<div class="lede">Type real particulars. Everything after this screen is computed from them, and you will watch the same values arrive on the Finance screen without anyone retyping them.</div>'
+ +'<div class="card"><div class="gate">'+FORMS.SETUP.note+'</div>';
+ let pair=[];const flush=()=>{if(pair.length){h+='<div class="ff c2">'+pair.join('')+'</div>';pair=[]}};
+ FORMS.SETUP.fields.forEach(f=>{
+  const v=f.v?f.v():'';
+  if(f.t==='sec'){flush();h+=fldHtml(f,'','ff');return}
+  if(f.t==='ta'||f.full){flush();h+='<div class="ff">'+fldHtml(f,v,'ff')+'</div>';return}
+  pair.push(fldHtml(f,v,'ff'));if(pair.length===2)flush()});
+ flush();
+ h+='<div style="display:flex;justify-content:flex-end;gap:8px;margin-top:18px">'
+  +'<button class="bg" onclick="cancelStart()">Cancel</button>'
+  +'<button class="bo" onclick="saveSetup()">Start the exit</button></div></div>';
+ return h}
+
+/* ---------------- item summaries ---------------- */
+function summ(code){
+ const c=[];const push=(l,v,k)=>{if(v!==undefined&&v!==''&&v!==null)c.push('<span class="chip '+(k||'')+'"><b>'+l+'</b> '+esc(v)+'</span>')};
+ if(code==='RM-2'){push('Client',V('RM-2','client'));push('Projects',V('RM-2','projects'));
+  push('Continuity',V('RM-2','risk'),V('RM-2','risk')==='At risk'?'b':V('RM-2','risk')==='Watch'?'w':'')}
+ if(code==='RM-1'){push('Sessions',V('RM-1','sessions'));push('Transfers',dispCount('Transfers to successor'));
+  if(V('RM-1','gaps'))push('Gaps noted','yes','w')}
+ if(code==='RM-3'){push('Recommendation',V('RM-3','rec'));if(V('RM-3','conduct'))push('Conduct feedback','routed to HR only')}
+ if(code==='IT-1'){push('Access rows',ROWS('IT-1','rows').length);push('Client contact',V('IT-1','clientContact'))}
+ if(code==='IT-2'){push('Mailbox',V('IT-2','mailbox'));push('Shared credentials',V('IT-2','shared'))}
+ if(code==='IT-3'){const r=ROWS('IT-3','rows');push('Returned',r.filter(x=>x.recd==='Yes').length+' of '+r.length);
+  const n=r.filter(x=>x.recd==='No').length;if(n)push('Not returned',n,'b');
+  const d=r.filter(x=>(x.cond||'').includes('amage')).length;if(d)push('Damaged',d,'w')}
+ if(code==='AD-2'){const r=ROWS('AD-2','rows');push('Surrendered',r.filter(x=>x.ret==='Yes').length+' of '+r.length);
+  const n=r.filter(x=>x.ret==='No').length;if(n)push('Open',n,'b');push('Registry',V('AD-2','regPos'))}
+ if(code==='HR-4')c.push('<span class="chip b"><b>Confidential</b> not visible outside HR</span>');
+ if(code==='HR-1')push('Schedule 3',(V('RM-2','client')||'')+' · '+(V('RM-2','projects')||0)+' projects');
+ if(code==='FI-1'){const q=calc();push('Recoverable lines',q.lines.length);
+  if(q.blocked>0)push('Without a notice',rs(q.blocked),'b');push('Leave days',S.c.leaveBal)}
+ if(code==='FI-2'){const f=S.f['FI-2']||{};if(+f.sdaAmt)push('Site agreement',rs(f.sdaAmt),f.sdaNotice?'':'b');
+  if(+f.bondAmt)push('Bond',rs(f.bondAmt),f.bondNotice?'':'b')}
+ if(code==='FI-3'){push('Gratuity',V('FI-3','grEl'))}
+ if(code==='FI-4'){const q=calc();push('Wages payable',rs(q.gross));push('Deduction',rs(q.deduct));push('Net',rs(q.net))}
+ return c.length?'<div class="sum">'+c.join('')+'</div>':''}
+
+/* ---------------- uploads, force, blocks ---------------- */
+function upModal(code){
+ open_('<div class="mh"><h3>Upload the signed '+code+'</h3><p>'+FORMS[code].t+'</p></div><div class="mc">'
+ +'<div class="gate"><b>Checked before it is accepted.</b> Page count against the generated document, the verification code readable, every signature block present. '
+ +'A checklist item never closes because somebody clicked Done.</div>'
+ +'<label>Simulate the scan you are uploading</label>'
+ +'<select class="f" id="up"><option value="ok">Correct scan</option>'
+ +'<option value="pg">A page is missing</option><option value="cd">Verification code not readable</option>'
+ +'<option value="sg">A signature block is blank</option></select>'
+ +'<div class="fh">Expected verification code on this document · <b>'+vcode(code)+'</b></div></div>'
+ +'<div class="mf"><button class="bg" onclick="close_()">Cancel</button>'
+ +'<button class="bo" onclick="doUp(\''+code+'\')">Upload</button></div>')}
+function doUp(code){
+ const v=document.getElementById('up').value;const st=stageOf(code);const it=S.stages[st].items[code];
+ if(v==='ok'){it.state='closed';
+  lg('Human Resources','Upload verified',code+' · page count and verification code matched, signature blocks present, hash stored');
+  if(code==='RM-1')S.rmSigned=true;toast(code+' closed')}
+ else{it.rej++;const w={pg:'page count did not match',cd:'verification code not readable',sg:'a signature block was blank'}[v];
+  lg('System','Upload rejected',code+' · '+w+' · file retained with the reason, counted on the monthly department report');
+  toast('Rejected · '+w,true)}
+ close_();clock();save();render()}
+
+function forceModal(i){const s=STG[i];
+ if(S.role!=='DO'){open_('<div class="mh"><h3>Force advance is not available to you</h3><p>Acting as '+ROLES[S.role].label+'</p></div>'
+  +'<div class="mc"><div class="wb">Only Director Operations may force a stage. With one Human Resources role, HR forcing a stage is one person overruling herself, which is not a control.</div></div>'
+  +'<div class="mf"><button class="bg" onclick="close_()">Understood</button></div>');return}
+ open_('<div class="mh"><h3>Force advance Stage '+s.k+'</h3><p>'+s.n+'</p></div><div class="mc">'
+ +'<div class="wb">A forced stage is marked permanently. It is never afterwards shown as complete, and it appears on the monthly override report to the CEO.</div>'
+ +'<label>Reason · not less than twenty words</label><textarea id="rsn"></textarea><div class="fh" id="wc">0 words</div></div>'
+ +'<div class="mf"><button class="bg" onclick="close_()">Cancel</button>'
+ +'<button class="bo" onclick="doForce(\''+s.k+'\')">Force advance</button></div>');
+ const t=document.getElementById('rsn');t.oninput=()=>{const n=t.value.trim().split(/\s+/).filter(Boolean).length;
+  document.getElementById('wc').textContent=n+' words'+(n<20?' · at least 20 required':' · sufficient')}}
+function doForce(k){const t=document.getElementById('rsn').value.trim();
+ if(t.split(/\s+/).filter(Boolean).length<20){toast('At least twenty words',true);return}
+ S.stages[k].forced=true;S.stages[k].demo=false;S.stages[k].reason=t;
+ lg('Director Operations','FORCE ADVANCE','Stage '+k+' advanced without completion · reason recorded · monthly override report to the CEO');
+ close_();save();clock();save();render();toast('Stage '+k+' forced and recorded')}
+
+function blocked(i){const s=STG[i],ss=stStatus(i);
+ if(ss==='blocked'){const p=STG[i-1];
+  open_('<div class="mh"><h3>Stage '+s.k+' is blocked</h3><p>'+s.n+'</p></div>'
+  +'<div class="mc"><div class="wb">Stage '+p.k+' · '+p.n+' has not closed. Nothing here opens a stage whose entry condition is unsatisfied. There is no button labelled proceed.</div></div>'
+  +'<div class="mf"><button class="bg" onclick="close_()">Understood</button>'
+  +'<button class="bo" onclick="close_();forceModal('+(i-1)+')">Force advance Stage '+p.k+'</button></div>')}
+ else if(ss==='notyet'){open_('<div class="mh"><h3>Stage '+s.k+' has not opened</h3><p>'+s.n+'</p></div>'
+  +'<div class="mc"><div class="gate">Opens <b>'+fmt(openD(i))+'</b>, computed from the last working day. Advance the clock to reach it.</div></div>'
+  +'<div class="mf"><button class="bg" onclick="close_()">Close</button></div>')}}
+
+/* ---------------- custody, successor, route card ---------------- */
+const DEFDISP={L1:'Returns to the Company',L2:'Returns to the Company',L3:'Returns to the Company',
+ L4:'Transfers to successor',L5:'Transfers to successor',L6:'Reassign to a named manager',
+ L7:'Transfers to successor',L8:'Transfers to successor',L9:'Closes',L10:'Closes'};
+function setDisp(id,v){if(!v)return;S.disp[id]=v;lg(ROLES[S.role].label,'Custody disposition',id+' · '+v);save();render()}
+function setRepo(id,v){S.repos[id].act=v;lg(ROLES[S.role].label,'Repository action set',id+' · '+v);save();render()}
+function confRepo(id){S.repos[id].conf=true;lg('Successor','Access confirmed',id+' · he can open it');save();render()}
+function nameSucc(){const v=document.getElementById('sn').value.trim();
+ if(!v){toast('Type a name',true);return}
+ S.c.succ=v;lg('Reporting Manager','Successor named',v+' · invitation fired the moment the name was entered');
+ save();render();toast('Successor named · he now has a link')}
+function sendSucc(){
+ if(Object.keys(S.disp).length<LEDGER.length){toast('Every custody row needs a disposition first',true);return}
+ if(REPOS.some(r=>!S.repos[r.id].act)){toast('Set an action on every repository first',true);return}
+ if(!S.c.succ){toast('Name the successor first',true);return}
+ S.succSent=true;lg('System','Sent to the successor','Single-use link. He sees the rows marked transfers and nothing else on this case');
+ save();render();toast('Sent · switch Acting as to Successor to see his screen')}
+function succAccept(){const t=document.getElementById('srem');if(t)S.succRemark=t.value.trim();
+ S.succAccepted=true;
+ lg('Successor','Acceptance confirmed','Rows now held against the successor'
+  +(S.succRemark?' · remark recorded, non-blocking, carried to RM-4':'')+'. Reporting Manager told to print RM-1');
+ save();render();toast('Accepted · the Reporting Manager prints RM-1')}
+function signCard(x){S.card[x]=true;lg('Human Resources','Route card stop signed','Stop '+x+' signed on the card he carried');save();render()}
+function closeRow(id){S.closure[id]=true;const r=CLOSURE.find(x=>x.id===id);
+ lg('Human Resources','Closure proof uploaded',r.d+' · '+r.p);save();render()}
+function closeCase(){const o=CLOSURE.filter(r=>!S.closure[r.id]);
+ if(o.length){toast(o.length+' closure rows still unproved',true);return}
+ S.caseClosed=true;lg('Human Resources','CASE CLOSED','Every closure row proved. Nothing outstanding');save();render();toast('Case closed')}
+
+function demoJump(){
+ if(!S.opened){toast('Open a case first',true);return}
+ const st=ROLES[S.role].stage;
+ if(ROLES[S.role].scoped){
+  if(!S.c.succ)S.c.succ='K. Prasad';
+  LEDGER.forEach(r=>{if(!S.disp[r.id])S.disp[r.id]=DEFDISP[r.id]});
+  REPOS.forEach(r=>{if(!S.repos[r.id].act)S.repos[r.id].act='Transfer ownership'});
+  if(!S.succSent){S.succSent=true;lg('Prototype','Positioned for review','Dispositions filled and the handover sent, so the Successor screen has something to accept')}
+  S.view='case';save();render();toast('Handover sent to you');return}
+ if(!st){S.view='case';save();render();toast('Director Operations approves. It executes no stage');return}
+ const i=STG.findIndex(s=>s.k===st);let moved=0;
+ for(let j=0;j<i;j++){const k=STG[j].k;if(!stDone(k)){S.stages[k].forced=true;S.stages[k].demo=true;moved++;
+  S.stages[k].reason='Positioned by the mockup so a later department can see its own screens. Not a real force advance.'}}
+ if(S.today<openD(i))S.today=+openD(i);
+ S.exp=st;S.view='case';
+ lg('Prototype','Positioned for review','Case moved to Stage '+st+' for '+ROLES[S.role].label
+  +(moved?' · '+moved+' earlier stage marked positioned':'')+'. Reset restores the true position');
+ clock();save();render();toast('Case positioned at Stage '+st)}
+
+/* ---------------- views ---------------- */
+function roleBanner(){
+ const r=ROLES[S.role];
+ if(r.approver)return '<div class="pb" style="margin-bottom:13px"><b>Director Operations.</b> You execute no stage. You are here to force a stalled stage on the record, to sign off letters withheld on a recorded ground, and to approve a buy-out. Open any stage and press <b>Force advance</b>.</div>';
+ if(r.all)return '<div class="ob" style="margin-bottom:13px"><b>Human Resources runs the whole case.</b> Every stage is workable by you, because HR receives and verifies the signed return for every department. Stage D is your own meeting. Switch the role selector to see how little a single department sees.</div>';
+ const i=STG.findIndex(s=>s.k===r.stage);const ss=stStatus(i);
+ const m={open:['ob','Your stage is open. Work it below.'],
+  overdue:['wb','Your stage is overdue and escalating.'],
+  done:['ob','Your stage is closed. Nothing is outstanding from you.'],
+  demo:['gate','Your stage is open, positioned for review.'],
+  forced:['wb','Your stage was force-advanced by Director Operations.'],
+  blocked:['gate','Your stage is blocked by Stage '+(i>0?STG[i-1].k+' · '+STG[i-1].n:'')+'. To see your own screens now, press <b>Review my stage</b> in the header.'],
+  notyet:['gate','Your stage opens '+fmt(openD(i))+'. To see your own screens now, press <b>Review my stage</b> in the header.']}[ss];
+ return '<div class="'+m[0]+'" style="margin-bottom:13px"><b>'+r.label+' · Stage '+r.stage+'.</b> '+m[1]+'</div>'}
+
+function vCase(){
+ if(ROLES[S.role].scoped)return vSuccessor();
+ if(D.starting||!S.opened)return vSetup();
+ const q=calc();
+ let h='<h2><span class="n">3</span>'+(S.c.name||'')+' · '+(S.c.eid||'')+'</h2>'
+ +'<div class="lede">'+(S.c.desig||'')+' · '+(S.c.route||'')+' · last working day '+fmt(S.c.lwd)
+ +'. Acting as <b>'+ROLES[S.role].label+'</b>.</div>'
+ +roleBanner()
+ +'<div class="floor"><div class="k">Settlement floor · computed, not decided</div>'
+ +'<div class="v">'+rs(q.net)+' on '+fmt(settleD())+' · '+(S.settlementPaid?'released':'pending')+'</div>'
+ +'<p>Wages payable '+rs(q.gross)+', less a deduction of '+rs(q.deduct)
+ +(q.blocked>0?' (a further '+rs(q.blocked)+' cannot be touched · no written notice)':'')
+ +'. Section 17(2) of the Code on Wages gives two working days. Section 56 voids any clause to the contrary. No role holds this, including Director Operations.</p>'
+ +'<div class="lockrow"><span>Relieving letter · '+(S.lettersReleased?'released':'HELD')+'</span>'
+ +'<span>Experience certificate · '+(S.lettersReleased?'released':'HELD')+'</span>'
+ +'<span>Reimbursements · '+(S.lettersReleased?'released':'HELD')+'</span>'
+ +'<span>Gratuity · by '+fmt(gratD())+', own timer</span></div></div>';
+
+ STG.forEach((s,i)=>{
+  const ss=stStatus(i),st=S.stages[s.k];
+  const cls=['done','forced','demo'].includes(ss)?'done':(canWork(i)?'open':'locked');
+  const pm={done:['p-ok','CLOSED'],forced:['p-forced','FORCED · INCOMPLETE'],open:['p-run','OPEN'],
+   overdue:['p-bad','OVERDUE'],blocked:['p-lock','BLOCKED'],notyet:['p-lock','OPENS '+fmt(openD(i))],
+   demo:['p-warn','POSITIONED FOR REVIEW']}[ss];
+  const click=(ss==='blocked'||ss==='notyet')?'onclick="blocked('+i+')"':'onclick="toggle(\''+s.k+'\')"';
+  h+='<div class="stage '+cls+' '+(S.exp===s.k?'exp':'')+'"><div class="sh" '+click+'>'
+   +'<div class="sl">'+s.k+'</div><div class="st"><b>'+s.n+'</b>'
+   +'<small>opens '+fmt(openD(i))+' · closes '+fmt(dueD(i))+(st.esc?' · escalation level '+st.esc:'')+'</small></div>'
+   +'<span class="pill '+pm[0]+'">'+pm[1]+'</span></div><div class="sb">';
+  if(ss==='forced')h+='<div class="wb"><b>Advanced without completion.</b> '+esc(st.reason)+'</div>';
+  if(ss==='demo')h+='<div class="yb"><b>Positioned for review.</b> '+esc(st.reason)+'</div>';
+  const mine=roleCanWork(i);
+  if(!mine&&canWork(i))h+='<div class="pb">You are acting as '+ROLES[S.role].label+'. This stage belongs to '
+   +s.n+'. In the built system a department sees only its own stage.</div>';
+  h+='<div class="gate"><b>Gate.</b> '+(i===0?'Case in notice and the open date reached.':'Stage '+STG[i-1].k+' closed.')
+   +' Closes when every item below is complete'
+   +(s.k==='A'?', every custody row dispositioned, the successor named and accepted, and RM-1 signed and uploaded'
+    :s.k==='D'?' and the route card is back with all four stops signed':'')+'.</div>';
+  if(s.k==='A')h+=exA(i,mine);
+  if(s.k==='D')h+=exD(canWork(i)&&mine);
+
+  ITEMS[s.k].forEach(([code,nm,kind])=>{
+   const it=st.items[code],w=canWork(i)&&mine;
+   let a='';
+   if(kind==='auto'){a='<span class="pill p-ok">RUN BY SYSTEM</span>'}
+   else if(it.state==='closed'){a='<span class="pill p-ok">CLOSED</span>'
+     +(FORMS[code]?'<button class="bg" onclick="event.stopPropagation();formModal(\''+code+'\')">Open</button>':'')}
+   else if(kind==='sign'){
+    a= it.state==='pending'
+     ?'<button class="bg" '+(w?'':'disabled')+' onclick="event.stopPropagation();formModal(\''+code+'\')">Fill and generate</button>'
+     : it.state==='gen'
+     ?'<button class="bg" onclick="event.stopPropagation();previewModal(\''+code+'\')">Preview</button>'
+      +'<button class="bo" '+(w?'':'disabled')+' onclick="event.stopPropagation();markPrinted(\''+code+'\')">Print</button>'
+     :'<button class="bg" onclick="event.stopPropagation();previewModal(\''+code+'\')">Preview</button>'
+      +'<button class="bo" '+(w?'':'disabled')+' onclick="event.stopPropagation();upModal(\''+code+'\')">Upload signed</button>'}
+   else a='<button class="bo" '+(w?'':'disabled')+' onclick="event.stopPropagation();formModal(\''+code+'\')">'
+     +(kind==='ro'?'Review and certify':'Fill in')+'</button>';
+   const rj=it.rej?' <span class="chip b"><b>'+it.rej+'</b> upload rejected</span>':'';
+   const tg=kind==='sign'?' <span class="tag">He signs it</span>':kind==='auto'?' <span class="tag">Automatic</span>'
+     :kind==='ro'?' <span class="tag">Assembled</span>':'';
+   h+='<div class="item '+(it.state==='closed'?'cl':'')+'"><div class="c">'+code+'</div>'
+    +'<div class="n">'+nm+tg+rj+(it.state==='closed'?summ(code):'')
+    +(code==='IT-0'?'<div class="hint">External sharing events in the last 30 days · <b>14</b>, against his own 12-month baseline. Evidence hashed, HR alone notified. Access not altered, Reporting Manager not told.</div>':'')
+    +'</div><div class="a">'+a+'</div></div>'});
+
+  if(s.k==='E'&&stDone('E'))h+='<div style="margin-top:9px">'
+   +(S.soaIssued?'<div class="ob"><b>Statement of Account handed over.</b> In person or by registered post. It was not emailed and not messaged.</div>'
+     :'<button class="bo" onclick="event.stopPropagation();previewModal(\'SOA\')">Statement of Account</button>'
+      +'<div class="hint">The only document in the case carrying figures. It goes with the settlement, in person or by registered post with acknowledgement due, never by email or message.</div>')+'</div>';
+  if(!stDone(s.k))h+='<div style="margin-top:10px"><button class="bg" onclick="event.stopPropagation();forceModal('+i+')">Force advance · Director Operations only</button></div>';
+  h+='</div></div>'});
+ return h}
+
+function exA(i,mine){
+ const w=canWork(i)&&mine;
+ const un=LEDGER.filter(r=>!S.disp[r.id]).length;
+ let h='<div class="card" style="margin-bottom:10px"><b>Successor</b>';
+ if(!S.c.succ)h+='<div class="hint" style="margin:5px 0 7px">Nobody is named yet. Two working days from the acceptance and the system hands the nomination to Human Resources, who names one after consulting the Department Head. It does not sit.</div>'
+  +'<div style="display:flex;gap:8px"><input type="text" id="sn" placeholder="Name of the person taking over" '+(w?'':'disabled')+'>'
+  +'<button class="bo" '+(w?'':'disabled')+' onclick="nameSucc()">Name him</button></div>';
+ else h+='<div style="font-size:12.8px;margin-top:4px"><b style="color:var(--blue-deep)">'+esc(S.c.succ)+'</b>'
+  +' <span class="pill '+(S.succAccepted?'p-ok':S.succSent?'p-run':'p-lock')+'">'
+  +(S.succAccepted?'accepted':S.succSent?'with him now':'not yet sent')+'</span></div>'
+  +'<div class="hint">The invitation fired the moment the name was entered.</div>';
+ h+='</div>';
+
+ h+='<div style="margin-bottom:10px"><b style="font-size:12.5px;color:var(--blue-deep)">Custody disposition</b>'
+  +'<span class="pill '+(un?'p-bad':'p-ok')+'" style="margin-left:8px">'
+  +(un?un+' of '+LEDGER.length+' unanswered':'all '+LEDGER.length+' answered')+'</span>'
+  +'<div class="hint">Nothing defaults. Every row is answered. This is exactly what the successor own exit will start from in two years.</div></div>';
+ let g='';
+ LEDGER.forEach(r=>{if(r.g!==g){g=r.g;h+='<div class="grp">'+g+'</div>'}
+  const v=S.disp[r.id]||'';
+  h+='<div class="row '+(v?'':'miss')+'"><div>'+r.d+(r.sn?' · '+r.sn:'')+'<div class="hint">'+r.src+'</div></div>'
+   +'<select class="f" '+(w?'':'disabled')+' onchange="setDisp(\''+r.id+'\',this.value)"><option value="">Select a disposition</option>'
+   +['Transfers to successor','Returns to the Company','Closes','Reassign to a named manager']
+     .map(o=>'<option '+(v===o?'selected':'')+'>'+o+'</option>').join('')+'</select>'
+   +'<span class="pill '+(v?'p-ok':'p-bad')+'">'+(v?'set':'not set')+'</span></div>'});
+ h+='<div class="grp">Repository register</div>';
+ REPOS.forEach(r=>{const st=S.repos[r.id];
+  h+='<div class="row '+(st.act&&st.conf?'':'miss')+'"><div style="font-family:ui-monospace,monospace;font-size:11.4px">'+r.u
+   +'<div class="hint" style="font-family:Inter">'+r.d+'</div></div>'
+   +'<select class="f" '+(w?'':'disabled')+' onchange="setRepo(\''+r.id+'\',this.value)"><option value="">Select the action</option>'
+   +['Transfer ownership','Grant successor, keep owner','Company folder, no change','Delete after archive']
+     .map(o=>'<option '+(st.act===o?'selected':'')+'>'+o+'</option>').join('')+'</select>'
+   +'<span class="pill '+(st.conf?'p-ok':'p-lock')+'">'+(st.conf?'successor confirmed':'successor to confirm')+'</span></div>'});
+ h+='<div class="hint" style="margin-bottom:10px">You set the action. Only the successor can confirm the folder actually opens, and you cannot confirm it for him.</div>';
+
+ h+='<div style="margin:12px 0">';
+ h+= S.succAccepted
+  ?'<div class="ob"><b>Successor has accepted.</b>'+(S.succRemark?' He recorded a remark, which blocked nothing and carries to RM-4 · <i>'+esc(S.succRemark)+'</i>':' No remark.')+' RM-1 can be generated now.</div>'
+  :S.succSent
+  ?'<div class="gate"><b>With the successor.</b> You cannot reach RM-1 until he confirms. Switch <b>Acting as</b> to Successor to see what he is looking at.</div>'
+  :'<button class="bo" '+(w?'':'disabled')+' onclick="sendSucc()">Send to the successor</button>'
+   +'<div class="hint">He cannot reject. He can record a remark, and it travels.</div>';
+ return h+'</div>'}
+
+function exD(w){
+ const st=['A','B','C','D'];const done=st.filter(x=>S.card[x]).length;
+ let h='<div style="margin-bottom:9px"><b style="font-size:12.5px;color:var(--blue-deep)">Route card returned</b>'
+  +'<span class="pill '+(done===4?'p-ok':'p-bad')+'" style="margin-left:8px">'+done+' of 4 stops signed</span>'
+  +'<div class="hint">He carried this card to each department. The clearance certificates travelled internally, never with him.</div></div>'
+  +'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">';
+ st.forEach(x=>{h+= S.card[x]?'<span class="pill p-ok">Stop '+x+' signed</span>'
+  :'<button class="bg" '+(w?'':'disabled')+' onclick="signCard(\''+x+'\')">Sign stop '+x+'</button>'});
+ return h+'</div>'}
+
+function vSuccessor(){
+ if(!S.opened)return '<h2><span class="n">3</span>Your handover</h2><div class="noaccess">Nothing has been sent to you.</div>';
+ const tr=LEDGER.filter(r=>S.disp[r.id]==='Transfers to successor');
+ const rr=REPOS.filter(r=>S.repos[r.id].act&&S.repos[r.id].act!=='Company folder, no change');
+ let h='<h2><span class="n">3</span>Your handover</h2>'
+ +'<div class="lede">You reached this screen from a single-use link in your email. No password was created for you, and the link works for this one handover only.</div>';
+ if(!S.succSent||!tr.length)return h+'<div class="noaccess">Nothing has been sent to you yet.<br><br>'
+  +'The Reporting Manager is still working through the custody list. You will get an email the moment something is marked for you.<br><br>'
+  +'<span class="hint">To see the screen as it will look, press <b>Review my stage</b> in the header.</span></div>';
+ h+='<div class="pb"><b>What you can see, and what you cannot.</b> You are looking at the rows coming to you and nothing else. '
+  +'Not the rest of this exit, not what he said at his interview, not what his manager recorded about him, no figure, and no other screen. '
+  +'This access ends when the handover certificate is signed.</div>'
+ +'<div class="card"><b>Taking over from</b>'
+ +'<div style="font-size:12.6px;margin-top:4px">'+esc(S.c.desig||'')+' · handover prepared by '+esc(S.c.rm||'the Reporting Manager')+'</div>'
+ +'<div class="hint">Last working day '+fmt(S.c.lwd)+'. He is available to you until then.</div></div>'
+ +'<div class="card"><b>What is passing to you · '+tr.length+' items</b>'
+ +'<div class="hint" style="margin-bottom:9px">Read each one. If something here is not actually yours to hold, say so in the box below. It goes to the Reporting Manager and the Department Head.</div>';
+ let g='';
+ tr.forEach(r=>{if(r.g!==g){g=r.g;h+='<div class="grp">'+g+'</div>'}
+  h+='<div class="row" style="grid-template-columns:1fr 150px"><div>'+r.d+'<div class="hint">'+r.src+'</div></div>'
+   +'<span class="pill '+(S.succAccepted?'p-ok':'p-run')+'">'+(S.succAccepted?'accepted':'awaiting you')+'</span></div>'});
+ h+='</div>';
+ if(rr.length){h+='<div class="card"><b>Confirm you can actually open these</b>'
+  +'<div class="hint" style="margin-bottom:9px">A folder nobody can open is not a handover. Click through, then confirm. If it does not open, leave it and write it in the box below.</div>';
+  rr.forEach(r=>{const st=S.repos[r.id];
+   h+='<div class="row '+(st.conf?'':'miss')+'"><div style="font-family:ui-monospace,monospace;font-size:11.4px">'+r.u
+    +'<div class="hint" style="font-family:Inter">'+r.d+' · '+st.act+'</div></div><div></div>'
+    +(st.conf?'<span class="pill p-ok">confirmed</span>'
+      :'<button class="bo" '+(S.succAccepted?'disabled':'')+' onclick="confRepo(\''+r.id+'\')">I can open this</button>')+'</div>'});
+  h+='</div>'}
+ if(S.succAccepted)return h
+  +'<div class="ob"><b>Accepted and recorded.</b> These items now sit against your name in the custody ledger. When you leave VB in your own time, this exact list is where your own handover starts. That is the only reason a chain of handovers survives more than one person.</div>'
+  +(S.succRemark?'<div class="card"><b>Your remark, as recorded</b><div style="font-size:12.4px;color:var(--grey);margin-top:5px">'+esc(S.succRemark)+'</div>'
+    +'<div class="hint">Carried to RM-4. It blocked nothing.</div></div>':'')
+  +'<div class="gate"><b>Next.</b> The Reporting Manager prints the handover certificate. You and he sign it on paper and HR uploads it. Nothing further is asked of you.</div>';
+ const unconf=rr.filter(r=>!S.repos[r.id].conf).length;
+ return h+'<div class="card"><b>Anything you want on the record</b>'
+ +'<div class="hint" style="margin-bottom:6px">Optional. A gap in the drawings, a Client contact you were not given, a system you cannot reach.</div>'
+ +'<textarea id="srem" placeholder="Leave blank if there is nothing.">'+esc(S.succRemark||'')+'</textarea>'
+ +'<div class="wb" style="margin-top:11px"><b>There is no reject button, and that is deliberate.</b> If a successor could refuse, a handover would stall on a disagreement between two people while a third walks out of the door. You accept the position as it stands, and your remark travels with it so nobody can later say the gap was not flagged.</div>'
+ +'<div style="display:flex;justify-content:flex-end;margin-top:12px">'
+ +'<button class="bo" '+(unconf?'disabled':'')+' onclick="succAccept()">Confirm acceptance</button></div>'
+ +(unconf?'<div class="hint" style="text-align:right">Confirm all '+rr.length+' repositories open before you accept.</div>':'')+'</div>'}
+
+function caseSummary(i){
+ return withCase(i,()=>{
+  const q=calc();
+  const idx=STG.findIndex(s=>!stDone(s.k));
+  const ss=idx<0?'done':stStatus(idx);
+  const overdue=STG.filter((s,j)=>stStatus(j)==='overdue').length;
+  const esc_=Math.max.apply(null,STG.map(s=>S.stages[s.k].esc));
+  const leak=CLOSURE.filter(r=>!S.closure[r.id]).reduce((a,r)=>a+r.cost,0);
+  return{ref:S.ref,name:S.c.name,eid:S.c.eid,desig:S.c.desig,route:S.c.route,
+   lwd:S.c.lwd,stage:idx<0?'All closed':'Stage '+STG[idx].k+' · '+STG[idx].n,
+   ss,overdue,esc:esc_,net:q.net,settle:settleD(),paid:S.settlementPaid,
+   closed:S.caseClosed,letters:S.lettersReleased,leak:S.today>=LWD()?leak:0}})}
+
+function vBoard(){
+ const list=D.cases.map((c,i)=>c.opened?i:-1).filter(i=>i>=0);
+ if(!list.length)return '<h2><span class="n">2</span>Live board</h2>'
+  +'<div class="noaccess">No exit is open.<br><br>'
+  +(D.role==='HR'?'<button class="bo" onclick="startExit()">Start an exit</button>'
+    :'<span class="hint">Human Resources starts every exit.</span>')+'</div>';
+ const rows=list.map(caseSummary);
+ const running=rows.filter(r=>!r.closed).length;
+ const overdue=rows.reduce((a,r)=>a+r.overdue,0);
+ const dueSettle=rows.filter(r=>!r.paid).length;
+ const leak=rows.reduce((a,r)=>a+r.leak,0);
+ const pm={done:['p-ok','ALL CLOSED'],open:['p-run','IN PROGRESS'],overdue:['p-bad','OVERDUE'],
+  blocked:['p-lock','BLOCKED'],notyet:['p-lock','NOT YET OPEN'],forced:['p-forced','FORCED'],
+  demo:['p-warn','POSITIONED']};
+ let h='<h2><span class="n">2</span>Live board</h2>'
+ +'<div class="lede">Every exit VB has open, ordered by the date that matters. Nobody assigns these and nobody decides when they move. '
+ +'Click a row to work it · the whole application then follows that case until you pick another.</div>'
+ +'<div class="grid g4">'
+ +'<div class="kpi"><div class="k">Exits running</div><div class="v">'+running+'</div><div class="d">of '+rows.length+' opened</div></div>'
+ +'<div class="kpi '+(overdue?'al':'')+'"><div class="k">Stages overdue</div><div class="v">'+overdue+'</div><div class="d">across all cases</div></div>'
+ +'<div class="kpi"><div class="k">Settlements due</div><div class="v">'+dueSettle+'</div><div class="d">none of them can be held</div></div>'
+ +'<div class="kpi '+(leak?'al':'')+'"><div class="k">Cost still leaking</div><div class="v">'+(leak?rs(leak):'Nil')
+ +'</div><div class="d">per month, until proved closed</div></div></div>'
+ +'<div class="card" style="padding:0;overflow:hidden;margin-top:13px"><table>'
+ +'<thead><tr><th>Case</th><th>Employee</th><th>Route</th><th>Last working day</th><th>Stage</th>'
+ +'<th>Status</th><th>Settlement</th><th>Letters</th></tr></thead><tbody>';
+ list.forEach((idx,n)=>{const r=rows[n];const p=pm[r.ss]||pm.open;
+  h+='<tr style="cursor:pointer'+(D.cur===idx?';background:#FFF4EF':'')+'" onclick="setCur('+idx+')">'
+   +'<td><b>'+esc(r.ref)+'</b>'+(D.cur===idx?' <span class="chip"><b>open</b> now</span>':'')
+   +(r.esc>2?'<div class="chip b" style="margin-top:3px"><b>escalated</b> level '+r.esc+'</div>':'')+'</td>'
+   +'<td>'+esc(r.name)+'<div class="hint">'+esc(r.eid)+' · '+esc(r.desig)+'</div></td>'
+   +'<td>'+esc(r.route)+'</td><td>'+fmt(r.lwd)+'</td><td>'+r.stage+'</td>'
+   +'<td><span class="pill '+p[0]+'">'+p[1]+'</span></td>'
+   +'<td>'+fmt(r.settle)+'<div class="hint">'+(r.paid?'paid '+rs(r.net):'due '+rs(r.net))+'</div></td>'
+   +'<td>'+(r.letters?'<span class="pill p-ok">released</span>':'<span class="pill p-lock">held</span>')+'</td></tr>'});
+ h+='</tbody></table></div>'
+ +'<div class="grid g3" style="margin-top:13px">'
+ +'<div class="card"><b>Why the board exists</b><p class="hint" style="margin-top:6px">'
+ +'Exits run in parallel and they do not queue politely. Two engineers can be in Stage B on the same afternoon while a third settlement falls due. '
+ +'The board is the only screen that sees all of them at once.</p></div>'
+ +'<div class="card"><b>What it does not do</b><p class="hint" style="margin-top:6px">'
+ +'It does not let anyone reorder the list, mark a case urgent, or move a date. Order comes from the last working day and nothing else.</p></div>'
+ +'<div class="card"><b>Try it</b><p class="hint" style="margin-top:6px">'
+ +'Start a second exit with a nearer last working day, then advance the clock. Watch one case escalate while the other is still comfortable, '
+ +'and watch both settlements fire on their own dates.</p></div></div>';
+ return h}
+
+function vLedger(){
+ let h='<h2><span class="n">4</span>Custody ledger</h2>'
+ +'<div class="lede">Built from the joining record. Nobody typed it. The exit list is not a list anyone maintains · it is everything ever issued, minus everything returned.</div>';
+ if(!S.opened)return h+'<div class="noaccess">No case is open.</div>';
+ h+='<div class="card">';let g='';
+ LEDGER.forEach(r=>{if(r.g!==g){g=r.g;h+='<div class="grp">'+g+'</div>'}
+  const v=S.disp[r.id];
+  h+='<div class="row"><div>'+r.d+(r.sn?' · '+r.sn:'')+'<div class="hint">'+r.src+'</div></div>'
+   +'<div style="font-size:11.8px;color:var(--grey)">'+(v||'no disposition yet')+'</div>'
+   +'<span class="pill '+(v?'p-ok':'p-lock')+'">'+(v?'dispositioned':'open')+'</span></div>'});
+ return h+'</div><div class="card"><b>Why the inherited rows exist</b>'
+ +'<p style="font-size:12.4px;color:var(--grey);margin-top:6px">They are here only because the earlier handover was recorded as a custody transfer that a successor signed. Record a handover as a tick and the chain breaks at the first person.</p></div>'}
+
+function vClosure(){
+ let h='<h2><span class="n">5</span>Closure register</h2>'
+ +'<div class="lede">Raised on the last working day. Human Resources owns it and chases whoever holds the console. Every row needs proof, not a tick.</div>';
+ if(!S.opened)return h+'<div class="noaccess">No case is open.</div>';
+ if(S.today<LWD())return h+'<div class="noaccess">Raised on the last working day, '+fmt(S.c.lwd)+'. Advance the clock to reach it.</div>';
+ const leak=CLOSURE.filter(r=>!S.closure[r.id]).reduce((a,r)=>a+r.cost,0);
+ const open=CLOSURE.filter(r=>!S.closure[r.id]).length;
+ h+='<div class="grid g2"><div class="kpi '+(leak?'al':'')+'"><div class="k">Still leaking</div><div class="v">'+(leak?rs(leak):'Nil')
+  +'</div><div class="d">per month · '+open+' rows open</div></div>'
+  +'<div class="kpi"><div class="k">Case</div><div class="v" style="font-size:17px;padding-top:6px">'+(S.caseClosed?'CLOSED':'OPEN')
+  +'</div><div class="d">'+(S.caseClosed?'every row proved':'cannot close with rows unproved')+'</div></div></div>'
+  +'<div class="card" style="margin-top:13px">';
+ let g='';
+ CLOSURE.forEach(r=>{if(r.g!==g){g=r.g;h+='<div class="grp">'+g+'</div>'}
+  const d=S.closure[r.id];
+  h+='<div class="row '+(d?'':'miss')+'"><div>'+r.d+'<div class="hint">proof · '+r.p+(r.cost?' · '+rs(r.cost)+' per month':'')+'</div></div><div></div>'
+   +(d?'<span class="pill p-ok">proved</span>'
+     :'<button class="bo" '+(S.role==='HR'?'':'disabled')+' onclick="closeRow(\''+r.id+'\')">Upload proof</button>')+'</div>'});
+ return h+'</div><div style="display:flex;justify-content:flex-end">'
+ +'<button class="bo" '+(S.role==='HR'&&!S.caseClosed?'':'disabled')+' onclick="closeCase()">Close case</button></div>'
+ +(S.role!=='HR'?'<div class="hint" style="text-align:right;margin-top:6px">Only Human Resources uploads here. IT and Finance are asked, not assigned.</div>':'')}
+
+function vLog(){
+ return '<h2><span class="n">6</span>Audit log</h2>'
+ +'<div class="lede">Append only. No role, including the system administrator, can edit or remove an entry.</div>'
+ +'<div class="card"><div class="log">'+(S.log.length?S.log.map(e=>
+  '<div class="e"><div class="t">'+fmt(e.at)+'</div><div class="a">'+e.a+'</div><div><b>'+e.ac+'</b> · '+esc(e.d)+'</div></div>').join('')
+  :'<div class="e"><div></div><div></div><div>No entries yet.</div></div>')+'</div></div>'}
+
+function vAbout(){
+ return '<h2><span class="n">7</span>How to read this</h2>'
+ +'<div class="lede">A working model. Every figure is calculated from what you type, and nothing leaves this page.</div>'
+ +'<div class="grid g2">'
+ +'<div class="card"><b>Run it end to end in five minutes</b>'
+ +'<div class="step"><div class="num">1</div><div><div class="wt">Open a case</div><div class="bdy">Case tab as Human Resources. Change the wage and the leave balance to something real.</div></div></div>'
+ +'<div class="step"><div class="num">2</div><div><div class="wt">Work Stage A as the Reporting Manager</div><div class="bdy">Fill RM-2, name a successor, disposition ten rows, send. Switch to Successor, confirm the folders, accept with a remark. Switch back, generate RM-1, preview it, print, upload.</div></div></div>'
+ +'<div class="step"><div class="num">3</div><div><div class="wt">Mark a device damaged in IT-3</div><div class="bdy">Then mark an item not surrendered in AD-2 with a value. Watch both arrive on the Finance screen at Stage E without anyone retyping them.</div></div></div>'
+ +'<div class="step"><div class="num">4</div><div><div class="wt">At FI-1, leave the notice date blank</div><div class="bdy">The line is shown, totalled separately and left out of the settlement. Fill the date and the net figure moves.</div></div></div>'
+ +'<div class="step"><div class="num">5</div><div><div class="wt">Advance the clock past the last working day</div><div class="bdy">Letters stay held, the settlement pays anyway, and the log says it was released regardless.</div></div></div></div>'
+ +'<div class="card"><b>What is real and what is not</b>'
+ +'<p class="hint" style="margin-top:7px"><b>Real.</b> The arithmetic, the gates, the escalation clock, the carry-forward between departments, the document previews, the upload rejection path, the fifty per cent ceiling, the exclusion of a deduction with no written notice.</p>'
+ +'<p class="hint" style="margin-top:8px"><b>Not real.</b> No login, no database, no email, no PDF. Uploads are simulated. Refreshing keeps your work; Reset clears it.</p>'
+ +'<div class="ob" style="margin-top:10px">The two rules to watch. Every gate blocks. The settlement floor cannot be blocked by anyone, including Director Operations.</div>'
+ +'<p class="hint" style="margin-top:9px"><b>Why the Successor sits after the Reporting Manager.</b> He does not exist as a participant until somebody names him, and the person who names him is the Reporting Manager. Until that field is filled, there is nobody to invite. That is also why the system takes the nomination away from the Reporting Manager after two working days and hands it to Human Resources · a case cannot wait on a manager who has not decided.</p></div></div>'}
+
+/* ---------------- render ---------------- */
+function render(){
+ document.getElementById('today').textContent=fmt(S.today);
+ document.getElementById('role').innerHTML=Object.entries(ROLES)
+  .map(([k,v])=>'<option value="'+k+'" '+(S.role===k?'selected':'')+'>'+v.label+'</option>').join('');
+ const nb=document.getElementById('newbtn');
+ if(nb){nb.textContent=S.opened?'+ New exit':'+ Start an exit';
+  nb.style.display=(S.role==='HR'&&!D.starting)?'':'none'}
+ const cs=document.getElementById('casesel');
+ if(cs){const list=openCases();const box=cs.closest?cs.closest('.box'):null;
+  if(box)box.style.display=list.length?'':'none';
+  cs.innerHTML=D.cases.map((c,i)=>c.opened
+   ?'<option value="'+i+'" '+(D.cur===i?'selected':'')+'>'+esc(c.ref+' · '+(c.c.name||''))
+     +(c.caseClosed?' · closed':'')+'</option>':'').join('')}
+ const tabs=tabsFor();
+ if(!tabs.some(t=>t[0]===S.view))S.view='case';
+ document.getElementById('nav').innerHTML=tabs.map(([k,l])=>
+  '<button class="'+(S.view===k?'on':'')+'" onclick="tab(\''+k+'\')">'+l+'</button>').join('');
+ document.getElementById('view').innerHTML=({flow:vFlow,board:vBoard,case:vCase,ledger:vLedger,
+  closure:vClosure,log:vLog,about:vAbout})[S.view]()}
+
+load();clock();save();render();
+
+</script>
+</body>
+</html>
