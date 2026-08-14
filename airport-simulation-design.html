@@ -79,141 +79,13 @@ a:hover{text-decoration:underline}
 @media (max-width:768px){.nav-links{display:none}.hero h1{font-size:34px}.hero{padding:60px 0}.section{padding:48px 0}.section h2{font-size:26px}}
 </style>
 <style id="vbe-canonical-shell">
-:root{
-  --vb-blue-deep:#0B2451;
-  --vb-blue:#143A78;
-  --vb-orange:#F26522;
-  --vb-orange-light:#F26522;
-  --slate:#4A5A7A;
-  --charcoal:#0B2451;
-  --hairline:#E5E7EB;
-}
-
-/* CANONICAL HEADER + FOOTER CSS · Edition 1.13.5 · injected site-wide */
-
-/* === HEADER (.vbe-nav) === */
-
-.vbe-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,252,254,0.85);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border-bottom:1px solid var(--hairline)}
-
-.vbe-nav-inner{max-width:1400px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
-
-.brand-mark{display:flex;align-items:center;gap:12px;text-decoration:none}
-
-.brand-mark img{width:40px;height:auto;display:block}
-
-.brand-wordmark{font-weight:800;font-size:17px;letter-spacing:-0.3px;color:var(--vb-blue-deep)}
-
-.brand-wordmark span{color:var(--vb-orange)}
-
-.brand-tagline{font-size:10px;letter-spacing:1.6px;color:var(--slate);text-transform:uppercase;margin-top:1px}
-
-.nav-menu{list-style:none;display:flex;gap:28px;align-items:center}
-
-.nav-menu a{color:var(--charcoal);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
-
-.nav-menu a:hover{color:var(--vb-orange)}
-
-.nav-cta{color:#FFFFFF !important;}
-
-.nav-cta{padding:10px 20px;background:var(--vb-orange);color:white !important;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:0.3px}
-
-.nav-cta:hover{background:var(--vb-orange-light);color:white !important;transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(242,101,34,0.5)}
-
-.primary,nav.primary a{color:#0B2451;}
-
-.primary .nav-items a{color:#0B2451;}
-
-.primary .nav-cta{color:#FFFFFF !important;}
-
-/* === FOOTER (.vbe-site-footer) === */
-
-.vbe-site-footer { background: linear-gradient(180deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; padding: 80px 24px 32px; font-family: 'Inter', sans-serif; margin-top: 0; }
-
-.vbe-site-footer-inner { max-width: 1280px; margin: 0 auto; }
-
-.vbe-site-footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 48px; margin-bottom: 56px; }
-
-.vbe-site-footer .brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
-
-.vbe-site-footer .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
-
-.vbe-site-footer .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
-
-.vbe-site-footer .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
-
-.vbe-site-footer .brand-col a { color: #F26522; text-decoration: none; }
-
-.vbe-site-footer .social { display: flex; gap: 12px; }
-
-.vbe-site-footer .social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-size: 16px; transition: background 0.3s; }
-
-.vbe-site-footer .social a:hover { background: #F26522; }
-
-.vbe-site-footer h5 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F26522; margin-bottom: 18px; }
-
-.vbe-site-footer ul { list-style: none; padding: 0; margin: 0; }
-
-.vbe-site-footer ul li { margin-bottom: 10px; }
-
-.vbe-site-footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-
-.vbe-site-footer ul li a:hover { color: #F26522; }
-
-.vbe-site-footer-base { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.10); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-
-.vbe-site-footer-base .copy { font-size: 12px; color: rgba(255,255,255,0.55); }
-
-.vbe-site-footer-base .badge { font-size: 11px; color: #F26522; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
-
-@media (max-width: 900px) { .vbe-site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
-
-@media (max-width: 600px) { .vbe-site-footer-grid { grid-template-columns: 1fr; gap: 28px; } }
-
-.brand-col img { height: 40px; width: auto; margin-bottom: 16px; }
-
-.brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
-
-.brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
-
-.brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
-
-.brand-col a { color: #F26522; text-decoration: none; }
-
-.brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; }
-
-.brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+:root{ --vb-blue-deep:#0B2451; --vb-blue:#143A78; --vb-orange:#F26522; --vb-orange-light:#F26522; --slate:#4A5A7A; --charcoal:#0B2451; --hairline:#E5E7EB;
+} /* CANONICAL HEADER + FOOTER CSS · Edition 1.13.5 · injected site-wide */* === HEADER (.vbe-nav) === */ .vbe-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(251,252,254,0.85);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border-bottom:1px solid var(--hairline)} .vbe-nav-inner{max-width:1400px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px} .brand-mark{display:flex;align-items:center;gap:12px;text-decoration:none} .brand-mark img{width:40px;height:auto;display:block} .brand-wordmark{font-weight:800;font-size:17px;letter-spacing:-0.3px;color:var(--vb-blue-deep)} .brand-wordmark span{color:var(--vb-orange)} .brand-tagline{font-size:10px;letter-spacing:1.6px;color:var(--slate);text-transform:uppercase;margin-top:1px} .nav-menu{list-style:none;display:flex;gap:28px;align-items:center} .nav-menu a{color:var(--charcoal);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s} .nav-menu a:hover{color:var(--vb-orange)} .nav-cta{color:#FFFFFF !important;} .nav-cta{padding:10px 20px;background:var(--vb-orange);color:white !important;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:0.3px} .nav-cta:hover{background:var(--vb-orange-light);color:white !important;transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(242,101,34,0.5)} .primary,nav.primary a{color:#0B2451;} .primary .nav-items a{color:#0B2451;} .primary .nav-cta{color:#FFFFFF !important;} /* === FOOTER (.vbe-site-footer) === */ .vbe-site-footer { background: linear-gradient(180deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; padding: 80px 24px 32px; font-family: 'Inter', sans-serif; margin-top: 0; } .vbe-site-footer-inner { max-width: 1280px; margin: 0 auto; } .vbe-site-footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 48px; margin-bottom: 56px; } .vbe-site-footer .brand-col img { height: 40px; width: auto; margin-bottom: 16px; } .vbe-site-footer .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .vbe-site-footer .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; } .vbe-site-footer .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; } .vbe-site-footer .brand-col a { color: #F26522; text-decoration: none; } .vbe-site-footer .social { display: flex; gap: 12px; } .vbe-site-footer .social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-size: 16px; transition: background 0.3s; } .vbe-site-footer .social a:hover { background: #F26522; } .vbe-site-footer h5 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F26522; margin-bottom: 18px; } .vbe-site-footer ul { list-style: none; padding: 0; margin: 0; } .vbe-site-footer ul li { margin-bottom: 10px; } .vbe-site-footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; } .vbe-site-footer ul li a:hover { color: #F26522; } .vbe-site-footer-base { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.10); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; } .vbe-site-footer-base .copy { font-size: 12px; color: rgba(255,255,255,0.55); } .vbe-site-footer-base .badge { font-size: 11px; color: #F26522; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; font-family: 'JetBrains Mono', monospace; } @media (max-width: 900px) { .vbe-site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } } @media (max-width: 600px) { .vbe-site-footer-grid { grid-template-columns: 1fr; gap: 28px; } } .brand-col img { height: 40px; width: auto; margin-bottom: 16px; } .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; } .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; } .brand-col a { color: #F26522; text-decoration: none; } .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
 </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "VB Engineering",
-  "legalName": "Vijaya Bhanu Engineering India Pvt. Ltd.",
-  "url": "https://www.vbengg.com/",
-  "logo": "https://www.vbengg.com/assets/vb-logo.png",
-  "foundingDate": "2014",
-  "founder": {
-    "@type": "Person",
-    "name": "Peri Sastry Peri"
-  },
-  "description": "Brownfield digital engineering practice. 1,000+ power system studies, 50,000+ LiDAR scans, 21 countries. NFPA 70E + IEEE 1584 + IEC compliant. Delivered by in-house Chartered Engineers.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Hyderabad",
-    "addressRegion": "Telangana",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/5402803/",
-    "https://www.facebook.com/vbengineeringindia",
-    "https://www.instagram.com/vbengineering",
-    "https://x.com/VBengineering",
-    "https://www.youtube.com/channel/UCiOyDMTcIsGKkFucNRmd_fw"
-  ]
+{ "@context": "https://schema.org", "@type": "Organization", "name": "VB Engineering", "legalName": "Vijaya Bhanu Engineering India Pvt. Ltd.", "url": "https://www.vbengg.com/", "logo": "https://www.vbengg.com/assets/vb-logo.png", "foundingDate": "2014", "founder": { "@type": "Person", "name": "Peri Sastry Peri" }, "description": "Brownfield digital engineering practice. 1,000+ power system studies, 50,000+ LiDAR scans, 21 countries. NFPA 70E + IEEE 1584 + IEC compliant. Delivered by in-house Chartered Engineers.", "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" }, "sameAs": [ "https://www.linkedin.com/company/5402803/", "https://www.facebook.com/vbengineeringindia", "https://www.instagram.com/vbengineering", "https://x.com/VBengineering", "https://www.youtube.com/channel/UCiOyDMTcIsGKkFucNRmd_fw" ]
 }
-</script>
-
-<style id="vbe-linkedin-pill-css">
+</script> <style id="vbe-linkedin-pill-css">
 .vbe-linkedin-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;margin-left:6px;border:1px solid #E5E7EB;border-radius:20px;background:#FFFFFF;color:#0B2451;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;text-decoration:none;line-height:1;transition:border-color .15s,color .15s,background .15s;vertical-align:middle}
 .vbe-linkedin-pill:hover{border-color:#F26522;color:#F26522;background:#FAFAFA}
 .vbe-li-glyph{width:14px;height:14px;flex-shrink:0;fill:#0A66C2}
@@ -234,11 +106,7 @@ a:hover{text-decoration:underline}
 <div class="eyebrow">Discrete Event Simulation</div>
 <h1>Airport simulation + design.<br><span class="accent">FlexSim DES across terminals, apron, baggage.</span></h1>
 <div class="lede">Passenger flow, baggage handling system throughput, apron movement, terminal queuing, runway and taxiway capacity. 1,000+ engineering studies, 21-country delivery, every model signed by a Chartered Engineer (CEng MIE).</div>
-</div></section>
-
-<section class="marquee-band"><div class="label">Trusted by enterprise plant operators · 25 of 63 verified</div><div class="marquee"><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bureau-veritas.png" alt="Bureau Veritas" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/lloyd-logo-1.png" alt="Lloyd's Register" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tvs.png" alt="TVS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/indianoil.png" alt="Indian Oil" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/halliburton.png" alt="Halliburton" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngene.png" alt="Syngene" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bureau-veritas.png" alt="Bureau Veritas" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/lloyd-logo-1.png" alt="Lloyd's Register" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tvs.png" alt="TVS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/indianoil.png" alt="Indian Oil" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/halliburton.png" alt="Halliburton" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngene.png" alt="Syngene" loading="lazy"></div></div></section>
-
-<section class="section"><div class="container">
+</div></section> <section class="marquee-band"><div class="label">Trusted by enterprise plant operators · 25 of 63 verified</div><div class="marquee"><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bureau-veritas.png" alt="Bureau Veritas" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/lloyd-logo-1.png" alt="Lloyd's Register" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tvs.png" alt="TVS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/indianoil.png" alt="Indian Oil" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/halliburton.png" alt="Halliburton" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngene.png" alt="Syngene" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bayer.png" alt="Bayer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/pfizer.png" alt="Pfizer" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tata.png" alt="TATA" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/adani.png" alt="Adani" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/jsw.png" alt="JSW" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/nestle.png" alt="Nestle" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/isro.png" alt="ISRO" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/hindalco.png" alt="Hindalco" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amazon.png" alt="Amazon" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/siemens.png" alt="Siemens" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/aditya.png" alt="Aditya Birla" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/itc.png" alt="ITC" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/mahindra.png" alt="Mahindra" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/kia.png" alt="Kia" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/amns.png" alt="AMNS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bosch.png" alt="Bosch" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/dupont.png" alt="DuPont" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/drreddys.png" alt="Dr. Reddy's" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/bureau-veritas.png" alt="Bureau Veritas" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/lloyd-logo-1.png" alt="Lloyd's Register" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/tvs.png" alt="TVS" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/indianoil.png" alt="Indian Oil" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/halliburton.png" alt="Halliburton" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/asian-paints.png" alt="Asian Paints" loading="lazy"></div><div class="mq-logo"><img src="/assets/client-logos/syngene.png" alt="Syngene" loading="lazy"></div></div></section> <section class="section"><div class="container">
 <h2>What we simulate.</h2>
 <p>VB Engineering builds FlexSim discrete-event models for the full airport operational chain. Each model is constructed from operations data, validated against historical performance, and stress-tested against design-day and disruption scenarios.</p>
 <div class="grid-3">
@@ -249,9 +117,7 @@ a:hover{text-decoration:underline}
 <div class="card"><h3>Operational disruption</h3><p>Weather diversions, security incidents, BHS failure, runway closure. Stress-tests the contingency plan against quantitative recovery KPIs.</p></div>
 <div class="card"><h3>Pre-commissioning capacity</h3><p>Validates a new or expanded terminal against design-day throughput before opening. Catches gate assignment, security lane sizing, BHS recovery loop issues pre-go-live.</p></div>
 </div>
-</div></section>
-
-<section class="section"><div class="container">
+</div></section> <section class="section"><div class="container">
 <h2>The deliverable shape.</h2>
 <p>Every airport simulation deliverable is built to the same five-part structure. The model is the proof. The report is the audit trail. The recommendations are the executable artifact.</p>
 <div class="grid-3">
@@ -261,102 +127,19 @@ a:hover{text-decoration:underline}
 <div class="card"><h3>Recommendation register</h3><p>Specific layout, process, or technology interventions tied to the KPI gaps. Each recommendation costed at order-of-magnitude.</p></div>
 <div class="card"><h3>CEng MIE signature</h3><p>Every section signed by a Chartered Engineer. Audit-ready, regulator-ready, lender-ready.</p></div>
 </div>
-</div></section>
-
-<section class="section"><div class="container">
+</div></section> <section class="section"><div class="container">
 <h2>Frequently asked.</h2>
-<div class="grid-3"><div class="card"><h3>Which simulation platform does VB Engineering use for airport projects?</h3><p>FlexSim Discrete Event Simulation as the primary platform. AnyLogic and Simio for hybrid agent-based work. Every airport simulation is built to ISA-95 data structures and validated against ASA criteria for Verification, Validation, and Accreditation.</p></div><div class="card"><h3>What airport operations can be simulated?</h3><p>Passenger flow through check-in, security, immigration, gate boarding. Baggage handling system throughput, redirect logic, and recovery from belt failures. Apron movement of pushback tugs, ground service equipment, fueling, catering. Terminal queuing at retail and F+B. Runway and taxiway throughput under weather constraints.</p></div><div class="card"><h3>How is a typical airport simulation engagement scoped?</h3><p>Four weeks for a single terminal scope. Eight weeks for a full landside-to-airside model. Twelve to sixteen weeks for a multi-terminal airport with apron, baggage, and security integrated. Every model is delivered with a CEng MIE signature, a verification report, and a sensitivity analysis on the top three input drivers.</p></div><div class="card"><h3>Does VB Engineering deliver pre-commissioning capacity studies for new terminals?</h3><p>Yes. Pre-commissioning capacity validation is a frequent scope. The simulation runs against design-day, peak-hour, and disruption scenarios. Outcomes feed into terminal layout final-fix, gate assignment policy, and contingency procedures.</p></div><div class="card"><h3>Is the simulation output linked to BIM or digital twin?</h3><p>Yes when the client has a BIM or digital twin in place. The FlexSim model imports IFC geometry and the result KPIs are published to the digital twin layer for live-vs-design comparison. The <a href="https://wistwin.in/" target="_blank" rel="noopener noreferrer" style="color:inherit;border-bottom:1px dotted currentColor;text-decoration:none">Wistwin</a> platform extends this into the operational ARR phase.</p></div></div>
-</div></section>
-
-<section class="cta-band"><div class="container">
+<div class="grid-3"><div class="card"><h3>Which simulation platform does VB Engineering use for airport projects?</h3><p>FlexSim Discrete Event Simulation as the primary platform. and for hybrid agent-based work. Every airport simulation is built to ISA-95 data structures and validated against ASA criteria for Verification, Validation, and Accreditation.</p></div><div class="card"><h3>What airport operations can be simulated?</h3><p>Passenger flow through check-in, security, immigration, gate boarding. Baggage handling system throughput, redirect logic, and recovery from belt failures. Apron movement of pushback tugs, ground service equipment, fueling, catering. Terminal queuing at retail and F+B. Runway and taxiway throughput under weather constraints.</p></div><div class="card"><h3>How is a typical airport simulation engagement scoped?</h3><p>Four weeks for a single terminal scope. Eight weeks for a full landside-to-airside model. Twelve to sixteen weeks for a multi-terminal airport with apron, baggage, and security integrated. Every model is delivered with a CEng MIE signature, a verification report, and a sensitivity analysis on the top three input drivers.</p></div><div class="card"><h3>Does VB Engineering deliver pre-commissioning capacity studies for new terminals?</h3><p>Yes. Pre-commissioning capacity validation is a frequent scope. The simulation runs against design-day, peak-hour, and disruption scenarios. Outcomes feed into terminal layout final-fix, gate assignment policy, and contingency procedures.</p></div><div class="card"><h3>Is the simulation output linked to BIM or digital twin?</h3><p>Yes when the client has a BIM or digital twin in place. The FlexSim model imports IFC geometry and the result KPIs are published to the digital twin layer for live-vs-design comparison. The <a href="https://wistwin.in/" target="_blank" rel="noopener noreferrer" style="color:inherit;border-bottom:1px dotted currentColor;text-decoration:none">Wistwin</a> platform extends this into the operational ARR phase.</p></div></div>
+</div></section> <section class="cta-band"><div class="container">
 <h2>Scoping an airport simulation?</h2>
 <p>Tell us the airport, the operational question, and the timeline. We will scope the model, the data needs, and the delivery weeks within 48 hours.</p>
 <a href="/contact/?service=simulation&source=airport-simulation-design" class="cta-btn">Scope your model</a>
-</div></section>
-
-<!--#include virtual="/partials/footer.html" -->
-
-
-<!-- Interakt / Kiwi WhatsApp SDK -->
-
-<!-- SCOPE YOUR PLANT · MODAL COMPONENT · v10.8.4 · Bitrix Master Form A (230/wna9sd) -->
-<style id="vbe-scope-modal-styles">
-  .scope-modal-overlay{position:fixed;inset:0;background:rgba(11,36,81,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;overflow-y:auto}
-  .scope-modal-overlay.open{display:flex}
-  .scope-modal{background:#FFFFFF;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);position:relative;padding:36px 40px}
-  .scope-modal-close{position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:28px;color:#4A5A7A;cursor:pointer;line-height:1;padding:8px;border-radius:8px;transition:background 0.2s}
-  .scope-modal-close:hover{background:#F8F8F8;color:#0B2451}
-  .scope-modal-header{margin-bottom:24px;padding-right:32px}
-  .scope-modal-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F26522;font-weight:700;margin-bottom:8px}
-  .scope-modal-title{font-size:24px;font-weight:800;color:#0B2451;line-height:1.2;margin-bottom:6px}
-  .scope-modal-sub{font-size:14px;color:#4A5A7A;line-height:1.5}
-  .scope-modal-body .form-loader{padding:32px;text-align:center;color:#4A5A7A;font-size:14px}
-  @media (max-width:600px){.scope-modal{padding:28px 20px}.scope-modal-title{font-size:20px}}
+</div></section> <!--#include virtual="/partials/footer.html" --> <!-- Interakt / Kiwi WhatsApp SDK --> <!-- SCOPE YOUR PLANT · MODAL COMPONENT · v10.8.4 · Bitrix Master Form A (230/wna9sd) -->
+<style id="vbe-scope-modal-styles"> .scope-modal-overlay{position:fixed;inset:0;background:rgba(11,36,81,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;overflow-y:auto} .scope-modal-overlay.open{display:flex} .scope-modal{background:#FFFFFF;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);position:relative;padding:36px 40px} .scope-modal-close{position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:28px;color:#4A5A7A;cursor:pointer;line-height:1;padding:8px;border-radius:8px;transition:background 0.2s} .scope-modal-close:hover{background:#F8F8F8;color:#0B2451} .scope-modal-header{margin-bottom:24px;padding-right:32px} .scope-modal-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F26522;font-weight:700;margin-bottom:8px} .scope-modal-title{font-size:24px;font-weight:800;color:#0B2451;line-height:1.2;margin-bottom:6px} .scope-modal-sub{font-size:14px;color:#4A5A7A;line-height:1.5} .scope-modal-body .form-loader{padding:32px;text-align:center;color:#4A5A7A;font-size:14px} @media (max-width:600px){.scope-modal{padding:28px 20px}.scope-modal-title{font-size:20px}}
 </style>
-<div class="scope-modal-overlay" id="scopeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="scopeModalTitle">
-  <div class="scope-modal">
-    <button class="scope-modal-close" id="scopeModalClose" aria-label="Close">&times;</button>
-    <div class="scope-modal-header">
-      <div class="scope-modal-eyebrow">Scope Your Plant</div>
-      <div class="scope-modal-title" id="scopeModalTitle">Tell us about the plant. We&rsquo;ll scope it in 48 hours.</div>
-      <div class="scope-modal-sub">Chartered Engineer signature on every deliverable. No pitch decks. Just engineering answers.</div>
-    </div>
-    <div class="scope-modal-body">
-      <div class="form-loader">Loading scoping form&hellip;</div>
-      <script data-b24-form="inline/230/wna9sd" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_230.js');</script>
-    </div>
-  </div>
+<div class="scope-modal-overlay" id="scopeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="scopeModalTitle"> <div class="scope-modal"> <button class="scope-modal-close" id="scopeModalClose" aria-label="Close">&times;</button> <div class="scope-modal-header"> <div class="scope-modal-eyebrow">Scope Your Plant</div> <div class="scope-modal-title" id="scopeModalTitle">Tell us about the plant. We&rsquo;ll scope it in 48 hours.</div> <div class="scope-modal-sub">Chartered Engineer signature on every deliverable. No pitch decks. Just engineering answers.</div> </div> <div class="scope-modal-body"> <div class="form-loader">Loading scoping form&hellip;</div> <script data-b24-form="inline/230/wna9sd" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_230.js');</script> </div> </div>
 </div>
-<script id="vbe-scope-modal-js">(function(){
-  var overlay=document.getElementById('scopeModalOverlay');
-  var closeBtn=document.getElementById('scopeModalClose');
-  if(!overlay)return;
-  function openModal(ctx){
-    overlay.classList.add('open');
-    document.body.style.overflow='hidden';
-    // Push URL context as hidden fields when Bitrix form is ready
-    if(ctx){
-      var tryFill=function(){
-        var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source};
-        Object.keys(fields).forEach(function(k){
-          if(!fields[k])return;
-          var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]');
-          if(input){input.value=fields[k]}
-        });
-      };
-      setTimeout(tryFill,1500);
-      setTimeout(tryFill,3000);
-      setTimeout(tryFill,5000);
-    }
-    // GA4 event
-    if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});}
-  }
-  function closeModal(){
-    overlay.classList.remove('open');
-    document.body.style.overflow='';
-  }
-  closeBtn&&closeBtn.addEventListener('click',closeModal);
-  overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
-  // Intercept all Scope Your Plant CTAs
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('a.nav-cta, a[data-scope-cta]');
-    if(!a)return;
-    if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return;
-    e.preventDefault();
-    // Parse the CTA href query params for context
-    var url=a.getAttribute('href')||'';
-    var q=url.split('?')[1]||'';
-    var ctx={};
-    q.split('&').forEach(function(pair){
-      var kv=pair.split('=');
-      if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||'');
-    });
-    openModal(ctx);
-  });
-})();</script>
-
-
-</body></html>
+<script id="vbe-scope-modal-js">(function(){ var overlay=document.getElementById('scopeModalOverlay'); var closeBtn=document.getElementById('scopeModalClose'); if(!overlay)return; function openModal(ctx){ overlay.classList.add('open'); document.body.style.overflow='hidden'; / Push URL context as hidden fields when Bitrix form is ready if(ctx){ var tryFill=function(){ var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source}; Object.keys(fields).forEach(function(k){ if(!fields[k])return; var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]'); if(input){input.value=fields[k]} }); }; setTimeout(tryFill,1500); setTimeout(tryFill,3000); setTimeout(tryFill,5000); } / GA4 event if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});} } function closeModal(){ overlay.classList.remove('open'); document.body.style.overflow=''; } closeBtn&&closeBtn.addEventListener('click',closeModal); overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()}); document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()}); / Intercept all Scope Your Plant CTAs document.addEventListener('click',function(e){ var a=e.target.closest('a.nav-cta, a[data-scope-cta]'); if(!a)return; if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return; e.preventDefault(); / Parse the CTA href query params for context var url=a.getAttribute('href')||''; var q=url.split('?')[1]||''; var ctx={}; q.split('&').forEach(function(pair){ var kv=pair.split('='); if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||''); }); openModal(ctx); });
+})();</script> </body></html>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vbengg.com/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://www.vbengg.com/resources/"},{"@type":"ListItem","position":3,"name":"Airport Simulation + Design","item":"https://www.vbengg.com/airport-simulation-design.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which simulation platform does VB Engineering use for airport projects?","acceptedAnswer":{"@type":"Answer","text":"FlexSim Discrete Event Simulation as the primary platform. AnyLogic and Simio for hybrid agent-based work. Every airport simulation is built to ISA-95 data structures and validated against ASA criteria for Verification, Validation, and Accreditation."}},{"@type":"Question","name":"What airport operations can be simulated?","acceptedAnswer":{"@type":"Answer","text":"Passenger flow through check-in, security, immigration, gate boarding. Baggage handling system throughput, redirect logic, and recovery from belt failures. Apron movement of pushback tugs, ground service equipment, fueling, catering. Terminal queuing at retail and F+B. Runway and taxiway throughput under weather constraints."}},{"@type":"Question","name":"How is a typical airport simulation engagement scoped?","acceptedAnswer":{"@type":"Answer","text":"Four weeks for a single terminal scope. Eight weeks for a full landside-to-airside model. Twelve to sixteen weeks for a multi-terminal airport with apron, baggage, and security integrated. Every model is delivered with a CEng MIE signature, a verification report, and a sensitivity analysis on the top three input drivers."}},{"@type":"Question","name":"Does VB Engineering deliver pre-commissioning capacity studies for new terminals?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pre-commissioning capacity validation is a frequent scope. The simulation runs against design-day, peak-hour, and disruption scenarios. Outcomes feed into terminal layout final-fix, gate assignment policy, and contingency procedures."}},{"@type":"Question","name":"Is the simulation output linked to BIM or digital twin?","acceptedAnswer":{"@type":"Answer","text":"Yes when the client has a BIM or digital twin in place. The FlexSim model imports IFC geometry and the result KPIs are published to the digital twin layer for live-vs-design comparison. The Wistwin platform extends this into the operational ARR phase."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which simulation platform does VB Engineering use for airport projects?","acceptedAnswer":{"@type":"Answer","text":"FlexSim Discrete Event Simulation as the primary platform. and for hybrid agent-based work. Every airport simulation is built to ISA-95 data structures and validated against ASA criteria for Verification, Validation, and Accreditation."}},{"@type":"Question","name":"What airport operations can be simulated?","acceptedAnswer":{"@type":"Answer","text":"Passenger flow through check-in, security, immigration, gate boarding. Baggage handling system throughput, redirect logic, and recovery from belt failures. Apron movement of pushback tugs, ground service equipment, fueling, catering. Terminal queuing at retail and F+B. Runway and taxiway throughput under weather constraints."}},{"@type":"Question","name":"How is a typical airport simulation engagement scoped?","acceptedAnswer":{"@type":"Answer","text":"Four weeks for a single terminal scope. Eight weeks for a full landside-to-airside model. Twelve to sixteen weeks for a multi-terminal airport with apron, baggage, and security integrated. Every model is delivered with a CEng MIE signature, a verification report, and a sensitivity analysis on the top three input drivers."}},{"@type":"Question","name":"Does VB Engineering deliver pre-commissioning capacity studies for new terminals?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pre-commissioning capacity validation is a frequent scope. The simulation runs against design-day, peak-hour, and disruption scenarios. Outcomes feed into terminal layout final-fix, gate assignment policy, and contingency procedures."}},{"@type":"Question","name":"Is the simulation output linked to BIM or digital twin?","acceptedAnswer":{"@type":"Answer","text":"Yes when the client has a BIM or digital twin in place. The FlexSim model imports IFC geometry and the result KPIs are published to the digital twin layer for live-vs-design comparison. The Wistwin platform extends this into the operational ARR phase."}}]}</script>
