@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- VBE master sitemap · Edition 1.13.1 · CEO-directive · all legacy URLs preserved · 2026-06-21 -->
+<!-- VBE master sitemap · Edition 1.13.1 · CEO-directive · all legacy URLs preserved
+     · v16 · 2026-08-17 · A1 restored 53 de-listed live pages (1,637 clicks,
+     168,651 impressions) removed by a migration whose redirects never deployed -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.vbengg.com/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/3d-cad-drafting-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/3d-factory-animation.html</loc>
@@ -24,6 +32,18 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/PandID-Drawings-Preperation-India.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/about-vb-engineering.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/about/</loc>
@@ -74,9 +94,33 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/arc-flash-Study-Consultant-UAE.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-analysis-india.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-australia.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/arc-flash-check-list</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-check-list.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
@@ -98,10 +142,22 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/arc-flash-ppe-india.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/arc-flash-report.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-risk-assessment-China</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/arc-flash-risk-assessment-belgium</loc>
@@ -116,6 +172,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/arc-flash-risk-assessment-for-oil-rigs.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/arc-flash-risk-assessment-france</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
@@ -128,6 +190,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/arc-flash-risk-assessment-india.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-risk-assessment-italian</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/arc-flash-risk-assessment-italy</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
@@ -138,6 +212,12 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-risk-assessment-japanese</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/arc-flash-risk-assessment-luxembourg</loc>
@@ -164,15 +244,45 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/arc-flash-risk-assessment-spanish</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/arc-flash-risk-assessment-switzerland</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/arc-flash-risk-assessment.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/arc-flash-safety-assessment</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-study-Qatar.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-study-UAE.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/arc-flash-study-saudi-arabia.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
@@ -192,6 +302,18 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/australia-arc-flash-study.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/australia-electrical-Arc-Flash-study-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/bahrain-arc-flash-study.html</loc>
@@ -236,6 +358,18 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/cad-drafting-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/cad-drawing-preparation.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/cad-training.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
@@ -252,6 +386,18 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/dc-arc-flash-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/dc-short-circuit-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/design.html</loc>
@@ -276,6 +422,12 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/e-hazop-study.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/earthing-design-india.html</loc>
@@ -312,6 +464,12 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/electrical-engineering-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/electrical-hazardous-area-classification.html</loc>
@@ -368,6 +526,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/engineering-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/equipment-evaluation-studies.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
@@ -402,6 +566,72 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/australia/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/india/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/saudi-arabia/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/uae/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/uk/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/usa/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-assettwin/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-powerpulse/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/flagship-solutions/vb-safewatch/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/flexsim-india.html</loc>
@@ -446,10 +676,34 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/harmonic-analysis-india.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/harmonic-analysis.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/hvac-design.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/india-arc-flash-study.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/indonesia-electrical-Arc-Flash-study-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/industrial-accident-investigation.html</loc>
@@ -468,6 +722,12 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/industrial-risk-assessments.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/industrial-simulation-solutions.html</loc>
@@ -536,6 +796,18 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/insulation-coordination-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/insulation-coordination-study.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/ir-thermography.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
@@ -546,6 +818,24 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/kingdom-of-saudi-arabia-arc-flash-study.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/kingdom-of-saudi-arabia-electrical-Arc-Flash-study-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/ksa-arc-flash-study.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/kuwait-arc-flash-study.html</loc>
@@ -572,10 +862,22 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/lightning-arrester.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/lightning-arrestor-protection-study-audit.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/load-flow-analysis-for-oil-and-gas-rigs.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/locations/</loc>
@@ -590,10 +892,65 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/locations/australia/arc-flash-study/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/australia/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/australia/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/australia/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/australia/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/australia/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/locations/china/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/china/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/china/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/china/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/china/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/china/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/locations/india/</loc>
@@ -602,10 +959,125 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/locations/india/angul/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/arc-flash-study/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/baddi/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/ballari/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/durgapur/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/hyderabad/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/nellore/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/pune/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/raigarh/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/sanand/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/india/visakhapatnam/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/locations/indonesia/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/indonesia/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/indonesia/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/indonesia/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/indonesia/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/indonesia/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/locations/qatar/</loc>
@@ -614,10 +1086,65 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/locations/qatar/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/qatar/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/qatar/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/qatar/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/qatar/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/locations/saudi-arabia/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/saudi-arabia/arc-flash-study/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/saudi-arabia/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/saudi-arabia/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/saudi-arabia/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/saudi-arabia/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/saudi-arabia/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/locations/singapore/</loc>
@@ -626,10 +1153,65 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/locations/singapore/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/singapore/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/singapore/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/singapore/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/singapore/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/locations/uae/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uae/arc-flash-study/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uae/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uae/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uae/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uae/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uae/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/locations/uk/</loc>
@@ -638,10 +1220,70 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/locations/uk/arc-flash-study/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uk/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uk/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uk/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uk/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/uk/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/locations/usa/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/usa/arc-flash-study/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/usa/as-built-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/usa/lidar-scanning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/usa/power-system-studies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/usa/risk-safety-amc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/locations/usa/simulation-evaluation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/malaysia-electrical-Arc-Flash-study-services.html</loc>
@@ -654,6 +1296,12 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/motor-starting-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/network-analysis-tool.html</loc>
@@ -672,6 +1320,12 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/osha-process-safety-hazop-study.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/philippines-electrical-Arc-Flash-study-services.html</loc>
@@ -728,6 +1382,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/power-system-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/process-design.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
@@ -770,6 +1430,30 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/qatar-electrical-Arc-Flash-study-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/relay-coordination-india.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/relay-coordination-study.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/relay-coordination.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/reliability-studies-contingency-analysis.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
@@ -786,6 +1470,12 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/safety-audits.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/safety-faq.html</loc>
@@ -858,6 +1548,30 @@
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/services/discrete-event-simulation/airport-discrete-event-simulation/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/services/discrete-event-simulation/healthcare-discrete-event-simulation/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/services/discrete-event-simulation/mining-discrete-event-simulation/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/services/discrete-event-simulation/port-discrete-event-simulation/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/services/lidar-scanning/</loc>
@@ -1117,11 +1831,35 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
-<url>
+  <url>
+    <loc>https://www.vbengg.com/services/simulation-evaluation/throughput-optimisation/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/services/simulation-evaluation/underground-mine-haul-cycle/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/short-circuit-analysis.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/short-circuit-studies-for-oil-and-gas-rigs.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/short-circuit-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/sitemap.html</loc>
@@ -1226,10 +1964,28 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/transient-stability-and-load-shedding-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/transient-stability-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/uae-arc-flash-study.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/uk-arc-flash-study.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/usa-arc-flash-study.html</loc>
@@ -1238,16 +1994,52 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/usa-electrical-Arc-Flash-study-services.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/vb-accessibility-statement.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/vb-anti-bribery-policy.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/vb-careers.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/vb-cookie-policy.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/vb-disclaimers.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/vb-dmca-policy.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/vb-health-safety-policy.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/vb-knowledge-base.html</loc>
@@ -1262,16 +2054,34 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/vb-legal-notice.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/vb-media-center.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.vbengg.com/vb-modern-slavery-statement.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.vbengg.com/vb-privacy-policy.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.vbengg.com/vb-quality-policy.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.vbengg.com/vb-research.html</loc>
@@ -1286,293 +2096,27 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.vbengg.com/warehouse-logistics-simulation.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url><loc>https://www.vbengg.com/locations/india/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/usa/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uae/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/saudi-arabia/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/qatar/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/australia/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/singapore/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/indonesia/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uk/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/china/power-system-studies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/india/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/usa/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uae/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/saudi-arabia/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/qatar/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/australia/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/singapore/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/indonesia/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uk/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/china/lidar-scanning/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/india/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/usa/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uae/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/saudi-arabia/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/qatar/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/australia/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/singapore/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/indonesia/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uk/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/china/as-built-engineering/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/india/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/usa/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uae/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/saudi-arabia/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/qatar/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/australia/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/singapore/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/indonesia/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uk/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/china/simulation-evaluation/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/india/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/usa/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uae/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/saudi-arabia/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/qatar/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/australia/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/singapore/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/indonesia/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uk/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/china/risk-safety-amc/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/india/arc-flash-study/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/usa/arc-flash-study/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uae/arc-flash-study/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/saudi-arabia/arc-flash-study/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/australia/arc-flash-study/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.vbengg.com/locations/uk/arc-flash-study/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/india/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/usa/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/uae/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/saudi-arabia/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/australia/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-arc360/uk/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-safewatch/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-assettwin/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/flagship-solutions/vb-powerpulse/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/ksa-arc-flash-study.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.vbengg.com/vb-terms-of-use.html</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.vbengg.com/vb-cookie-policy.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>https://www.vbengg.com/voltage-drop-studies.html</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.vbengg.com/vb-accessibility-statement.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>https://www.vbengg.com/warehouse-logistics-simulation.html</loc>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.vbengg.com/vb-legal-notice.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/vb-dmca-policy.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/vb-anti-bribery-policy.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/vb-modern-slavery-statement.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/vb-health-safety-policy.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/vb-quality-policy.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/australia-arc-flash-study.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>https://www.vbengg.com/wistwin</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/india-arc-flash-study.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/uk-arc-flash-study.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/angul/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/baddi/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/ballari/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/durgapur/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/hyderabad/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/nellore/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/pune/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/raigarh/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/sanand/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/locations/india/visakhapatnam/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/services/discrete-event-simulation/airport-discrete-event-simulation/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/services/discrete-event-simulation/healthcare-discrete-event-simulation/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/services/discrete-event-simulation/mining-discrete-event-simulation/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.vbengg.com/services/discrete-event-simulation/port-discrete-event-simulation/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 </urlset>
