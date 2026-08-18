@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="robots" content="noindex,nofollow"><!--DEMO-ONLY-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Power + Electrical Engineering · The PSS Practice</title>
@@ -135,7 +135,53 @@ a:hover{text-decoration:underline}
 </style>
 <div class="scope-modal-overlay" id="scopeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="scopeModalTitle"> <div class="scope-modal"> <button class="scope-modal-close" id="scopeModalClose" aria-label="Close">&times;</button> <div class="scope-modal-header"> <div class="scope-modal-eyebrow">Scope Your Plant</div> <div class="scope-modal-title" id="scopeModalTitle">Tell us about the plant. We&rsquo;ll scope it in 48 hours.</div> <div class="scope-modal-sub">Chartered Engineer signature on every deliverable. No pitch decks. Just engineering answers.</div> </div> <div class="scope-modal-body"> <div class="form-loader">Loading scoping form&hellip;</div> <script data-b24-form="inline/230/wna9sd" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_230.js');</script> </div> </div>
 </div>
-<script id="vbe-scope-modal-js">(function(){ var overlay=document.getElementById('scopeModalOverlay'); var closeBtn=document.getElementById('scopeModalClose'); if(!overlay)return; function openModal(ctx){ overlay.classList.add('open'); document.body.style.overflow='hidden'; / Push URL context as hidden fields when Bitrix form is ready if(ctx){ var tryFill=function(){ var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source}; Object.keys(fields).forEach(function(k){ if(!fields[k])return; var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]'); if(input){input.value=fields[k]} }); }; setTimeout(tryFill,1500); setTimeout(tryFill,3000); setTimeout(tryFill,5000); } / GA4 event if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});} } function closeModal(){ overlay.classList.remove('open'); document.body.style.overflow=''; } closeBtn&&closeBtn.addEventListener('click',closeModal); overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()}); document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()}); / Intercept all Scope Your Plant CTAs document.addEventListener('click',function(e){ var a=e.target.closest('a.nav-cta, a[data-scope-cta]'); if(!a)return; if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return; e.preventDefault(); / Parse the CTA href query params for context var url=a.getAttribute('href')||''; var q=url.split('?')[1]||''; var ctx={}; q.split('&').forEach(function(pair){ var kv=pair.split('='); if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||''); }); openModal(ctx); });
+<script id="vbe-scope-modal-js">(function(){
+  var overlay=document.getElementById('scopeModalOverlay');
+  var closeBtn=document.getElementById('scopeModalClose');
+  if(!overlay)return;
+  function openModal(ctx){
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    // Push URL context as hidden fields when Bitrix form is ready
+    if(ctx){
+      var tryFill=function(){
+        var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source};
+        Object.keys(fields).forEach(function(k){
+          if(!fields[k])return;
+          var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]');
+          if(input){input.value=fields[k]}
+        });
+      };
+      setTimeout(tryFill,1500);
+      setTimeout(tryFill,3000);
+      setTimeout(tryFill,5000);
+    }
+    // GA4 event
+    if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});}
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  closeBtn&&closeBtn.addEventListener('click',closeModal);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+  // Intercept all Scope Your Plant CTAs
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a.nav-cta, a[data-scope-cta]');
+    if(!a)return;
+    if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return;
+    e.preventDefault();
+    // Parse the CTA href query params for context
+    var url=a.getAttribute('href')||'';
+    var q=url.split('?')[1]||'';
+    var ctx={};
+    q.split('&').forEach(function(pair){
+      var kv=pair.split('=');
+      if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||'');
+    });
+    openModal(ctx);
+  });
 })();</script> </body></html>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vbengg.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.vbengg.com/services/"},{"@type":"ListItem","position":3,"name":"Power + Electrical Engineering","item":"https://www.vbengg.com/power-electrical-engineering.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which power system study deliverables does VB Engineering offer?","acceptedAnswer":{"@type":"Answer","text":"Load Flow Analysis, Short Circuit Analysis, Arc Flash Hazard Analysis to IEEE 1584-2018, Protection Coordination, Transient + Dynamic Stability, Harmonic Analysis, Motor Starting, Insulation Coordination, Reliability + Availability, DC Arc Flash. The full IEEE Color Books practice across 21 countries."}},{"@type":"Question","name":"Which simulation platforms are used?","acceptedAnswer":{"@type":"Answer","text":"ETAP, DigSILENT PowerFactory, and PSCAD as the three main platforms. ETAP for steady-state and arc flash. DigSILENT for transient stability and protection. PSCAD for harmonics and converter studies."}},{"@type":"Question","name":"Are deliverables signed by a Chartered Engineer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every Power System Study deliverable is signed by a Chartered Engineer (CEng MIE FIE). The signature is on the calculation report, the SLD reconciliation, the conformance matrix, and the executive summary."}},{"@type":"Question","name":"How long does a typical PSS engagement take?","acceptedAnswer":{"@type":"Answer","text":"Six weeks for a single-deliverable 11 kV / 33 kV industrial site. Eight weeks for a 132 kV operating-company facility. Ten to fourteen weeks for a multi-train complex with phased outage windows."}},{"@type":"Question","name":"Is VB Engineering pre-qualified with operating companies?","acceptedAnswer":{"@type":"Answer","text":"Yes for ADNOC. Pre-qualification with Aramco, ADCO, QatarEnergy, KOC, PDO, BAPCO is tracked per scope; current status is provided on request before tender submission."}}]}</script>
