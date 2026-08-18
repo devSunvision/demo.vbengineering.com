@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- VBE master sitemap · Edition 1.13.1 · CEO-directive · all legacy URLs preserved
-     · v16 · 2026-08-17 · A1 restored 53 de-listed live pages (1,637 clicks,
-     168,651 impressions) removed by a migration whose redirects never deployed -->
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.vbengg.com/</loc>
@@ -2119,4 +2116,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+<url><loc>https://www.vbengg.com/resources/arc-flash-study-nfpa-70e-2027/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url></urlset>
