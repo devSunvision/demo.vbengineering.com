@@ -1,3 +1,6 @@
+<style id="vbe-partial-css">/* VBE-PARTIAL-SELF-CONTAINED · FOOTER · so the shared layer renders on any page regardless of that page's own stylesheet */
+/* === FOOTER (.vbe-site-footer) === */ .vbe-site-footer { background: linear-gradient(180deg, #0B2451 0%, #143A78 100%); color: #FFFFFF; padding: 80px 24px 32px; font-family: 'Inter', sans-serif; margin-top: 0; } .vbe-site-footer-inner { max-width: 1280px; margin: 0 auto; } .vbe-site-footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 48px; margin-bottom: 56px; } .vbe-site-footer .brand-col img { height: 40px; width: auto; margin-bottom: 16px; } .vbe-site-footer .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .vbe-site-footer .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; } .vbe-site-footer .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; } .vbe-site-footer .brand-col a { color: #F26522; text-decoration: none; } .vbe-site-footer .social { display: flex; gap: 12px; } .vbe-site-footer .social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; font-size: 16px; transition: background 0.3s; } .vbe-site-footer .social a:hover { background: #F26522; } .vbe-site-footer h5 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F26522; margin-bottom: 18px; } .vbe-site-footer ul { list-style: none; padding: 0; margin: 0; } .vbe-site-footer ul li { margin-bottom: 10px; } .vbe-site-footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; } .vbe-site-footer ul li a:hover { color: #F26522; } .vbe-site-footer-base { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.10); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; } .vbe-site-footer-base .copy { font-size: 12px; color: rgba(255,255,255,0.55); } .vbe-site-footer-base .badge { font-size: 11px; color: #F26522; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; font-family: 'JetBrains Mono', monospace; } @media (max-width: 900px) { .vbe-site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } } @media (max-width: 600px) { .vbe-site-footer-grid { grid-template-columns: 1fr; gap: 28px; } } .brand-col img { height: 40px; width: auto; margin-bottom: 16px; } .brand-col .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .brand-col .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; } .brand-col p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; } .brand-col a { color: #F26522; text-decoration: none; } .brand-name { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; } .brand-sub { font-size: 12px; color: #F26522; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+</style>
 <footer class="vbe-site-footer">
   <div class="vbe-site-footer-inner">
     <div class="vbe-site-footer-grid">
@@ -51,7 +54,7 @@
           <li><a href="/about/leadership/">Leadership</a></li>
           <li><a href="/about/careers/">Careers</a></li>
           <li><a href="/about/quality/">Quality</a></li>
-          <li><a href="/resources/">Resources</a></li><li><a href="/downloads/VB-Engineering-Capability-Brochure.pdf?source=footer" data-scope-cta data-bitrix-form="230/wna9sd" data-brochure>Capability Brochure</a></li>
+          <li><a href="/resources/">Resources</a></li><li><a href="/contact/?source=footer&amp;utm_asset=brochure" data-scope-cta data-bitrix-form="230/wna9sd" data-brochure>Capability Brochure</a></li>
           <li><a href="/contact/">Contact</a></li>
           <li><a href="/vb-privacy-policy.html">Privacy</a></li>
           <li><a href="/vb-terms-of-use.html">Terms of Use</a></li><li><a href="/vb-cookie-policy.html">Cookies</a></li><li><a href="/vb-accessibility-statement.html">Accessibility</a></li><li><a href="/vb-legal-notice.html">Legal Notice</a></li><li><a href="/vb-dmca-policy.html">DMCA</a></li><li><a href="/vb-anti-bribery-policy.html">Anti-Bribery</a></li><li><a href="/vb-modern-slavery-statement.html">Modern Slavery</a></li><li><a href="/vb-health-safety-policy.html">Health &amp; Safety</a></li><li><a href="/vb-quality-policy.html">Quality Policy</a></li>
@@ -110,3 +113,20 @@ document.addEventListener("click",function(e){var d=e.target.closest('a[href="#d
 .hero-visual>img,.deliv-photo>img,.case-photo>img,.proof-photo>img,.train-img>img,.vbe-vs-frame>img,.team-photo>img,.sign-card>img{width:100%;height:100%;object-fit:cover;display:block}
 </style>
 <!-- ══ end v13.1 shared layer ══ -->
+<script>
+(function(){
+// Capture scoping context at click time so /thankyou.html can recommend against it.
+// Runs estate-wide from this partial · no per-page edit, and it never blocks the CTA.
+document.addEventListener("click",function(e){try{
+ var a=e.target.closest("a[href*=\"source=\"], a[href*=\"utm_\"], a.nav-cta, a[data-scope-cta], button[data-bitrix-form]");
+ if(!a) return;
+ var q=((a.getAttribute("href")||"").split("?")[1])||"", ctx={};
+ q.split("&").forEach(function(pr){var k=pr.split("=");if(k[0])ctx[k[0]]=decodeURIComponent(k[1]||"");});
+ var path=location.pathname, m=path.match(/\/services\/([a-z0-9\-]+)\//);
+ var svc=ctx.utm_service||ctx.service||(m?m[1]:"")||(/arc-?flash/.test(path)?"arc-flash-study":"");
+ sessionStorage.setItem("vbe_scope_ctx", JSON.stringify({
+   utm_service: svc, utm_country: ctx.utm_country||ctx.country||"",
+   utm_industry: ctx.utm_industry||ctx.industry||"", utm_source_page: path }));
+}catch(err){}},true);
+})();
+</script>
