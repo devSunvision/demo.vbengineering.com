@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="robots" content="noindex,nofollow"><!--DEMO-ONLY-->
 <meta charset="UTF-8">
 <title>Redirecting to Renewable Integration</title>
 <meta name="description" content="This page has moved">
@@ -18,7 +18,8 @@
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NDRGZJV');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QN2LJH6YR5"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-QN2LJH6YR5');</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[ {"@type":"ListItem","position":1,"name":"Home","item":"https://www.vbengg.com/"}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://www.vbengg.com/"}
 ]}
 </script>
 <meta property="og:image" content="https://www.vbengg.com/og-default.jpg"> <style id="vbe-linkedin-pill-css">
@@ -41,9 +42,66 @@
 </style>
 <div class="scope-modal-overlay" id="scopeModalOverlay" role="dialog" aria-modal="true" aria-labelledby="scopeModalTitle"> <div class="scope-modal"> <button class="scope-modal-close" id="scopeModalClose" aria-label="Close">&times;</button> <div class="scope-modal-header"> <div class="scope-modal-eyebrow">Scope Your Plant</div> <div class="scope-modal-title" id="scopeModalTitle">Tell us about the plant. We&rsquo;ll scope it in 48 hours.</div> <div class="scope-modal-sub">Chartered Engineer signature on every deliverable. No pitch decks. Just engineering answers.</div> </div> <div class="scope-modal-body"> <div class="form-loader">Loading scoping form&hellip;</div> <script data-b24-form="inline/230/wna9sd" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.in/b14322741/crm/form/loader_230.js');</script> </div> </div>
 </div>
-<script id="vbe-scope-modal-js">(function(){ var overlay=document.getElementById('scopeModalOverlay'); var closeBtn=document.getElementById('scopeModalClose'); if(!overlay)return; function openModal(ctx){ overlay.classList.add('open'); document.body.style.overflow='hidden'; / Push URL context as hidden fields when Bitrix form is ready if(ctx){ var tryFill=function(){ var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source}; Object.keys(fields).forEach(function(k){ if(!fields[k])return; var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]'); if(input){input.value=fields[k]} }); }; setTimeout(tryFill,1500); setTimeout(tryFill,3000); setTimeout(tryFill,5000); } / GA4 event if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});} } function closeModal(){ overlay.classList.remove('open'); document.body.style.overflow=''; } closeBtn&&closeBtn.addEventListener('click',closeModal); overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()}); document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()}); / Intercept all Scope Your Plant CTAs document.addEventListener('click',function(e){ var a=e.target.closest('a.nav-cta, a[data-scope-cta]'); if(!a)return; if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return; e.preventDefault(); / Parse the CTA href query params for context var url=a.getAttribute('href')||''; var q=url.split('?')[1]||''; var ctx={}; q.split('&').forEach(function(pair){ var kv=pair.split('='); if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||''); }); openModal(ctx); });
+<script id="vbe-scope-modal-js">(function(){
+  var overlay=document.getElementById('scopeModalOverlay');
+  var closeBtn=document.getElementById('scopeModalClose');
+  if(!overlay)return;
+  function openModal(ctx){
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    // Push URL context as hidden fields when Bitrix form is ready
+    if(ctx){
+      var tryFill=function(){
+        var fields={'utm_country':ctx.country,'utm_service':ctx.service,'utm_industry':ctx.industry,'utm_city':ctx.city,'utm_product':ctx.product,'utm_source_page':ctx.source};
+        Object.keys(fields).forEach(function(k){
+          if(!fields[k])return;
+          var input=overlay.querySelector('input[name="'+k+'"], input[data-b24-name="'+k+'"]');
+          if(input){input.value=fields[k]}
+        });
+      };
+      setTimeout(tryFill,1500);
+      setTimeout(tryFill,3000);
+      setTimeout(tryFill,5000);
+    }
+    // GA4 event
+    if(typeof gtag==='function'){gtag('event','scope_modal_open',{'context':JSON.stringify(ctx||{})});}
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  closeBtn&&closeBtn.addEventListener('click',closeModal);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+  // Intercept all Scope Your Plant CTAs
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a.nav-cta, a[data-scope-cta]');
+    if(!a)return;
+    if(!a.hasAttribute('data-scope-cta') && !(a.textContent||'').match(/scope your plant/i))return;
+    e.preventDefault();
+    // Parse the CTA href query params for context
+    var url=a.getAttribute('href')||'';
+    var q=url.split('?')[1]||'';
+    var ctx={};
+    q.split('&').forEach(function(pair){
+      var kv=pair.split('=');
+      if(kv[0])ctx[kv[0]]=decodeURIComponent(kv[1]||'');
+    });
+    openModal(ctx);
+  });
 })();</script> <script async src="https://cdn.bitrix24.in/b14322741/crm/site_button/loader_10_uejvnm.js"></script> <style>#bx-livechat-container,.bx-livechat-container,.b24-widget-button-position-bottom-right{bottom:100px !important}</style> <script id="vbe-linkedin-pill-js">
-(function(){ var el = document.querySelector('.vbe-linkedin-pill .vbe-li-count'); if(!el) return; var t = Date.now(); fetch('/data/social.json?t=' + t, {cache:'no-store'}) .then(function(r){ return r.ok ? r.json() : null; }) .then(function(d){ if(d && d.linkedin){ el.textContent = (typeof d.linkedin==='number'?(d.linkedin>=1000?Math.floor(d.linkedin/1000)+'k+':String(d.linkedin)):String(d.linkedin)); } }) .catch(function(){ /* silent · pill keeps hardcoded fallback */ });
+(function(){
+  var el = document.querySelector('.vbe-linkedin-pill .vbe-li-count');
+  if(!el) return;
+  var t = Date.now();
+  fetch('/data/social.json?t=' + t, {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(d && d.linkedin){
+        el.textContent = (typeof d.linkedin==='number'?(d.linkedin>=1000?Math.floor(d.linkedin/1000)+'k+':String(d.linkedin)):String(d.linkedin));
+      }
+    })
+    .catch(function(){ /* silent · pill keeps hardcoded fallback */ });
 })();
 </script>
 </body></html>
