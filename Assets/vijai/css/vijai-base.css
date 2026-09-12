@@ -1,0 +1,539 @@
+/* ============================================================================
+   VijAI · BASE PAGE STYLESHEET · the approved template style
+   ----------------------------------------------------------------------------
+   Extracted verbatim from the approved homepage r6 so every one of the 59 pages
+   shares one visual language. Built 10 September 2026, Rule Book Edition 1.7.
+
+   LOAD ORDER on every page:
+       vijai-chrome.css   tokens, header v8, footer v5
+       vijai-base.css     this file · sections, type scale, components
+       <page>.css         only what is unique to that page
+
+   A page ADDS to this file. A page never overrides it. If a page needs a
+   different section rhythm or type scale, that is a change request against the
+   template, not a local exception.
+   ============================================================================ */
+
+/* ---------------- primitives ---------------- */
+.mo{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.w{max-width:1280px;margin:0 auto;padding:0 28px}
+img{max-width:100%;height:auto;display:block}
+::selection{background:rgba(0,185,242,.28)}
+
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+
+/* ---------------- section furniture ---------------- */
+section.lt{background:var(--pg);padding:120px 0;position:relative;overflow:hidden}
+section.lt::before{content:"";position:absolute;left:-10%;top:-30%;width:60%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,185,242,.10),transparent 62%);pointer-events:none}
+section.pn{background:var(--pn);padding:120px 0;border-top:1px solid var(--rl);border-bottom:1px solid var(--rl);position:relative;overflow:hidden}
+section.dk{background:var(--ink);color:var(--dtx);padding:120px 0;position:relative;overflow:hidden;border-top:1px solid var(--line)}
+section.dk .glowa{position:absolute;right:-14%;top:-24%;width:56%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,116,166,.30),transparent 64%);pointer-events:none}
+section.dk .glowb{position:absolute;left:-16%;bottom:-30%;width:52%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,185,242,.16),transparent 64%);pointer-events:none}
+section .w{position:relative;z-index:2}
+
+.kick{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--cyd);font-weight:600;margin:0 0 16px;display:flex;align-items:center;gap:12px}
+.kick::before{content:"";width:30px;height:1px;background:currentColor;flex:none}
+.kick i{font-style:normal;opacity:.55}
+section.dk .kick{color:var(--cy)}
+h2{font-size:clamp(30px,4.6vw,56px);line-height:1.02;letter-spacing:-.038em;margin:0 0 20px;font-weight:700;
+  max-width:20ch;text-wrap:balance}
+section.dk h2{color:#fff}
+.sub{color:var(--tx2);font-size:18px;max-width:60ch;margin:0 0 48px;line-height:1.62}
+section.dk .sub{color:var(--dtx2)}
+
+.rv{transition:opacity .8s cubic-bezier(.2,.8,.3,1),transform .8s cubic-bezier(.2,.8,.3,1)}
+.js .rv{opacity:0;transform:translateY(30px)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------------- buttons ---------------- */
+.btn{background:linear-gradient(180deg,#22C8F7,#00A6DC);color:#04212E;font-weight:700;font-size:15.5px;
+  padding:16px 30px;border-radius:10px;border:0;cursor:pointer;text-decoration:none;display:inline-block;
+  box-shadow:0 10px 30px rgba(0,185,242,.30), inset 0 1px 0 rgba(255,255,255,.45);
+  transition:transform .2s cubic-bezier(.2,.8,.3,1),box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 20px 46px rgba(0,185,242,.5), inset 0 1px 0 rgba(255,255,255,.6)}
+.btn2{border:1px solid rgba(255,255,255,.18);color:#fff;background:rgba(255,255,255,.04);font-weight:600;
+  font-size:15px;padding:15px 24px;border-radius:10px;text-decoration:none;backdrop-filter:blur(8px);
+  transition:border-color .22s,background .22s,transform .22s}
+.btn2:hover{border-color:var(--cy);background:rgba(0,185,242,.10);transform:translateY(-2px)}
+
+/* ---------------- breadcrumb · every page except the homepage, rule 4.2.1 ---------------- */
+.crumb{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--dtx3);
+  margin:0 0 26px;display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.crumb a{color:var(--dtx2);text-decoration:none;transition:color .2s}
+.crumb a:hover{color:var(--cy)}
+.crumb b{color:var(--dtx);font-weight:500}
+
+/* ---------------- answer block · rule 4.2.3 ---------------- */
+.ansblock{max-width:60ch;padding:15px 0 15px 20px;position:relative;font-size:clamp(16.5px,1.75vw,20px);
+  line-height:1.6;color:var(--dtx);margin:0}
+.ansblock::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--cy),rgba(0,185,242,0))}
+
+/* ---------------- turnkey line · rule 4.2.15a ---------------- */
+.tk{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);max-width:64ch;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--dtx3);line-height:1.8}
+.tk a{color:var(--cy);text-decoration:none;border-bottom:1px solid rgba(0,185,242,.35)}
+.tk a:hover{border-bottom-color:var(--cy)}
+
+/* ---------------- client ribbon · rule 4.2.11a, mandatory sitewide ----------------
+   CR-15, CEO ruling 11 Sep 2026. WHITE band, logos in their own colours.
+   The 18 logo files are dark ink on transparency, average brightness 85 of 255 and the
+   darkest 6 of 255. On the old dark band four of them were unreadable and IndianOil was
+   invisible; the grayscale(1) brightness(1.7) rescue could not work, because near-black
+   multiplied by 1.7 is still near-black. White band, full opacity, no filter. */
+.ribbon{background:#FFFFFF;padding:34px 0;border-top:1px solid var(--rl);border-bottom:1px solid var(--rl)}
+.ribbon .lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--tx2);text-align:center;margin:0 0 22px;font-weight:600}
+.logomask{position:relative;overflow:hidden;width:100%}
+.logomask::before,.logomask::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.logomask::before{left:0;background:linear-gradient(90deg,#FFFFFF,rgba(255,255,255,0))}
+.logomask::after{right:0;background:linear-gradient(270deg,#FFFFFF,rgba(255,255,255,0))}
+.logotrack img{height:52px;width:auto;opacity:1;filter:none}
+.logotrack{display:flex;gap:14px;width:max-content;align-items:center;
+  animation:logoflow 52s linear infinite;will-change:transform}
+.logomask:hover .logotrack{animation-play-state:paused}
+@keyframes logoflow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:640px){.logomask::before,.logomask::after{width:56px}}
+@media (prefers-reduced-motion:reduce){.logotrack{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}
+
+/* ---------------- installation numbers band · rule 4.2.11b ---------------- */
+.units{display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:1px;background:var(--rl);
+  border:1px solid var(--rl);border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(5,11,18,.07)}
+.unit{background:var(--pn);padding:30px 26px;transition:background .3s}
+.unit:hover{background:var(--sk)}
+.unit .u{font-family:"IBM Plex Mono",monospace;font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.035em;
+  line-height:1;background:linear-gradient(140deg,#0074A6,#00B9F2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.unit .l{font-size:14.5px;color:var(--tx2);margin-top:13px;line-height:1.5}
+
+/* ---------------- industry pills ---------------- */
+.ind{display:flex;flex-wrap:wrap;gap:11px}
+.ind a{background:var(--pn);border:1px solid var(--rl);border-radius:99px;padding:12px 22px;font-size:14.5px;
+  text-decoration:none;color:var(--tx);font-weight:500;transition:all .24s cubic-bezier(.2,.8,.3,1)}
+.ind a:hover{border-color:transparent;color:#04212E;transform:translateY(-3px);
+  background:linear-gradient(180deg,#22C8F7,#00A6DC);box-shadow:0 14px 30px rgba(0,185,242,.34)}
+.ind span{background:var(--pn);border:1px solid var(--rl);border-radius:99px;padding:12px 22px;font-size:14.5px;
+  font-weight:600;color:var(--tx2);display:inline-block;opacity:.8;cursor:default}
+
+/* ---------------- statement card ---------------- */
+.sc{background:var(--pn);border:1px solid var(--rl);border-radius:18px;padding:30px 30px;position:relative;
+  overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.sc:hover{transform:translateY(-4px);box-shadow:0 26px 58px rgba(5,11,18,.12);border-color:var(--cys)}
+.sc::after{content:"";position:absolute;left:0;top:0;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--cy),var(--cyd));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.sc:hover::after{transform:scaleX(1)}
+.sc .who{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--cyd);font-weight:600;margin-bottom:14px}
+.sc h3{font-size:20px;margin:0 0 10px;font-weight:700;letter-spacing:-.02em;line-height:1.26}
+.sc p{margin:0;font-size:15px;color:var(--tx2);line-height:1.6}
+
+/* ---------------- FAQ · rule 4.2.7 ---------------- */
+.faq{max-width:82ch}
+.fq{border-bottom:1px solid var(--rl);padding:28px 0;transition:padding-left .3s}
+.fq:first-child{border-top:1px solid var(--rl)}
+.fq:hover{padding-left:10px}
+.fq h3{font-size:21px;margin:0 0 10px;font-weight:700;letter-spacing:-.02em}
+.fq p{margin:0;color:var(--tx2);font-size:16.5px;line-height:1.64}
+
+/* ---------------- enquiry block · the only form on the site, rule 3.5 ---------------- */
+.ctin{position:relative;display:grid;grid-template-columns:1.1fr 220px 1fr;gap:0;z-index:2}
+@media(max-width:1080px){.ctin{grid-template-columns:1fr}.ctchar{display:none}}
+.ctl{padding:60px 52px;border-right:1px solid var(--line)}
+@media(max-width:1080px){.ctl{border-right:0;border-bottom:1px solid var(--line);padding:44px 28px}}
+.ctl h2{color:#fff;margin:0 0 14px;max-width:15ch}
+.ctl .pl{color:var(--dtx2);margin:0 0 32px;max-width:44ch;font-size:17px;line-height:1.62}
+.steps{list-style:none;counter-reset:s;margin:0 0 32px;padding:0}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 50px;color:var(--dtx);font-size:15.5px;line-height:1.56}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-3px;width:32px;height:32px;border-radius:10px;
+  border:1px solid rgba(0,185,242,.3);background:rgba(0,185,242,.09);color:var(--cy);display:grid;place-items:center;
+  font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600}
+.steps li b{color:#fff;font-weight:600}
+.ctchar{align-self:end;padding:0 0 0 10px;margin:0}
+.ctchar img{width:100%;height:auto;filter:drop-shadow(0 26px 40px rgba(0,0,0,.55))}
+.ctr{padding:60px 46px;border-left:1px solid var(--line)}
+@media(max-width:1080px){.ctr{padding:44px 28px;border-left:0}}
+.ctr .fh{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--dtx3);margin:0 0 20px}
+.fallback{margin-top:26px;border-top:1px solid var(--line);padding-top:22px;font-size:14.5px;color:var(--dtx2);line-height:1.75}
+.fallback a{color:var(--cy);text-decoration:none}
+.fallback a:hover{text-decoration:underline}
+.fallback .lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dtx3);display:block;margin-bottom:9px}
+
+/* ---------------- E-E-A-T byline · rule 4.2.10, claim pages only, CR-08 ---------------- */
+.eeat{margin-top:48px;border-top:1px solid var(--line);padding-top:28px;max-width:82ch;display:grid;gap:9px}
+.eeat .ln{margin:0;font-size:13.5px;line-height:1.7;color:var(--dtx3)}
+.eeat b{color:var(--dtx2);font-weight:600}
+.eeat time{color:var(--dtx3)}
+.eeat .slot{color:var(--dtx3);font-style:italic}
+.eeat .pend{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--amb);border:1px solid rgba(240,165,0,.35);border-radius:4px;padding:2px 7px;margin-left:8px;
+  vertical-align:2px;white-space:nowrap}
+
+/* ---------------- outbound citations ---------------- */
+.cites{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.03em;color:var(--dtx3);line-height:2;
+  margin:26px 0 0;padding-top:20px;border-top:1px solid var(--line)}
+.cites a{color:var(--dtx2);text-decoration:none;border-bottom:1px solid var(--line)}
+.cites a:hover{color:var(--cy);border-bottom-color:var(--cy)}
+
+/* ---------------- in-body internal links · rule 4.2.8 ---------------- */
+.links{font-size:15px;color:var(--dtx2);margin:44px 0 0;padding-top:24px;border-top:1px solid var(--line)}
+.links a{color:var(--cy);text-decoration:none;border-bottom:1px solid rgba(0,185,242,.3)}
+.links a:hover{border-bottom-color:var(--cy)}
+
+/* ================= dark-dominant override · one continuous surface ================= */
+section.lt{background:radial-gradient(90% 70% at 18% 0%,#0A1826 0%,#050B12 58%)}
+section.lt::before{background:radial-gradient(circle,rgba(0,185,242,.13),transparent 62%)}
+section.pn{background:linear-gradient(180deg,#07131F 0%,#050D16 100%);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section.lt h2,section.pn h2{color:#fff}
+section.lt .sub,section.pn .sub{color:var(--dtx2)}
+section.lt .kick,section.pn .kick{color:var(--cy)}
+.units{background:var(--line);border-color:var(--line);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.unit{background:linear-gradient(160deg,#0C1B29,#081420)}
+.unit:hover{background:linear-gradient(160deg,#122839,#0A1A28)}
+.unit .u{background:linear-gradient(140deg,#00B9F2,#B7ECFB);-webkit-background-clip:text;background-clip:text;color:transparent}
+.unit .l{color:var(--dtx2)}
+.ind a{background:rgba(255,255,255,.03);border-color:rgba(0,185,242,.20);color:var(--dtx)}
+.ind a:hover{color:#04212E;border-color:transparent}
+.ind span{background:rgba(255,255,255,.03);border-color:rgba(0,185,242,.20);color:var(--dtx2);opacity:.75}
+.sc{background:linear-gradient(160deg,#0C1B29,#081420);border-color:var(--line)}
+.sc:hover{border-color:rgba(0,185,242,.45);box-shadow:0 26px 58px rgba(0,0,0,.5)}
+.sc h3{color:#fff}
+.sc p{color:var(--dtx2)}
+.sc .who{color:var(--cy)}
+.fq{border-bottom-color:var(--line)}
+.fq:first-child{border-top-color:var(--line)}
+.fq h3{color:#fff}
+.fq p{color:var(--dtx2)}
+
+/* ---------------- motion and mobile ---------------- */
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1!important;transform:none!important}
+}
+@media(max-width:640px){
+  section.lt,section.pn,section.dk{padding:80px 0}
+  .ctl,.ctr{padding:34px 22px}
+  .w{padding:0 22px}
+}
+
+/* ============ STANDARD BAND · shared furniture on every page ============
+   Deployment models + turnkey.  Rule Book 4.2.14 / 4.2.15.  Section id how-it-runs.
+   Lives in the BASE sheet because the band ships on all 59 pages.
+   Verbatim from the approved homepage r6. */
+.stdgrid{display:grid;grid-template-columns:1.12fr 1fr;gap:56px;align-items:start}
+@media(max-width:960px){.stdgrid{grid-template-columns:1fr;gap:50px}}
+.stdgrid h2{font-size:clamp(25px,3.3vw,37px);margin:0 0 18px}
+.stdgrid .sub{margin:0 0 28px;font-size:16.5px;max-width:52ch}
+.depwrap{overflow-x:auto;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+table.dep{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px;table-layout:fixed}
+table.dep td:first-child,table.dep th:first-child{width:23%;min-width:150px}
+table.dep td:nth-child(2),table.dep th:nth-child(2){width:40%}
+table.dep th{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--dtx3);font-weight:600;text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.03);white-space:nowrap}
+table.dep td{padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--dtx2);line-height:1.55}
+table.dep tr:last-child td{border-bottom:0}
+table.dep td b{color:#fff;font-size:15.5px;display:block;margin-bottom:3px}
+table.dep tr.pick td{background:rgba(0,185,242,.07)}
+table.dep tr.pick td:first-child{box-shadow:inset 3px 0 0 var(--cy)}
+.pill{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:600;color:#04212E;background:var(--cy);padding:3px 8px;border-radius:3px;margin-top:4px}
+.depnote{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.04em;color:var(--dtx3);margin:15px 0 0}
+ol.tksteps{list-style:none;counter-reset:st;margin:0;padding:0;border-top:1px solid var(--line)}
+ol.tksteps li{counter-increment:st;position:relative;padding:15px 0 15px 46px;border-bottom:1px solid var(--line);
+  color:var(--dtx2);font-size:14.5px;line-height:1.55}
+ol.tksteps li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:17px;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;color:var(--cy);font-weight:600}
+ol.tksteps li b{color:#fff;display:block;margin-bottom:2px;font-size:15px}
+
+/* ── CR-13 · the enquiry dialog ─────────────────────────────────────────────
+   The Bitrix inline embed lives inside this dialog and renders on page load, so
+   the form is ready the moment a CTA is pressed. Kept out of the layout with
+   visibility rather than display:none, so Bitrix measures a real box. The panel
+   is light because the Bitrix form styles itself for a light surface, the same
+   way the enquiry section does. */
+.vbmodal{position:fixed;inset:0;z-index:9000;opacity:0;visibility:hidden;
+  pointer-events:none;transition:opacity .18s ease}
+.vbmodal.is-open{opacity:1;visibility:visible;pointer-events:auto}
+.vbmodal-bd{position:absolute;inset:0;background:rgba(5,11,18,.84);backdrop-filter:blur(3px)}
+.vbmodal-in{position:relative;max-width:560px;margin:0 auto;top:50%;
+  transform:translateY(-50%) scale(.985);background:var(--pn);border:1px solid var(--rl);
+  border-radius:14px;padding:26px 26px 20px;max-height:88vh;overflow-y:auto;
+  box-shadow:0 40px 90px rgba(0,0,0,.55);transition:transform .18s ease}
+.vbmodal.is-open .vbmodal-in{transform:translateY(-50%) scale(1)}
+.vbmodal-h{margin:0 0 14px;font-size:19px;font-weight:700;color:var(--tx);letter-spacing:-.01em}
+.vbmodal-x{position:absolute;top:12px;right:14px;width:36px;height:36px;line-height:1;
+  font-size:26px;background:transparent;border:0;color:var(--tx2);cursor:pointer;border-radius:8px}
+.vbmodal-x:hover{color:var(--tx);background:var(--sk)}
+.vbmodal-f{margin:14px 0 0;padding-top:14px;border-top:1px solid var(--rl);
+  font-size:13.5px;line-height:1.6;color:var(--tx2)}
+.vbmodal-f a{color:var(--cyd)}
+@media(max-width:640px){
+  .vbmodal-in{margin:0 12px;padding:22px 18px 16px;max-height:92vh}
+}
+
+/* ── CR-13 · the Bitrix click-mode CTA button ───────────────────────────────
+   Bitrix draws its own button inside .vbb24. These rules brand whatever it
+   renders so every CTA matches .btn. The caption itself comes from the form's
+   Show on click settings in Bitrix and must read "Enquire Now". */
+.vbb24{display:inline-block}
+.vbb24hook{position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden}
+.vbb24 button, .vbb24 a, .vbb24 [role="button"]{
+  background:var(--cy) !important;color:#04212E !important;font-weight:700 !important;
+  font-size:15.5px !important;padding:16px 30px !important;border-radius:8px !important;
+  border:0 !important;cursor:pointer;text-decoration:none !important;display:inline-block;
+  line-height:1.2 !important;letter-spacing:0 !important;box-shadow:none !important;
+  transition:transform .18s, box-shadow .18s}
+.vbb24 button:hover, .vbb24 a:hover, .vbb24 [role="button"]:hover{
+  transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,185,242,.42) !important}
+.ctarow{margin:30px 0 4px}
+.cbody .ctarow{margin:34px 0 10px}
+
+/* ── C14 · recognition band ─────────────────────────────────────────────────
+   Chetna left, Rakshak right, four items between them. Characters sticky on
+   desktop, stacked on mobile. No schema, no keyword, no CTA inside this band. */
+.c14{background:var(--ink);padding:76px 0 84px;border-bottom:1px solid var(--line)}
+.c14in{display:grid;grid-template-columns:190px minmax(0,1fr) 190px;gap:40px;align-items:start}
+.c14fig{margin:0;position:sticky;top:150px}
+.c14fig img{width:100%;height:auto;filter:drop-shadow(0 24px 38px rgba(0,0,0,.55))}
+.c14fig figcaption{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dtx3);text-align:center;margin-top:12px;line-height:1.5}
+.c14body h2{margin:0 0 30px;color:#fff}
+.c14item{padding:22px 0;border-top:1px solid var(--line)}
+.c14item:first-of-type{border-top:0;padding-top:6px}
+.c14line{margin:0 0 10px;font-size:21px;line-height:1.42;color:#fff;font-weight:600;letter-spacing:-.01em}
+.c14line::before{content:"\201C"}
+.c14line::after{content:"\201D"}
+.c14why{margin:0 0 10px;font-size:15.5px;line-height:1.65;color:var(--dtx2);max-width:64ch}
+.c14ctrl{margin:0;font-size:14.5px;line-height:1.6;color:var(--cy);font-weight:600}
+.c14close{margin:26px 0 0;padding-top:20px;border-top:1px solid var(--line);
+  font-size:15px;line-height:1.6;color:var(--dtx2);max-width:64ch}
+@media(max-width:1040px){
+  .c14in{grid-template-columns:1fr;gap:28px}
+  .c14fig{position:static;max-width:170px}
+  .c14fig-l{margin:0 auto}
+  .c14fig-r{margin:0 auto}
+  .c14line{font-size:19px}
+}
+
+
+/* ── EXTRACTED FROM THE LOCKED HOMEPAGE r6, VERBATIM · 11 Sep 2026 ──────────
+   Reveal, the odometer counter band and the C14 recognition band were all styled
+   only in vijai-home.css, so every inner page shipped without them. They are
+   shared components, not homepage decoration. Match r6, never reinvent it. */
+.ans .k{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dtx3);margin:0 0 8px}
+.ansband .k{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--cy);margin:4px 0 0;font-weight:600}
+.kick{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--cyd);font-weight:600;margin:0 0 16px;display:flex;align-items:center;gap:12px}
+.kick::before{content:"";width:30px;height:1px;background:currentColor;flex:none}
+.kick i{font-style:normal;opacity:.55}
+section.dk .kick{color:var(--cy)}
+.rv{transition:opacity .8s cubic-bezier(.2,.8,.3,1),transform .8s cubic-bezier(.2,.8,.3,1)}
+.js .rv{opacity:0;transform:translateY(30px)}
+.js .rv.in{opacity:1;transform:none}
+/* ---------------- odometer counters ---------------- */
+.igrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:40px}
+.icell{background:linear-gradient(160deg,#0B1926,#070F18);padding:36px 26px;position:relative;overflow:hidden;
+  transition:background .35s}
+.icell:hover{background:linear-gradient(160deg,#102437,#08131F)}
+.icell::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cy),transparent);opacity:0;transition:opacity .4s}
+.icell:hover::before{opacity:1}
+.odo{display:flex;align-items:baseline;font-family:"IBM Plex Mono",monospace;
+  font-size:clamp(38px,5.2vw,62px);font-weight:600;letter-spacing:-.04em;color:#fff;line-height:1}
+.odo em{font-style:normal;color:var(--cy);font-size:.55em;margin-left:3px}
+.dgt{display:inline-block;height:1em;overflow:hidden;position:relative;width:1ch;vertical-align:top}
+.dgt u{display:block;text-decoration:none;line-height:1;transition:transform 1.6s cubic-bezier(.2,.85,.25,1)}
+.odo .plain{display:inline}
+.icell .k{font-size:13.5px;color:var(--dtx2);margin-top:15px;line-height:1.5}
+.isrc{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--dtx3);line-height:1.8}
+/* ---------------- C14 recognition band ---------------- */
+.recog{background:linear-gradient(180deg,#070F18,#04090F);color:var(--dtx);padding:118px 0;position:relative;
+  overflow:hidden;border-top:1px solid var(--line)}
+.rgrid{display:grid;grid-template-columns:250px minmax(0,1fr) 250px;gap:44px;align-items:start;margin-top:10px}
+/* CR-29 · the C14 band had NO responsive rule in this stylesheet.
+   The band was extracted from the locked homepage verbatim, and its media queries
+   were left behind. Below 1080px the two 250px character columns held their width
+   and the middle content column computed to ZERO. The text then overflowed a
+   zero-width box, so on a phone every word wrapped onto its own line beside a
+   column of empty space.
+   It never tripped a gate because the page did not overflow horizontally · the
+   column collapsed instead. A width check is not a legibility check. */
+@media(max-width:1080px){.rgrid{grid-template-columns:1fr}}
+.rchar{position:sticky;top:110px;text-align:center}
+.rchar img{width:100%;height:auto;filter:drop-shadow(0 30px 44px rgba(0,0,0,.6))}
+@media(max-width:1080px){
+  .rchar{position:static;display:flex;gap:20px;align-items:flex-end;justify-content:center;flex-wrap:wrap}
+  .rchar img{width:auto;height:220px;max-width:46%;object-fit:contain;flex:0 0 auto}
+  .rchar .rname{align-self:flex-end;text-align:left;margin:0 0 6px}
+}
+@media(max-width:560px){
+  /* let width drive on small screens so the box ratio always matches the artwork */
+  .rchar img{width:42%;height:auto;max-width:42%}
+}
+.rchar .rname{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--dtx3);margin:14px 0 0;line-height:1.8}
+.rchar .rname b{display:block;color:var(--cy);font-weight:600;margin-bottom:3px;font-size:11px}
+.ritem{padding:30px 0;border-bottom:1px solid var(--line)}
+.ritem:first-child{padding-top:0}
+.ritem:last-child{border-bottom:0}
+.rq{font-size:clamp(20px,2.4vw,28px);line-height:1.26;letter-spacing:-.026em;color:#fff;font-weight:700;
+  margin:0 0 14px;text-wrap:balance}
+.rq::before{content:"“";color:var(--cy)}
+.rq::after{content:"”";color:var(--cy)}
+.rwhy{font-size:16px;color:var(--dtx2);margin:0 0 16px;line-height:1.64;max-width:56ch}
+.rc{display:flex;flex-direction:column;background:linear-gradient(160deg,#0B1926,#070F18);border:1px solid var(--line);
+  border-radius:18px;padding:28px;text-decoration:none;color:var(--dtx);
+  transition:transform .3s,box-shadow .3s,border-color .3s}
+.rc:hover{transform:translateY(-5px);box-shadow:0 28px 60px rgba(5,11,18,.3);border-color:rgba(0,185,242,.4)}
+.rc .t{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--cy);font-weight:600;margin-bottom:14px}
+.rc h3{font-size:20px;margin:0 0 10px;font-weight:700;letter-spacing:-.02em;line-height:1.26;color:#fff}
+.rc p{font-size:14.5px;color:var(--dtx2);margin:0 0 18px;flex:1;line-height:1.58}
+.rc .go{font-size:14.5px;color:var(--cy);font-weight:600}
+section.lt .kick,section.pn .kick{color:var(--cy)}
+
+
+/* ── T3 ANSWER-PAGE SECTIONS ─────────────────────────────────────────────────
+   Folded in from a separate tier stylesheet 11 Sep 2026. The locked chain is
+   chrome -> base -> page, three layers and no fourth, and these sections are
+   furniture on all 31 T3 pages rather than unique to one page. A <page>.css
+   now carries only what is genuinely unique to that page. */
+/* VijAI · T3 answer page · section styles. Adds to vijai-base.css, never overrides it. */
+
+/* ── hero · text left, module animation right ───────────────────────────── */
+.t3hero{padding:132px 0 64px;position:relative;overflow:hidden}
+.t3grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+.t3hero h1{font-size:clamp(34px,4.4vw,56px);line-height:1.06;letter-spacing:-.032em;margin:14px 0 22px;max-width:17ch}
+.t3ans{border-left:2px solid var(--cy);padding:4px 0 4px 20px;margin:0 0 20px;
+  font-size:18px;line-height:1.62;color:var(--dtx);max-width:60ch}
+.t3tk{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;
+  color:var(--dtx3);line-height:1.9;margin:0 0 26px;padding-top:18px;border-top:1px solid var(--line)}
+.t3tk a{color:var(--cy)}
+.t3stage{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(0,185,242,.05),rgba(5,11,18,0))}
+.t3stage canvas{display:block;width:100%;height:auto}
+.t3cap{position:absolute;left:14px;bottom:12px;font-family:"IBM Plex Mono",monospace;
+  font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dtx3)}
+
+/* ── the deliverable · field list ───────────────────────────────────────── */
+.t3fields{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;border-top:1px solid var(--line);margin:26px 0 0}
+.t3field{padding:16px 0;border-bottom:1px solid var(--line)}
+.t3field .n{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;color:var(--cy);font-weight:600}
+.t3field b{display:block;color:#fff;font-size:15.5px;margin:3px 0 2px}
+.t3field p{margin:0;color:var(--dtx2);font-size:14.5px;line-height:1.6}
+
+/* ── the worked specimen ────────────────────────────────────────────────── */
+.spec{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:26px 0 0;background:rgba(255,255,255,.02)}
+.spechd{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  padding:14px 20px;border-bottom:1px solid var(--line);background:rgba(0,185,242,.05)}
+.spechd b{color:#fff;font-size:14.5px}
+.spechd span{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--dtx3)}
+.specrow{display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;padding:13px 20px;border-bottom:1px solid var(--line)}
+.specrow:last-child{border-bottom:0}
+.specrow dt{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--cy);margin:2px 0 0}
+.specrow dd{margin:0;color:var(--dtx);font-size:15px;line-height:1.6}
+
+/* ── the take-away ──────────────────────────────────────────────────────── */
+.take{border:1px solid var(--line);border-radius:14px;padding:22px;margin:26px 0 0;background:rgba(255,255,255,.02)}
+.takehd{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;margin:0 0 14px}
+.takehd b{color:#fff;font-size:16px}
+.takebtns{display:flex;gap:10px;flex-wrap:wrap}
+.tbtn{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:9px 14px;border-radius:7px;border:1px solid var(--line);background:rgba(255,255,255,.03);
+  color:var(--dtx);cursor:pointer}
+.tbtn:hover{border-color:var(--cy);color:#fff}
+.take pre{margin:0;padding:16px;border-radius:10px;background:#060E16;border:1px solid var(--line);
+  overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;
+  line-height:1.75;color:#CFE3F0;max-height:340px;overflow-y:auto}
+.takenote{margin:12px 0 0;font-size:13.5px;color:var(--dtx3);line-height:1.6}
+
+/* ── applies-to line ────────────────────────────────────────────────────── */
+.applies{margin:18px 0 0;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+  color:var(--dtx3);line-height:1.9}
+
+/* ── what gets this rejected ────────────────────────────────────────────── */
+.rej{counter-reset:rej;border-top:1px solid var(--line);margin:24px 0 0}
+.rejitem{counter-increment:rej;position:relative;padding:18px 0 18px 56px;border-bottom:1px solid var(--line)}
+.rejitem::before{content:counter(rej,decimal-leading-zero);position:absolute;left:0;top:20px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--red);font-weight:600}
+.rejitem b{display:block;color:#fff;font-size:16px;margin:0 0 4px}
+.rejitem p{margin:0;color:var(--dtx2);font-size:15px;line-height:1.62;max-width:70ch}
+
+/* ── ladder links ───────────────────────────────────────────────────────── */
+.ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 0}
+.lcard{display:block;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:18px;
+  background:rgba(255,255,255,.02);transition:border-color .2s,transform .2s}
+.lcard:hover{border-color:var(--cy);transform:translateY(-2px)}
+.lcard .lay{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cy)}
+.lcard b{display:block;color:#fff;font-size:15.5px;margin:6px 0 4px;line-height:1.35}
+.lcard p{margin:0;color:var(--dtx2);font-size:14px;line-height:1.55}
+
+@media(max-width:980px){
+  .t3grid{grid-template-columns:1fr;gap:34px}
+  .t3fields{grid-template-columns:1fr}
+  .ladder{grid-template-columns:1fr}
+  .specrow{grid-template-columns:1fr;gap:4px}
+  .t3hero{padding:108px 0 48px}
+}
+
+/* ── media band · video, LinkedIn or real captures. CR-21 ───────────────── */
+.media{padding:76px 0}
+.mplay{position:relative;margin:26px 0 0;border:1px solid var(--rl);border-radius:14px;overflow:hidden;
+  aspect-ratio:16/9;background:#0B1520}
+.mplay img{width:100%;height:100%;object-fit:cover;display:block}
+.mplay iframe{width:100%;height:100%;border:0;display:block}
+.mbtn{position:absolute;inset:0;margin:0;width:100%;height:100%;background:rgba(5,11,18,.34);
+  border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  transition:background .2s}
+.mbtn:hover{background:rgba(5,11,18,.2)}
+.mtri{width:74px;height:74px;border-radius:50%;background:var(--cy);position:relative;
+  box-shadow:0 18px 46px rgba(0,185,242,.45)}
+.mtri::after{content:"";position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);
+  border-left:22px solid #04212E;border-top:14px solid transparent;border-bottom:14px solid transparent}
+.mlab{font-weight:600;font-size:16px;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6);max-width:34ch;text-align:center}
+.mtag{position:absolute;left:14px;bottom:12px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:#CFE3F0;background:rgba(5,11,18,.6);
+  padding:6px 10px;border-radius:6px}
+.mplay.is-live .mtag{display:none}
+.mshots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 0}
+.mshots figure{margin:0;border:1px solid var(--rl);border-radius:12px;overflow:hidden;background:var(--sk)}
+.mshots img{width:100%;height:auto;display:block}
+.mshots figcaption{padding:11px 13px;font-size:13.5px;line-height:1.55;color:var(--tx2)}
+.mnote{margin:14px 0 0;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--tx3)}
+@media(max-width:860px){ .mshots{grid-template-columns:1fr} .mtri{width:58px;height:58px} }
+
+/* CR-30 · PORTRAIT FILM. A 9:16 short must not become a column the height of the
+   screen. The frame is capped and centred; the play furniture scales with it.
+   Ported nowhere · this is the only place .mplay geometry is declared. */
+.mplay.mp9x16{aspect-ratio:9/16;max-width:min(340px,78vw);margin-left:auto;margin-right:auto}
+.mplay.mp9x16 .mtri{width:58px;height:58px;box-shadow:0 14px 34px rgba(0,185,242,.45)}
+.mplay.mp9x16 .mtri::after{border-left-width:18px;border-top-width:11px;border-bottom-width:11px}
+.mplay.mp9x16 .mlab{font-size:14px;max-width:22ch}
+.mplay.mp9x16 .mtag{left:10px;bottom:10px;font-size:8.5px;letter-spacing:.09em;padding:5px 8px}
+@media(max-width:560px){ .mplay.mp9x16{max-width:100%} }
+
+/* CR-32 · the floor under a third-party player that refuses to start */
+.mfail{position:absolute;left:50%;bottom:46px;transform:translateX(-50%);z-index:3;
+  width:calc(100% - 30px);max-width:32ch;text-align:center;pointer-events:none;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;line-height:1.5;
+  letter-spacing:.05em;color:#E3EEF6;background:rgba(5,11,18,.78);
+  padding:8px 11px;border-radius:6px}
+
+/* r7 · the two resource cards whose pages are not built yet. Card stays, link comes off. */
+.rc.rcp{cursor:default}
+.rc.rcp:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.go.soon{color:var(--dtx3);font-weight:600}
